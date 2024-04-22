@@ -1,0 +1,59 @@
+.tableContainerItem {
+  /* padding-bottom: 5rem; */
+}
+
+.hideElementFontSize {
+  font-size: 0;
+}
+
+.hrStyle {
+  margin: 1rem 0px;
+}
+
+.tableHeader th {
+  font-family: 'Outfit Light';
+  text-align : center;
+  color      : #545454;
+}
+
+.productName {
+  font-size         : 1rem;
+  text-transform    : capitalize;
+  display           : -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow          : hidden;
+  height            : 100%;
+}
+
+.estilospe-frontend-applications-0-x-productInfoColumn {
+  flex-direction : column;
+  display        : flex;
+  justify-content: space-around;
+  text-align     : start;
+}
+
+@media screen and (max-width:47.9rem) {
+  .productInfoColumn {
+    flex-direction : column;
+    display        : flex;
+    justify-content: space-around;
+    text-align     : start;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tableHeader {
+    display: none;
+  }
+
+  .productName {
+    white-space  : nowrap;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    max-width    : 200px;
+    font-size    : 14px;
+    line-height  : 1.5;
+  }
+
+}

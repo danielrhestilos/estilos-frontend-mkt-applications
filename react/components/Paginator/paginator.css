@@ -1,0 +1,68 @@
+.buttonShowMoreLayout {
+  margin: 15px 0;
+}
+
+:global(.vtex-slider-0-x-sliderFrame)>li>.active {
+  background-color: var(--emphasis);
+  border          : 1px solid var(--emphasis);
+  color           : var(--white);
+}
+
+:global(.vtex-slider-0-x-sliderFrame)>li>.noActive {
+  background-color: var(--emphasis);
+  border          : 1px solid var(--emphasis);
+  color           : var(--white);
+}
+
+
+.sliderLeftArrow[disabled] {
+  display: none;
+}
+
+.arrowPrev>svg>path:hover,
+.arrowNext>svg>path:hover {
+  fill: var(--white) !important;
+}
+
+.sliderLeftArrow[disabled] {
+  display: none;
+}
+
+.sliderRightArrow[disabled] {
+  display: none;
+}
+
+.containerDropdown :global(.vtex-dropdown__container) {
+  font-size: 0.8rem;
+}
+
+.containerDropdown :global(.vtex-dropdown__button) {
+  color: var(--text-color);
+}
+
+.slide {
+  width: 20% !important;
+}
+
+
+.noActive :global(.vtex-button) {
+  color      : #3f3f40;
+  font-weight: 500;
+}
+
+.active :global(.vtex-button) {
+  font-weight: 600;
+}
+
+.buttonShowMoreLayout :global(.vtex-button):focus,
+.buttonShowMoreLayout :global(.vtex-button):hover {
+  background-color: unset;
+}
+
+.buttonShowMoreLayout :global(.vtex-slider-0-x-sliderFrame) :global(li) {
+  margin: .25rem
+}
+
+.containerSteps {
+  margin: 0 auto
+}

@@ -1,0 +1,105 @@
+{
+  "support-chat": {
+    "component": "SupportChat"
+  },
+  "estilospe-horizontal-menu": {
+    "component": "HorizontalMenu"
+  },
+  "estilospe-section-identifier": {
+    "component": "SectionIdentifier",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "countdown": {
+    "component": "Countdown",
+     "composition": "children",
+    "allowed": "*"
+  },
+  "countdown#global__banner": {
+    "component": "Countdown",
+     "composition": "children",
+    "allowed": "*"
+  },
+  "countdown#global__vitrine-version-1": {
+    "component": "Countdown",
+     "composition": "children",
+    "allowed": "*"
+  },
+  "countdown#global__vitrine-version-2": {
+    "component": "Countdown",
+     "composition": "children",
+    "allowed": "*"
+  },
+  "estilospe-free-shipping": {
+    "component": "FreeShipping",
+    "render": "client"
+  },
+  "estilospe-search-paginator": {
+    "component": "Paginator",
+    "content": {
+      "$ref": "app:estilospe.frontend-applications#/definitions/Paginator"
+    }
+  },
+  "estilospe-mega-menu-actions": {
+    "component": "MegaMenuActions",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-product-custom-warranty": {
+    "component": "Warranty"
+  },
+  "estilos-product-custom-add-to-cart-button": {
+    "component": "AddToCartButton"
+  },
+  "estilos-product-custom-size-guide": {
+    "component": "CustomSizeGuide"
+  },
+  "estilos-items-order-placed": {
+    "component": "RenderItemsOrderPlaced"
+  },
+  "estilos-flixmedia-description": {
+    "component": "Flixmedia"
+  },
+  "estilos-retail-rocket-form": {
+    "component": "RetailRocketForm"
+  },
+  "estilos-send-quickview-event": {
+    "component": "sednQuickviewEvent"
+  },
+  "estilos-condition-category-show": {
+    "component": "ConditionCategoryShow",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-product-shelf-availability": {
+    "component": "ProductShelfAvailability",
+    "allowed": "*"
+  },
+  "estilos-custom-product-name": {
+    "component": "ProductCustomName",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-product-name-editor": {
+    "component": "ProductSummaryNameCustom",
+    "allowed": "*"
+  },
+  "estilospe-custom-filter-collection": {
+    "component": "CustomFilterColection"
+  },
+  "estilos-tarjeta-estilosPrice": {
+    "component": "EstilosPrice",
+    "render": "client"
+  },
+  "estilos-tarjeta-estilosPriceTracking": {
+    "component": "EstilosPriceTracking"
+  },
+  "estilos-buy-together-custom": {
+    "component": "BuyTogetherCustom"
+  },
+  "estilos-custom-sticky": {
+    "component": "CustomSticky",
+     "composition": "children",
+    "allowed": "*"
+  }
+}
