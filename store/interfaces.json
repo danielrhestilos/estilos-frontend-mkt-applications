@@ -12,22 +12,22 @@
   },
   "countdown": {
     "component": "Countdown",
-     "composition": "children",
+    "composition": "children",
     "allowed": "*"
   },
   "countdown#global__banner": {
     "component": "Countdown",
-     "composition": "children",
+    "composition": "children",
     "allowed": "*"
   },
   "countdown#global__vitrine-version-1": {
     "component": "Countdown",
-     "composition": "children",
+    "composition": "children",
     "allowed": "*"
   },
   "countdown#global__vitrine-version-2": {
     "component": "Countdown",
-     "composition": "children",
+    "composition": "children",
     "allowed": "*"
   },
   "estilospe-free-shipping": {
@@ -97,9 +97,12 @@
   "estilos-buy-together-custom": {
     "component": "BuyTogetherCustom"
   },
+  "estilos-klaviyo-form": {
+    "component": "KlaviyoForm"
+  },
   "estilos-custom-sticky": {
     "component": "CustomSticky",
-     "composition": "children",
+    "composition": "children",
     "allowed": "*"
   }
 }
