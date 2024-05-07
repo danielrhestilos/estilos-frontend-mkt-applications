@@ -75,13 +75,16 @@ const CustomSizeGuide = ({ containerSizeGuide }: CustomSizeGuideProps) => {
         </Alert>
       )
         : (
-          <Image
-            src={ImageAndBrandMatch[0].imageUrl}
-            alt={`brandId__${ImageAndBrandMatch[0].brandId}`}
-            width={'100%'}
-            height={'100%'}
-            className='w-100'
-          />
+          <a href="https://estilospe.vtexassets.com/arquivos/PlantillaPie.pdf" target="__blank">
+            <Image
+              src={ImageAndBrandMatch[0].imageUrl}
+              alt={`brandId__${ImageAndBrandMatch[0].brandId}`}
+              width={'100%'}
+              height={'100%'}
+              className='w-100'
+            />
+          </a>
+
         )}
     </>
   );
