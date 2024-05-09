@@ -104,5 +104,8 @@
     "component": "CustomSticky",
     "composition": "children",
     "allowed": "*"
+  },
+  "estilos-custom-checkout-buttom": {
+    "component": "CustomCheckoutButton"
   }
 }
