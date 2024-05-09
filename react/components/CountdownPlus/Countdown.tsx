@@ -52,7 +52,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   countdownBannerDesktop,
   hideIconImage,
   linkButton,
-  textCtaButton,
+  // textCtaButton,
   hideBannerImage,
   countdownWithBanner,
   countdownSimple,
@@ -67,7 +67,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   const [remainingTime, setRemainingTime] = useState<number>(calculateRemainingTime());
   const [showCountdown, setShowCountdown] = useState(false);
 
-  const textCtaButtonEdit = textCtaButton || "Comprar ahora"
+  // const textCtaButtonEdit = textCtaButton || "Comprar ahora"
   const linkButtonEdit = linkButton || "https://www.estilos.com.pe/"
   const countdownBannerPhoneEdit = countdownBannerPhone || "bannerPhone.png"
   const countdownBannerTabletEdit = countdownBannerTablet || "bannerDesktop.png"
@@ -156,7 +156,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
               descriptionItem3Edit={descriptionItem3Edit}
               countdownBannerPhoneEdit={countdownBannerPhoneEdit}
               linkButtonEdit={linkButtonEdit}
-              textCtaButtonEdit={textCtaButtonEdit}
+              // textCtaButtonEdit={textCtaButtonEdit}
               countdownBannerDesktopEdit={countdownBannerDesktopEdit}
               countdownBannerTabletEdit={countdownBannerTabletEdit} />
             : ""
