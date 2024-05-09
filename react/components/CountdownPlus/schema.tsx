@@ -70,13 +70,13 @@ export const CountdownSchema = {
       type: 'string',
       default: null
     },
-    textCtaButton: {
-      title: 'Texto del botón',
-      description: 'Define el llamado a la acción, por ejemplo: "COMPRA AHORA"',
-      type: 'string',
-      default: null
+    // textCtaButton: {
+    //   title: 'Texto del botón',
+    //   description: 'Define el llamado a la acción, por ejemplo: "COMPRA AHORA"',
+    //   type: 'string',
+    //   default: null
 
-    },
+    // },
     linkButton: {
       title: 'Link del botón',
       description: 'Link de producto, categoría o colección de la promoción.',

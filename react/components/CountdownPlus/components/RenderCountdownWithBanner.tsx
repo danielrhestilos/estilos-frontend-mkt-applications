@@ -31,7 +31,8 @@ const CSS_HANDLES = [
   'containerCountDownWithBannerPicture',
   'countdownRegular',
   'containerCountdownRegular',
-  'containerCountdownRegularAndChildren'
+  'containerCountdownRegularAndChildren',
+  'fullBanner', 'fullBannerT', 'fullBannerM'
 ]
 
 interface Props {
@@ -59,7 +60,7 @@ interface Props {
   descriptionItem3Edit: string,
   countdownBannerPhoneEdit: string,
   linkButtonEdit: string,
-  textCtaButtonEdit: string,
+  // textCtaButtonEdit: string,
   countdownBannerDesktopEdit: string,
   countdownBannerTabletEdit: string
 }
@@ -73,26 +74,16 @@ const RenderCountdownWithBanner = ({ normalizedProps, hideBannerImage, countdown
   descriptionItem3Edit,
   countdownBannerPhoneEdit,
   linkButtonEdit,
-  textCtaButtonEdit,
+  // textCtaButtonEdit,
   countdownBannerDesktopEdit,
   countdownBannerTabletEdit }: Props) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div className={`${handles.countdownComponent}`} style={{ backgroundColor: `${normalizedProps.backgroundColorEdit}` }}>
+    <div className={`${handles.countdownComponent}`} >
       <a href={linkButtonEdit} className="no-underline">
         <div className={`${handles.countdownComponentWithBanner}`}>
           <div className={`${handles.containerCountDownWithBannerItems}`}>
-            <div className={`${handles.containerCountDownWithBannerItems__iconImage}`}>
-              <picture className={`${handles.countdownIconImage}`}>
-                <source media='(min-width:768px)' srcSet={`/arquivos/${normalizedProps.countdownIconTabletEdit}`} />
-                <source media='(min-width:1024px)' srcSet={`/arquivos/${normalizedProps.countdownIconDesktopEdit}`} />
-                <img src={`/arquivos/${normalizedProps.countdownIconPhoneEdit}`} alt="" />
-              </picture>
-            </div>
-            <div className={`${handles.containerCountDownWithBannerItems__titleAndDescription}`}>
-              {normalizedProps.descriptionPromotionEdit !== "" ? (<h2 className={`${handles.description}`} style={{ color: `${normalizedProps.fontColorDescriptionEdit}` }}>{normalizedProps.descriptionPromotionEdit}</h2>) : ''}
-              <h1 className={`${handles.title}`} style={{ color: `${normalizedProps.fontColorEdit}` }}>{normalizedProps.titleText}</h1>
-            </div>
+
             {descriptionItem1Edit !== "" || descriptionItem2Edit !== "" || descriptionItem3Edit !== "" ?
               <div className={`${handles.countdownList}`}>
                 <ul className={`${handles.countdownListContent}`}>
@@ -102,46 +93,42 @@ const RenderCountdownWithBanner = ({ normalizedProps, hideBannerImage, countdown
                 </ul>
               </div>
               : ''}
-            {countdownVisibility ?
-              <div className={`${handles.countdownCounter}`} style={{ color: `${normalizedProps.fontColorCountdownCounterEdit}` }}>
-                <div className={`${handles.timeRemainingCounter}`}>
-                  <div className={`${handles.timeRemaining}`}>{days}</div>
-                  <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Días</div>
+
+            <>
+              {countdownVisibility ?
+                <div className={`${handles.countdownCounter}`} style={{ color: `${normalizedProps.fontColorCountdownCounterEdit}` }}>
+                  <div className={`${handles.timeRemainingCounter}`}>
+                    <div className={`${handles.timeRemaining}`}>{days}</div>
+                    <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Días</div>
+                  </div>
+                  <div className={`${handles.timeRemainingCounter}`}>
+                    <div className={`${handles.timeRemaining}`}>{hours}</div>
+                    <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Horas</div>
+                  </div>
+                  <div className={`${handles.timeRemainingCounter}`}>
+                    <div className={`${handles.timeRemaining}`}>{minutes}</div>
+                    <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Minutos</div>
+                  </div>
+                  <div className={`${handles.timeRemainingCounter}`}>
+                    <div className={`${handles.timeRemaining}`}>{seconds}</div>
+                    <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Segundos</div>
+                  </div>
                 </div>
-                <div className={`${handles.timeRemainingCounter}`}>
-                  <div className={`${handles.timeRemaining}`}>{hours}</div>
-                  <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Horas</div>
-                </div>
-                <div className={`${handles.timeRemainingCounter}`}>
-                  <div className={`${handles.timeRemaining}`}>{minutes}</div>
-                  <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Minutos</div>
-                </div>
-                <div className={`${handles.timeRemainingCounter}`}>
-                  <div className={`${handles.timeRemaining}`}>{seconds}</div>
-                  <div className={`${handles.timeRemainingText}`} style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}>Segundos</div>
-                </div>
-              </div>
-              : ''}
-            <div className={`${handles.countdownBanner}`}>
-              {
-                hideBannerImage ?
-                  <picture className={`${handles.countdownBannerImage}`}>
-                    <img src={`/arquivos/${countdownBannerPhoneEdit}`} alt="" />
-                  </picture> : ""
-              }
-            </div>
-            <div className={`${handles.countdownButton}`}>
+                : ''}
+            </>
+            {/* <div className={`${handles.countdownButton}`}>
               <a className={`${handles.countdownButtonCta}`} href={`${linkButtonEdit}`}>{textCtaButtonEdit}</a>
-            </div>
+            </div> */}
           </div>
           <div className={`${handles.containerCountDownWithBannerPicture}`}>
             <div className={`${handles.countdownBannerDesktop}`}>
               {
                 hideBannerImage ?
-                  <picture className={`${handles.countdownBannerImage}`}>
-                    <source media='(min-width:1024px)' srcSet={`/arquivos/${countdownBannerDesktopEdit}`} />
-                    <img src={`/arquivos/${countdownBannerTabletEdit}`} alt="" />
-                  </picture>
+                  <>
+                    <img src={`https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/${countdownBannerDesktopEdit}`} alt="" className={`${handles.fullBanner}`} />
+                    <img src={`https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/${countdownBannerTabletEdit}`} alt="" className={`${handles.fullBanner} ${handles.fullBannerT}`} />
+                    <img src={`https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/${countdownBannerPhoneEdit}`} alt="" className={`${handles.fullBanner} ${handles.fullBannerM}`} />
+                  </>
                   : ""
               }
             </div>
