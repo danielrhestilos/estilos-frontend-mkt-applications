@@ -19,7 +19,8 @@
   flex-direction: column;
   /* padding: 1.25rem; */
   /* padding-bottom: 2rem; */
-  margin: 1.5rem 1rem;
+  margin: 0rem 1rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -372,7 +373,7 @@
   }
 
   .countdownComponent {
-    margin: 1.5rem auto;
+    margin: 0rem auto;
     padding: 0 !important;
   }
 
@@ -403,7 +404,7 @@
 
 /* General styles for all banners */
 .fullBanner {
-  border-radius: 19px;
+  border-radius: 9px;
   /* Common styles for all banner classes */
 }
 
