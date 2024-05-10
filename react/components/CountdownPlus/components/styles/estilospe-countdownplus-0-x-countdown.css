@@ -19,10 +19,15 @@
   flex-direction: column;
   /* padding: 1.25rem; */
   /* padding-bottom: 2rem; */
-  margin: 0rem 1rem;
-  margin-bottom: 1rem;
+  /* margin: 0rem 1rem; */
+  margin: 2rem 1rem 0 1em;
   border-radius: 8px;
   box-sizing: border-box;
+}
+
+/* .cont */
+.containerCountdownRegularAndChildren {
+  margin: 2rem 1rem 0 1em;
 }
 
 .countdownIconImage {
@@ -35,9 +40,9 @@
   margin: 0 auto;
 }
 
-.containerCountDownWithBannerItems__titleAndDescription {
-  /* margin: 0 auto 1.25rem auto; */
-}
+/* .containerCountDownWithBannerItems__titleAndDescription { */
+/* margin: 0 auto 1.25rem auto; */
+/* } */
 
 .countdownList {
   display: flex;
@@ -374,6 +379,7 @@
 
   .countdownComponent {
     margin: 0rem auto;
+    margin-bottom: 1rem;
     padding: 0 !important;
   }
 
