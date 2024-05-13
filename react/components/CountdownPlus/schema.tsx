@@ -15,9 +15,15 @@ export const CountdownSchema = {
       type: 'boolean',
       default: false
     },
-    countdownVisibility: {
-      title: 'Visualizar conteo regresivo',
-      description: 'Visualizar conteo regresivo',
+    countdownVisibilityBanner: {
+      title: 'Visualizar conteo regresivo para banners',
+      description: 'Visualizar conteo regresivo para banners',
+      type: 'boolean',
+      default: true
+    },
+    countdownVisibilityProducts: {
+      title: 'Visualizar conteo regresivo para productos',
+      description: 'Visualizar conteo regresivo para productos',
       type: 'boolean',
       default: true
     },

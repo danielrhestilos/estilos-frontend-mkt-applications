@@ -26,7 +26,8 @@ interface CountdownProps {
   countdownWithBanner: boolean
   countdownComponentWithBanner: boolean,
   countdownSimple: boolean,
-  countdownVisibility: boolean,
+  countdownVisibilityBanner: boolean,
+  countdownVisibilityProducts: boolean,
   descriptionItem1: string,
   descriptionItem2: string,
   descriptionItem3: string,
@@ -56,7 +57,8 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   hideBannerImage,
   countdownWithBanner,
   countdownSimple,
-  countdownVisibility,
+  countdownVisibilityBanner,
+  countdownVisibilityProducts,
   descriptionItem1,
   descriptionItem2,
   descriptionItem3,
@@ -79,7 +81,8 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   var normalizedProps = {
     backgroundColorEdit: backgroundColor || "#E1E1E1",
     hideIconImage,
-    countdownVisibility,
+    countdownVisibilityBanner,
+    countdownVisibilityProducts,
     countdownIconTabletEdit: countdownIconTablet || "imgCountdown.png",
     countdownIconDesktopEdit: countdownIconDesktop || "imgCountdown.png",
     countdownIconPhoneEdit: countdownIconPhone || "imgCountdown.png",
@@ -146,7 +149,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
       <>
         {
           countdownWithBanner ?
-            <RenderCountdownWithBanner normalizedProps={normalizedProps} countdownVisibility={countdownVisibility} hideBannerImage={hideBannerImage}
+            <RenderCountdownWithBanner normalizedProps={normalizedProps} countdownVisibility={countdownVisibilityBanner} hideBannerImage={hideBannerImage}
               days={days}
               hours={hours}
               minutes={minutes}
@@ -163,12 +166,12 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
         }
         {
           countdownSimple ?
-
             <RenderCountDownSimple normalizedProps={normalizedProps}
               days={days}
               hours={hours}
               minutes={minutes}
               seconds={seconds}
+              countdownVisibility={countdownVisibilityProducts}
             />
             : ""
         }

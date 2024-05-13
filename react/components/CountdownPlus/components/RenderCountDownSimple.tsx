@@ -38,7 +38,6 @@ interface Props {
   normalizedProps: {
     backgroundColorEdit: string,
     hideIconImage: boolean,
-    countdownVisibility: boolean,
     countdownIconTabletEdit: string,
     countdownIconDesktopEdit: string,
     countdownIconPhoneEdit: string,
@@ -54,12 +53,13 @@ interface Props {
   hours: string,
   minutes: string,
   seconds: string,
+  countdownVisibility: boolean,
 }
 
 const RenderCountDownSimple = ({ normalizedProps, days,
   hours,
   minutes,
-  seconds }: Props) => {
+  seconds, countdownVisibility }: Props) => {
 
   const handles = useCssHandles(CSS_HANDLES)
 
@@ -87,7 +87,7 @@ const RenderCountDownSimple = ({ normalizedProps, days,
             {normalizedProps.titleText}
           </h1>
         </div>
-        {normalizedProps.countdownVisibility ?
+        {countdownVisibility ?
           <div className={`${handles.countdownCounter}`} style={{ color: `${normalizedProps.fontColorCountdownCounterEdit}` }}>
             <div className={`${handles.timeRemainingCounter}`}>
               <div className={`${handles.timeRemaining}`}>{days}</div>
