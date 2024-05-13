@@ -112,11 +112,11 @@
   color: var(--font-black);
   margin: 1.75rem 0 1.5rem 0;
   box-sizing: border-box;
-  position: absolute;
+  /* position: absolute;
   bottom: -191px;
   z-index: 444;
-  left: 21%;
-  top: 26%;
+  left: 21%; */
+  /* bottom: 20%; */
 }
 
 .timeRemaining {
@@ -214,13 +214,26 @@
 }
 
 .countdownRegular .countdownCounter {
-  margin: 0 0 0 0;
+  margin: 15px 0 0 0;
   position: initial;
 }
 
 .countdownRegular {
   display: flex;
   flex-direction: column;
+}
+
+.countdownComponentWithBanner {
+  /* display: flex;
+  justify-content: space-between; */
+  width: 100%;
+  position: relative;
+}
+
+.containerCountDownWithBannerItems {
+  position: absolute;
+  top: 18%;
+  left: 18%;
 }
 
 /*FIN CONTADOR SIN BANNER*/
@@ -234,12 +247,7 @@
     padding-top: 1.3rem;
   }
 
-  .countdownComponentWithBanner {
-    /* display: flex;
-    justify-content: space-between; */
-    width: 100%;
-    position: relative;
-  }
+
 
   .containerCountDownWithBannerItems {
     /* display: flex;
@@ -248,7 +256,9 @@
     padding: 1.25rem 0;
     margin: 0 auto; */
     width: 100%;
-
+    max-width: 3%;
+    top: 40%;
+    /* position: absolute; */
     /* max-width: 35%; */
   }
 
@@ -281,11 +291,6 @@
     align-items: flex-start;
     margin: 0;
     padding-bottom: 1rem;
-    justify-content: space-evenly;
-
-    left: 7%;
-    top: 40%;
-
   }
 
   .timeRemaining {

@@ -107,5 +107,11 @@
   },
   "estilos-custom-checkout-buttom": {
     "component": "CustomCheckoutButton"
+  },
+  "estilos-custom-description": {
+    "component": "CustomDescription"
+  },
+  "estilos-custom-specifications": {
+    "component": "CustomSpecifications"
   }
 }
