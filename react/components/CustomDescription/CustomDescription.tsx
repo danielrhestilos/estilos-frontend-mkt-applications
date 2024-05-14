@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useProduct } from 'vtex.product-context'
+
 function CustomDescription() {
+
     const contextPdp = useProduct()
     const { product } = contextPdp
-    const { description
-    } = product
-    const arrToSplit = description.split("&&");
-    const content = arrToSplit ? arrToSplit[1] : description
+    const arrToSplit = product?.description?.split("&&");
+    // const content = arrToSplit ? arrToSplit[1] : "";
+    const [content, setContent] = useState('')
+
+    useEffect(() => {
+        let cont = arrToSplit ? arrToSplit[1] : "";
+        setContent(cont);
+    }, [product]);
+
     return (
         <>
             <div>

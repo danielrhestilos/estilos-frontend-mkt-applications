@@ -24,10 +24,11 @@ function CustomDescription() {
 
     return (
         <div style={{ position: "relative" }} className={styles.customSpecificationsContainer}>
-            <section id="custom-description-section">
+            <section id="custom-description-section"
+                className={styles.contentSpecifications}
+                style={{ maxHeight: `${!showMore ? "100%" : "80px"}` }}
+            >
                 <div
-                    className={styles.contentSpecifications}
-                    style={{ maxHeight: `${!showMore ? "100%" : "140px"}` }}
                     dangerouslySetInnerHTML={{ __html: content }}
                 />
             </section>
@@ -36,7 +37,7 @@ function CustomDescription() {
                     className={showMore ? "vtex-store-components-3-x-fadeBottom w-100 h-50" : ""}
                     style={{ transition: "all 400ms ease-in-out 0s" }}
                 ></div>
-                {sectionHeight > 140 && (
+                {sectionHeight > 80 && (
                     <div className={`${styles.containerShowMore} vtex-store-components-3-x-pointerEventsAuto tc w-100 bg-base`}>
                         <button onClick={() => { toggleShowMore() }} className="vtex-store-components-3-x-showMoreButton c-action-primary t-action pointer ma5 bn outline-0">
                             {showMore ? "Mostrar más" : "Mostrar menos"}
