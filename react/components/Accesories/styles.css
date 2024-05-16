@@ -1,0 +1,378 @@
+.marginContainer {
+    background: none;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat";
+}
+
+.containerMaxWidth {
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    /* box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1); */
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    /* margin-bottom: 20px; */
+}
+
+.containerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    width: 100%;
+}
+
+.contentProduct {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 200px;
+}
+
+.contentProduct input[type='checkbox']:checked+label {
+    opacity: 1;
+    transition: .2s ease-in-out;
+}
+
+.contentProduct input[type='checkbox']+label {
+    opacity: .5;
+}
+
+.contentProduct>label>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+}
+
+.contentProduct img {
+    width: 150px;
+}
+
+.contentProduct .productName {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 180px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.productContainerPrice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.productOldPrice {
+    font-size: 13px;
+    color: black;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+
+.contentProduct .productPrice {
+    font-weight: bold;
+    color: #D70D27;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.plusProduct {
+    font-size: 40px;
+    font-weight: bold;
+    color: #D70D27;
+    margin: 10px;
+}
+
+.plusProduct:last-child {
+    display: none;
+}
+
+.contentProduct input[type='checkbox'] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #DADADA;
+    width: 23px;
+    height: 23px;
+    border-radius: 3px;
+    transition: .2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    margin-top: 10px;
+}
+
+.contentProduct input[type='checkbox']:hover {
+    background: #d70d288c;
+}
+
+.contentProduct input[type='checkbox']:checked {
+    background: #D70D27;
+}
+
+.contentProduct input[type='checkbox']:checked::before {
+    content: url('./assets/check-solid-dark.svg');
+    width: 15px;
+}
+
+.contentProduct input[type='checkbox']:disabled {
+    background: #d70d288c;
+}
+
+.contentProduct input[type='checkbox']:disabled:before {
+    content: url('./assets/check-solid-dark.svg');
+    width: 15px;
+}
+
+.containerPrice {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1.5px solid #e5e5e5;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    min-width: 30%;
+}
+
+.sentencePrice,
+.sentencePriceMobile {
+    font-weight: bold;
+    font-size: 18px;
+    /* font-size: 20px; */
+}
+
+.sentencePriceMobile {
+    display: none;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.contentPrincePercent {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* justify-content: space-between; */
+}
+
+.contentPrice {
+    display: flex;
+    flex-direction: column;
+}
+
+.titlePrice {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.valuePrice {
+    font-weight: 700;
+    font-size: 24px;
+    /* font-size: 30px; */
+    color: #D70D27;
+}
+
+.contentPercent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.percentNumber {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 5px;
+    background-color: #e53d52;
+    color: white;
+    border-radius: 5px;
+}
+
+.percentText {
+    font-size: 10px;
+}
+
+.discountToday {
+    font-size: 18px;
+    color: #979899;
+    font-weight: 600;
+}
+
+.buttonsBuyTogether {
+    display: flex;
+    gap: 10px;
+}
+
+.buttonPriceAdd,
+.buttonPrice,
+.buttonPriceAddMobile {
+    width: 45%;
+    font-size: 12px;
+    line-height: 15px;
+    border: 1px solid #D70D27;
+    border-radius: 50px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.buttonPriceAdd {
+    color: #D70D27;
+    background: #ffffff;
+}
+
+.buttonPrice,
+.buttonPriceAddMobile {
+    color: #ffffff;
+    background: #D70D27;
+}
+
+.buttonPriceAddMobile,
+.contentPrincePercentMobile {
+    display: none;
+}
+
+.discountPriceMobile {
+    font-size: 18px;
+    color: #979899;
+    font-weight: 600;
+    display: flex;
+    margin-right: 10px;
+}
+
+/* ? Detalles */
+.valuePrice::before,
+.contentProduct .productPrice::before,
+.contentProduct .productOldPrice::before,
+.discountToday .discountPrice::before {
+    content: 'S/ ';
+}
+
+.contentPercent .percentNumber::before {
+    content: '-';
+}
+
+.contentPercent .percentNumber::after {
+    content: '%';
+}
+
+/* *VERSIÓN MOBILE */
+@media screen and (max-width: 1280px) {
+    .containerMaxWidth {
+        flex-direction: column;
+        padding: 30px 15px;
+        margin: 20px 24px;
+    }
+
+    .containerContent {
+        justify-content: space-between;
+    }
+
+    .containerPrice {
+        border: none;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+        height: auto;
+    }
+
+    .sentencePrice {
+        display: none;
+    }
+
+    .sentencePriceMobile {
+        display: block;
+    }
+
+    .titlePrice {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 19.5px;
+    }
+
+    .valuePrice {
+        font-weight: 700;
+        font-size: 24px;
+        color: #D70D27;
+        line-height: 26.5px;
+    }
+
+    .buttonPrice {
+        margin-top: 25px;
+    }
+
+    .buttonPriceAddMobile,
+    .contentPrincePercentMobile {
+        display: block;
+    }
+
+    .buttonPriceAddMobile {
+        width: 200px;
+        font-size: 15px;
+    }
+
+    .contentPrincePercentMobile {
+        display: flex;
+        flex-direction: column;
+        /* gap: 15px; */
+    }
+
+    .buttonPriceAdd,
+    .buttonPrice,
+    .contentPrincePercent,
+    .contentPercent,
+    .discountToday {
+        display: none;
+    }
+
+    .valuesPrices {
+        display: flex;
+        align-items: center;
+        /* gap: 10px; */
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .containerMaxWidth {
+        padding: 10px 0;
+        margin: 0 0 10px;
+        overflow: hidden;
+    }
+
+    .containerContent {
+        overflow-x: scroll;
+    }
+
+    .contentProduct {
+        margin: 15px 0;
+    }
+
+    .valuesPrices {
+        flex-direction: column;
+    }
+}
+
+/* .checkboxCompreJunto{
+    cursor: initial;
+} */

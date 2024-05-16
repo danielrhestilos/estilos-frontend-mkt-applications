@@ -7,16 +7,22 @@ function CustomDescription() {
     const [sectionHeight, setSectionHeight] = useState(0);
     const contextPdp = useProduct();
     const { product } = contextPdp;
-    const { description } = product;
-    const arrToSplit = description.split("&&");
-    const content = arrToSplit ? arrToSplit[0] : description;
+    const [content, setContent] = useState('')
+
+    useEffect(() => {
+        if (product?.description) {
+            const arrToSplit = product?.description?.split("&&");
+            let cont = arrToSplit ? arrToSplit[0] : "";
+            setContent(cont);
+        }
+    }, [product]);
 
     useEffect(() => {
         const section = document.getElementById("custom-description-section");
         if (section) {
             setSectionHeight(section.offsetHeight);
         }
-    }, [description]);
+    }, [product?.description]);
 
     const toggleShowMore = () => {
         setShowMore(!showMore);

@@ -5,13 +5,14 @@ function CustomDescription() {
 
     const contextPdp = useProduct()
     const { product } = contextPdp
-    const arrToSplit = product?.description?.split("&&");
-    // const content = arrToSplit ? arrToSplit[1] : "";
     const [content, setContent] = useState('')
 
     useEffect(() => {
-        let cont = arrToSplit ? arrToSplit[1] : "";
-        setContent(cont);
+        if (product?.description) {
+            const arrToSplit = product?.description?.split("&&");
+            let cont = arrToSplit ? arrToSplit[1] : "";
+            setContent(cont);
+        }
     }, [product]);
 
     return (

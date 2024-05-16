@@ -113,5 +113,8 @@
   },
   "estilos-custom-specifications": {
     "component": "CustomSpecifications"
+  },
+  "estilos-custom-accesories": {
+    "component": "Accesories"
   }
 }
