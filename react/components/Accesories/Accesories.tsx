@@ -147,7 +147,6 @@ function Accesories() {
                 {(loadingCJ == false) && (
                     (productCJ.length != 0) && (
                         <div className={styles.containerMaxWidth}>
-
                             {/* Título de versión mobile */}
                             <span className={styles.sentencePriceMobile}>Arma tu combo ahorro</span>
                             {/* Contenido de productos */}
@@ -221,26 +220,20 @@ function Accesories() {
                             </div>
                             {/* Precio final y */}
                             <div className={styles.containerPrice}>
-                                {/* <span class={styles.sentencePrice}>Arma tu compra con estos productos y paga</span> */}
                                 <span className={styles.sentencePrice}>Arma tu combo ahorro</span>
                                 {total != null && (
                                     <div className={styles.contentPrincePercent}>
                                         <div className={styles.contentPrice}>
-                                            <span className={styles.titlePrice}>Precio total</span>
-                                            <span className={styles.valuePrice}>{total.toFixed(2)}</span>
+                                            {/* Subtotal: */}
+                                            <span className={styles.titlePrice}>Precio total:</span>
+                                            <span className={styles.valuePrice}> {total.toFixed(2)}</span>
+                                            {((originalPrice - total) != 0) && (
+                                                <span className={styles.discountToday}>Ahorra hoy <span className={styles.discountPrice}>{(originalPrice - total).toFixed(2)}</span></span>
+                                            )}
                                         </div>
-                                        {((originalPrice - total) != 0) && (
-                                            <div className={styles.contentPercent}>
-                                                <div className={styles.percentNumber}>{((originalPrice - total) * 100 / total).toFixed(0)}</div>
-                                                <span className={styles.percentText}>Todos los <br /> medios de pago</span>
-                                            </div>)}
                                     </div>
                                 )}
-                                {((originalPrice - total) != 0) && (
-                                    <div>
-                                        <span className={styles.discountToday}>Ahorra hoy <span className={styles.discountPrice}>{(originalPrice - total).toFixed(2)}</span></span>
-                                    </div>
-                                )}
+
                                 {/* mobile */}
                                 {total != null && (
                                     <div className={styles.contentPrincePercentMobile}>
@@ -253,7 +246,7 @@ function Accesories() {
                                 )}
                                 {/* <button onClick={onClickBuy} className={styles.buttonPrice}>Comprar Ahora</button> */}
                                 <div className={styles.buttonsBuyTogether}>
-                                    <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button>
+                                    {/* <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button> */}
                                     <button onClick={onClickBuy} className={styles.buttonPrice}>Comprar</button>
                                 </div>
                                 <button onClick={onClickAddToCart} className={styles.buttonPriceAddMobile}>Agregar combo</button>
