@@ -1,0 +1,31 @@
+.cardContainer {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    font-weight: 400;
+    color: #fff;
+    background-color: rgb(55, 55, 55);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    gap: 6px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.cta {
+    font-size: 13px;
+    font-family: Outfit;
+    margin: 0;
+    text-align: center;
+}
+
+.ctaContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.here {
+    text-decoration: underline;
+}
