@@ -117,6 +117,9 @@
   "estilos-custom-card-cta": {
     "component": "CardCTA"
   },
+  "estilos-custom-carousel-products": {
+    "component": "CarouselProducts"
+  },
   "estilos-product-custom-size-guide-trigger": {
     "component": "CustomSizeGuideTrigger",
     "composition": "children",

@@ -1,0 +1,227 @@
+.container {
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 7%);
+  font-family: "Outfit";
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 1243px;
+}
+
+.container p {
+  margin: 0;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.smallTitle {
+  font-size: 15px;
+  margin: 3px;
+}
+
+.image {
+  margin-bottom: 24px;
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+.imageHorizontal {
+  width: 190px;
+  height: 190px;
+}
+
+.productLink {
+  all: unset;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+}
+
+.productLink .percentageD,
+.productLinkHorizontal .percentageD {
+  background-color: #e91111;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 5px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+
+.productLinkHorizontal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 475px;
+}
+
+.productContent {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  background: var(--light-background);
+}
+
+.productContentHorizontal {
+  width: 230px;
+}
+
+.brand {
+  color: #000;
+  font-family: "Outfit";
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.name {
+  line-height: initial;
+  font-size: 13px;
+  color: #000;
+  padding: 10px;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  font-family: Outfit;
+  -webkit-box-orient: vertical;
+  /* text-align: center; */
+  /* height: 38px; */
+  margin-bottom: 30px !important;
+}
+
+
+.oldPrice {
+  padding: 0 .25rem;
+  font-size: 13px;
+  color: #000;
+  text-decoration: line-through;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e91111;
+}
+
+/* Carrusel de Minicart */
+.minicartProduct .productContent {
+  padding: 0;
+}
+
+.minicartProduct .image {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 5px !important;
+}
+
+.minicartProduct .brand {
+  font-size: 14px;
+}
+
+.minicartProduct .name {
+  font-size: 12px;
+  margin-bottom: 5px !important;
+}
+
+.minicartProduct .oldPrice {
+  font-size: 12px;
+}
+
+.minicartProduct .price {
+  font-size: 14px;
+}
+
+.addToCartButton {
+  all: unset;
+  cursor: pointer;
+  transition: .3s all;
+  font-family: "Montserrat";
+  font-size: 12px;
+  background-color: #FFF;
+  color: #C62732;
+  border: 1px solid #C62732;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+}
+
+.addToCartButton:hover {
+  scale: 1.02;
+  color: #D70D27;
+  border: 1px solid #D70D27;
+}
+
+@media screen and (max-width: 1366px) {
+
+  /* Carrusel de Minicart */
+  .minicartProduct .exclusivePrice {
+    font-size: 12px;
+  }
+
+  .minicartProduct .productContent {
+    padding: 0;
+  }
+
+  .minicartProduct .image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 3px !important;
+  }
+
+  .minicartProduct .brand {
+    font-size: 14px;
+  }
+
+  .minicartProduct .name {
+    font-size: 12px;
+    margin-bottom: 3px !important;
+    height: 38px;
+  }
+
+  .minicartProduct .oldPrice {
+    font-size: 12px;
+  }
+
+  .minicartProduct .price {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .productLinkHorizontal {
+    min-width: calc(95vw / 2);
+  }
+
+  .imageHorizontal {
+    width: 180px;
+    height: 180px;
+  }
+
+  .productContentHorizontal {
+    min-width: auto;
+    max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .productLinkHorizontal {
+    min-width: 95vw;
+  }
+}
