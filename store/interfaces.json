@@ -113,5 +113,13 @@
   },
   "estilos-custom-specifications": {
     "component": "CustomSpecifications"
+  },
+  "estilos-custom-card-cta": {
+    "component": "CardCTA"
+  },
+  "estilos-product-custom-size-guide-trigger": {
+    "component": "CustomSizeGuideTrigger",
+    "composition": "children",
+    "allowed": "*"
   }
 }
