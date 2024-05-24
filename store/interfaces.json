@@ -127,5 +127,10 @@
     "component": "CustomSizeGuideTrigger",
     "composition": "children",
     "allowed": "*"
+  },
+  "estilos-templates-builder-pro": {
+    "component": "TemplatesBuilderPro",
+    "composition": "children",
+    "allowed": "*"
   }
 }

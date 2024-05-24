@@ -1,0 +1,143 @@
+.layoutSolo {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.layoutDuo {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.layoutDuo img:nth-child(1) {
+    display: block;
+    grid-column: 1/2;
+}
+
+.layoutDuo img:nth-child(2) {
+    display: block;
+    grid-column: 2/3;
+}
+
+
+.layoutTriple {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.layoutTriple img:nth-child(1) {
+    display: block;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+
+.layoutTriple img:nth-child(2) {
+    display: block;
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+.layoutTriple img:nth-child(3) {
+    display: block;
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+}
+
+
+
+.layoutCollage{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+
+.layoutCollage img:nth-child(1) {
+    display: block;
+    grid-column: 1/3;
+    grid-row: 1/-1;
+}
+
+.layoutCollage img:nth-child(2) {
+    display: block;
+    grid-column: 3/4;
+    grid-row:1/2;
+}
+
+.layoutCollage img:nth-child(3) {
+    display: block;
+    grid-column: 4/-1;
+    grid-row:1/2;
+}
+
+.layoutCollage img:nth-child(4) {
+    display: block;
+    grid-column: 3/-1;
+    grid-row:2/-1;
+}
+
+
+
+
+
+.layoutCollage2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+
+.layoutCollage2 img:nth-child(1) {
+    display: block;
+    grid-column: 1/3; /* Large banner on the left, spanning 2 columns */
+    grid-row: 1/-1;   /* Spanning the entire height */
+}
+
+.layoutCollage2 img:nth-child(2) {
+    display: block;
+    grid-column: 3/4; /* First small item on the right */
+    grid-row: 1/2;
+}
+
+.layoutCollage2 img:nth-child(3) {
+    display: block;
+    grid-column: 4/5; /* Second small item on the right */
+    grid-row: 1/2;
+}
+
+.layoutCollage2 img:nth-child(4) {
+    display: block;
+    grid-column: 3/5; /* Third and fourth items below the first two */
+    grid-row: 2/-1;   /* Spanning the rest of the height */
+}
+
+
+
+
+.layoutCollagePro{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+
+.layoutCollagePro img:nth-child(1) {
+    display: block;
+    grid-column: 1/3;
+    grid-row: 1/2; 
+}
+
+.layoutCollagePro img:nth-child(2) {
+    display: block;
+    grid-column: 3/-1; 
+    grid-row: 1/-1;
+}
+
+.layoutCollagePro img:nth-child(3) {
+    display: block;
+    grid-column:1/2; 
+    grid-row: 2/-1
+}
+
+.layoutCollagePro img:nth-child(4) {
+    display: block;
+    grid-column: 2/3; 
+    grid-row: 2/-1;   
+}

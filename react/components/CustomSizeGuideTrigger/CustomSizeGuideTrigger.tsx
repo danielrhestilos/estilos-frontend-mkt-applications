@@ -21,7 +21,6 @@ function CustomSizeGuideTrigger(props: any) {
     const { product: { brandId: productBrandId } } = contextPdp;
 
     let filteredChildren = React.Children.map(props.children, (child) => {
-        console.log('props.children', props.children);
 
         const productCategoryIds = useProductCategoryIds();
         const brandSelected = useFilteredBrands(child.props.blockProps.containerSizeGuide, productBrandId);
