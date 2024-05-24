@@ -171,7 +171,6 @@ const CarouselProducts: React.FC<CarouselProductsProps> = ({
         });
     }
   }, [product, idCategory]);
-  console.log('id component ->', id);
 
   const handleAddToCart = (e: any, item: any) => {
     e.preventDefault();

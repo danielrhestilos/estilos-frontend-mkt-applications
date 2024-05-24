@@ -117,6 +117,9 @@
   "estilos-custom-card-cta": {
     "component": "CardCTA"
   },
+  "estilos-custom-bubbles-plp": {
+    "component": "BubblesPLP"
+  },
   "estilos-custom-carousel-products": {
     "component": "CarouselProducts"
   },
