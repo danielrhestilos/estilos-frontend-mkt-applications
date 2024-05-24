@@ -13,7 +13,7 @@ function BubblesPLP({ container }: any) {
         })
     }
     console.log('route.pageContext ', route.pageContext);
-
+    
     return (
         <SliderLayout
             infinite={true}
