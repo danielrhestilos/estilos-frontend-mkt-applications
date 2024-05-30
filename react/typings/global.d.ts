@@ -4,5 +4,4 @@ export interface TimeSplit {
   minutes: string
   seconds: string
 }
-
 type GenericObject = Record<string, any>

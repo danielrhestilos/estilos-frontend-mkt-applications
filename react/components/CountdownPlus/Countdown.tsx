@@ -53,7 +53,6 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   countdownBannerDesktop,
   hideIconImage,
   linkButton,
-  // textCtaButton,
   hideBannerImage,
   countdownWithBanner,
   countdownSimple,

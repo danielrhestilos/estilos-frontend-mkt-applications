@@ -22,7 +22,7 @@ const PromotionMessage = ({ installments }: any) => {
     </div>
   )
 }
-
+                                          
 const PromotionDetails = ({ priceProduct, installments }: any) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (

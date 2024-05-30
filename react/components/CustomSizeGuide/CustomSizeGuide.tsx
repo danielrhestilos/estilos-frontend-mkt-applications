@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react"
-import { useProduct } from 'vtex.product-context'
-import { Image } from 'vtex.store-image'
-import { Alert } from 'vtex.styleguide'
+import React from 'react';
+import { useProduct } from 'vtex.product-context';
+import { Image } from 'vtex.store-image';
+import { useCategoryMatch } from '../../hooks/categoryMatchHook';
+import { useProductCategoryIds } from '../../hooks/categoryIdsHook';
+import { useFilteredBrands } from '../../hooks/filteredBrandsHook';
 
 interface CustomSizeGuideProps {
   containerSizeGuide: SizeGuideProps[]
@@ -14,79 +16,37 @@ interface SizeGuideProps {
 
 const CustomSizeGuide = ({ containerSizeGuide }: CustomSizeGuideProps) => {
   const contextPdp = useProduct();
-  const [brandSelected, setBrandSelected] = useState<SizeGuideProps[]>([]);
-  const [productCategoryIds, setProductCategoryIds] = useState<string[]>([]);
+  const productCategoryIds = useProductCategoryIds();
 
-  const {
-    product: {
-      brandId: productBrandId,
-      categoryTree: productCategoryTree
-    }
-  } = contextPdp
-
-  useEffect(() => {
-    const categoryIds = productCategoryTree?.map((category: { id: number }) => category.id.toString()) || []
-    setProductCategoryIds(categoryIds)
-
-    const filteredBrands = containerSizeGuide.filter(({ brandId }: SizeGuideProps) => {
-      return productBrandId.toString() === brandId
-    })
-
-    setBrandSelected(filteredBrands);
-  }, [containerSizeGuide, productBrandId, productCategoryTree]);
-
-  // Return null if there is no match or containerSizeGuide is undefined
-  if (containerSizeGuide === undefined || brandSelected.length === 0) {
-    return null
+  // Verificar que contextPdp, contextPdp.product y containerSizeGuide estén definidos
+  if (!contextPdp || !contextPdp.product || !containerSizeGuide) {
+    return null;
   }
 
-  /**
-   * The function `validateCategoryMatch` takes in an array of selected categories and a brand ID, and
-   * returns an array of objects containing the image URL and brand ID for categories that match the
-   * product category IDs.
-   * @param {any} categoriesSelected - An array of objects representing the selected categories. Each
-   * object has two properties: "categoryList" and "imageUrl".
-   * @param {any} brandId - The `brandId` parameter is the ID of a brand.
-   * @returns The function `validateCategoryMatch` returns an array of objects that have the properties
-   * `imageUrl` and `brandId`.
-   */
-  const validateCategoryMatch = (categoriesSelected: any, brandId: any) => {
-    const categorySet = new Set(productCategoryIds)
-    const coincidencias: any[] = [];
+  const { product: { brandId: productBrandId } } = contextPdp;
 
-    categoriesSelected.forEach(({ categoryList, imageUrl }: any) => {
-      categoryList?.forEach(({ categoryId }: any) => {
-        if (categorySet?.has(categoryId)) {
-          coincidencias.push({ imageUrl, brandId })
-        }
-      });
-    });
+  const brandSelected = useFilteredBrands(containerSizeGuide, productBrandId);
 
-    return coincidencias
+  // Verificar que brandSelected no esté vacío y que productCategoryIds esté definido
+  if (brandSelected.length === 0 || !productCategoryIds) {
+    return null;
   }
 
-  const ImageAndBrandMatch = validateCategoryMatch(brandSelected[0].categories, brandSelected[0].brandId)
+  const ImageAndBrandMatch = useCategoryMatch(brandSelected[0].categories, productCategoryIds);
+
+  // Verificar que ImageAndBrandMatch no esté vacío
+  if (ImageAndBrandMatch.length === 0) {
+    return null;
+  }
 
   return (
-    <>
-      {ImageAndBrandMatch[0] === undefined ? (
-        <Alert type="error" onClose={() => console.log('Closed!')}>
-          No disponible para este producto.
-        </Alert>
-      )
-        : (
-          <a href="https://estilospe.vtexassets.com/arquivos/PlantillaPie.pdf" target="__blank">
-            <Image
-              src={ImageAndBrandMatch[0].imageUrl}
-              alt={`brandId__${ImageAndBrandMatch[0].brandId}`}
-              width={'100%'}
-              height={'100%'}
-              className='w-100'
-            />
-          </a>
-
-        )}
-    </>
+    <a href="https://estilospe.vtexassets.com/arquivos/PlantillaPie.pdf" target="__blank" style={{ margin: "auto", display: "block", width: "fit-content" }}>
+      <Image
+        src={ImageAndBrandMatch[0].imageUrl}
+        alt={`brandId__${ImageAndBrandMatch[0].brandId}`}
+        width="auto"
+      />
+    </a>
   );
 };
 
@@ -100,6 +60,7 @@ CustomSizeGuide.schema = {
   description: 'Puedes alterar el orden de este componente, asegurate de tener cargado el ID correspondiente',
   type: 'object',
   properties: {
+    tabIndex: -1,
     containerSizeGuide: {
       title: 'Contenedor de validación de guía de tallas',
       type: 'array',

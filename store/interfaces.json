@@ -116,5 +116,34 @@
   },
   "estilos-custom-accesories": {
     "component": "Accesories"
+  },
+  "estilos-custom-card-cta": {
+    "component": "CardCTA"
+  },
+  "estilos-custom-bubbles-plp": {
+    "component": "BubblesPLP"
+  },
+  "estilos-custom-carousel-products": {
+    "component": "CarouselProducts"
+  },
+  "estilos-product-custom-size-guide-trigger": {
+    "component": "CustomSizeGuideTrigger",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-templates-builder-pro": {
+    "component": "TemplatesBuilderPro",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-todays-offers": {
+    "component": "TodaysOffers",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-countdown-pro": {
+    "component": "CountdownPro",
+    "composition": "children",
+    "allowed": "*"
   }
 }

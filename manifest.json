@@ -1,7 +1,7 @@
 {
   "vendor": "estilospe",
   "name": "frontend-applications",
-  "version": "0.0.33",
+  "version": "0.0.38",
   "title": "Aplicaciones Frontend - Estilos",
   "description": "Aplicaciones Frontend - Estilos",
   "builders": {
@@ -28,7 +28,9 @@
     "vtex.device-detector": "0.x",
     "vtex.store-graphql": "2.x",
     "vtex.add-to-cart-button": "0.x",
-    "vtex.checkout-resources": "0.x"
+    "vtex.checkout-resources": "0.x",
+    "vtex.modal-layout": "0.x",
+    "vtex.slider-layout": "0.x"
   },
   "registries": [
     "smartcheckout"
