@@ -100,6 +100,9 @@
   "estilos-klaviyo-form": {
     "component": "KlaviyoForm"
   },
+  "estilos-seo-categories": {
+    "component": "SEOCategories"
+  },
   "estilos-custom-sticky": {
     "component": "CustomSticky",
     "composition": "children",
