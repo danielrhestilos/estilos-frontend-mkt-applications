@@ -1,0 +1,168 @@
+/* TodaysOffers.css */
+
+.productInfo {
+    padding: 20px;
+    color: #fff;
+    /* background-color: #f9f9f9; */
+    border-radius: 5px;
+  }
+  
+  .sectionTitle {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sectionDescription {
+    font-size: 23px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .bzotechCountdown {
+    display: flex;
+    gap: 44px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:36px;
+  }
+  
+  .clock .number {
+    font-size: 34px;
+    font-weight: 600;
+  }
+  
+  .clock span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .actionButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttonBuy {
+    border: 2px solid #fff;
+    padding: 5px 15px;
+    background-color: transparent;
+    display: block;
+    color: #fff !important;
+  }
+  /* .addcartLink { */
+    /* display: inline-block;
+    padding: 10px 20px; */
+    /* background-color: #007bff; */
+    /* color: white; */
+    /* border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s; */
+  /* } */
+  
+  .addcartLink:hover {
+    background-color: #0056b3;
+  }
+  
+  .text {
+    font-size: 22px;
+    /* color: #007bff; */
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+.todaysOffersCont{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+  .productThumb {
+    position: relative;
+    border: 1px solid #ebebeb;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: #fff;
+    width: 290px;
+  }
+  
+  .productLabel .sale {
+    background: #ff0000;
+    color: #fff;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .productThumbLink {
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .productThumb img {
+    width: 280px;
+    height: auto;
+  }
+  
+  .productTagList a {
+    display: inline-block;
+    background: #e5e5e5;
+    color: #333;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
+  .productTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .colorTitle {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .productPrice {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .productPrice del {
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  .productPrice ins {
+    color: #e60023;
+  }
+
+  @media screen and (max-width:900px){
+    .todaysOffersCont{
+
+        flex-direction: column;
+    }
+
+    
+  }
