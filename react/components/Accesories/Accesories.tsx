@@ -143,7 +143,6 @@ function Accesories() {
     return (
         <>
             <div id="buyTogether" className={styles.marginContainer}>
-                {/* {console.log('productCJ cero', productCJ[0].length)} */}
                 {(loadingCJ == false) && (
                     (productCJ.length != 0) && (
                         <div className={styles.containerMaxWidth}>
