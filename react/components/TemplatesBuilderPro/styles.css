@@ -158,6 +158,7 @@
 
 .contBanner {
     position: relative;
+    cursor: pointer;
 }
 
 .textBanner {

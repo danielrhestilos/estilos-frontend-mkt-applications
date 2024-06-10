@@ -12,7 +12,7 @@ function TemplatesBuilderPro(props: any) {
                     typeLayout={child.typeLayout}
                     titlLayout={child.titlLayout}
                 >
-                    {child.images.map((image: any, imgIndex: number) => (
+                    {child?.images?.map((image: any, imgIndex: number) => (
                         <div className={image.main ? styles.contBannerMain: styles.contBanner}  style={{backgroundColor: image.bgColor}} >
                             <img
                                 key={imgIndex}
