@@ -1,0 +1,235 @@
+.containerColors {
+    margin:7px 0 7px 0 ;
+    display: flex;
+    gap: 5px;
+}
+.pickerSelect {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    cursor: pointer;
+    border: .5px solid #707070;
+    border-radius: 18px;
+}
+.colorSelector {
+    background: #707070;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+
+.beige{
+    background-color: #F4E4B7 !important;
+} 
+.vino1{
+    background-color: #763134 !important;
+} 
+.nude{
+    background-color: #ebc8b2 !important;
+} 
+.blanco{
+    background-color: #ffffff !important;
+} 
+.ftwrwhite{
+    background-color: #EAEDF3 !important;
+}
+.negro{
+    background-color: #222222 !important;
+} 
+
+.negronegro{
+    background-color: #222222 !important;
+} 
+
+.crema{
+    background-color: #F0DFCC !important; 
+}
+.dorado{
+    background-color: #d6c387 !important; 
+}
+.plata{
+    background-color: #cdcdcd !important; 
+}
+.cacao{
+    background-color: #490206 !important; 
+}
+.marino{
+    background-color: #19284c !important;
+}
+.rojo {
+    background-color: #D33644 !important;
+}
+.taupe {
+    background-color: #b19986 !important;
+}
+.nudenegro{
+    background-color: #D3B08C !important;
+}
+
+.verde{
+    background-color: #32AF77 !important;
+}
+
+.blancodorado{
+    background-color: #E3E1CF !important;
+}
+
+
+
+
+.rosa {
+    background-color: #F4CBC8 !important;
+}
+
+
+.olivo {
+    background-color: #504C3C !important;
+}
+
+.hueso {
+    background-color: #FEF5EE !important;
+}
+
+.beigeperla{
+    background-color: #C3A88A !important;
+}
+
+.marfiloro {
+    background-color: #F6EADA !important;
+}
+
+.calendula {
+    background-color:  #DAB5B4 !important;
+}
+
+.marfil {
+    background-color: #F0ECE0 !important;
+}
+
+.camel {
+    background-color:  #DA9E4E !important;
+}
+.cafe {
+    background-color:  #9B5F3D !important;
+}
+.tan {
+    background-color: #96624B !important;
+}
+.gris {
+    background-color: #B1B3B2 !important;
+}
+
+.wisky {
+    background-color: #81553D !important;
+}
+
+
+.taupe {
+    background-color: #E3D5C5 !important;
+}
+.beigeoro{
+    background-color: #DFC7A6 !important;
+}
+.paloderosa{
+    background-color: #CC9595 !important;
+}
+.rosado{
+    background-color: #EAC9BF !important;
+}
+
+/* df */
+
+.darkwash{
+    background-color: #18344D !important;
+}
+.mediumwash {
+    background-color: #355A7D !important;
+}
+.azulmedio{
+    background-color: #4B7DA7 !important;
+}
+.ltblue{
+    background-color: #85A7C5 !important;
+}
+.ecru {
+    background-color: #F3E3D2 !important;
+}
+.kaki {
+    background-color: #A79788 !important;
+}
+.verdemilitar{
+    background-color: #899070 !important;
+}
+.cuadros1{
+    background-color: #6E6E70 !important;
+}
+.lightwash{
+    background-color:  #6789A7 !important;
+}
+.azul{
+    background-color: #262435 !important;
+}
+.burgundi{
+    background-color: #812A33 !important;
+}
+.cocoa1{
+    background-color: #FEE3C5 !important;
+}
+.olivooscuro{
+    background-color: #483B2B !important;
+}
+.verdeolivo {
+    background-color:  #4B4C39 !important;
+}
+.arcilla {
+    background-color: #DA5A34 !important;
+}
+.lacretostado{
+    background-color: #FC852A !important;
+}
+.amarillomostaza{
+    background-color: #E8B88D !important;
+}
+.negro4{
+    background-color: #272425 !important;
+}
+
+
+.print2{
+    background-color:#66DEC0 !important;
+}
+.print1{
+    background-color:#5B72DA !important;
+}
+.azulmarino{
+    background-color: #3B425F !important;
+}
+.vino{
+    background-color: #8C344B !important;
+}
+.color2{
+    background-color: #120F10 !important;
+}
+.color1{
+    background-color: #640C09 !important;
+}
+.rojorayas1old{
+    background-color: #781A2D !important;
+}
+.negrorayas1old{
+    background-color: #212023 !important;
+}
+.cuadrosgris{
+    background-color: #C7BCB9 !important;
+}
+.cuadrosbeige{
+    background-color: #ECE0D4 !important;
+}
+.iceblue{
+    background-color: #294566 !important;
+}
