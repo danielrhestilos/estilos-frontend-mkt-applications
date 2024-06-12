@@ -114,7 +114,7 @@ const CarouselProducts: React.FC<CarouselProductsProps> = ({
             return products;
           }
         )
-        .then((products_collection) => {
+        .then((products_collection:any) => {
           // console.log("products_collection: ", products_collection);
           client
             .query({

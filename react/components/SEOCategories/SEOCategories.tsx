@@ -6,6 +6,8 @@ function SEOCategories(props: any) {
   const [text, setText] = useState('');
   const { route } = useRuntime();
   const canonicalPath = route?.canonicalPath;
+  const params = route?.params;
+  const terms = params?.terms;
   const containerPLP = props?.containerPLP;
 
   useEffect(() => {
@@ -14,10 +16,16 @@ function SEOCategories(props: any) {
       return;
     }
     else{
-        console.log("canonicalPath ",canonicalPath);
+        console.log("terms ",terms);
         
+        console.log("route ",route);
+        console.log("canonicalPath ",canonicalPath);
     }
-    const matchedItem = containerPLP.find((item: any) => item.route === canonicalPath);
+    const path = terms ?  `${canonicalPath}/${terms}` : canonicalPath 
+    console.log('path ',path);
+    
+    const matchedItem = containerPLP.find((item: any) => item.route === path);
+
     console.log("matchedItem ",matchedItem)
     if (matchedItem) {
       setText(matchedItem.htmlText || '');  // Set the text or an empty string if htmlText is undefined
