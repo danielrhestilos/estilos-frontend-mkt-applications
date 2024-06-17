@@ -4,7 +4,7 @@
     font-weight: 700 !important;
     border: none;
     transition: all .3s;
-    background-color: var(--primary-color);
+    background-color:  #e91111 ;
     font-size: 17px !important;
     padding: 11px;
     display: block;
@@ -17,5 +17,5 @@
 
 .minicartCheckoutButton:hover {
     cursor: pointer;
-    background-color: var(--primary) !important;
+    background-color: #e60b0b !important;
 }
