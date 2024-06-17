@@ -1,0 +1,1593 @@
+.containerColors {
+    margin:7px 0 7px 0 ;
+    display: flex;
+    gap: 5px;
+}
+.pickerSelect {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    cursor: pointer;
+    border: .5px solid #707070;
+    border-radius: 18px;
+}
+.colorSelector {
+    background-color: azure; 
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+/*COLORES GENERADOS*/
+
+
+
+.unico,.natblack{
+    background-color: #000000 !important;  
+}
+.purpuraflores{
+    background-color: #DDA0DD !important; 
+}
+.antique{
+    background-color: #FAEBD7 !important;  
+}
+.verdecuadros{
+    background-color: #228B22 !important;  
+}
+.damasco{
+    background-color: #F5F5DC !important; 
+}
+.estampado{
+    background-color: #F4E4B7 !important; 
+}
+.blancoazul{
+    background-color: #F0F8FF !important;  
+}
+.verdeazul{
+    background-color: #008080 !important; 
+}
+.biolight{
+    background-color: #FFFFE0 !important;  
+}
+.amarillo{
+    background-color: #FFFF00 !important; 
+}
+.rojo,.red{
+    background-color: #D33644 !important; 
+ }
+.verde{
+    background-color: #008000 !important; 
+ }
+.verdeolivo{
+    background-color: #808000 !important; 
+ }
+.verdemilitar{
+    background-color: #4B5320 !important;  
+}
+/* (army green) */
+.azul{
+    background-color: #0000FF !important; 
+ }
+  /* (blue) */
+.azulmarino{
+    background-color: #000080 !important; 
+ }
+  /* (navy) */
+.azulitaliano{
+    background-color: #0033A0 !important;  
+}
+/* (Italian blue) */
+.azulfrances{
+    background-color: #0072BB !important;  
+}
+/* (French blue) */
+.blanco{
+    background-color: #FFFFFF !important; 
+ }
+  /* (white) */
+.turquesa{
+    background-color: #40E0D0 !important; 
+ }
+  /* (turquoise) */
+.marron{
+    background-color: #A52A2A !important; 
+ }
+  /* (brown) */
+.marronclaro{
+    background-color: #D2B48C !important; 
+ }
+  /* (tan) */
+.marronoscuro{
+    background-color: #654321 !important;  
+}
+/* (dark brown) */
+.beige{
+    background-color: #F5F5DC !important; 
+ }
+  /* (beige) */
+.guinda{
+    background-color: #800020 !important; 
+ }
+  /* (burgundy) */
+.anaranjado{
+    background-color: #FFA500 !important; 
+ }
+  /* (orange) */
+.moro{
+    background-color: #654321 !important;  
+}
+/* (saddle brown) */
+.melon{
+    background-color: #FEBAAD !important; 
+ }
+  /* (melon) */
+.moca{
+    background-color: #493D26 !important; 
+ }
+  /* (mocha) */
+.gris{
+    background-color: #808080 !important; 
+ }
+  /* (gray) */
+.maiz{
+    background-color: #FBEC5D !important; 
+ }
+  /* (maize) */
+.plata{
+    background-color: #C0C0C0 !important; 
+ }
+  /* (silver) */
+.terracota{
+    background-color: #E2725B !important;  
+}
+/* (terra cotta) */
+.negro{
+    background-color: #000000 !important; 
+ }
+  /* (black) */
+.plomo{
+    background-color: #B1B3B2 !important;  
+}
+/* (lead gray) */
+.plomoplata{
+    background-color: #A9A9A9 !important;  
+}
+/* (dark gray) */
+.plomooscuro{
+    background-color: #2F4F4F !important; 
+ }
+  /* (dark slate gray) */
+.plomoclaro{
+    background-color: #D3D3D3 !important;  
+}
+/* (light gray) */
+.rosado{
+    background-color: #FFC0CB !important; 
+ }
+  /* (pink) */
+.palorosa{
+    background-color: #F4C2C2 !important;  
+}
+/* (baby pink) */
+.lila{
+    background-color: #C8A2C8 !important; 
+ }
+  /* (lilac) */
+.morado{
+    background-color: #800080 !important; 
+ }
+  /* (purple) */
+.celeste{
+    background-color: #87CEEB !important;  
+}
+/* (sky blue) */
+.celesteclaro{
+    background-color: #87CEFA !important; 
+ }
+  /* (light sky blue) */
+.celesteoscuro{
+    background-color: #00BFFF !important; 
+ }
+  /* (deep sky blue) */
+.apache{
+    background-color: #D2B48C !important; 
+ }
+  /* (tan) */
+.hueso{
+    background-color: #FFE4C4 !important; 
+ }
+  /* (bisque) */
+.crema{
+    background-color: #FFFDD0 !important; 
+ }
+  /* (cream) */
+.acero{
+    background-color: #4682B4 !important;  
+}
+/* (steel blue) */
+.kakhi{
+    background-color: #F0E68C !important; 
+ }
+  /* (khaki) */
+.lucuma{
+    background-color: #E39400 !important;  
+}
+/* (lucuma yellow) */
+.granate{
+    background-color: #8B0000 !important;  
+}
+/* (dark red) */
+.charcoal{
+    background-color: #36454F !important; 
+ }
+  /* (charcoal) */
+.fuxia{
+    background-color: #F088B4 !important; 
+ }
+  /* (fuchsia) */
+.blue1{
+    background-color: #1E90FF !important;  
+}
+/* (dodger blue) */
+.darkblue{
+    background-color: #00008B !important;  
+}
+/* (dark blue) */
+.iceblue{
+    background-color: #99FFFF !important;  
+}
+/* (ice blue) */
+.silver{
+    background-color: #C0C0C0 !important; 
+ }
+  /* (silver) */
+.beigecuadros{
+    background-color: #F5F5DC !important; 
+ }
+  /* (beige) */
+.camel{
+    background-color: #C19A6B !important; 
+ }
+  /* (camel) */
+.pink{
+    background-color: #FFC0CB !important; 
+ }
+  /* (pink) */
+.orange{
+    background-color: #FFA500 !important; 
+ }
+  /* (orange) */
+.white{
+    background-color: #FFFFFF !important; 
+ }
+  /* (white) */
+.black{
+    background-color: #000000 !important; 
+ }
+.grey{
+    background-color: #808080 !important; 
+}
+.green{
+    background-color: #008000 !important; 
+}
+.fresa{
+    background-color: #FC5A8D !important; 
+}
+.cocoa{
+    background-color: #D2691E !important; 
+}
+.cemento{
+    background-color: #8B8B83 !important;  
+}
+.arena{
+    background-color: #D3D3D3 !important;  
+}
+/* (light sand) */
+.pizarra{
+    background-color: #2F4F4F !important;  
+}
+/* (slate gray) */
+.yellow{
+    background-color: #FFFF00 !important; 
+ }
+  /* (yellow) */
+.miel{
+    background-color: #FFB300 !important; 
+ }
+  /* (honey) */
+.ningunocolor{
+    background-color: #1E90FF !important; 
+ }
+  /* color) */
+.comando{
+    background-color: #4B5320 !important;  
+}
+/* (army green) */
+.camello{
+    background-color: #C19A6B !important; 
+ }
+  /* (camel) */
+.celestemedio{
+    background-color: #87CEEB !important;  
+}
+/* (sky blue) */
+.azulino{
+    background-color: #4682B4 !important;  
+}
+/* (steel blue) */
+.verdeagua{
+    background-color: #00FF7F !important;  
+}
+/* (spring green) */
+.palorosaclaro{
+    background-color: #FFDAB9 !important;  
+}
+/* (peach puff) */
+.cafe{
+    background-color: #A52A2A !important; 
+ }
+  /* (brown) */
+.blancoazul{
+    background-color: #F0F8FF !important;  
+}
+/* (alice blue) */
+.steel{
+    background-color: #4682B4 !important;  
+}
+/* (steel blue) */
+.shark{
+    background-color: #2F4F4F !important;  
+}
+/* (slate gray) */
+.topo{
+    background-color: #8B4513 !important;  
+}
+/* (saddle brown) */
+.azulamarillo{
+    background-color: #1E90FF !important; 
+ }
+  /* (dodger blue) y #FFFF00 (yellow) */
+.naranja{
+    background-color: #FFA500 !important; 
+ }
+  /* (orange) */
+.charcoal1{
+    background-color: #36454F !important; 
+ }
+  /* (charcoal) */
+.grey1{
+    background-color: #BEBEBE !important;  
+}
+/* (light gray) */
+.blackwhite{
+    background-color: #000000 !important;  
+}
+/* (black) y #FFFFFF (white) */
+.dorado{
+    background-color: #FFD700 !important; 
+ }
+  /* (gold) */
+.natural{
+    background-color: #A0522D !important; 
+ }
+  /* (sienna) */
+.miel1{
+    background-color: #FFB300 !important; 
+ }
+  /* (honey) */
+.blackbrown{
+    background-color: #654321 !important;  
+}
+/* (dark brown) */
+.blackgolden{
+    background-color: #FFD700 !important;  
+}
+/* (gold) y #000000 (black) */
+.habano{
+    background-color: #3D2B1F !important;  
+}
+/* (dark brown) */
+.azuloscuro{
+    background-color: #00008B !important;  
+}
+/* (dark blue) */
+.verdelimon{
+    background-color: #ADFF2F !important;  
+}
+/* (green yellow) */
+.verdebotella{
+    background-color: #006A4E !important;  
+}
+/* (bottle green) */
+.raven{
+    background-color: #454545 !important;  
+}
+/* (raven black) */
+.verdepacay{
+    background-color: #228B22 !important;  
+}
+/* (forest green) */
+.beigeoscuro{
+    background-color: #F5F5DC !important; 
+ }
+  /* (beige) */
+.melange{
+    background-color:  #800080 !important
+ }
+  /* de la mezcla) */
+.plomogris{
+    background-color: #708090 !important;  
+}
+/* (slate gray) */
+.chocolate{
+    background-color: #D2691E !important; 
+ }
+  /* (chocolate) */
+.brown{
+    background-color: #A52A2A !important; 
+ }
+  /* (brown) */
+.cuadros{
+    background-color: #707070 !important
+ }
+  /* del patrón) */
+.verdeclaro{
+    background-color: #90EE90 !important;  
+}
+/* (light green) */
+.azulrayas{
+    background-color: #0000FF !important
+ }
+  /* del patrón) */
+.rojorayas{
+    background-color: #D33644  !important;
+ }
+  /* del patrón) */
+.blancoestampado{
+    background-color: #FFFFFF !important; 
+ }
+  /* (white) */
+.celesteestampado{
+    background-color: #87CEEB !important;  
+}
+/* (sky blue) */
+.verdeestampado{
+    background-color: #008000 !important; 
+ }
+  /* (green) */
+.marino{
+    background-color: #000080 !important; 
+ }
+  /* (navy) */
+.blancorojonegro{
+    background-color: #FFFFFF !important;  
+}
+/* e), #FF0000 (red), #000000 (black) */
+.verderayas{
+    background-color: #00A86B !important
+ }
+  /* del patrón) */
+.negrorayas{
+    background-color: #222222 !important;
+ }
+  /* del patrón) */
+.celesterayas{
+    background-color: #00BFFF !important;
+ }
+  /* del patrón) */
+.grafitotoxico{
+    background-color: #2F4F4F !important;  
+}
+/* (slate gray) */
+.papel{
+    background-color: #FFF8DC !important; 
+ }
+  /* (cornsilk) */
+.castor{
+    background-color: #8B4513 !important;  
+}
+/* (saddle brown) */
+.azulclaro{
+    background-color: #ADD8E6 !important;  
+}
+/* (light blue) */
+.canela{
+    background-color: #D2691E !important; 
+ }
+  /* (cinnamon) */
+.verdehoja{
+    background-color: #228B22 !important;  
+}
+/* (forest green) */
+.olivo{
+    background-color: #808000 !important; 
+ }
+  /* (olive) */
+.celesteblanco{
+    background-color: #87CEEB !important; 
+ }
+  /* (sky blue) y #FFFFFF (white) */
+.cocoa1{
+    background-color: #D2691E !important; 
+ }
+  /* (cocoa) */
+.azulceleste{
+    background-color: #87CEEB !important;  
+}
+/* (sky blue) */
+.perla{
+    background-color: #EAE0C8 !important; 
+ }
+  /* (pearl) */
+.café{
+    background-color: #A52A2A !important; 
+ }
+  /* (brown) */
+.azulblanco1{
+    background-color: #0000FF !important;  
+}
+/* (blue) y #FFFFFF (white) */
+.ladrillo{
+    background-color: #B22222 !important; 
+ }
+  /* (brick) */
+.coral{
+    background-color: #FF7F50 !important; 
+ }
+  /* (coral) */
+.blanconegro{
+    background-color: #FFFFFF !important;  
+}
+/* (white) y #000000 (black) */
+.salmon{
+    background-color: #FA8072 !important; 
+ }
+  /* (salmon) */
+.aceroclaro{
+    background-color: #B0C4DE !important; 
+ }
+  /* (light steel blue) */
+.rosadoclaro{
+    background-color: #FFB6C1 !important;  
+}
+/* (light pink) */
+.cremarayas{
+    background-color: #D2B48C !important; 
+ }
+  /* del patrón) */
+.blanconaranja{
+    background-color: #FFFFFF !important;  
+}
+/* (white) y #FFA500 (orange) */
+.mostaza{
+    background-color: #FFDB58 !important; 
+ }
+  /* (mustard) */
+.cedar{
+    background-color: #8E6642 !important; 
+ }
+  /* (cedar) */
+.bleachgrey{
+    background-color: #D3D3D3 !important;  
+}
+/* (light gray) */
+.madera{
+    background-color: #DEB887 !important; 
+ }
+  /* (burlywood) */
+.tabaco{
+    background-color: #8B4513 !important;  
+}
+/* (saddle brown) */
+.piedra{
+    background-color: #8D918D !important; 
+ }
+  /* (stone) */
+.ice{
+    background-color: #99FFFF !important;  
+}
+/* (ice blue) */
+.grafito{
+    background-color: #2F4F4F !important;  
+}
+/* (slate gray) */
+.sky{
+    background-color: #87CEEB !important;  
+}
+/* (sky blue) */
+.stonewashmedio{
+    background-color: #708090 !important;  
+}
+/* (slate gray) */
+.navy{
+    background-color: #000080 !important; 
+ }
+  /* (navy) */
+.verdenaranja{
+    background-color: #ADFF2F !important; 
+ }
+  /* (green yellow) y #FFA500 (orange) */
+.verdeoscuro{
+    background-color: #006400 !important;  
+}
+/* (dark green) */
+.jade{
+    background-color: #00A86B !important; 
+ }
+  /* (jade) */
+.oldsteel{
+    background-color: #2F4F4F !important; 
+ }
+  /* (old steel gray) */
+.humo{
+    background-color: #708090 !important;  
+}
+/* (smoke gray) */
+.mint{
+    background-color: #98FF98 !important; 
+ }
+  /* (mint) */
+.violeta{
+    background-color: #EE82EE !important; 
+ }
+  /* (violet) */
+.marfil{
+    background-color: #FFFFF0 !important; 
+ }
+  /* (ivory) */
+.lacre{
+    background-color: #800000 !important; 
+ }
+  /* (maroon) */
+.camote{
+    background-color: #E9967A !important;  
+}
+/* (dark salmon) */
+.uva{
+    background-color: #6A0DAD !important; 
+ }
+  /* (grape) */
+.cemento1{
+    background-color: #8B8B83 !important;  
+}
+/* (cement gray) */
+.varios{
+    background-color:#4B0082 !important
+ } 
+  /* patrones) */
+.burdeo{
+    background-color: #800020 !important; 
+ }
+  /* (burgundy) */
+.desertblue{
+    background-color: #A2B5CD !important;  
+}
+/* (light blue) */
+.vintage{
+    background-color: #9FA8DA !important;  
+}
+/* (vintage blue) */
+.darkwash{
+    background-color: #483D8B !important; 
+ }
+  /* (dark wash blue) */
+.indigooptico{
+    background-color: #4B0082 !important; 
+ }
+  /* (indigo) */
+.azulverdoso{
+    background-color: #008080 !important; 
+ }
+  /* (teal) */
+.dirtystone{
+    background-color: #8B8B83 !important; 
+ }
+  /* (dirty stone gray) */
+.bleach{
+    background-color: #FFFFFF !important; 
+ }
+  /* (white) */
+.moka{
+    background-color: #493D26 !important; 
+ }
+  /* (mocha) */
+.powerblack{
+    background-color: #000000 !important;  
+}
+/* (power black) */
+.brown1{
+    background-color: #A52A2A !important; 
+ }
+  /* (brown) */
+.agua{
+    background-color: #00FFFF !important; 
+ }
+  /* (aqua) */
+.carbon{
+    background-color: #36454F !important; 
+ }
+  /* (carbon) */
+.forest{
+    background-color: #228B22 !important;  
+}
+/* (forest green) */
+.bluesmoke{
+    background-color: #6699CC !important;  
+}
+/* (blue smoke) */
+.lizard{
+    background-color: #556B2F !important; 
+ }
+  /* (dark olive green) */
+.blueligth{
+    background-color: #ADD8E6 !important;  
+}
+/* (light blue) */
+.coñac{
+    background-color: #9A463D !important; 
+ }
+  /* (conac) */
+.aqua{
+    background-color: #00FFFF !important; 
+ }
+  /* (aqua) */
+.pistacho{
+    background-color: #93C572 !important; 
+ }
+  /* (pistachio) */
+.cobalto{
+    background-color: #0047AB !important;  
+}
+/* (cobalt blue) */
+.azufreblack{
+    background-color: #000000 !important; 
+ }
+  /* (black) */
+.borgoña{
+    background-color: #800020 !important; 
+ }
+  /* (burgundy) */
+.cristal{
+    background-color: #E0FFFF !important;  
+}
+/* (light cyan) */
+.ambar{
+    background-color: #FFBF00 !important; 
+ }
+  /* (amber) */
+.oldwash{
+    background-color: #808080 !important; 
+}
+.powderblack{
+    background-color: #000000 !important;  
+}
+.powerblue{
+    background-color: #1E90FF !important;  
+}
+.verdelaurel{
+    background-color: #228B22 !important;  
+}
+.crudo{
+    background-color: #FAEBD7 !important;  
+}
+.darkstone{
+    background-color: #2F4F4F !important; 
+}
+.vintageblue{
+    background-color: #9FA8DA !important;  
+}
+.stoneblue{
+    background-color: #4682B4 !important;  
+}
+.dirty{
+    background-color: #8B8B83 !important;  
+}
+.bronce{
+    background-color: #CD7F32 !important; 
+ }
+
+
+ 
+.negronegro{
+    background-color:#000000 !important;
+}
+    /* (negro) */
+.oro{
+    background-color:#FFD700 !important;
+  }
+    /* (dorado) */
+.rojolistado{
+    background-color:#FF0000 !important;
+  }
+    /* (rojo, depende del patrón) */
+.celestelistado{
+    background-color:#87CEEB !important;
+  }
+    /* (celeste, depende del patrón) */
+.menta{
+    background-color:#98FF98 !important;
+  }
+    /* (mint) */
+.musgo{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.ocre{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.rojonegro{
+    background-color:#FF0000 !important;
+  }
+    /* (rojo) y #000000 (negro) */
+.petroleo{
+    background-color:#008080 !important;
+  }
+    /* (teal) */
+.tostado{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.rosadoblanco{
+    background-color:#FFC0CB !important;
+  }
+    /* (pink) y #FFFFFF (white) */
+.medio{
+    background-color:#87CEEB !important;
+  }
+    /* (sky blue) */
+.camo{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.sand{
+    background-color:#D3D3D3 !important;
+  }
+    /* (light sand) */
+.plateado{
+    background-color:#C0C0C0 !important;
+  }
+    /* (silver) */
+.aluminio{
+    background-color:#C0C0C0 !important;
+  }
+    /* (silver) */
+.blk{
+    background-color:#000000 !important;
+  }
+    /* (negro) */
+.chicle{
+    background-color:#FFC0CB !important;
+  }
+    /* (pink) */
+.smoke{
+    background-color:#708090 !important;
+  }
+    /* (smoke gray) */
+.sunset{
+    background-color:#FFA500 !important;
+  }
+    /* (orange) */
+.marronnegro{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) y #000000 (black) */
+.vino{
+    background-color:#800020 !important;
+  }
+    /* (burgundy) */
+.beigeclaro{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) */
+.beigemedio{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.rosa{
+    background-color:#FFC0CB !important;
+  }
+    /* (pink) */
+.grisclaro{
+    background-color:#D3D3D3 !important;
+  }
+    /* (light gray) */
+.fucsia,.rosado{
+    background-color:#F088B4 !important;
+  }
+    /* (fuchsia) */
+.verdepetroleo{
+    background-color:#008080 !important;
+  }
+    /* (teal) */
+.darkgray{
+    background-color:#2F4F4F !important;
+  }
+    /* (dark slate gray) */
+.oceanblue{
+    background-color:#1E90FF !important;
+  }
+    /* (dodger blue) */
+.surtido{
+    background-color: #EE82EE !important;
+  }
+    /* patrones) */
+.mar{
+    background-color:#1E90FF !important;
+  }
+    /* (dodger blue) */
+.steelblue{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.icestreet{
+    background-color:#99FFFF !important;
+  }
+    /* (ice blue) */
+.night{
+    background-color:#00008B !important;
+  }
+    /* (dark blue) */
+.pink1{
+    background-color:#FFC0CB !important;
+  }
+    /* (pink) */
+.sage{
+    background-color:#00A86B !important;
+  }
+    /* (jade) */
+.verdeperico{
+    background-color:#00FF7F !important;
+  }
+    /* (spring green) */
+.whiteblack{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #000000 (black) */
+.gray{
+    background-color:#808080 !important;
+  }
+    /* (gray) */
+.military{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.alpine{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.tofee{
+    background-color:#D2691E !important;
+  }
+    /* (cinnamon) */
+.alpine1{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.blueoscuro{
+    background-color:#00008B !important;
+  }
+    /* (dark blue) */
+.dirtybleach{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) */
+.stonegreen{
+    background-color:#2F4F4F !important;
+  }
+    /* (dark slate gray) */
+.stonebeige{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) */
+.bluegray{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.blacksilver{
+    background-color:#000000 !important;
+  }
+    /* (black) y #C0C0C0 (silver) */
+.darkcamel{
+    background-color:#C19A6B !important;
+  }
+    /* (camel) */
+.lightgreen{
+    background-color:#90EE90 !important;
+  }
+    /* (light green) */
+.lightbrown{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.ecru{
+    background-color:#FFFDD0 !important;
+  }
+    /* (cream) */
+.darkslate{
+    background-color:#2F4F4F !important;
+  }
+    /* (dark slate gray) */
+.oldbleach{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) */
+.stoneblack{
+    background-color:#000000 !important;
+  }
+    /* (black) */
+.navywhite{
+    background-color:#000080 !important;
+  }
+    /* (navy) y #FFFFFF (white) */
+.darknavy{
+    background-color:#00008B !important;
+  }
+    /* (dark blue) */
+.rose{
+    background-color:#FFC0CB !important;
+  }
+    /* (pink) */
+.midnight{
+    background-color:#000080 !important;
+  }
+    /* (navy) */
+.coffe{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) */
+.charcol{
+    background-color:#36454F !important;
+  }
+    /* (charcoal) */
+.taupe{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.verdemusgo{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.celestegris{
+    background-color:#87CEEB !important;
+  }
+    /* (sky blue) y #D3D3D3 (light gray) */
+.bluesky{
+    background-color:#87CEEB !important;
+  }
+    /* (sky blue) */
+.oldbeige{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) */
+.verdegris{
+    background-color:#808000 !important;
+  }
+    /* (olive) */
+.naturalblue{
+    background-color:#1E90FF !important;
+  }
+    /* (dodger blue) */
+.pepper{
+    background-color:#2F4F4F !important;
+  }
+    /* (dark slate gray) */
+.nuez{
+    background-color:#8B4513 !important;
+  }
+    /* (saddle brown) */
+.marronjaspeado{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) */
+.melonpastel{
+    background-color:#FEBAAD !important;
+  }
+    /* (melon) */
+.limon{
+    background-color:#ADFF2F !important;
+  }
+    /* (green yellow) */
+.safari{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.verdeesmeralda{
+    background-color:#228B22 !important;
+  }
+    /* (forest green) */
+.darkgreen{
+    background-color:#006400 !important;
+  }
+    /* (dark green) */
+.charcoalgray{
+    background-color:#36454F !important;
+  }
+    /* (charcoal) */
+.darkbrown{
+    background-color:#654321 !important;
+  }
+    /* (dark brown) */
+.rayasrojas{
+    background-color:#FF0000 !important;
+  }
+    /* (red, depende del patrón) */
+.italiano{
+    background-color:#0033A0 !important;
+  }
+    /* (Italian blue) */
+.plataclaro{
+    background-color:#D3D3D3 !important;
+  }
+    /* (light gray) */
+.amarilloclaro{
+    background-color:#FFFFE0 !important;
+  }
+    /* (light yellow) */
+.greywhite{
+    background-color:#D3D3D3 !important;
+  }
+    /* (light gray) y #FFFFFF (white) */
+.blackgrey{
+    background-color:#000000 !important;
+  }
+    /* (black) y #808080 (gray) */
+.blancofucsia{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #FF00FF (fuchsia) */
+.negroblanco{
+    background-color:#000000 !important;
+  }
+    /* (black) y #FFFFFF (white) */
+.azulblanco{
+    background-color:#0000FF !important;
+  }
+    /* (blue) y #FFFFFF (white) */
+.whisky{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) */
+.fucsiablanco{
+    background-color:#FF00FF !important;
+  }
+    /* (fuchsia) y #FFFFFF (white) */
+.navyyellow{
+    background-color:#000080 !important;
+  }
+    /* (navy) y #FFFF00 (yellow) */
+.whitepink{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #FFC0CB (pink) */
+.mango{
+    background-color:#FFA500 !important;
+  }
+    /* (orange) */
+.whiteblue{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #0000FF (blue) */
+.blackred{
+    background-color:#000000 !important;
+  }
+    /* (black) y #FF0000 (red) */
+.verdemanzana{
+    background-color:#ADFF2F !important;
+  }
+    /* (green yellow) */
+.champagne{
+    background-color:#FAEBD7 !important;
+  }
+    /* (antique white) */
+.cocoaclaro{
+    background-color:#D2691E !important;
+  }
+    /* (cocoa) */
+.greyblue{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.grismedio{
+    background-color:#808080 !important;
+  }
+    /* (gray) */
+.negromarron{
+    background-color:#000000 !important;
+  }
+    /* (black) y #A52A2A (brown) */
+.bone{
+    background-color:#FFE4C4 !important;
+  }
+    /* (bisque) */
+.cipres{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.verdeca{
+    background-color:#00FF7F !important;
+  }
+    /* (spring green) */
+.verderosa{
+    background-color:#00FF7F !important;
+  }
+    /* (spring green) y #FFC0CB (pink) */
+.negrofucsia{
+    background-color:#000000 !important;
+  }
+    /* (black) y #FF00FF (fuchsia) */
+.negrofucsiaplomo{
+    background-color:#000000 !important;
+  }
+    /* (black), #FF00FF (fuchsia) y #A9A9A9 (dark gray) */
+.militar{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.stell{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.camellcnegro{
+    background-color:#C19A6B !important;
+  }
+    /* (camel) y #000000 (black) */
+.indigoblue{
+    background-color:#4B0082 !important;
+  }
+    /* (indigo) */
+.bluewash{
+    background-color:#483D8B !important;
+  }
+    /* (dark wash blue) */
+.bluenight{
+    background-color:#00008B !important;
+  }
+    /* (dark blue) */
+.grisnegro{
+    background-color:#808080 !important;
+  }
+    /* (gray) y #000000 (black) */
+.azulacero{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.azulrojo{
+    background-color:#0000FF !important;
+  }
+    /* (blue) y #FF0000 (red) */
+.negroamarillo{
+    background-color:#000000 !important;
+  }
+    /* (black) y #FFFF00 (yellow) */
+.melange4{
+    background-color: #40E0D0 !important;
+  }
+    /* de la mezcla) */
+.plomorata{
+    background-color:#2F4F4F !important;
+  }
+    /* (dark slate gray) */
+.verdecemento{
+    background-color:#8B8B83 !important;
+  }
+    /* (cement gray) */
+.caramelo{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.palta{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.celestecrema{
+    background-color:#87CEEB !important;
+  }
+    /* (sky blue) y #FFFDD0 (cream) */
+.doradoplata{
+    background-color:#FFD700 !important;
+  }
+    /* (gold) y #C0C0C0 (silver) */
+.negroplata{
+    background-color:#000000 !important;
+  }
+    /* (black) y #C0C0C0 (silver) */
+.azulbeige{
+    background-color:#0000FF !important;
+  }
+    /* (blue) y #F5F5DC (beige) */
+.beigeblack{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) y #000000 (black) */
+.nutria{
+    background-color:#8B4513 !important;
+  }
+    /* (saddle brown) */
+.blancoceleste{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #87CEEB (sky blue) */
+.blancorosado{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #FFC0CB (pink) */
+.verdeamarillo{
+    background-color:#00FF7F !important;
+  }
+    /* (spring green) y #FFFF00 (yellow) */
+.celesteblanco{
+    background-color:#87CEEB !important;
+  }
+    /* (sky blue) y #FFFFFF (white) */
+.brandy{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) */
+.atlantic{
+    background-color:#1E90FF !important;
+  }
+    /* (dodger blue) */
+.mediumwash{
+    background-color:#483D8B !important;
+  }
+    /* (dark wash blue) */
+.cobre{
+    background-color:#CD7F32 !important;
+  }
+    /* (bronze) */
+.cocoaoscuro{
+    background-color:#493D26 !important;
+  }
+    /* (mocha) */
+.melangerojo{
+    background-color:#FF0000 !important;
+  }
+    /* (red, depende del patrón) */
+.khaki{
+    background-color:#F0E68C !important;
+  }
+    /* (khaki) */
+.azulivory{
+    background-color:#0000FF !important;
+  }
+    /* (blue) y #FFFFF0 (ivory) */
+.totalbleachst{
+    background-color: #FFFFFF !important;
+}
+/* : (white) */
+.azulmarin{
+    background-color:#000080 !important;
+  }
+    /* (navy) */
+.azulmarinero{
+    background-color:#000080 !important;
+  }
+    /* (navy) */
+.blackredwhite{
+    background-color:#000000 !important;
+  }
+    /* (black), #FF0000 (red), y #FFFFFF (white) */
+.blackwhitered{
+    background-color:#000000 !important;
+  }
+    /* (black), #FFFFFF (white), y #FF0000 (red) */
+.whitenavyred{
+    background-color:#FFFFFF !important;
+  }
+    /* (white), #000080 (navy), y #FF0000 (red) */
+.color{
+    background-color:#000000 !important;
+  }
+    /* (black) (por defecto a negro ya que es único) */
+.darknavywhite{
+    background-color:#00008B !important;
+  }
+    /* (dark blue) y #FFFFFF (white) */
+.sparblue{
+    background-color:#4682B4 !important;
+  }
+    /* (steel blue) */
+.lightblue{
+    background-color:#ADD8E6 !important;
+  }
+    /* (light blue) */
+.avellana{
+    background-color:#8B4513 !important;
+  }
+    /* (saddle brown) */
+.verdenaranja{
+    background-color:#00FF7F !important;
+  }
+    /* (spring green) y #FFA500 (orange) */
+.rojoacero{
+    background-color:#FF0000 !important;
+  }
+    /* (red) y #4682B4 (steel blue) */
+.naranjaceleste{
+    background-color:#FFA500 !important;
+  }
+    /* (orange) y #87CEEB (sky blue) */
+.azulceleste{
+    background-color:#87CEEB !important;
+  }
+    /* (sky blue) */
+.beigemarron1{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) y #A52A2A (brown) */
+.applegreen{
+    background-color:#ADFF2F !important;
+  }
+    /* (green yellow) */
+.wheat{
+    background-color:#F5DEB3 !important;
+  }
+    /* (wheat) */
+.ivory{
+    background-color:#FFFFF0 !important;
+  }
+    /* (ivory) */
+.lbrown{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) */
+.toast{
+    background-color:#D2B48C !important;
+  }
+    /* (tan) */
+.mediumblue{
+    background-color:#1E90FF !important;
+  }
+    /* (dodger blue) */
+.apricot{
+    background-color:#FBEC5D !important;
+  }
+    /* (maize) */
+.blanco3{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) */
+.golden{
+    background-color:#FFD700 !important;
+  }
+    /* (gold) */
+.spruce{
+    background-color:#006400 !important;
+  }
+    /* (dark green) */
+.blanca{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) */
+.contaminado{
+    background-color:#8B8B83 !important;
+  }
+    /* (dirty stone gray) */
+.light{
+    background-color:#FFFFE0 !important;
+  }
+    /* (light yellow) */
+.marmol{
+    background-color:#D3D3D3 !important;
+  }
+    /* (light gray) */
+.africano{
+    background-color:#8B4513 !important;
+  }
+    /* (saddle brown) */
+.mandarina{
+    background-color:#FFA500 !important;
+  }
+    /* (orange) */
+.blancoop{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) */
+.verdem{
+    background-color:#008000 !important;
+  }
+    /* (green) */
+.verdearena{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) */
+.beigecamel{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) y #C19A6B (camel) */
+.azulow1{
+    background-color:#1E90FF !important;
+  }
+    /* (dodger blue) */
+.blancorojo{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #FF0000 (red) */
+.blancoverde{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #008000 (green) */
+.blackwash{
+    background-color:#000000 !important;
+  }
+    /* (black) */
+.kaky{
+    background-color:#F0E68C !important;
+  }
+    /* (khaki) */
+.army{
+    background-color:#4B5320 !important;
+  }
+    /* (army green) */
+.humoclaro{
+    background-color:#B0C4DE !important;
+  }
+    /* (light steel blue) */
+.dirtygreen{
+    background-color:#8B8B83 !important;
+  }
+    /* (dirty stone gray) */
+.cbeige{
+    background-color:#F5F5DC !important;
+  }
+    /* (beige) */
+.blackgums{
+    background-color:#000000 !important;
+  }
+    /* (black) */
+.cafebeige{
+    background-color:#A52A2A !important;
+  }
+    /* (brown) y #F5F5DC (beige) */
+.blancogris{
+    background-color:#FFFFFF !important;
+  }
+    /* (white) y #808080 (gray) */
+.sundance{
+    background-color:#FFA500 !important;
+  }
+    /* (orange) */
+.negrodorado{
+    background-color:#000000 !important;
+  }
+    /* (black) y #FFD700 (gold) */
+.color7{
+    background-color:#000000 !important;
+  }
+    /* (black) (por defecto a negro ya que es único) */
+.color8{
+    background-color:#000000 !important;
+  }
+    /* (black) (por defecto a negro ya que es único) */
+.color9{
+    background-color:#000000 !important;
+  }
+.verdecipres{
+    background-color:#4B5320 !important;
+  }
+.huesonegro{
+    background-color:#FFE4C4 !important;
+  }
+.color1{
+    background-color:#000000 !important;
+  }
+.color2{
+    background-color:#000000 !important;
+  }
+.color3{
+    background-color:#000000 !important;
+  }
+.naranjablanco{
+    background-color:#FFA500 !important;
+  }
+.fucsianegro{
+    background-color:#F088B4 !important;
+}
+
+
+
+
