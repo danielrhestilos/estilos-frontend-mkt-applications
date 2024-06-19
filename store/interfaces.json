@@ -147,6 +147,11 @@
     "composition": "children",
     "allowed": "*"
   },
+  "estilos-list-price-custom": {
+    "component": "ListPriceCustom",
+    "composition": "children",
+    "allowed": "*"
+  },
   "estilos-countdown-pro": {
     "component": "CountdownPro",
     "composition": "children",

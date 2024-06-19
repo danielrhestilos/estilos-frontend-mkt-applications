@@ -28,13 +28,18 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 2px solid var(--text-normal);
-    border-radius: 5px;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
     /* max-width: 200px; */
     background: #fff;
     padding-bottom: 20px;
     margin:  5px;
 }
+.contentProduct:hover {
+    border: 1px solid #e91111;
+}
+
+
 
 .contentProduct input[type='checkbox']:checked+label {
     opacity: 1;

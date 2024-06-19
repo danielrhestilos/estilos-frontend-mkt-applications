@@ -1,0 +1,5 @@
+.listPrice {
+    color: #949494;
+    display: flex;
+    justify-content: space-between;
+}
