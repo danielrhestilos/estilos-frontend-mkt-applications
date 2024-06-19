@@ -143,7 +143,7 @@ function Accesories() {
             <div className={styles.containerContent}>
 
                 <span className={styles.sentencePrice}>
-                Complementos indispensables para tu Compra
+                Complementos indispensables para tu compra
                 </span>
 
 
@@ -256,7 +256,7 @@ function Accesories() {
                   <div className={styles.buttonsBuyTogether}>
                     {/* <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button> */}
                     <button onClick={onClickBuy} className={styles.buttonPrice}>
-                      Agregar al carrito 
+                      ¡LOS QUIERO! 
                     </button>
                   </div>
                 </div>
