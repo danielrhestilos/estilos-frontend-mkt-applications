@@ -52,9 +52,19 @@
 .vinooscuro,
 .vinorayas,
 .huesovinorayas,
-.vinoborgoña,
+.vinoborgoña,   
+.viño,
+.tinto,
+.sangria,
 .vinoazulmarino{
     background-color: #90364E !important;
+}
+
+.granate
+,.granateblanco
+,.granateclaro
+,.pomegranate {
+    background-color: #BF2D55 !important;
 }
 
 .sandia{
@@ -227,6 +237,10 @@
 .rojofresa,
 .rojomelange,
 .rojotomate,
+.tomate,
+.tomato,
+.rayasrojas,
+.rojbl,
 .gamuzarojo,
 .rojoceleste,
 .rojoclaro,
@@ -249,15 +263,42 @@
 .rojonaranja,
 .rojomadre,
 .rosadorojo,
-.blancorojoazul {
+.cereza,
+.cherry,
+.cherrytomato,
+.blancorojoazul,
+.ciruela ,
+.crimson
+,.fresa
+,.fresaoscuro
+,.fresaprint
+,.printfresa
+,.berry
+,.wildberry
+,.betterscarlet
+,.flamescarlet
+,.cranberry
+,.scarlet 
+{
    background-color: #D33644 !important;
 }
 
+.concrete{
+    background-color: #CCAD81 !important;
+}
 
-.green,
-.verde
+.verdeclaro1 {
+    background-color: #AACBB9 !important;
+}
+
+.green
+,.verdoso
+,.parrot
+,.verdeloro
+,.verde
+,.verdegris
 ,.verdeagua
-,.stonegreen
+,.jardin
 ,.lightgreen
 ,.darkgreen
 ,.verdenaranja
@@ -290,20 +331,16 @@
 ,.blackgreen
 ,.neongreen
 ,.verdegris
-,.armygreen
 ,.verdem
 ,.totaldirtygreen
 ,.totalsupergreenhb
-,.armygreen
 ,.totalstonegreen
 ,.palegreen
 ,.stonegreenhb
 ,.lightgreen1
 ,.pastelgreen
 ,.metalgreen
-,.greenarmy
 ,.blackmilitarygreen
-,.greenarmysas
 ,.whitegreen
 ,.coalgreenwhtpwtrgrey
 ,.sgreencblackcorgrn
@@ -315,6 +352,8 @@
 ,.totalstonegreendstyr
 ,.greenlove
 ,.greenolive
+,.verdeoliva
+,.jungle
 ,.blackgraygreen
 ,.green195408
 ,.totalbleachgreen
@@ -345,9 +384,8 @@
 ,.verdeprintpiton
 ,.verdebotellalistado
 ,.verdeprintcamuflaje
-,.verdeolivolistado
 ,.verdemilitar
-,.verdeolivocuadros
+,.verdem
 ,.verdebotellacharcoal
 ,.dustgreen
 ,.greenlimewhite
@@ -367,16 +405,12 @@
 ,.verdeclaro
 ,.verderayas
 ,.verdeestampado
-,.verdehoja
-,.verdeolivomedio
-,.grisverdeoscuro
+,.verdehoj
 ,.verdeasudel
-,.verdeopaco
 ,.napaverde
 ,.allwhitechristmasgreen
 ,.ftwrwhiteftwrwhitegreen
 ,.verdecamuflaje
-,.verdeverdeoscuro
 ,.verdeely
 ,.verdeaguajaspe
 ,.verdeaguaazulino
@@ -386,15 +420,12 @@
 ,.verdeazul
 ,.negroverde
 ,.verdenegro
-,.verdeolivoprint
-,.verdeolivooscuro
 ,.verdeceledon
 ,.neogreen
 ,.printverde
 ,.totalgreenhb
 ,.coreblacksignalgreenglorygreen
 ,.coreblackwhitesignalgreen
-,.verdeolive
 ,.azulverdeminiprint
 ,.verdementapastel
 ,.softgreen
@@ -402,8 +433,6 @@
 ,.slitgreen
 ,.totalstonegreentorn
 ,.printverdehoja
-,.verdeivory
-,.ivoryverde
 ,.estampverde
 ,.rayasverde
 ,.verdegrisaceo
@@ -427,7 +456,6 @@
 ,.verdetrebol
 ,.blancoverde
 ,.verdetrebolivory
-,.verdeolivo
 ,.verdemint
 ,.ivorylilaverde
 ,.beigeverdeesmeralda
@@ -441,19 +469,14 @@
 ,.verdeaqua1
 ,.verdeempolvadoestampado
 ,.camelverde
-,.verdeolivonegro
-,.verdeolivo1
 ,.blancocremosoverde
 ,.verdenegro
-,.verdeoscuroestampado
 ,.melangeverdeagua
 ,.azulgrisverde
-,.verdeoscuroocregris
 ,.verdeesmeraldaarenamelange
 ,.beigemedioverdeagua
 ,.crackytotalgreen
 ,.totalstonegreenst
-,.verdeolivoclaro
 ,.plomoverde
 ,.agavegreen
 ,.verdemar
@@ -481,12 +504,9 @@
 ,.verdesombra
 ,.verdemarprint
 ,.watergreen
-,.verdearmy
-,.verdeolivoglacer
 ,.verdeclaronegro
 ,.verdeaqua
 ,.verdeportugal
-,.verdeolivomelange
 ,.aguaabetoverde
 ,.verdeferiaivory
 ,.lightblueivorylemongreen
@@ -506,7 +526,6 @@
 ,.verdetrop
 ,.taydaynaranjagreen
 ,.verde642
-,.verdeolivo676
 ,.dustygreen
 ,.verdemalaquita
 ,.negroverdeantiguo
@@ -527,7 +546,6 @@
 ,.greentorn
 ,.crackygreenhb
 ,.dessertgreen
-,.verdeoja
 ,.supergreenhb
 ,.verdenaranjo
 ,.resedagreen
@@ -543,14 +561,55 @@
 ,.verdejungla
 ,.supergreen
 ,.greenmatte{
-    background-color: #32AF77 !important;;
+    background-color: #4EB849 !important;;
 }
 
 
-.rosado{
+.rose
+,.rose1
+,.rous
+,.roseas
+,.roseberry
+,.roseblack
+,.roseegris
+,.roseblossom
+,.rosedust
+,.rosee
+,.roselistado
+,.rosenegro
+,.rosepale
+,.roseprint
+,.rosetone
+,.rosette
+,.ross
+,.rosse
+,.rossprint
+,.printrose
+,.mellowrose
+,.whiterose
+,.blackgrey7rwhiterose
+,.blackroses
+,.bulgarianrose
+,.charcoalblackmellowrose
+,.dustyrose
+,.fadedrose
+,.vernizrose
+,.lrose
+,.mauve
+,.mauveprint
+,.operamauve
+,.puttymauve
+,.wondermauve
+,.metalrose
+{
 background-color: #DAA6A5 !important;
 }
+
 .pink
+,.rosado
+,.barbie
+
+,.barbiefashion
 ,.rosadoclaro
 ,.rosadoblanco
 ,.pink1
@@ -696,13 +755,13 @@ background-color: #DAA6A5 !important;
 ,.lucidpink
 ,.candypink
 ,.ivoryazulrosadolistado
-,.camelororosado
 ,.ororosadoclaro{
     background-color: #dda0dd !important;
 }
 
 
 .beige
+,.beig
 ,.beigecuadros
 ,.beigeoscuro
 ,.beigeclaro
@@ -849,7 +908,9 @@ background-color: #DAA6A5 !important;
 }
 
 
-.blancoazul
+
+.maritimo
+,.blancoazul
 ,.azul
 ,.azulmarino
 ,.azulitaliano
@@ -859,7 +920,6 @@ background-color: #DAA6A5 !important;
 ,.azulamarillo
 ,.azuloscuro
 ,.azulrayas
-,.azulclaro
 ,.azulceleste
 ,.azulblanco1
 ,.azulverdoso
@@ -895,7 +955,6 @@ background-color: #DAA6A5 !important;
 ,.aceroazul
 ,.azulnoche
 ,.azulmedio
-,.azulcontaminado
 ,.azulintermedio
 ,.azulgris1
 ,.azulnavy
@@ -920,7 +979,6 @@ background-color: #DAA6A5 !important;
 ,.azulreal
 ,.cremaazul
 ,.azulnaranja
-,.azulcielo
 ,.aquaazul
 ,.azulnegro
 ,.azulpastel
@@ -929,6 +987,7 @@ background-color: #DAA6A5 !important;
 ,.multiazul
 ,.azulosc
 ,.azulturquesa
+,.turkish
 ,.azulinojaspe
 ,.azullistado
 ,.azulzafiro
@@ -954,7 +1013,6 @@ background-color: #DAA6A5 !important;
 ,.surtidoazul
 ,.azulnegro
 ,.azulcuadros
-,.azullight
 ,.azuljaspeado
 ,.azuldenim
 ,.listadoazul
@@ -1064,6 +1122,7 @@ background-color: #DAA6A5 !important;
 ,.multicolorazulmarino
 ,.azulmarinoacero
 ,.azulmediterraneo
+,.atlantic
 ,.azulinoivory
 ,.olivooscuroazulmarino
 ,.azulprint1
@@ -1156,7 +1215,6 @@ background-color: #DAA6A5 !important;
 ,.royalblue
 ,.whiteblackblue
 ,.brightblue
-,.grafitoblue
 ,.strongblue
 ,.midblue
 ,.coronetblue
@@ -1189,7 +1247,6 @@ background-color: #DAA6A5 !important;
 ,.stonebluestratch
 ,.totalbluetorn
 ,.greylightblue
-,.grafitobluehb
 ,.blkbluepwtr
 ,.totalblue1
 ,.blueminding
@@ -1339,7 +1396,6 @@ background-color: #DAA6A5 !important;
 ,.vallartablue
 ,.darkbluelistado
 ,.lichenblue
-,.armyaquablue
 ,.totaldarkbluehb
 ,.mediumbluewash
 ,.powerbluehb
@@ -1364,11 +1420,32 @@ background-color: #DAA6A5 !important;
 ,.bluemustard
 ,.copenblue
 ,.arcticblue
+,.telasportvzpremiummarino
+,.multimarino
+,.marine
+,.marino
+,.marinocalendula
+,.marinodalia
+,.marinofloral
+,.marinolistado
+,.marinoprint
+,.marinoprint
+,.milanomarin
+,.npmarino
+,.tcmarino
+,.telatechlycravienaprotectionmarino
+,.ultramarino 
+,.legendmarinegreys18
+,.lightmarine
+,.legendink
 {
-    background-color: #2858f7 !important;
+    background-color: #00008B !important;
 }
 
-.anaranjado
+.mandarina
+,.anaranjado
+,.grenadine
+,.tangerine
 ,.orange
 ,.naranja
 ,.blanconaranja
@@ -1586,12 +1663,15 @@ background-color: #DAA6A5 !important;
 ,.camelldarkblue
 ,.blackwhitecamel
 ,.camelloclaroprint
+,.camelororosado
 ,.camelcamel{
     background-color: #CA986D !important;
 }
 
 
 .palorosa
+,.bridal
+,.orquidea
 ,.palorosaclaro
 ,.gamuzapalorosa
 ,.negropalorosa
@@ -1612,9 +1692,8 @@ background-color: #DAA6A5 !important;
 ,.coralpalorosa
 ,.palorosaviejo
 ,.palorosaivory
-,.palorosamedio
-,.ivorypalorosa {
-    background-color: #EEBDB9;
+,.palorosamedio {
+    background-color: #EEBDB9 !important;
 }
 
 
@@ -1708,11 +1787,34 @@ background-color: #DAA6A5 !important;
 ,.rosahumo
 ,.rosamalvo
 ,.rosabrillante {
-    background-color: #ffc0cb;
+    background-color: #ffc0cb !important;
 }
 
 
-.olivo
+.verdeolivonegro
+,.verdeolivo1
+,.verdeoscuroestampado
+,.verdeoscuroocregris
+,.verdeolivoclaro
+,.verdeopaco
+,.verdeolivolistado
+,.verdeolivocuadros
+,.verdeolivomedio
+,.grisverdeoscuro
+,.verdeverdeoscuro
+,.verdeolivoprint
+,.verdeolivooscuro
+,.verdeolive
+,.verdeolivo
+,.verdeolivoglacer
+,.verdeolivomelange
+,.verdeolivo676
+,.verdeoja
+,.oli
+,.oliva
+,.olivo
+,.lirio
+,.verdeolivoclaro
 ,.olive
 ,.olivooscuro
 ,.olivewhite
@@ -1737,12 +1839,20 @@ background-color: #DAA6A5 !important;
 ,.blueolivost
 ,.shadowolive
 ,.olivestrata
+,.snake
 ,.olivestratamel {
     background-color: #808000 !important;
 }
 
+.azulcontaminado,
+.contaminado {
+    background-color: #606F78 !important;
+}
 
-.celeste
+.totalsky
+,.celes
+,.celestial
+,.celeste
 ,.celesteclaro
 ,.celesteoscuro
 ,.celestemedio
@@ -1755,8 +1865,11 @@ background-color: #DAA6A5 !important;
 ,.blancoceleste
 ,.celesteblanco
 ,.skyblue
+,.azulclaro
+,.azullight
 ,.negroceleste
 ,.grisceleste
+,.mediterranean
 ,.celesteosc
 ,.blancoceleste1
 ,.plomoceleste
@@ -1773,6 +1886,7 @@ background-color: #DAA6A5 !important;
 ,.celestenegro
 ,.celestemot
 ,.blancoceleste
+,.azulcielo
 ,.denimceleste
 ,.celestejaspeado
 ,.skyblue
@@ -1903,9 +2017,14 @@ background-color: #DAA6A5 !important;
 ,.purplesilver
 ,.purpleash
 {
-    background-color: #D3ABB4;
+    background-color: #D3ABB4 !important;
 }
 
+.pur
+,.purpura
+,.purpuraflores {
+    background-color: #7d2181  !important;
+}
 
 .blackbrown
 ,.brown
@@ -1925,7 +2044,6 @@ background-color: #DAA6A5 !important;
 ,.lbrown
 ,.brownblackwhite
 ,.nightbrownbrownwhite
-,.brownarmy
 ,.brownprint
 ,.browncroco
 ,.brownrojizo
@@ -1939,8 +2057,17 @@ background-color: #DAA6A5 !important;
 ,.browncuadros
 ,.totaldirtybrownhb
 ,.stonebrownhb 
+,.maroon
+,.maroongreyruby
+,.maroonmerlotblack
+,.marrón
+,.marron
+,.marrónmedium
+,.chocolate
+,.cacao
+,.tan
 {
-    background-color: brown;
+    background-color: #72503E !important;
 }
 
 
@@ -1967,11 +2094,13 @@ background-color: #DAA6A5 !important;
 ,.boneheaven
 ,.heavenbone
 ,.bonewhite
+,.blancooff
 {
-    background-color: #F5EFD7;
+    background-color: #F5EFD7 !important;
 }
 
-
+.totalcristal,
+.totalcristalhb,
 .cristal
 ,.totalcristal
 ,.totalcristaldstyr
@@ -1986,7 +2115,6 @@ background-color: #DAA6A5 !important;
 ,.cristalfoc
 ,.totalcristalhb
 ,.cristalcont
-,.cristaloxitorn
 ,.cristalhb
 ,.cristalstratch
 ,.cristalfrosty
@@ -2003,6 +2131,8 @@ background-color: #DAA6A5 !important;
 ,.negrocristal
 ,.cristalrose 
 ,.cristalbeige 
+,.crystal
+,.crystalwhite
 {
     background-color: #4F6A8E !important;
 }
@@ -2010,9 +2140,17 @@ background-color: #DAA6A5 !important;
 .dirtyblue{
     background-color: #0D2037 !important;
 }
-
+.cristaloxitorn {
+    background-color:  #6E8292 !important;
+}
 
 .blackgolden
+,.oro
+,.oromate
+,.oroviejo
+,.marfiloro
+,.moro
+,.metalororos
 ,.golden
 ,.gold
 ,.blancogold
@@ -2041,7 +2179,11 @@ background-color: #DAA6A5 !important;
     background-color: #E7B70B !important;
 }
 
-.fucsia
+.fuschia
+,.fushia
+,.fuxia
+,.fuxiaprint
+,.fucsia
 ,.blancofucsia
 ,.fucsiablanco
 ,.negrofucsia
@@ -2060,16 +2202,16 @@ background-color: #DAA6A5 !important;
 ,.negrofucsiablanco
 ,.fucsiamadrid
 ,.fucsia356
-,.fucsiavioleta 
 ,.fuccia
 ,.fucciaivory
 ,.fuchsia
 ,.crudewithfuchsialetters
 {
-    background-color: #F14672;
+    background-color: #F14672 !important;
 }
 
 .melon
+,.melónoscuro
 ,.melonpastel
 ,.amelon
 ,.amelon
@@ -2146,6 +2288,9 @@ background-color: #DAA6A5 !important;
 }
 
 .guinda
+,.win
+,.winda
+,.winne
 ,.andorra
 ,.rayasguinda
 ,.guindajaspe
@@ -2159,7 +2304,15 @@ background-color: #DAA6A5 !important;
 }
 
 
-.lacre
+
+.ladrillo
+,.ladrillogray
+,.ladrillojaspe
+,.lacre
+,.bombay
+,.otoño
+,.sienna
+,.printblancolacre
 ,.blancolacre
 ,.lacreprint
 ,.lacrenegro
@@ -2181,6 +2334,7 @@ background-color: #DAA6A5 !important;
 ,.lacretostado
 ,.lacreblack
 ,.ivorylacre
+,.melangeblancocremosolacre
 ,.lacre4152
 ,.lacre238
 ,.lacregris
@@ -2208,6 +2362,10 @@ background-color: #DAA6A5 !important;
 ,.graphiteblacksalmon
 ,.printsalmon
 ,.salmon
+,.estampsalmónpastel
+,.salmónmedionegro
+,.salmónpastel
+,.salmónpastelcharcoal
 ,.salmonbeerpurblk
 ,.salmonclaro
 ,.salmoncuadros
@@ -2231,14 +2389,17 @@ background-color: #DAA6A5 !important;
 ,.violet
 ,.violeta
 ,.violetaclaro
+,.fucsiavioleta 
 ,.violetajade
 ,.violetamalva
 ,.violetamedio {
     background-color: rgb(134, 71, 250) !important;
 }
 
-
-.bcocrema
+.cream
+,.cremita
+,.cremoso
+,.bcocrema
 ,.blancocrema
 ,.crema
 ,.cremacemento
@@ -2321,7 +2482,22 @@ background-color: #DAA6A5 !important;
 ,.marinoacero
 ,.negroacero
 ,.negroaceroblanco
-,.negromelangeacero {
+,.negromelangeacero 
+,.powersteel
+,.specksteel
+,.steel
+,.steeldarkgrey
+,.steelmelange
+,.steelprint
+,.steelstripes
+,.tigreysteel
+,.whitesteelgum
+,.wondersteel
+,.mustardwhitesteel
+,.charcoalblacksteelgrey
+,.darksteel
+,.oldsteel
+{
     background-color:  #384767 !important;
 }
 
@@ -2538,7 +2714,48 @@ background-color: #DAA6A5 !important;
 ,.whitelollipopblack
 ,.whitevermillionblack
 ,.whitewhiteblack
-,.witheblack {
+,.witheblack
+,.telasportvzpremiumnegro
+,.telatechlycravienaprotectionnegro
+,.tecidoknitnegro
+,.taupenegro
+,.tcnegro
+,.surtidonegro
+,.surtnegro
+,.printnegro
+,.metgrycblackorbgry
+,.mezclanegro
+,.gamuzanegro
+,.vrznegro
+,.vznegro
+,.printfondonegro
+,.perlanegro
+,.cnegro
+,.camurcanegro
+,.cuadrosnegros
+,.ecrunegro
+,.estampadoennegro
+,.fondonegroconfloresyhojas
+,.gamnegro
+,.gznegro
+,.lavadonegro
+,.lezardnegro
+,.listadonegro
+,.lycravienanegro
+,.melangenegro
+,.melangerayasnegro
+,.milanonegro
+,.multinegro
+,.npnegro
+,.nppelestrechnegro
+,.nudenegro
+,.ocrenegro
+,.pistachonegro
+,.verniznegro
+,.verniznegro1
+,.dark
+,.dark1
+{
     background-color: #222222 !important;
 }
 
@@ -2568,7 +2785,9 @@ background-color: #DAA6A5 !important;
 ,.grafitooscuro
 ,.grafitotoxico
 ,.grisgrafito
+,.asphalt
 ,.plomografito
+,.outerspace
 ,.totalgrafitotorn {
     background-color: #5E6366 !important;
 }
@@ -2608,7 +2827,8 @@ background-color: #DAA6A5 !important;
 ,.silvermet
 ,.teesilver
 ,.whitesilver
-,.wondersilver {
+,.wondersilver
+,.neblina {
     background-color:  #B8BCC5 !important;
 }
 
@@ -2664,7 +2884,20 @@ background-color: #C7EDF0 !important;
 background-color: #CDAA34 !important;
 }
 
-.babypeach
+
+.morita
+,.aceituna
+,.aceitunamelange
+,.mora
+,.moralistado {
+    background-color: #C386A4 !important;
+}
+
+.albaricoque
+,.durazno
+,.melocoton
+,.babypeach
+,.giorgiapeach
 ,.georgiapeach
 ,.justpeachy
 ,.lightpeach
@@ -2673,6 +2906,9 @@ background-color: #CDAA34 !important;
     background-color: #EAA899 !important;
 }
 
+.turq2
+,.turquoise
+,.turquoisestripes
 .melangeturqueza
 ,.negroturquezablanco
 ,.turquesa
@@ -2697,8 +2933,9 @@ background-color: #CDAA34 !important;
 }
 
 
-
 .blancocremosogrismelange
+,.aluminio
+,.alumina
 ,.blancogris
 ,.blancogris
 ,.blancomarmolgris
@@ -2720,7 +2957,6 @@ background-color: #CDAA34 !important;
 ,.grisdarkprint
 ,.grisdesierto
 ,.grisfantasia
-,.grisfrost
 ,.grisgales
 ,.grisgrey
 ,.grisheather
@@ -2779,9 +3015,1407 @@ background-color: #CDAA34 !important;
 ,.plomogrisblanco
 ,.printgris
 ,.rayasgris
-,.roseegris
 ,.totalgris
 ,.totalgrisplatadstyr
 ,.verdigris {
     background-color: #B9BAC5 !important;
+}
+
+.negromarron,
+.negro
+,.negro1
+,.negro190303tpx
+,.negro2
+,.negro3
+,.negro4
+,.negro5
+,.negro999
+,.negrob
+,.negroestampado
+,.negroestampado
+,.negroblancomelange
+,.negroalmendra
+,.negroanimalprint
+,.negroarmy
+,.negrocafe
+,.negroatigrado
+,.negroblanco
+,.negroblanco
+,.negrocblanco1
+,.negroccobre
+,.negrocereza
+,.negrochicle
+,.negrocobalto
+,.negrocobalto
+,.negroconbolasblancas
+,.negrocontraste
+,.negrocroco
+,.negrodegrade
+,.negrodot
+,.negrodstyr
+,.negrofantasia
+,.negrofloral
+,.negroflores
+,.negroglitter
+,.negroivory
+,.negroj
+,.negrojabonjasp
+,.negrojaspe
+,.negrojaspeado
+,.negroladrillo
+,.negrolatte
+,.negroleopardoivory
+,.negroleopardoprint
+,.negrolistado
+,.negromate
+,.negromelange
+,.negromelange
+,.negromelangeblanco
+,.negrotiedye
+,.negrotiedyeprint
+,.negromelangeblancocremoso
+,.negrominiprintflores
+,.negromulticolor
+,.negrotransparente
+,.negromulticolor
+,.negromulticolor
+,.negrotorn
+,.negron
+,.negrovarios 
+,.negroplata
+,.negroplata
+,.negroplomo
+,.negroplomo
+,.negronegro
+,.negronatural
+,.negroprint
+,.negroprint
+,.negronevado
+,.negronudenatural
+,.negropepas
+,.negropetroleo
+
+,.negroplomoplata
+,.negropuntoblanco
+,.negrorayas
+,.negroserpiente
+,.negrosolido
+,.negrotendencia
+,.negrotropical
+,.negrorayas1old
+,.negroplomo
+,.rayasnegras
+,.negra
+,.negraprint
+,.rayasnegro
+,.mood
+{
+    background-color: #222222 !important;
+}
+
+.basil,
+.basilnegro {
+    background-color: #2d572c !important;
+}
+
+
+.yvory
+,.yvorymelange
+,.ivory
+,.ivory2
+,.ivoryamarino
+,.ivoryblack
+,.ivorycrystal
+,.ivorycuadros
+,.ivoryestampado
+,.ivoryfloral
+,.ivoryflores
+,.ivorygrey
+,.ivoryheather
+,.ivorylacre
+,.ivoryladrillo
+,.ivorylavanda
+,.ivorylistado
+,.ivorymedio
+,.ivorymelange
+,.ivorymelange
+,.ivorymelangeprint
+,.ivorymenta
+,.ivoryminiprintflores
+,.ivorynavy
+,.ivorynegro
+,.ivorynegrolistado
+,.ivorynude
+,.ivorypastel
+,.ivorypepas
+,.ivoryprint
+,.ivoryprint
+,.ivoryprintcebra
+,.ivoryprintleopardo
+,.ivoryrose
+,.verdeivory
+,.ivoryverde
+,.estampivory
+,.estivory
+,.blackivory
+,.cementoivory
+,.combinationivory
+,.navyivory
+,.printivory
+,.roseivory
+,.softivory
+,.melangeivory
+,.ivorytenue
+,.ivorypalorosa
+,.ivorytropical {
+    background-color: #fffff0 !important;
+}
+
+.emerald
+,.esmerald
+,.esmeralda
+,.blancoesmeralda{
+    background-color:#009975 !important;
+}
+
+.blanca
+,.blanco
+,.blanco1
+,.blanco2
+,.blanco3
+,.blancoa
+,.blancoarte1
+,.blancoarte2
+,.blancobolas
+,.blancobrillantepurpurina
+,.blancocarton
+,.blancoconraya
+,.blancocremoso
+,.blancocremosoestampado
+,.blancocremosoice
+,.blancocremosolistado
+,.blancocremosomalva
+,.blancocremosonegroprint
+,.blancocremosoocre
+,.blancocremosoplomostone
+,.blancocremosoprint
+,.blancocremosoprint
+,.blancodot
+,.blancodstyr
+,.blancoestampado
+,.blancoestampadonegro
+,.blancofloral
+,.blancoflower
+,.blancofrenchvanilla
+,.blancofrio
+,.blancohojas
+,.blancohumo
+,.blancojaspe
+,.blancolacre
+,.blancolacrorojizo
+,.blancolemon
+,.blancolistado
+,.blancomaiz
+,.blancomalva
+,.blancomedio
+,.blancomelange
+,.blancominiprint
+,.blancomulticolor
+,.blanconavy
+,.blanconegro
+,.blanconegro
+,.blanconegro
+,.blanconegro6
+,.blanconude
+,.blancooffplata
+,.blancoop
+,.blancopandeplata
+,.blancoprint
+,.blancoprint1
+,.blancoprint2
+,.blancoprint3
+,.blancorayas
+,.blancorayas
+,.blancorubi
+,.blancotandori
+,.blancotopo
+,.blancovarios 
+,.melangeblanco
+,.melangeblanco
+,.melangeblanconegro
+,.melangeblanconegro
+,.vzblanco
+,.multicolorblancocremoso
+,.vernizblanco
+,.rayasblanco
+,.printblanco
+,.npblanco
+,.pelblanco
+{
+    background-color: #ffffff !important;
+}
+
+.grafitoblue{
+    background-color: #1B2746 !important;
+}
+
+.hipobiobleach
+,.mopbleach
+,.dirtybleach
+,.oldbleach
+,.oldbleach1
+,.darkbleach
+,.bibiobleach
+,.biobleach
+,.biobleach1
+,.totalacidobleach
+,.totalbleach
+,.totalbleachdstyr
+,.totalbleachdstyr1
+,.totalbleachfull
+,.totalbleachhb
+,.totalbleachst
+,.totalbleachst
+,.totalbleachtorn
+,.totalbleachtorn1
+,.totalcrackybleachhb
+,.bleach
+,.bleachdstyr
+,.bleachfulldstyr
+,.bleachgrey
+,.bleachhb
+,.bleachhb
+,.bleachst
+,.bleachst
+,.bleachtorn
+,.frostbleach
+,.totalbleach {
+    background-color: #E3DFDC !important;
+}
+
+.grisfrost {
+    background-color: #365171 !important;
+}
+
+.gray
+,.totalgray
+,.gray173911tcx
+,.graydstyr
+,.graymelange
+,.graystone
+,.graytorn{
+    background-color: #808080 !important;
+}
+
+.napabege
+,.napablanco
+,.napablancooff
+,.napamarino
+,.napanegro
+,.napanude{
+    background-color: #D28940 !important;
+}
+
+.menta
+,.freshmint
+,.darkmint
+,.ftwwhtmintonhalmin
+,.icemintftwrwhiteclearmint
+,.mint
+,.spearmint
+,.carboncarbonclearmint
+,.mentablanco
+,.mentaoscuro
+,.mentaprint
+,.estammentapastel
+,.vmenta
+,.neonmenta
+,.melangementa{
+    background-color: #20603d !important;
+}
+
+.totalstone
+,.stone
+,.roca
+,.rock
+,.stonegreen
+,.stonedalia
+,.stonefoc
+,.stonegrayhb
+,.stonegrey
+,.stonehb
+,.stonehb
+,.stoneheather
+,.stoneoxi
+,.stonest
+,.stonetorn
+,.stonewash
+,.stonewashmedio {
+    background-color: #848889 !important;
+}
+
+.stoneblack
+,.stoneblackhb
+,.stoneblackst
+,.stoneblacktorn{
+    background-color: #3B393A !important;
+}
+
+.mediumstonewash
+,.dirtystone
+,.dirtystonehb
+,.flintstone
+,.greystone
+,.indistone
+,.powerstone
+,.blackstone
+,.totaldirtystonedstyr
+,.tsstonedstyr
+,.tsstonehb
+,.tstoneblack
+,.tstoneblackfulldstyr
+,.tsuperstonehb
+,.tsupstone
+,.totalstone
+,.totalstonebl
+,.totalstoneblack
+,.totalstoneblackdstyr
+,.totalstoneblackhb
+,.totalstoneblackst
+,.totalstonedstyr
+,.totalstonedstyr1
+,.totalstonegray
+,.totalstonegraydstyr
+,.totalstonehb
+,.totalstonehb
+,.totalstonest
+,.totalstonetorn
+,.totalstonetorn1
+,.tcrackystone
+,.superstone
+,.superstonedstyr
+,.superstonefdstyr
+,.superstonehb
+,.superstonehb
+,.superstonest
+,.superstonestratch
+,.superstonetorn
+,.totalsuperstone
+,.totalsuperstone1
+,.totalsuperstonedstyr
+,.totalsuperstonehb
+,.totalsuperstonehb
+,.totalsuperstonest
+,.totalsuperstonetorn
+,.totstoneblacktorn
+,.totstonetorn
+,.totsuperstonehb
+,.darkstone {
+    background-color: #848889 !important ;
+}
+
+.estampuva
+,.whitegrapepunch
+,.grape
+,.grapeleaf
+,.dustygrape
+,.uva
+,.printuva
+,.uvaclaro
+,.uvamedio
+,.uvaoscuro
+,.listuva{
+    background-color:  #6f2da8  !important;
+}
+
+.miel
+,.miel1
+,.honey
+,.honeyreset
+,.wildhoney {
+   background-color:  #FFB83E !important; 
+}
+ 
+.whisky
+,.wiskey
+,.wisky{
+background-color: #CF7F1D !important;
+}
+
+
+.cobaltnavygreywhite
+,.twnavywhitelightgum
+,.shadownavy
+,.nav
+,.navy
+,.navy1
+,.navy2
+,.navybermuda
+,.navyblack
+,.navycarotenewhite
+,.navycobaltwhite
+,.navycream
+,.navydarkprint
+,.navyfushia
+,.navygraphitelime
+,.navyheather
+,.navyjaspe
+,.navykhaki
+,.navylimegrey
+,.navymelange
+,.navyplata
+,.navyprint
+,.navypuntoblanco
+,.navywhite
+,.navywhitepwtr
+,.navywhitevermillion
+,.rapportnavy
+,.vectornavy
+,.whitedarknavy
+,.whitedarknavyvermillion
+,.whitefilanavymulti
+,.darknavy
+,.darknavy
+,.darknavywhite
+,.darknavywhitevermillion
+,.conavy
+,.ftwrwhitenavy
+,.collegiatenavy
+,.collegiatenavywhite
+,.collnavycrushcoba
+,.melangenavy
+,.indigowhitenavy
+,.heritagenavy
+,.aviatornavy
+,.newnavy {
+    background-color: #000080 !important;
+}
+
+.chicle
+,.chiclebb
+,.chicleclaro
+,.chiclemelange
+,.chicleoscuro
+,.melangechicle
+,.melangechicleblanco{
+    background-color: #FEA2B6  !important;
+}
+
+.plomo
+,.plomoclaro
+,.plomocolegial
+,.plomofloral
+,.plomogales
+,.plomomedio
+,.plomomelange
+,.plomooscuro
+,.plomoplata
+,.plomoplatajaspeado
+,.plomoprincipedegales
+,.plomorata
+,.printplomo
+,.cuadroplomo
+,.gamplomo
+,.melangeplomo
+,.medioplomo {
+    background-color: #9b9b9b !important;
+}
+
+.cobalt
+,.cobalto
+,.cobaltomelange
+,.cobaltonegro
+,.cobaltoprint
+,.darkcobalt
+,.shadowgreywhitecobalt
+,.blackalloycobaltpewter
+,.blackalloycobaltwhite {
+    background-color: #313A83 !important;
+}
+
+
+
+.darkkhaki
+,.darkkhaky {
+  background-color: #A8712B !important;
+}
+.kakhi
+,.caqui
+,.kaki
+,.lightkhaki
+,.kakiclaro
+,.kakimedio
+,.kakimedioprint
+,.kaky
+,.khaki
+,.khaki1
+,.khakiclaro
+,.khakicuadros
+,.khakinegro
+,.khaky
+,.khakyclaro
+,.printkakimedio {
+    background-color: #94946a !important;
+}
+
+
+.charcoalcemento
+,.cemento
+,.cemento1
+,.cementobb
+,.cementoclaro
+,.cementopastel {
+    background-color:  #7d8471 !important;
+}
+
+
+.whi
+,.whi1
+,.white
+,.white1
+,.powderwhite
+,.whiteblack
+,.whiteblack
+,.whiteblackblack
+,.whiteblackgrey
+,.whiteblackgreyheather
+,.whiteblackmgreyh
+,.whiteblackscarle
+,.whiteblackurbanchic
+,.whiteblackvermillion
+,.whitecamu
+,.whitecap
+,.whitefrostgraycarrot
+,.whitegravelblack
+,.whitegrey
+,.whitegrey
+,.whitegreytwof17
+,.whitehearther
+,.whitehighrisewhite
+,.whiteiron
+,.whitelightgum
+,.whitelollipopblack
+,.whitemultiwhite
+,.whitenightindigo
+,.whiteoptic
+,.whitepalms
+,.whitepeacoatcapribreeze
+,.whitepewter
+,.whiteplum
+,.whiteprint
+,.whitesilvmtreacor
+,.whitetropical
+,.whitetropicalflower
+,.whitevermillionblack
+,.whitewhite
+,.whitewhite
+,.whitewhiteblack
+,.whitewhitemulti
+,.whitewhitewhite
+,.whitewhitewhitetingrey
+,.whtblk1 
+,.coreblackcoreblackftwrwhite
+,.coreblackcoreblackgreythree
+,.coreblackftwrwhitecarbon
+,.coreblackftwrwhitecoreblack
+,.coreblackftwrwhiteftwrwhite
+,.coreblackftwrwhiteftwrwhite
+,.coreblackgreyfivef17white
+,.coreblackwhitecoreblack
+,.corewhite
+,.ftwrwhite
+,.ftwrwhitecoreblack
+,.ftwrwhiteftwrwhitecybermet
+,.ftwrwhiteftwrwhitegreytwof17
+,.ftwrwhitegrey
+,.ftwrwhitegreytwo
+,.ftwrwhiteplatinmetftwrwhite
+,.blackwhite
+,.blackwhite
+,.blackwhite
+,.blackwhiteblack
+,.blackwhitegrey
+,.blackwhiteguavapunch
+,.blackwhitelightgum
+,.blackwhiteneolim
+,.blackwhitescarletibis
+,.blackwhitevermillion
+,.blackwhitewhite
+{
+    background-color: #ffffff !important;
+}
+
+.indigo
+,.indigochalkpearlchalk
+,.indigoclaro
+,.indigoclaro
+,.indigoheather
+,.indigolavadoclaro
+,.indigolavadomedio
+,.indigolavadooscuro
+,.indigolight
+,.indigomagentagrey
+,.indigomedio
+,.indigomedio
+,.indigooptico
+,.indigowash
+,.rawindigoftwrwhitegreythreef17
+,.techindigo{
+    background-color: #1A5594 !important;
+}
+
+
+.allblackfrostgray
+,.allblackgravitytitan
+,.azufreblack
+,.black
+,.black4
+,.blackashgrey
+,.blackbeauty
+,.blackblack
+,.blackblackblack
+,.blackblacktrgry8
+,.blackblacktruegrey8
+,.blackblackwhite
+,.blackblackwhitegum
+,.blackblock
+,.blackcamo
+,.blackcarbongrey
+,.blackcarbonwhite
+,.blackchar
+,.blackcharcaol
+,.blackcomplete
+,.blackcream
+,.blackcroco
+,.blackcuadro
+,.blackforest190315tpx
+,.blackgrain
+,.blackgray
+,.blackgray
+,.blackgrein
+,.blackgrey
+,.blackgreyheathrwhite
+,.blackgreywhite
+,.blackgreywhitepnk
+,.blackgreywhtslvr
+,.blackgs
+,.blackgums
+,.blackheather
+,.blackhorizon
+,.blackice
+,.blackiris
+,.blackironmetironmet
+,.blackironmtironmt
+,.blackleopardgradientiea
+,.blacklimegraphite
+,.blacklines
+,.blackmediumgreyheatherwhite
+,.blackmetallictaupe
+,.blackmgreyhwhite
+,.blackmonumentwhite
+,.blackmulti
+,.blackmulti2
+,.blackneolim
+,.blackneonlimewhite
+,.blackout
+,.blackpalms
+,.blackpebble
+,.blackprint
+,.blackprint
+,.blackpropnkwhite
+,.blackquietshadegojiberry
+,.blackreflective
+,.blacksas
+,.blackscarlet
+,.blacksolid
+,.blackstormyweather
+,.blacktan
+,.blacktrgry8trugr7
+,.blacktropicalflower
+,.blacktruegrey5sahara
+,.blacktrugr7horblu
+,.blackvanilla
+,.blackwash
+,.blackwht
+,.camoblack
+,.camocharcoalblack
+,.carboncblackgretwo
+,.carbons18coreblack
+,.cblackcblackdgsogr
+,.cblackcblackftwwht
+,.cblackchemetftwwht
+,.cblackfocoraftwwht
+,.cblackftwwhtftwwht
+,.cblackftwwhtgresix
+,.cblackftwwhtgretwo
+,.cblackgresixscrpnk
+,.cblackironmtftwwht
+,.cblackironmtorbind
+,.cblackscrgrngrethr
+,.cblackwhite
+,.charcoalblack
+,.charcoalblack
+,.charcoalblackforgetmenot
+,.coreblack
+,.coreblackcarbon
+,.coreblackcarboncoreblack
+,.coreblackcarbons18
+,.coreblackcoreblack
+,.darkblack
+,.deecobblackwhite
+,.ftwwhtcblackftwwht
+,.ftwwhtcblacksiggnr
+,.ftwwhtftwwhtcblack
+,.grarwhblack
+,.grefourcoreblackgrethree
+,.gresixgresixcblack
+,.greyblack
+,.greyblackwhite
+,.greyblackwhite1
+,.greylightblack
+,.intblack
+,.jetblack
+,.legendinkwhiteblack
+,.leginkwhiteblack
+,.liteblack
+,.metalblack
+,.mghsolidgreyblack
+,.mgreyhblack
+,.mopblack
+,.natblack
+,.natblack
+,.natheatherblack
+,.naturalblack
+,.naturalblackst
+,.nmblackgreywhiterefletive
+,.offblack
+,.pirateblack
+,.porcelacoldgrey4black
+,.powderblack
+,.powerblack
+,.publack
+,.ruggedroseblackwhite
+,.scarletblackwhite
+,.scarletcoreblackwhite
+,.shopinshopincblack
+,.shopnkcoreblackshopnk
+,.snakeblack
+,.stormyweatherblack
+,.tecindleginkcblack
+,.tiedyeblack
+,.tropicalblack
+,.utilityblack
+,.vermillionwhiteblack
+,.washedblack
+,.witheblack
+{
+    background-color: #222222 !important;
+}
+
+.coffe
+,.cafe
+,.cafecafe
+,.cafecaramelo
+,.cafecarameloecru
+,.café
+,.galescafe
+,.ocrecafe
+,.coffee
+,.coffeebean
+,.darkcoffe
+,.dkcoffe
+,.icedcoffee
+,.ltcoffee{
+    background-color: #6F4E37 !important;
+}
+
+.ochremixedochre
+,.ochremixedochrelavander
+,.ocre
+,.ocrejaspe
+,.ocremd
+,.ocreoscuro {
+background-color: #C67321 !important;
+}
+
+
+.darkcharcoal
+,.heathercharcoal
+,.melangecharcoal
+,.surtcharcoal
+,.charcol
+,.charolmarino
+,.charcoa
+,.charcoal
+,.charcoal1
+,.charcoal840
+,.charcoalclaro
+,.charcoalcuadros
+,.charcoalgray
+,.charcoalgrey
+,.charcoaljaspe
+,.charcoallightmelange
+,.charcoallistado
+,.charcoalmedio
+,.charcoalmelange
+,.charcoalmelange
+,.charcoalmixed
+,.charcoalpetrol{
+   background-color:  #838298  !important
+}
+
+.militar
+,.militarmedio
+,.military
+,.militarycamo
+,.vmilitar
+,.vmilitar
+,.darkmilitary {
+    background-color: #667C3E !important;
+}
+
+
+.moca
+,.mocca
+,.mocha
+,.moka {
+    background-color: #a38068  !important;
+}
+
+
+.tofee
+,.toffe
+,.toffee
+,.toffy {
+    background-color: #b57e3f  !important;
+}
+
+.gamuzacaramel
+,.gamuzamarino
+,.gamuzamarino1 {
+    background-color: #e6b57e !important;
+}
+
+.plata
+,.blancoplata
+,.plataclaro
+,.platafantasia
+,.platamate
+,.platamelange
+,.platatornasol
+,.plateado {
+    background-color: #e3e4e5 !important;
+}
+
+.cocoa
+,.cocoa1
+,.cocoaclaro
+,.cocoanobu
+,.cocoaoscuro {
+    background-color:  #45322e  !important;
+}
+
+.cognac
+,.conac
+,.cogñac
+,.coñac {
+    background-color: #95443B !important;
+}
+
+.canela
+,.cinamon
+,.cinnamon {
+    background-color: #703417  !important;
+}
+.alloytruegrey
+,.ashgrey
+,.bckashgrey
+,.coldgreysoldtealwhite
+,.darkgrey
+,.darkgrey1
+,.darkgreyheath
+,.darkgreyheather
+,.darkgreymelee
+,.dashgrey
+,.dgreyh
+,.dgreyhreacor
+,.flintgrey
+,.gravitygrey
+,.grey
+,.grey1
+,.greyasphalt
+,.greyclaro
+,.greyfive
+,.greyfourf17vapourgreymetf16chalkwhite
+,.greyftwwhtlgtorc
+,.greyice
+,.greylightgrey
+,.greymel
+,.greymel1
+,.greymelange
+,.greyonef17greyfivef17
+,.greyorngwhtpwtrgrey
+,.greysas
+,.greysix
+,.greysixscarletftwrwhite
+,.greytwo
+,.greytwogreytwoftwrwhite
+,.greywash
+,.greywhite
+,.greywhitegrey
+,.heathergrey
+,.lgrey
+,.lightgrey
+,.lightgreyheather
+,.mediumgreyheather
+,.melangegrey
+,.meteorgreyf17r
+,.mgreyh
+,.mgreyhpripnk
+,.middlegrey
+,.midgrey
+,.mixedgrey
+,.puttygrey
+,.softgrey
+,.steeplegrey
+,.techinkftwrwhiterawgreys18
+,.techinkgreysixlightgranite
+,.tradewindsgrey {
+    background-color: #808080 !important;
+}
+
+.greyheater
+,.greyheather
+,.greyheather1
+,.greyheather2
+,.greyhther{
+    background-color: #B4AEB4 !important;
+}
+
+.tandori
+,.tandoriclaro
+,.tandoriespecial
+,.tandorilistado
+,.tandorioscuro
+,.tandoriprint {
+ background-color: #9f534f !important;
+
+}
+
+.castor1,
+.castor {
+    background-color: #A9948B !important;
+}
+
+
+.ftwwhtmsilvecarbon
+,.carbon
+,.carbonclaro
+,.carbonfoc
+,.carbonoscuro
+,.coal{
+    background-color: #151716 !important;
+}
+
+.madera
+,.maderado
+,.maderadoclaro
+,.maderadooscuro
+,.maderadooscuroyclaro{
+    background-color: #7B6E69 !important;
+}
+
+.coco
+,.coco114300tpx
+,.coconut
+,.coconutmilk
+,.coconutvanilla{
+   background:  #F8F4F0 !important;
+}
+
+.acidowash
+,.acidsky
+,.acidwash
+,.acidwashtorn
+,.mediumacid
+,.darkacid {
+    background-color: #b0bf1a !important;
+}
+
+.sepia {
+    background-color: #382c1e !important;
+}
+
+.papikra
+,.paprica
+,.paprika{
+    background-color: #d43800  !important;
+}
+
+.carmesi
+,.carmesilistado
+,.carmesiprint {
+  background-color: #DE194A !important;
+}
+
+.deepsea
+,.northsea
+,.sea
+,.seafoam
+,.seagla
+,.seaglass
+,.seapine
+,.seashell
+,.seaspray {
+  background-color: #1d334a !important;
+}
+
+.bronce
+,.bronze{
+    background-color: #bf8970 !important;
+}
+
+.petrol
+,.petroleo
+,.verdepetroleo
+,.petrolnightf17{
+background-color: #216477 !important;
+}
+.nube
+,.linenstpalenudecloudwhite
+,.nude
+,.skin
+,.cobrenude
+,.ngrblncnude
+,.tecidoknitnude
+,.verniznude
+,.nudedegrade
+,.nudeoscuro {
+    background-color: #C69D84 !important;
+}
+.adobe{
+    background-color: #6E3115 !important;
+}
+.aceite{
+
+}
+.abeto{
+    background-color: #1C8B8D !important;
+}
+.caramel
+,.caramelo
+,.vernizcaram
+,.vernizcaramel {
+    background-color: #85461e !important;
+}
+
+.cipres{
+    background-color: #4B3D3B !important;
+}
+
+.cyp
+,.cypres
+,.cypress {
+    background-color: #5F7164 !important;
+}
+
+.marfil
+,.marfiloscuro
+,.marfilsucio {
+    background-color: #e1cc4f  !important;
+}
+
+.darktaupeboysenberry
+,.tau
+,.taupe
+,.taupe1
+,.taupeoscuro
+,.metallictaupe {
+    background-color: #AB9C8F!important;
+}
+
+.lavanda
+,.lavandabb
+,.lavandaclaro
+,.lavandapastel
+,.lavender {
+    background-color: #C6C6F6 !important;
+}
+
+.acorn
+,.corn
+,.cornstalk {
+    background-color: #F2E9DC !important;
+}
+
+.maiz
+,.maizclaro
+,.maizempolvado
+,.maizoscuro
+,.printmaiz
+,.biomaiz {
+    background-color: #CC9755 !important;
+}
+.clay,
+.ambar,
+.amber {
+    background-color: #D16646 !important;
+}
+
+.diamante
+,.diamantecont
+,.diamantefoc
+,.diamcont
+,.dijon
+,.dimanantefro{
+    background-color: #ACBED6 !important;
+}
+
+.pepper
+,.peppercont
+,.pepperfoc
+,.pepperosc {
+    background-color: #15203F !important;
+}
+
+.skd
+,.sky
+,.sky1
+,.frostsky
+,.totskydstyr
+,.tskyfulldstyr
+,.skydiver
+,.skydstyr
+,.lightsky
+,.skyfulldstyr
+,.skyhb
+,.mopsky
+,.skypastel
+,.darksky
+,.skyst
+,.skytorn{
+    background-color: #8199BC !important;
+}
+
+.henna{
+background-color: #9B423E !important;
+}
+
+.bruguer{
+    background-color: #A9729D !important;
+}
+.tiza{
+    background-color: #D7CECA !important;
+}
+
+.topo
+,.topoclaro
+,.topoprintchita {
+    background-color: #997564 !important;
+}
+
+.snorkel
+,.snowwhite{
+    background-color: #fffafa !important;
+}
+
+.snowmel{
+    background-color: #899AA4 !important;
+}
+
+.tabasco,
+.tabaco {
+    background-color: #8F4C1B !important;
+}
+
+.musgo
+,.vmusgo {
+    background-color: #82795E !important;
+}
+
+.ice
+,.ice1
+,.icefoc
+,.icefulldstyr
+,.icegray
+,.icestreet
+,.iceblue
+,.icewash{
+    background-color: #EFF0F3 !important;
+}
+
+.oxblood
+,.oxi
+,.oxid
+,.oxidewash
+,.oxido
+,.oxido1
+,.oxido2{
+    background-color: #CC2D2A !important;
+}
+
+.lavado
+,.lavado1
+,.lavado2
+,.lavadoclaro
+,.lavadoice
+,.lavadomedio
+,.lavadooscuro{
+    background-color: #2C6EA5 !important;
+}
+
+.manzanilla
+,.manzanillamedio {
+  background-color:  #F7CD7C !important;
+}
+
+
+.jade
+,.verdejade
+,.jadedarkmetwhit
+,.jadeite
+,.jadeoscuro
+,.jadepastel{
+    background-color: #00A368 !important;
+}
+
+
+
+.vainilla
+,.vainillalacre {
+    background-color: #F7F4AE !important;
+}
+
+.zafiro {
+    background-color: #6576b4 !important;
+}
+
+.sun
+,.sundance
+,.sunflower
+,.sunny
+,.sunshine {
+    background-color: #F3D831 !important;
+}
+
+.sunset
+{
+    background-color: #3291A1 !important;
+}
+
+.stealth{
+    background-color: #526E6B !important;
+}
+
+.mango
+,.mangopastel {
+    background-color: #F7C746  !important;
+}
+
+.latte {
+    background-color: #A17758 !important;
+}
+
+.agua
+,.aguaclara
+,.aguamarina {
+    background-color:#9DDBDA !important;
+}
+
+
+.darkarmy
+,.greenarmy
+,.army {
+    background-color:  #7D885E !important;
+}
+
+
+.avenamelange
+,.celpastelmelange
+,.darkmelange
+,.frostmelange
+,.frostmelangest
+,.frostmelangetorn
+,.graffittimelange
+,.melange
+,.melange10
+,.melange2
+,.melange3
+,.melange3
+,.melange4
+,.melange5
+,.melange8
+,.melange800
+,.melangecla
+,.melangeclaro
+,.melangecremoso
+,.melangeestampado
+,.melangegray
+,.melangehaspe
+,.melangehb
+,.melangeintermedio
+,.melangejasp
+,.melangejaspe
+,.melangelacre
+,.melangelistado
+,.melangemedio
+,.melangeosc
+,.melangeoscuro
+,.melangepitonprint
+,.melangeprint
+,.melangerayas
+,.printmelange {
+    background-color: #C5C4C2 !important;
+}
+
+
+.egru
+,.egrujaspe
+,.ecru
+,.ecrujaspe
+,.ecruprint {
+    background-color: #FBF1E5 !important;
+}
+
+.spruce {
+    background-color: #0A5C36 !important;
+}
+
+.sierra {
+    background-color: #815439 !important;
+}
+.burdeos{
+    background-color:  #A67BA9!important;
+}
+.beetle {
+    background-color: #445148 !important;
+}
+
+.sage{
+    background-color: #C1DDD8 !important;
+}
+
+.mallard {
+    background-color:#164E54 !important;
+}
+
+.milk
+,.milk1{
+    background-color: #f8efce !important;
+}
+
+.azucar {
+    background-color: #AD795C !important;
+}
+
+.tufo {
+    background-color: #DAB395 !important;
+}
+
+.tierra{
+    background-color: #524D4C !important;
+}
+
+.curry{
+    background-color: #A0744C !important;
 }
