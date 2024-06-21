@@ -7,8 +7,9 @@ import styles from "./styles.css";
 
 function Accesories() {
   const productContext = useProduct();
-  const { product } = productContext;
-  const { productId } = product;
+  const { product } = productContext || {};
+  const productId = product ? product.productId : null;
+
   const [productCJ, setProductCJ] = useState<any>(null);
   const [total, setTotal] = useState<any>(null);
   const [originalPrice, setOriginalPrice] = useState<any>(null);
@@ -17,12 +18,13 @@ function Accesories() {
   const [loadingCJ, setLoadingCJ] = useState<any>(true);
   const { addItem } = useOrderItems();
   const { orderForm } = useOrderForm();
+
   useEffect(() => {
+    if (!productId) return;
+
     console.log("se viene le fetch");
 
-    fetch(
-      `/api/catalog_system/pub/products/crossselling/accessories/${productId}`
-    )
+    fetch(`/api/catalog_system/pub/products/crossselling/accessories/${productId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -82,7 +84,7 @@ function Accesories() {
         console.error("Error fetching cross-selling data:", error);
         setLoadingCJ(false);
       });
-  }, [product]);
+  }, [productId]);
 
   const searchInProductCJ = (id: any) => {
     for (const item of productCJ) if (item.id == id) return item;
@@ -127,33 +129,42 @@ function Accesories() {
       window.location.href = "/checkout/#/cart";
     });
   };
+
   const CheckBoxChange = (e: any) => {
     const { target } = e;
     const { value } = target;
     select(value);
   };
+
   return (
     <>
       <div id="buyTogether" className={styles.marginContainer}>
-        {loadingCJ == false && productCJ.length != 0 && (
+        {loadingCJ === false && productCJ && productCJ.length > 0 && (
           <div className={styles.containerMaxWidth}>
             {/* Contenido de productos */}
-
             {/* Precio final y */}
             <div className={styles.containerContent}>
-
-                <span className={styles.sentencePrice}>
+              <span className={styles.sentencePrice}>
                 Complementos indispensables para tu compra
-                </span>
-
-
+              </span>
             </div>
+
+            {originalPrice - total != 0 && (
+              <div className={styles.titlePrice} style={{ margin: "auto" }}>
+                <span>
+                  Ahorras :S/{" "}
+                  <span className={styles.discountPrice}>
+                    {(originalPrice - total).toFixed(2)}
+                  </span>
+                </span>
+              </div>
+            )}
 
             <div className={styles.containerContent}>
               {productCJ.map((item: any, index: any) =>
                 ids.includes(item.id) ? (
                   <>
-                    <div className={styles.contentProduct}>
+                    <div className={styles.contentProduct} key={item.id}>
                       <input
                         type="checkbox"
                         id={`${item.id}`}
@@ -161,20 +172,17 @@ function Accesories() {
                         value={item.id}
                         checked={ids.includes(item.id)}
                         disabled={item.id === product.items[0].itemId}
-                        className={
-                          styles.checkboxCompreJunto + `-` + `${index}`
-                        }
+                        className={styles.checkboxCompreJunto + `-` + `${index}`}
                       />
                       <label htmlFor={`${item.id}`}>
                         <a href={"/" + item.linkText + "/p"}>
                           <img
                             className={styles.imageProduct}
                             src={item.imageUrl}
+                            alt={item.name}
                           />
-                          <span className={styles.productName}>
-                            {item.name}
-                          </span>
-                          {item.price == item.listPrice ? (
+                          <span className={styles.productName}>{item.name}</span>
+                          {item.price === item.listPrice ? (
                             <span className={styles.productPrice}>
                               {item.price.toFixed(2)}
                             </span>
@@ -188,17 +196,16 @@ function Accesories() {
                               </span>
                             </div>
                           )}
-                          {/* <span className={styles.productPrice}>{item.price}</span> */}
                         </a>
                       </label>
                     </div>
-                    {index == 0 && (
+                    {index === 0 && (
                       <span className={styles.plusProduct}>+</span>
                     )}
                   </>
                 ) : (
                   <>
-                    <div className={styles.contentProduct}>
+                    <div className={styles.contentProduct} key={item.id}>
                       <input
                         type="checkbox"
                         id={`${item.id}`}
@@ -212,11 +219,10 @@ function Accesories() {
                           <img
                             className={styles.imageProduct}
                             src={item.imageUrl}
+                            alt={item.name}
                           />
-                          <span className={styles.productName}>
-                            {item.name}
-                          </span>
-                          {item.price == item.listPrice ? (
+                          <span className={styles.productName}>{item.name}</span>
+                          {item.price === item.listPrice ? (
                             <span className={styles.productPrice}>
                               {item.price.toFixed(2)}
                             </span>
@@ -230,11 +236,9 @@ function Accesories() {
                               </span>
                             </div>
                           )}
-                          {/* <span className={styles.productPrice}>{item.price}</span> */}
                         </a>
                       </label>
                     </div>
-                    {/* <span className={styles.plusProduct}>+</span> */}
                   </>
                 )
               )}
@@ -244,19 +248,14 @@ function Accesories() {
                 <div className={styles.contentPrice}>
                   {/* Subtotal: */}
                   <span className={styles.titlePrice}>Total:</span>
-                  <span className={styles.valuePrice}> {total.toFixed(2)}</span>
-                  {originalPrice - total != 0 && (
-                    <span className={styles.discountToday}>
-                      Ahorras:{" "}
-                      <span className={styles.discountPrice}>
-                        {(originalPrice - total).toFixed(2)}
-                      </span>
-                    </span>
-                  )}
+                  <span className={styles.valuePrice}>
+                    {total.toFixed(2)}
+                  </span>
+
                   <div className={styles.buttonsBuyTogether}>
                     {/* <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button> */}
                     <button onClick={onClickBuy} className={styles.buttonPrice}>
-                      ¡LOS QUIERO! 
+                      ¡LOS QUIERO!
                     </button>
                   </div>
                 </div>
@@ -268,4 +267,5 @@ function Accesories() {
     </>
   );
 }
+
 export default Accesories;
