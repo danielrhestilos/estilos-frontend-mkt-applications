@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Image } from 'vtex.store-image';
+import React, { useEffect, useState } from 'react'
+import { Image } from 'vtex.store-image'
 import { useDevice } from 'vtex.device-detector'
 import { useCssHandles } from 'vtex.css-handles'
 
 import style from './styles.css'
 
 interface ItemProps {
-  scrollY: number,
-  url: string,
-  logo: string,
-  nombre: string,
+  scrollY: number
+  url: string
+  logo: string
+  nombre: string
   rowcontentStyle: any
 }
 
@@ -18,21 +18,18 @@ const CSS_HANDLES = [
   'childrenContainer',
   'notShowContentName',
   'contenNameContainer',
-  'textContainer'
+  'textContainer',
 ]
 
-const RenderItem = ({ scrollY, url, logo, nombre, rowcontentStyle }: ItemProps) => {
+// const RenderItem = ({ props.scrollY, props.url, logo, nombre, rowcontentStyle }: ItemProps) => {
+const RenderItem = (props: ItemProps) => {
+  const { scrollY, url, logo, nombre, rowcontentStyle }: ItemProps = props
   const [isActive, setIsActive] = useState(false)
   const [position, setPosition] = useState({ heigth: 0, top: 0 })
 
-  const handles = useCssHandles(CSS_HANDLES);
+  const handles = useCssHandles(CSS_HANDLES)
   const { isMobile } = useDevice()
 
-
-  /* This `useEffect` hook is checking if the `scrollY` value is within a certain range of the
-  `position` of the component on the page. If it is, then it sets the `active` state to `true`,
-  otherwise it sets it to `false`. This is used to determine whether or not the component should be
-  displayed as active or not, based on the user's scrolling position on the page. */
   useEffect(() => {
     if (scrollY >= position.top - 225 && scrollY + 150 < position.heigth) {
       setIsActive(true)
@@ -41,20 +38,11 @@ const RenderItem = ({ scrollY, url, logo, nombre, rowcontentStyle }: ItemProps) 
     }
   }, [scrollY])
 
-
-  /* This `useEffect` hook is setting the `position` state of the component based on the position of an
-  element with the `id` equal to the `url` prop. It first tries to get the element using
-  `document.getElementById` and then calculates its height and top offset using `offsetHeight` and
-  `offsetTop` properties. It then sets the `position` state using the `setPosition` function. This
-  effect runs whenever the `scrollY` prop changes. */
   useEffect(() => {
     try {
-      let contentResult = document.getElementById(
-        url
-      ) as HTMLElement
+      let contentResult = document.getElementById(url) as HTMLElement
 
       if (contentResult) {
-
         let heigth = contentResult.offsetHeight + contentResult.offsetTop
         let top = contentResult.offsetTop
 
@@ -69,28 +57,23 @@ const RenderItem = ({ scrollY, url, logo, nombre, rowcontentStyle }: ItemProps) 
     }
   }, [scrollY])
 
-  /**
-   * This function scrolls to a specific element on the page based on its identifier.
-   * @param {string} identifier - The identifier parameter is a string that is used to identify the
-   * element that needs to be scrolled into view. It is used to create a query selector that targets the
-   * element with a specific data attribute.
-   */
   const scrollingToView = (identifier: string) => {
-    const identifierElement = document.querySelector(`[data-js="id_${identifier}"]`)
-    const containerElement = document.querySelector(`.${rowcontentStyle}`) as HTMLElement | null;
+    const identifierElement = document.querySelector(
+      `[data-js="id_${identifier}"]`
+    )
+    const containerElement = document.querySelector(
+      `.${rowcontentStyle}`
+    ) as HTMLElement | null
 
     if (containerElement !== null && identifierElement !== null) {
       containerElement.scrollLeft = identifierElement.getBoundingClientRect().left
     }
   }
 
-  /**
-   * The function smoothInPage scrolls the window smoothly to a specified element on the page.
-   * @param {string} identifier - The `identifier` parameter is a string that represents the ID of the
-   * element on the page that you want to scroll to.
-   */
   const smoothInPage = (identifier: string) => {
-    var pagePosition = document.querySelector(`#${identifier}`) as HTMLElement | null;
+    var pagePosition = document.querySelector(
+      `#${identifier}`
+    ) as HTMLElement | null
 
     if (pagePosition !== null) {
       window.scrollTo({
@@ -101,39 +84,47 @@ const RenderItem = ({ scrollY, url, logo, nombre, rowcontentStyle }: ItemProps) 
     }
   }
 
-  /**
-   * This is a TypeScript React function that renders an image with specified attributes.
-   * @param {string} logo - The logo parameter is a string that represents the source URL of an image.
-   * @param {string} nombre - The parameter "nombre" is a string that represents the name or
-   * description of the image. It is used as the value for the "alt" attribute of the "Image"
-   * component, which provides alternative text for the image in case it cannot be displayed.
-   */
   const ImageRender = (logo: string, nombre: string) => {
     return (
       <Image
         src={logo}
         alt={nombre}
-        rel=''
+        rel=""
         width={'100%'}
         height={'100%'}
         maxWidth={'38px'}
         maxHeight={'38px'}
         minWidth={'48px'}
         minHeight={'32px'}
-        className='w-100'
+        className="w-100"
       />
     )
   }
 
   return (
-    <div className={`w-100 h-100 flex items-center ${isActive && style.showContentName}  ${isActive ? handles.showContentName : handles.notShowContentName}`} data-js={`id_${url}`}>
+    <div
+      className={`w-100 h-100 flex items-center ${
+        isActive && style.showContentName
+      }  ${isActive ? handles.showContentName : handles.notShowContentName}`}
+      data-js={`id_${url}`}
+    >
       <div
         onClick={() => smoothInPage(url)}
-        className={`flex w-100 items-center justify-center ${handles.childrenContainer} ${isActive ? 'ph6' : 'ph5'}`}
+        className={`flex w-100 items-center justify-center ${
+          handles.childrenContainer
+        } ${isActive ? 'ph6' : 'ph5'}`}
       >
         {ImageRender(logo, nombre)}
-        <div className={`w-100 ${handles.textContainer} ${!isActive ? 'dn' : 'flex'} `}>
-          <span className={`w-100 c-on-base ${handles.contenNameContainer} pl3`}>{nombre}</span>
+        <div
+          className={`w-100 ${handles.textContainer} ${
+            !isActive ? 'dn' : 'flex'
+          } `}
+        >
+          <span
+            className={`w-100 c-on-base ${handles.contenNameContainer} pl3`}
+          >
+            {nombre}
+          </span>
         </div>
       </div>
       {isActive && scrollingToView(url)}

@@ -156,5 +156,13 @@
     "component": "CountdownPro",
     "composition": "children",
     "allowed": "*"
+  },
+  "estilos-video": {
+    "component": "Video",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-card-shelf-cta":{
+    "component": "CardShelfCTA"
   }
 }
