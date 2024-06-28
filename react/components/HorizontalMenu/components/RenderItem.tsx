@@ -106,10 +106,10 @@ const RenderItem = (props: ItemProps) => {
       className={`w-100 h-100 flex items-center ${
         isActive && style.showContentName
       }  ${isActive ? handles.showContentName : handles.notShowContentName}`}
-      data-js={`id_${url}`}
     >
       <div
         onClick={() => smoothInPage(url)}
+        id={`id_${url}`}
         className={`flex w-100 items-center justify-center ${
           handles.childrenContainer
         } ${isActive ? 'ph6' : 'ph5'}`}
