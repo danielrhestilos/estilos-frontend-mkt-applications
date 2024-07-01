@@ -2,7 +2,7 @@ import React from 'react'
 import { useProduct } from 'vtex.product-context'
 // import { useRuntime } from 'vtex.render-runtime'
 function CardShelfCTA() {
-  // const { Link } = useRuntime()
+  // const { navigate } = useRuntime()
   const productContext = useProduct()
   const product = productContext?.product
 
@@ -12,10 +12,14 @@ function CardShelfCTA() {
   //   })
   // }
 
-  // function onNavigateClick(e: React.MouseEvent) {
-  //   e.preventDefault()
-  //   e.stopPropagation()
-  // }
+  function onNavigateClick() {
+    if (typeof window !== 'undefined') {
+      window.open(
+        'https://www.tarjetaestilos.com.pe/solicitartarjeta',
+        '_blank'
+      )
+    }
+  }
 
   return (
     <a
@@ -31,7 +35,7 @@ function CardShelfCTA() {
         color: '#222',
         fontWeight: '600',
       }}
-      // onClick={onNavigateClick}
+      onClick={onNavigateClick}
       id={`ctaCardPLP-${product?.productId}`}
     >
       <span>Solicita tu tarjeta ahora</span>
