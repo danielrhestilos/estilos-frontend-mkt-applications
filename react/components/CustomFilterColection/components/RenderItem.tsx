@@ -96,6 +96,7 @@ const RenderItem = ({
   ) => {
     return (
       <div
+        id={canonicalPath}
         className={`w-100 ${handles.itemBigFilter} ${
           !small && canonicalPath == url && handles.pathSelect
         }`}
