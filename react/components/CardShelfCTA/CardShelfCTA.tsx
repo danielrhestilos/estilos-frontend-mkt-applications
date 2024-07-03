@@ -1,18 +1,19 @@
 import React from 'react'
 import { useProduct } from 'vtex.product-context'
-// import { useRuntime } from 'vtex.render-runtime'
+import styles from './styles.css'
+
 function CardShelfCTA() {
-  // const { navigate } = useRuntime()
   const productContext = useProduct()
-  const product = productContext?.product
+  const product = productContext?.product ?? {}
+  const loadingItem = productContext?.loadingItem ?? false
+  const sku = product?.sku ?? {}
+  const referenceId = sku?.referenceId ?? []
+  const reference = referenceId?.[0] ?? {}
+  const valueRefId = reference?.Value ?? 'no-sku'
 
-  // const handleRedirect = (linkText: any) => {
-  //   navigate({
-  //     to: linkText,
-  //   })
-  // }
-
-  function onNavigateClick() {
+  function onNavigateClick(e: React.MouseEvent) {
+    e.preventDefault()
+    e.stopPropagation()
     if (typeof window !== 'undefined') {
       window.open(
         'https://www.tarjetaestilos.com.pe/solicitartarjeta',
@@ -22,25 +23,15 @@ function CardShelfCTA() {
   }
 
   return (
-    <a
-      href={`https://www.tarjetaestilos.com.pe/solicitartarjeta`}
-      target="__blank"
-      style={{
-        border: 'none',
-        background: 'transparent',
-        textDecoration: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        color: '#222',
-        fontWeight: '600',
-      }}
-      onClick={onNavigateClick}
-      id={`ctaCardPLP-${product?.productId}`}
-    >
-      <span>Solicita tu tarjeta ahora</span>
-      <img src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/a13e9229-c244-428f-bd70-ab9e5fc46c64___e74fd41af0b2c18bfb1365e5758991da.svg" />
-    </a>
+    !loadingItem && (
+      <a
+        className={styles.shelfCTACard}
+        id={`cardBtn${valueRefId}`}
+        target="__blank"
+        onClick={onNavigateClick}
+        href="https://www.tarjetaestilos.com.pe/solicitartarjeta"
+      ></a>
+    )
   )
 }
 

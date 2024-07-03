@@ -1,35 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 // import axios from 'axios';
-import useProduct from "vtex.product-context/useProduct";
-import { useOrderForm } from "vtex.order-manager/OrderForm";
-import { useOrderItems } from "vtex.order-items/OrderItems";
-import styles from "./styles.css";
+import useProduct from 'vtex.product-context/useProduct'
+import { useOrderForm } from 'vtex.order-manager/OrderForm'
+import { useOrderItems } from 'vtex.order-items/OrderItems'
+import styles from './styles.css'
 
 function Accesories() {
-  const productContext = useProduct();
-  const { product } = productContext || {};
-  const productId = product ? product.productId : null;
+  const productContext = useProduct()
+  const { product } = productContext || {}
+  const productId = product ? product.productId : null
 
-  const [productCJ, setProductCJ] = useState<any>(null);
-  const [total, setTotal] = useState<any>(null);
-  const [originalPrice, setOriginalPrice] = useState<any>(null);
-  const [ids, setIds] = useState<any>([]);
-  const [quantity, setQuantity] = useState<any>(0);
-  const [loadingCJ, setLoadingCJ] = useState<any>(true);
-  const { addItem } = useOrderItems();
-  const { orderForm } = useOrderForm();
+  const [productCJ, setProductCJ] = useState<any>(null)
+  const [total, setTotal] = useState<any>(null)
+  const [originalPrice, setOriginalPrice] = useState<any>(null)
+  const [ids, setIds] = useState<any>([])
+  const [quantity, setQuantity] = useState<any>(0)
+  const [loadingCJ, setLoadingCJ] = useState<any>(true)
+  const { addItem } = useOrderItems()
+  const { orderForm } = useOrderForm()
 
   useEffect(() => {
-    if (!productId) return;
+    if (!productId) return
 
-    console.log("se viene le fetch");
+    console.log('se viene le fetch')
 
-    fetch(`/api/catalog_system/pub/products/crossselling/accessories/${productId}`)
+    fetch(
+      `/api/catalog_system/pub/products/crossselling/accessories/${productId}`
+    )
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error('Network response was not ok')
         }
-        return response.json();
+        return response.json()
       })
       .then((data) => {
         if (data.length !== 0) {
@@ -58,83 +60,81 @@ function Accesories() {
               brand: p.brand,
               linkText: p.linkText,
             })),
-          ];
+          ]
 
-          let ac = nuevo.reduce((total, item) => total + item.price, 0);
+          let ac = nuevo.reduce((total, item) => total + item.price, 0)
           let origPrice = nuevo.reduce(
             (total, item) => total + item.listPrice,
             0
-          );
+          )
 
-          setTotal(ac);
-          setOriginalPrice(origPrice);
-          setProductCJ(nuevo);
-          setIds(nuevo.map((item) => item.id));
-          setQuantity(nuevo.length);
+          setTotal(ac)
+          setOriginalPrice(origPrice)
+          setProductCJ(nuevo)
+          setIds(nuevo.map((item) => item.id))
+          setQuantity(nuevo.length)
         } else {
-          setTotal(0);
-          setOriginalPrice(0);
-          setProductCJ([]);
-          setIds([]);
-          setQuantity(0);
+          setTotal(0)
+          setOriginalPrice(0)
+          setProductCJ([])
+          setIds([])
+          setQuantity(0)
         }
-        setLoadingCJ(false);
+        setLoadingCJ(false)
       })
       .catch((error) => {
-        console.error("Error fetching cross-selling data:", error);
-        setLoadingCJ(false);
-      });
-  }, [productId]);
+        console.error('Error fetching cross-selling data:', error)
+        setLoadingCJ(false)
+      })
+  }, [productId])
 
   const searchInProductCJ = (id: any) => {
-    for (const item of productCJ) if (item.id == id) return item;
-    return null;
-  };
+    for (const item of productCJ) if (item.id == id) return item
+    return null
+  }
 
   const select = (selectedId: any) => {
-    const product = searchInProductCJ(selectedId);
+    const product = searchInProductCJ(selectedId)
     // console.log('precio: ',product.price)
     if (ids.includes(selectedId)) {
-      const newIds = ids.filter((id: any) => id !== selectedId);
-      setIds(newIds);
-      setTotal(total - product.price);
-      setOriginalPrice(originalPrice - product.listPrice);
-      setQuantity(quantity - 1);
+      const newIds = ids.filter((id: any) => id !== selectedId)
+      setIds(newIds)
+      setTotal(total - product.price)
+      setOriginalPrice(originalPrice - product.listPrice)
+      setQuantity(quantity - 1)
     } else {
-      const newIds = [...ids];
-      newIds.push(selectedId);
-      setIds(newIds);
-      setQuantity(quantity + 1);
-      setTotal(total + product.price);
-      setOriginalPrice(originalPrice + product.listPrice);
+      const newIds = [...ids]
+      newIds.push(selectedId)
+      setIds(newIds)
+      setQuantity(quantity + 1)
+      setTotal(total + product.price)
+      setOriginalPrice(originalPrice + product.listPrice)
     }
-  };
+  }
 
   const onClickBuy = () => {
-    const arreglo: any = [];
-    for (const prod of productCJ) if (ids.includes(prod.id)) arreglo.push(prod);
+    const arreglo: any = []
+    for (const prod of productCJ) if (ids.includes(prod.id)) arreglo.push(prod)
     orderForm.items.map((itemCart: any) => {
       if (product.productId === itemCart.productId) {
         for (let i = 0; i < arreglo.length; i++) {
-          arreglo[i].productId === product.productId
-            ? arreglo.splice(i, 1)
-            : {};
+          arreglo[i].productId === product.productId ? arreglo.splice(i, 1) : {}
         }
       }
-    });
+    })
     new Promise((resolver: any) => {
-      addItem(arreglo);
-      resolver();
+      addItem(arreglo)
+      resolver()
     }).then(() => {
-      window.location.href = "/checkout/#/cart";
-    });
-  };
+      window.location.href = '/checkout/#/cart'
+    })
+  }
 
   const CheckBoxChange = (e: any) => {
-    const { target } = e;
-    const { value } = target;
-    select(value);
-  };
+    const { target } = e
+    const { value } = target
+    select(value)
+  }
 
   return (
     <>
@@ -150,9 +150,9 @@ function Accesories() {
             </div>
 
             {originalPrice - total != 0 && (
-              <div className={styles.titlePrice} style={{ margin: "auto" }}>
+              <div className={styles.titlePrice} style={{ margin: 'auto' }}>
                 <span>
-                  Ahorras :S/{" "}
+                  Ahorras :S/{' '}
                   <span className={styles.discountPrice}>
                     {(originalPrice - total).toFixed(2)}
                   </span>
@@ -172,16 +172,20 @@ function Accesories() {
                         value={item.id}
                         checked={ids.includes(item.id)}
                         disabled={item.id === product.items[0].itemId}
-                        className={styles.checkboxCompreJunto + `-` + `${index}`}
+                        className={
+                          styles.checkboxCompreJunto + `-` + `${index}`
+                        }
                       />
                       <label htmlFor={`${item.id}`}>
-                        <a href={"/" + item.linkText + "/p"}>
+                        <a href={'/' + item.linkText + '/p'}>
                           <img
                             className={styles.imageProduct}
                             src={item.imageUrl}
                             alt={item.name}
                           />
-                          <span className={styles.productName}>{item.name}</span>
+                          <span className={styles.productName}>
+                            {item.name}
+                          </span>
                           {item.price === item.listPrice ? (
                             <span className={styles.productPrice}>
                               {item.price.toFixed(2)}
@@ -215,13 +219,15 @@ function Accesories() {
                         disabled={item.id === product.items[0].itemId}
                       />
                       <label htmlFor={`${item.id}`}>
-                        <a href={"/" + item.linkText + "/p"}>
+                        <a href={'/' + item.linkText + '/p'}>
                           <img
                             className={styles.imageProduct}
                             src={item.imageUrl}
                             alt={item.name}
                           />
-                          <span className={styles.productName}>{item.name}</span>
+                          <span className={styles.productName}>
+                            {item.name}
+                          </span>
                           {item.price === item.listPrice ? (
                             <span className={styles.productPrice}>
                               {item.price.toFixed(2)}
@@ -248,9 +254,7 @@ function Accesories() {
                 <div className={styles.contentPrice}>
                   {/* Subtotal: */}
                   <span className={styles.titlePrice}>Total:</span>
-                  <span className={styles.valuePrice}>
-                    {total.toFixed(2)}
-                  </span>
+                  <span className={styles.valuePrice}>{total.toFixed(2)}</span>
 
                   <div className={styles.buttonsBuyTogether}>
                     {/* <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button> */}
@@ -265,7 +269,7 @@ function Accesories() {
         )}
       </div>
     </>
-  );
+  )
 }
 
-export default Accesories;
+export default Accesories

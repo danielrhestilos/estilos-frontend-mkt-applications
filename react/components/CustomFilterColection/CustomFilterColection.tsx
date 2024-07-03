@@ -45,9 +45,6 @@ const CustomFilterColection = (
           !props.small && handles.BigRowFilter
         } justify-between overflow-x-auto ${handles.rowContent}`}
       >
-        {!props.small && (
-          <div className={handles.ourCamp}>Nuestras campañas</div>
-        )}
         {props.images.map((index: any, key: any) => {
           return (
             <div

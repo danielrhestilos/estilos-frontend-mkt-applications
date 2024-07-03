@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Image } from 'vtex.store-image'
+// import { Image } from 'vtex.store-image'
 // import { useDevice } from 'vtex.device-detector'
 import { useCssHandles } from 'vtex.css-handles'
 import { useRuntime } from 'vtex.render-runtime'
@@ -24,6 +24,7 @@ const CSS_HANDLES = [
   'contenNameContainer',
   'textContainer',
   'pathSelect',
+  'smallImage',
 ]
 
 const RenderItem = ({
@@ -96,21 +97,18 @@ const RenderItem = ({
   ) => {
     return (
       <div
-        id={canonicalPath}
         className={`w-100 ${handles.itemBigFilter} ${
           !small && canonicalPath == url && handles.pathSelect
         }`}
       >
-        <Image
+        <img
           src={logo}
           alt={nombre}
-          rel=""
-          width={small ? '100%' : ''}
-          height={small ? '100%' : ''}
-          maxWidth={small ? '38px' : ''}
-          maxHeight={small ? '38px' : ''}
-          minWidth={small ? '48px' : ''}
-          minHeight={small ? '32px' : ''}
+          id={`${canonicalPath.toLowerCase().replaceAll('/', '')}`}
+          className={`${canonicalPath.toLowerCase().replaceAll('/', '')} ${
+            small && handles.smallImage
+          }`}
+          // rel=""
         />
       </div>
     )
