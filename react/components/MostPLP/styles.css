@@ -1,0 +1,76 @@
+.titlePurchased{
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.containerPurchased{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid var(--light-background);
+    border-radius: 0px 37px 0px 37px;
+    padding: 22px 22px 44px 22px;
+    margin: 14px 11px 14px 11px;
+}
+
+.dotsito{
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+}
+
+.headerPurchased {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.closePurchased{
+    cursor: pointer;
+}
+.estilospe-frontend-applications-0-x-containerClassArrow:nth-last-child(){
+    transform: rotate(180);
+}
+
+.containerImageCardPurchased{
+    height: 149px;
+    background-size: cover !important;
+}
+
+.brandPurchased {
+    font-size: 15px;
+}
+
+.namePurchased{
+    font-size: 14px;
+}
+
+.cardPurchased {
+    cursor: pointer;
+    padding: 0 17px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 21px;
+}
+
+
+
+.sliderLeftArrow[disabled] {
+    display: none;
+  }
+  
+  .arrowPrev>svg>path:hover,
+  .arrowNext>svg>path:hover {
+    fill: var(--white) !important;
+  }
+  
+  .sliderLeftArrow[disabled] {
+    display: none;
+  }
+  
+  .sliderRightArrow[disabled] {
+    display: none;
+  }

@@ -164,5 +164,8 @@
   },
   "estilos-card-shelf-cta":{
     "component": "CardShelfCTA"
+  },
+  "estilos-most-purchased":{
+    "component": "MostPLP"
   }
 }
