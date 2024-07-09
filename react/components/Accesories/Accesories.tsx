@@ -22,7 +22,7 @@ function Accesories() {
   useEffect(() => {
     if (!productId) return
 
-    console.log('se viene le fetch')
+    // console.log('se viene le fetch')
 
     fetch(
       `/api/catalog_system/pub/products/crossselling/accessories/${productId}`

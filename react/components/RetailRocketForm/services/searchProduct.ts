@@ -4,7 +4,7 @@ export default async (productId: string) => {
       res = await res.json()
       return res;
   } catch (error) {
-      console.log('error searchProduct', error);
+      // console.log('error searchProduct', error);
       return null;
   }
 }

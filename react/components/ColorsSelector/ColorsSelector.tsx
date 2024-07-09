@@ -1,41 +1,41 @@
-import React from "react";
-import { useProduct /*, useProductDispatch */ } from "vtex.product-context";
-import { useRuntime } from "vtex.render-runtime";
+import React from 'react'
+import { useProduct /*, useProductDispatch */ } from 'vtex.product-context'
+import { useRuntime } from 'vtex.render-runtime'
 // import getSelectedSKUFromQueryString from 'vtex.product-context/'
 // export const getSelectedSKUFromQueryString = (
 
-import selectorStyles from "./selectorStyles.css";
-import stage from "./stage.css";
+import selectorStyles from './selectorStyles.css'
+import stage from './stage.css'
 // import useSetProduct from "../../hooks/setProductHook";
 
 function ColorsSelector() {
-  const { navigate } = useRuntime();
+  const { navigate } = useRuntime()
   // const dispatch = useProductDispatch();
-  const productContext = useProduct();
-  const product = productContext?.product;
-  const items = product?.items;
-  const skuSpecifications = product?.skuSpecifications;
+  const productContext = useProduct()
+  const product = productContext?.product
+  const items = product?.items
+  const skuSpecifications = product?.skuSpecifications
   // const setProduct = useSetProduct()
   const colorVariations = skuSpecifications?.find(
-    (item: any) => item.field.name === "Color"
-  );
-  const colorValues = colorVariations?.values;
+    (item: any) => item.field.name === 'Color'
+  )
+  const colorValues = colorVariations?.values
 
   const handleRedirect = (linkText: any) => {
     navigate({
       to: linkText,
-    });
-  };
+    })
+  }
 
   function onClickColor(e: React.MouseEvent, prettyColor: string) {
-    const targetItem: any = findItemByColor(items, prettyColor);
+    const targetItem: any = findItemByColor(items, prettyColor)
 
-    console.log("targetItem -> ", targetItem);
-    e.preventDefault();
-    e.stopPropagation();
-    handleRedirect(`${product.link}/?skuId=${targetItem?.itemId}`);
+    // console.log("targetItem -> ", targetItem);
+    e.preventDefault()
+    e.stopPropagation()
+    handleRedirect(`${product.link}/?skuId=${targetItem?.itemId}`)
 
-    console.log("product actual ->", product);
+    // console.log("product actual ->", product);
   }
 
   function findItemByColor(items: any, color: any): any {
@@ -44,40 +44,40 @@ function ColorsSelector() {
     return items.find((item: any) => {
       return item.variations.some((variation: any) => {
         return (
-          variation.name === "Color" &&
+          variation.name === 'Color' &&
           variation.values?.[0]
-            .replaceAll("/", "")
-            .replaceAll(" ", "")
-            .replaceAll("+", "")
-            .replaceAll("%", "")
-            .replaceAll("-", "")
-            .replaceAll("[", "")
-            .replaceAll("]", "")
-            .replaceAll(".", "")
-            .replaceAll('"', "")
-            .replaceAll("*", "")
-            .replaceAll("(", "")
-            .replaceAll(")", "")
-            .replaceAll("&", "")
+            .replaceAll('/', '')
+            .replaceAll(' ', '')
+            .replaceAll('+', '')
+            .replaceAll('%', '')
+            .replaceAll('-', '')
+            .replaceAll('[', '')
+            .replaceAll(']', '')
+            .replaceAll('.', '')
+            .replaceAll('"', '')
+            .replaceAll('*', '')
+            .replaceAll('(', '')
+            .replaceAll(')', '')
+            .replaceAll('&', '')
             .toLowerCase() ==
             color
-              .replaceAll("/", "")
-              .replaceAll(" ", "")
-              .replaceAll("+", "")
-              .replaceAll("%", "")
-              .replaceAll("-", "")
-              .replaceAll("[", "")
-              .replaceAll("]", "")
-              .replaceAll(".", "")
-              .replaceAll('"', "")
-              .replaceAll("*", "")
-              .replaceAll("(", "")
-              .replaceAll(")", "")
-              .replaceAll("&", "")
+              .replaceAll('/', '')
+              .replaceAll(' ', '')
+              .replaceAll('+', '')
+              .replaceAll('%', '')
+              .replaceAll('-', '')
+              .replaceAll('[', '')
+              .replaceAll(']', '')
+              .replaceAll('.', '')
+              .replaceAll('"', '')
+              .replaceAll('*', '')
+              .replaceAll('(', '')
+              .replaceAll(')', '')
+              .replaceAll('&', '')
               .toLowerCase()
-        );
-      });
-    });
+        )
+      })
+    })
   }
 
   return (
@@ -87,9 +87,9 @@ function ColorsSelector() {
           {colorValues.map((color: any, index: number) => {
             const prettyColor = color.name
               .toLowerCase()
-              .replaceAll(" ", "")
-              .replaceAll("/", "");
-            const keyX = `${prettyColor}-${index}`;
+              .replaceAll(' ', '')
+              .replaceAll('/', '')
+            const keyX = `${prettyColor}-${index}`
             if (stage[`${prettyColor}`]) {
               return (
                 <div>
@@ -97,7 +97,7 @@ function ColorsSelector() {
                     value={prettyColor}
                     className={selectorStyles.pickerSelect}
                     onClick={(e) => {
-                      onClickColor(e, prettyColor);
+                      onClickColor(e, prettyColor)
                     }}
                     key={keyX}
                   >
@@ -108,14 +108,14 @@ function ColorsSelector() {
                     ></div>
                   </button>
                 </div>
-              );
+              )
             }
-            return null;
+            return null
           })}
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default ColorsSelector;
+export default ColorsSelector

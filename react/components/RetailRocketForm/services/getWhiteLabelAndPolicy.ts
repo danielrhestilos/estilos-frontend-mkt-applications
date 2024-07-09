@@ -27,7 +27,7 @@ export default async () => {
 
     return data
   } catch (error) {
-      console.log('error searchProduct', error);
+      // console.log('error searchProduct', error);
       return null;
   }
 }

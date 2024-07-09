@@ -16,7 +16,7 @@ const useFetchPopularData = (url: string) => {
             throw new Error('Network response was not ok ' + response.statusText);
           }
           let data = await response.json(); 
-          console.log('data -> ',data );
+          // console.log('data -> ',data );
           
           data = data.map((item:any) =>  {return {...item,referenceId: item?.items[0]?.referenceId[0]?.Value}})   
           

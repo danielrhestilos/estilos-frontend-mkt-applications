@@ -37,7 +37,7 @@ function MostPLP() {
     return <div>error</div>
   }
 
-  console.log('data.length ', data.length)
+  // console.log('data.length ', data.length)
 
   return (
     visible &&

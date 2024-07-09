@@ -1,49 +1,50 @@
-import React, { useEffect, useState } from 'react';
-import { useRuntime } from 'vtex.render-runtime';
+import React, { useEffect, useState } from 'react'
+import { useRuntime } from 'vtex.render-runtime'
 import styles from './styles.css'
 
 function SEOCategories(props: any) {
-  const [text, setText] = useState('');
-  const { route } = useRuntime();
-  const canonicalPath = route?.canonicalPath;
-  const params = route?.params;
-  const terms = params?.terms;
-  const containerPLP = props?.containerPLP;
+  const [text, setText] = useState('')
+  const { route } = useRuntime()
+  const canonicalPath = route?.canonicalPath
+  const params = route?.params
+  const terms = params?.terms
+  const containerPLP = props?.containerPLP
 
   useEffect(() => {
     if (!canonicalPath) {
-      console.error('Canonical Path is undefined');
-      return;
+      console.error('Canonical Path is undefined')
+      return
     }
-    else{
-        console.log("terms ",terms);
-        
-        console.log("route ",route);
-        console.log("canonicalPath ",canonicalPath);
-    }
-    const path = terms ?  `${canonicalPath}/${terms}` : canonicalPath 
-    console.log('path ',path);
-    
-    const matchedItem = containerPLP.find((item: any) => item.route === path);
+    const path = terms ? `${canonicalPath}/${terms}` : canonicalPath
 
-    console.log("matchedItem ",matchedItem)
+    const matchedItem = containerPLP.find((item: any) => item.route === path)
+
     if (matchedItem) {
-      setText(matchedItem.htmlText || '');  // Set the text or an empty string if htmlText is undefined
+      setText(matchedItem.htmlText || '') // Set the text or an empty string if htmlText is undefined
     } else {
-      console.error('No matching route found in containerPLP');
+      console.error('No matching route found in containerPLP')
     }
-  }, [canonicalPath]);
+  }, [canonicalPath])
 
-  return (text!='' && <div className={styles.seoContent} dangerouslySetInnerHTML={{ __html: text }} />);
+  return (
+    text != '' && (
+      <div
+        className={styles.seoContent}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    )
+  )
 }
 
 SEOCategories.defaultProps = {
-  containerPLP: [{
-    route: '/textil/damas',
-    htmlText: '<h1>Calzado para Hombre</h1><p>Encuentra los mejores zapatos para hombre aquí.</p>',
-  }],
-  
-};
+  containerPLP: [
+    {
+      route: '/textil/damas',
+      htmlText:
+        '<h1>Calzado para Hombre</h1><p>Encuentra los mejores zapatos para hombre aquí.</p>',
+    },
+  ],
+}
 
 SEOCategories.schema = {
   title: 'Cargue contenido para el PLP',
@@ -60,7 +61,8 @@ SEOCategories.schema = {
         properties: {
           __editorItemTitle: {
             title: 'Asigna nombre al item para fácil acceso',
-            description: 'Asignar nombre al item. Solo visible en el site-editor',
+            description:
+              'Asignar nombre al item. Solo visible en el site-editor',
             type: 'string',
           },
           route: {
@@ -77,6 +79,6 @@ SEOCategories.schema = {
       },
     },
   },
-};
+}
 
-export default SEOCategories;
+export default SEOCategories

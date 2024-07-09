@@ -1,7 +1,22 @@
-import React from "react";
+import React from 'react'
 
-function KlaviyoForm() {
-    return (<div className="klaviyo-form-UQtnkH"></div>);
+function KlaviyoForm(props: any) {
+  return <div className={props.embedForm}></div>
 }
 
-export default KlaviyoForm;
+KlaviyoForm.defaultProps = {
+  embedForm: 'klaviyo-form-UQtnkH',
+}
+
+KlaviyoForm.schema = {
+  title: 'Klaviyo form',
+  description: 'Klaviyo form',
+  type: 'object',
+  properties: {
+    embedForm: {
+      type: 'string',
+    },
+  },
+}
+
+export default KlaviyoForm
