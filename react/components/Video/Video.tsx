@@ -7,7 +7,7 @@ function Video() {
   const [shouldShow, setShouldShow] = useState(false)
 
   useEffect((): void | any => {
-    const targetDate: any = new Date('2024-07-08T23:59:59') // fecha y hora objetivo
+    const targetDate: any = new Date('2024-07-10T11:59:59') // fecha y hora objetivo
     const now: any = new Date()
     const timeUntilTarget = targetDate - now
     if (timeUntilTarget > 0) {
@@ -21,7 +21,7 @@ function Video() {
   }, [])
 
   return (
-    shouldShow && (
+    !shouldShow && (
       <section
         id={`${isMobil ? 'estilos-video-movil' : 'video-estilos-desktop'}`}
         style={{ textAlign: 'center' }}
