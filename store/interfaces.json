@@ -167,5 +167,8 @@
   },
   "estilos-most-purchased":{
     "component": "MostPLP"
+  },
+  "estilos-price-bar":{
+    "component": "PriceBar"
   }
 }
