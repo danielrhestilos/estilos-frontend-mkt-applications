@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
-// import useProduct from 'vtex.product-context/useProduct'
 import { useRuntime } from 'vtex.render-runtime'
 import styles from './styles.css'
-
-// interface PriceBarProps {
-//   offerEndDate?: Date
-//   path: string
-// }
 
 interface TimeRemaining {
   total: number
@@ -51,9 +45,11 @@ const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', path = '/' }) => {
     const duration = offerEndDate.getTime() - new Date().setHours(0, 0, 0, 0)
     return Math.max((total / duration) * 100, 0)
   }
+
   const [timePercentage, setTimePercentage] = useState<number>(
     calculateTimePercentage(new Date(offerEndDate))
   )
+
   useEffect(() => {
     const timer = setInterval(updateTimeRemaining, 1000)
     return () => clearInterval(timer)
