@@ -42,7 +42,7 @@ function MostPLP() {
   }
 
   if (error) {
-    return <div>error</div>
+    return <div></div>
   }
 
   return (
