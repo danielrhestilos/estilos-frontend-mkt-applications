@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useRuntime } from 'vtex.render-runtime'
+import { useProduct } from 'vtex.product-context'
 import styles from './styles.css'
 
 interface TimeRemaining {
@@ -20,16 +21,22 @@ const calculateTimeRemaining = (offerEndDate: Date): TimeRemaining => {
   return { total, days, hours, minutes, seconds }
 }
 
-const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', path = '/' }) => {
-  const { route } = useRuntime() || {}
+const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', clusterId = '' }) => {
+  const runtime = useRuntime() || {}
+  console.log('runtime ', runtime)
+  const productContext = useProduct()
+  const route = runtime?.route ?? {}
+  const product = productContext?.product ?? {}
+  const productClusters = product?.productClusters ?? {}
+
+  console.log('product ', product)
+  console.log('productCluster ', productClusters)
   const canonicalPath = route?.canonicalPath || '/'
   console.log('canonicalPath ', canonicalPath)
-
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(
     calculateTimeRemaining(new Date(offerEndDate))
   )
   const [isOfferEnded, setIsOfferEnded] = useState<boolean>(false)
-
   const updateTimeRemaining = useCallback(() => {
     const remaining = calculateTimeRemaining(new Date(offerEndDate))
     setTimeRemaining(remaining)
@@ -59,12 +66,18 @@ const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', path = '/' }) => {
     return null
   }
 
-  return (
-    canonicalPath == path && (
+  const targetCluster = productClusters.find(
+    (item: any) => item.id == clusterId
+  )
+
+  if (canonicalPath != '/' && targetCluster) {
+    return (
       <div className={styles.dealItemRemaining}>
-        <span className={styles.clockLabel}>Quedan </span>{' '}
+        <span className={styles.clockLabel}>
+          Queda{timeRemaining.days != 1 && 'n'}{' '}
+        </span>{' '}
         <span className={styles.timeColor}>
-          {String(timeRemaining.days)} días{' '}
+          {String(timeRemaining.days)} día{timeRemaining.days != 1 && 's'}{' '}
           {String(timeRemaining.hours).padStart(2, '0')}:
           {String(timeRemaining.minutes).padStart(2, '0')}:
           {String(timeRemaining.seconds).padStart(2, '0')}
@@ -77,7 +90,9 @@ const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', path = '/' }) => {
         </div>
       </div>
     )
-  )
+  } else {
+    return null // O lo que sea necesario retornar cuando canonicalPath != path
+  }
 }
 
 export default PriceBar
