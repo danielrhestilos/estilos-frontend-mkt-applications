@@ -16,9 +16,6 @@ function SEOCategories(props: any) {
       return
     }
     const path = terms ? `${canonicalPath}` : canonicalPath
-    console.log('canonicalPath ', canonicalPath)
-    console.log('terms ', terms)
-    console.log('path ', path)
 
     const matchedItem = containerPLP.find((item: any) => item.route === path)
 

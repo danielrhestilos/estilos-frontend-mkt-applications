@@ -5,19 +5,27 @@ import { ButtonPlain } from 'vtex.styleguide'
 import styles from './styles.css'
 import useFetchPopularData from '../../hooks/fetchPopularDataHook'
 import useVisibility from '../../hooks/visibilityHook'
+import useResize from '../../hooks/sizeScreenHook'
 
 function MostPLP() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const { route, navigate } = useRuntime()
   const { pageContext = {} } = route || {}
   const { id = null } = pageContext || {}
+  const [, isMobil] = useResize()
 
   const { visible, toggleVisibility } = useVisibility()
 
-  const { data, loading, error } = useFetchPopularData(
-    `/api/catalog_system/pub/products/search?fq=C:/*/${id}/&O=OrderByPriceDESC`
-  )
+  console.log('pageContext ', pageContext)
 
+  let url = `/api/catalog_system/pub/products/search?fq=C:/*/${id}/&O=OrderByPriceDESC`
+  if (pageContext?.type == 'search') {
+    url = `/api/catalog_system/pub/products/search?ft=${id}&O=OrderByPriceDESC`
+  }
+
+  const { data, loading, error } = useFetchPopularData(url)
+  const diffSlides = isMobil ? 1 : 3
+  // const refSlides = isMobil ? :
   const handleChangeSlide = (i: number) => {
     setCurrentSlide(i)
   }
@@ -36,8 +44,6 @@ function MostPLP() {
   if (error) {
     return <div>error</div>
   }
-
-  // console.log('data.length ', data.length)
 
   return (
     visible &&
@@ -62,11 +68,11 @@ function MostPLP() {
           </div>
           <div className="w-100 justify-center db" style={{ display: 'flex' }}>
             <>
-              {currentSlide > 3 && (
+              {currentSlide > diffSlides && (
                 <ButtonPlain
                   className={`${styles.arrowPrev} mr2`}
                   onClick={() => {
-                    setCurrentSlide((prev) => prev - 3)
+                    setCurrentSlide((prev) => prev - diffSlides)
                   }}
                 >
                   <p className="w-100 pa3 flex flex-column justify-center">
@@ -115,11 +121,13 @@ function MostPLP() {
                       <p className={styles.namePurchased}>
                         {product.productName}
                       </p>
-                      <p className={styles.namePurchased}>
-                        Antes: <span>XXX</span>
-                      </p>
-                      <p className={styles.namePurchased}>
-                        Precio actual: <span>XXX</span>
+                      {product.listPrice != 0 && (
+                        <p className={styles.listPricePurchased}>
+                          Antes: <span>{product.listPriceFormated}</span>
+                        </p>
+                      )}
+                      <p className={styles.bestPricePurchased}>
+                        Precio: <span>{product.bestPriceFormated}</span>
                       </p>
                     </div>
                   </div>
@@ -132,7 +140,7 @@ function MostPLP() {
                 <ButtonPlain
                   className={`${styles.arrowNext} ml2`}
                   onClick={() => {
-                    setCurrentSlide((prev) => prev + 3)
+                    setCurrentSlide((prev) => prev + diffSlides)
                   }}
                 >
                   <p className="w-100 pa3 flex flex-column justify-center">
@@ -158,21 +166,23 @@ function MostPLP() {
             </>
           </div>
           <div>
-            <Dots
-              loop
-              showDotsPerPage
-              blockClass="sss"
-              perPage={perPage}
-              currentSlide={currentSlide}
-              totalSlides={9}
-              onChangeSlide={handleChangeSlide}
-              classes={{
-                root: 'pv5',
-                notActiveDot: 'bg-muted-3',
-                dot: `dot pointer br-100 h-100 w-100 ${styles.dotsito} `,
-                activeDot: 'bg-emphasis',
-              }}
-            />
+            {!isMobil && (
+              <Dots
+                loop
+                showDotsPerPage
+                blockClass="sss"
+                perPage={perPage}
+                currentSlide={currentSlide}
+                totalSlides={9}
+                onChangeSlide={handleChangeSlide}
+                classes={{
+                  root: 'pv5',
+                  notActiveDot: 'bg-muted-3',
+                  dot: `dot pointer br-100 h-100 w-100 ${styles.dotsito} `,
+                  activeDot: 'bg-emphasis',
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

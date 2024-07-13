@@ -23,16 +23,13 @@ const calculateTimeRemaining = (offerEndDate: Date): TimeRemaining => {
 
 const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', clusterId = '' }) => {
   const runtime = useRuntime() || {}
-  console.log('runtime ', runtime)
   const productContext = useProduct()
   const route = runtime?.route ?? {}
   const product = productContext?.product ?? {}
   const productClusters = product?.productClusters ?? {}
 
-  console.log('product ', product)
-  console.log('productCluster ', productClusters)
   const canonicalPath = route?.canonicalPath || '/'
-  console.log('canonicalPath ', canonicalPath)
+
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(
     calculateTimeRemaining(new Date(offerEndDate))
   )
