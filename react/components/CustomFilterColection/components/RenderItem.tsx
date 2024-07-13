@@ -25,6 +25,7 @@ const CSS_HANDLES = [
   'textContainer',
   'pathSelect',
   'smallImage',
+  'bigImage',
 ]
 
 const RenderItem = ({
@@ -106,7 +107,7 @@ const RenderItem = ({
           alt={nombre}
           id={`${canonicalPath.toLowerCase().replaceAll('/', '')}`}
           className={`${canonicalPath.toLowerCase().replaceAll('/', '')} ${
-            small && handles.smallImage
+            small ? handles.smallImage : handles.bigImage
           }`}
           // rel=""
         />
