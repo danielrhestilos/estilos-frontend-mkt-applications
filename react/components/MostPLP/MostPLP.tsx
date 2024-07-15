@@ -24,6 +24,7 @@ function MostPLP() {
   }
 
   const { data, loading, error } = useFetchPopularData(url)
+
   const diffSlides = isMobil ? 1 : 3
   // const refSlides = isMobil ? :
   const handleChangeSlide = (i: number) => {

@@ -60,7 +60,7 @@ const useFetchPopularData = (url: string) => {
       }
     }
     fetchData(url)
-  }, [])
+  }, [url])
 
   return { data, loading, error }
 }
