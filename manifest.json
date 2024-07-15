@@ -31,7 +31,8 @@
     "vtex.add-to-cart-button": "0.x",
     "vtex.checkout-resources": "0.x",
     "vtex.modal-layout": "0.x",
-    "vtex.slider-layout": "0.x"
+    "vtex.slider-layout": "0.x",
+    "vtex.session-client":"1.x"
   },
   "registries": [
     "smartcheckout"

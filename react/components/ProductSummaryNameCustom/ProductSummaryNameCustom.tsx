@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { canUseDOM } from 'vtex.render-runtime'
 
 const ProductSummaryNameCustom = () => {
-
   let brandNameShelfs: String[] | NodeListOf<Element> = []
   let brandNameProductMinicart: String[] | NodeListOf<Element> = []
 
@@ -15,9 +14,9 @@ const ProductSummaryNameCustom = () => {
    */
   const capitalizeFirstLetter = (str: string) => {
     return str.toLowerCase().replace(/(?:^|\s)\S/g, function (char) {
-      return char.toUpperCase();
-    });
-  };
+      return char.toUpperCase()
+    })
+  }
 
   /**
    * The function `applyCapitalization` takes an array of elements and capitalizes the first letter of
@@ -26,24 +25,30 @@ const ProductSummaryNameCustom = () => {
    */
   const applyCapitalization = (elements: any) => {
     elements?.forEach((element: any) => {
-      const originalText = element.textContent;
-      const capitalizedText = capitalizeFirstLetter(originalText);
-      element.textContent = capitalizedText;
-    });
-  };
+      const originalText = element.textContent
+      const capitalizedText = capitalizeFirstLetter(originalText)
+      element.textContent = capitalizedText
+    })
+  }
 
   useEffect(() => {
     if (canUseDOM) {
-      brandNameShelfs = document.querySelectorAll('.vtex-product-summary-2-x-brandName');
-      brandNameProductMinicart = document.querySelectorAll('.vtex-product-list-0-x-productName');
+      brandNameShelfs = document.querySelectorAll(
+        '.vtex-product-summary-2-x-brandName'
+      )
+      brandNameProductMinicart = document.querySelectorAll(
+        '.vtex-product-list-0-x-productName'
+      )
 
-      applyCapitalization(brandNameShelfs);
-      applyCapitalization(brandNameProductMinicart);
+      applyCapitalization(brandNameShelfs)
+      applyCapitalization(brandNameProductMinicart)
     }
   }, [])
 
   return (
-    <div className='dn'></div>
+    <>
+      <div className="dn"></div>
+    </>
   )
 }
 
