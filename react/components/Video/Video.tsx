@@ -7,7 +7,7 @@ function Video() {
   const [shouldShow, setShouldShow] = useState(false)
 
   useEffect((): void | any => {
-    const targetDate: any = new Date('2024-07-10T23:59:59') // fecha y hora objetivo
+    const targetDate: any = new Date('2024-07-21T23:59:59') // fecha y hora objetivo
     const now: any = new Date()
     const timeUntilTarget = targetDate - now
     if (timeUntilTarget > 0) {
@@ -28,13 +28,13 @@ function Video() {
         className={styles.videoEstilos}
         onClick={() => {
           window.open(
-            '/collection/solo-x-horas-severin-estilos-07-2024',
+            '/protuner-descuentos-exclusivos-en-estiloscompe',
             '__blank'
           )
         }}
       >
         <h5 style={{ fontSize: '1.73rem', textAlign: 'center' }}>
-          ¡48 Horas de Precios Exclusivos con Severin!
+          Protuner: marca exclusiva en Estilos
         </h5>
         {!isMobil ? (
           <video
@@ -43,7 +43,7 @@ function Video() {
             autoPlay
             muted
             loop
-            src="https://e-commerce.estilos.com.pe/videosmkp/severin_horizontal.mp4"
+            src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
           />
         ) : (
           <video
@@ -51,7 +51,7 @@ function Video() {
             autoPlay
             muted
             loop
-            src="https://e-commerce.estilos.com.pe/videosmkp/severin_vertical.mp4"
+            src="https://e-commerce.estilos.com.pe/videosmkp/vertical-protuner-promo-mp4.mp4"
           />
         )}
       </section>

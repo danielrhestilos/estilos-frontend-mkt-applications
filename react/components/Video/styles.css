@@ -4,7 +4,7 @@
 }
 
 .videoEstilos::after{
-    content: "¡Lo quiero ya!";
+    content: "Ver todas las bicis";
     display: block;
     background-color: #e91111;
     margin: auto;
