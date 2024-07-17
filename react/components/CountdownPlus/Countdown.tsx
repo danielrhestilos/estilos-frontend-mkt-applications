@@ -39,6 +39,7 @@ interface CountdownProps {
   children: any[]
 }
 
+
 const DEFAULT_TARGET_DATE = getTwoDaysFromNow()
 
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({

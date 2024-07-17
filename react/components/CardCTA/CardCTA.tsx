@@ -17,26 +17,20 @@ const CardCTA = () => {
     ? window.sessionStorage.getItem('PromotionsEstilosCard')
     : null
   const { price } = usePromotionData(selectedItem, dataLocalStorage)
-  // console.log('price ', price);
 
   if (!isAvailable) {
     return null
   }
 
-  // Verificaciones para evitar errores de undefined
   const seller = selectedItem?.sellers ? selectedItem.sellers[0] : null
-  // console.log('seller ', seller);
 
   const commertialOffer = seller?.commertialOffer
     ? seller.commertialOffer
     : null
-  // console.log('commertialOffer', commertialOffer);
 
   const itemPrice =
     commertialOffer?.Price !== undefined ? commertialOffer.Price : null
-  // console.log('itemPrice', itemPrice);
 
-  // Si no hay precio, no se muestra la tarjeta
   if (itemPrice === null) {
     return null
   }
