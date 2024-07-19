@@ -27,7 +27,7 @@ function Video() {
         style={{ textAlign: 'center' }}
         className={styles.videoEstilos}
         onClick={() => {
-          window.open('/836?map=productClusterIds', '__blank')
+          window.open('/severin---estilos?map=productclusternames', '__blank')
         }}
       >
         <h5 style={{ fontSize: '1.73rem', textAlign: 'center' }}>
