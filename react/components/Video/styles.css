@@ -4,7 +4,7 @@
 }
 
 .videoEstilos::after{
-    content: "Ver todas las bicis";
+    content: "Conoce nuestros productos";
     display: block;
     background-color: #e91111;
     margin: auto;

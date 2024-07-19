@@ -27,14 +27,11 @@ function Video() {
         style={{ textAlign: 'center' }}
         className={styles.videoEstilos}
         onClick={() => {
-          window.open(
-            '/protuner-descuentos-exclusivos-en-estiloscompe',
-            '__blank'
-          )
+          window.open('/836?map=productClusterIds', '__blank')
         }}
       >
         <h5 style={{ fontSize: '1.73rem', textAlign: 'center' }}>
-          Protuner: marca exclusiva en Estilos
+          Severin: marca exclusiva en Estilos
         </h5>
         {!isMobil ? (
           <video
@@ -43,7 +40,8 @@ function Video() {
             autoPlay
             muted
             loop
-            src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
+            // src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
+            src="https://e-commerce.estilos.com.pe/videosmkp/severin_horizontal.mp4"
           />
         ) : (
           <video
@@ -51,7 +49,8 @@ function Video() {
             autoPlay
             muted
             loop
-            src="https://e-commerce.estilos.com.pe/videosmkp/vertical-protuner-promo-mp4.mp4"
+            // src="https://e-commerce.estilos.com.pe/videosmkp/vertical-protuner-promo-mp4.mp4"
+            src="https://e-commerce.estilos.com.pe/videosmkp/severin_vertical.mp4"
           />
         )}
       </section>
