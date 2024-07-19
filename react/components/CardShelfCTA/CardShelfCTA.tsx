@@ -72,7 +72,7 @@ function CardShelfCTA(props: any) {
 }
 
 CardShelfCTA.defaultProps = {
-  collections: '(882),(881),(877)',
+  collections: '(),(),()',
 }
 
 CardShelfCTA.schema = {
