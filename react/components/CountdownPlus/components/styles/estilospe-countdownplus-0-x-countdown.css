@@ -381,12 +381,12 @@
 
   .countdownComponent {
     margin: 0rem auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding: 0 !important;
   }
 
   .containerCountdownRegularAndChildren {
-    margin: 1.5rem auto;
+    margin: 2rem  auto;
     padding: 0 1rem;
     padding-bottom: 30px;
   }

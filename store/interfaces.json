@@ -174,5 +174,8 @@
   },
   "estilos-price-bar":{
     "component": "PriceBar"
+  },
+  "estilos-simulation":{
+    "component": "Simulation"
   }
 }

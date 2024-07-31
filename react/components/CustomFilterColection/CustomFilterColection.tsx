@@ -22,6 +22,13 @@ const CustomFilterColection = (
   }
 
   useEffect(() => {
+    console.log('Hola')
+    console.log('links ', props.links)
+    console.log(
+      'props.links.includes(canonicalPath)',
+      props.links.includes(canonicalPath)
+    )
+
     if (props.small) {
       setShow(true)
     } else {
