@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Slider, Slide, Dots } from 'vtex.slider'
 import { useRuntime } from 'vtex.render-runtime'
 import { ButtonPlain } from 'vtex.styleguide'
+
 import styles from './styles.css'
 import useFetchPopularData from '../../hooks/fetchPopularDataHook'
 import useVisibility from '../../hooks/visibilityHook'
@@ -20,11 +21,13 @@ function MostPLP() {
   console.log('route ', route)
 
   let url = `/api/catalog_system/pub/products/search?fq=C:/*/${id}/&O=OrderByPriceDESC`
+
   if (pageContext?.type == 'search') {
     url = `/api/catalog_system/pub/products/search?ft=${id}&O=OrderByPriceDESC`
   }
 
   const { data, loading, error } = useFetchPopularData(url)
+
   console.log('data ->', data)
 
   const diffSlides = isMobil ? 1 : 3
@@ -41,11 +44,11 @@ function MostPLP() {
   }
 
   if (loading) {
-    return <div></div>
+    return <div />
   }
 
   if (error) {
-    return <div></div>
+    return <div />
   }
 
   return (
@@ -66,7 +69,7 @@ function MostPLP() {
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
-                <use href="#sti-close--line" xlinkHref="#sti-close--line"></use>
+                <use href="#sti-close--line" xlinkHref="#sti-close--line" />
               </svg>
             </div>
           </div>

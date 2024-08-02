@@ -183,5 +183,8 @@
   },
   "estilos-filters":{
     "component": "Filters"
+  },
+  "estilos-fake-filter":{
+    "component": "FakeFilter"
   }
 }
