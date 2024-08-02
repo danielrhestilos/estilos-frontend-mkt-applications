@@ -177,5 +177,11 @@
   },
   "estilos-simulation":{
     "component": "Simulation"
+  },
+  "estilos-view-read":{
+    "component": "ViewRead"
+  },
+  "estilos-filters":{
+    "component": "Filters"
   }
 }
