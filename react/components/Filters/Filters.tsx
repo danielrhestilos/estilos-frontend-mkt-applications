@@ -1,5 +1,7 @@
 import React from 'react'
+
 import styles from './styles.css'
+
 function Filters(props: any) {
   return (
     <div className={styles.filtersContainer}>
@@ -7,8 +9,8 @@ function Filters(props: any) {
         // <div>
         props.container.map(
           (item: any) => (
-            <a href={item.url} className={styles.linkFilter}>
-              <img src={item.imagen} className={styles.imgFilter} />
+            <a href={item.url} className={styles.linkFilter} key={item.url}>
+              <img src={item.imagen} className={styles.imgFilter} alt="" />
             </a>
           )
 
@@ -17,6 +19,7 @@ function Filters(props: any) {
     </div>
   )
 }
+
 Filters.defaultProps = {
   container: [
     {
