@@ -1,0 +1,18 @@
+.cardProductView {
+    max-width: 300px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 7px;
+}
+.imgCardProductView {
+    height: 200px;
+}
+.brandProductView 
+{
+    font-family: "Outfit";
+    font-weight: 500;
+}
+
+.productNameView {
+    font-family: Outfit;
+}

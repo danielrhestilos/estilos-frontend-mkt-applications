@@ -181,6 +181,9 @@
   "estilos-view-read":{
     "component": "ViewRead"
   },
+  "estilos-visited-products":{
+    "component": "VisitedProducts"
+  },
   "estilos-filters":{
     "component": "Filters"
   },
