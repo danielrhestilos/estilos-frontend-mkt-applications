@@ -4,28 +4,23 @@ import { useRuntime } from 'vtex.render-runtime'
 
 function FakeFilter(props: any) {
   const { route } = useRuntime()
-  const canonicalPath = route?.canonicalPath ?? '/'
   const { navigate } = useRuntime()
 
-  // Mapea las imágenes y agrega canonicalPath
-  const imagesWithCanonicalPath =
-    props.images?.map((image: any) => ({
-      ...image,
-      canonicalPath,
-    })) || []
+  const shouldDisplayFilter = props?.images?.some(
+    (image: any) => route.path === image.url
+  )
 
-  console.log('canonicalPath', canonicalPath)
-  console.log('route', route)
-  console.log('imagesWithCanonicalPath', imagesWithCanonicalPath)
+  if (!shouldDisplayFilter) {
+    return null
+  }
 
   return (
     <div className={styles.filterFake}>
       <h5 className={styles.filterFakeTitle}>Filtros de Tv</h5>
       <div className={styles.filterContainer}>
         <h6 className={styles.typeFilterFake}>PULGADAS: </h6>
-        {imagesWithCanonicalPath.map((image: any, index: any) => (
+        {props?.images?.map((image: any, index: any) => (
           <div key={index} className={styles.filterFakeBlock}>
-            {/* <p>URL: {image.url}</p> */}
             <p
               className={styles.filterFakeParagraph}
               onClick={() => {
@@ -34,20 +29,14 @@ function FakeFilter(props: any) {
                 })
               }}
             >
-              {console.log(
-                '${canonicalPath}?map=productClusterIds',
-                `${canonicalPath}?map=productClusterIds`
-              )}
-              {console.log('image.url', `${image.url}`)}
               <div className={`${styles.markerFilterFake}`}>
-                {// ((canonicalPath == '/electro/electro/video'   ) ||  )
-                `${canonicalPath}?map=productClusterIds` == image.url && (
+                {route.path === image.url && (
                   <svg
                     style={{
                       position: 'relative',
                       top: '-.5rem',
                     }}
-                    className="vtex__icon-check  "
+                    className="vtex__icon-check"
                     width="12"
                     height="12"
                     viewBox="0 0 12 12"
