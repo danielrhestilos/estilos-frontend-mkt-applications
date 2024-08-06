@@ -22,11 +22,11 @@ const ZipcodeSelector: React.FC = () => {
   const productContext = useProduct()
 
   const { product } = productContext
-  console.log('product ', product)
+  // console.log('product ', product)
   // const idSku = product.items[0].referenceId[0].Value
   const idSku = product.items[0].itemId
   // const idSeller = product.items[0].sellers[0].sellerId
-  console.log('idSku ', idSku)
+  // console.log('idSku ', idSku)
 
   useEffect(() => {
     setData({
@@ -2341,7 +2341,7 @@ const ZipcodeSelector: React.FC = () => {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log('data: ', data)
+            // console.log('data: ', data)
 
             setDeliveryData(
               data.logisticsInfo[0].slas

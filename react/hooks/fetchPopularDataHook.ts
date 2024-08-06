@@ -41,7 +41,7 @@ const useFetchPopularData = (url: string) => {
           data.map((item: any) => fetchPrices(item))
         )
         data = data.map(function (item: any, index: number) {
-          console.log(`dataPrices[${index}]`, dataPrices[index]);
+          // console.log(`dataPrices[${index}]`, dataPrices[index]);
           let skus = dataPrices[index]?.skus
           let skuAvailable = skus?.find((sku:any)=> sku.available)
           return {

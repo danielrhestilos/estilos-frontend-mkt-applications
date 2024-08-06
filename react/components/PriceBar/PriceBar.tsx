@@ -68,7 +68,7 @@ const PriceBar = ({ offerEndDate = '2024-07-11T23:59:59', clusterId = '' }) => {
   )
 
   if (canonicalPath != '/' && targetCluster) {
-    console.log('se puedeeee')
+    // console.log('se puedeeee')
 
     return (
       <div className={styles.dealItemRemaining}>

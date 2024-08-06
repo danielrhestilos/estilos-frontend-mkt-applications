@@ -59,9 +59,9 @@ function KlaviyoProductView() {
       }
     })()
     // console.log('klaviyo objeto', klaviyo)
-    console.log('data session ',data );
+    // console.log('data session ',data );
     // console.log('product', product)
-    console.log('orderForm', orderForm)
+    // console.log('orderForm', orderForm)
     var _learnq = _learnq || []
 
     function myCallback() {

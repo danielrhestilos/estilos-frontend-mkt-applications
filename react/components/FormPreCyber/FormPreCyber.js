@@ -111,8 +111,8 @@ export default function FormPreCyber(){
         }
 
         const showError = (e, i='') => { 
-          console.log('E',e);
-          console.log('i',i);
+          // console.log('E',e);
+          // console.log('i',i);
           let element = document.getElementById(e);
           element.style.transform = 'translateY(2px)';
           element.style.opacity = '1'; 

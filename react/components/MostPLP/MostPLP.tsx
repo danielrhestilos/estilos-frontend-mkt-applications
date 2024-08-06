@@ -17,8 +17,8 @@ function MostPLP() {
 
   const { visible, toggleVisibility } = useVisibility()
 
-  console.log('pageContext ', pageContext)
-  console.log('route ', route)
+  // console.log('pageContext ', pageContext)
+  // console.log('route ', route)
 
   let url = `/api/catalog_system/pub/products/search?fq=C:/*/${id}/&O=OrderByPriceDESC`
 
@@ -28,7 +28,7 @@ function MostPLP() {
 
   const { data, loading, error } = useFetchPopularData(url)
 
-  console.log('data ->', data)
+  // console.log('data ->', data)
 
   const diffSlides = isMobil ? 1 : 3
   // const refSlides = isMobil ? :

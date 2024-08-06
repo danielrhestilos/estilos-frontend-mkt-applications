@@ -5,7 +5,7 @@ import styles from './styles.css'
 
 function VisitedProducts() {
   const [products] = useLocalStorage('productsV', [])
-  console.log('products ->', products)
+  // console.log('products ->', products)
 
   return (
     <div className={styles.containerVisited}>

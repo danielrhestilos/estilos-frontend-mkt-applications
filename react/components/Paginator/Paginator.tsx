@@ -65,9 +65,9 @@ const Paginator = () => {
     orderBy: 'OrderByReleaseDateDESC',
   }
 
-  console.log('searchQuery', searchQuery)
+  // console.log('searchQuery', searchQuery)
 
-  console.log('queryData ', queryData)
+  // console.log('queryData ', queryData)
 
   const { handleFetchPerPage, loading } = useFetchMore({
     // page: currentPage,
