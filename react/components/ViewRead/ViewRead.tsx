@@ -4,7 +4,7 @@ import useLocalStorage from '../../hooks/localStorageHook'
 
 function ViewRead() {
   const { product } = useProduct()
-  console.log('productContext -> ', product)
+  // console.log('productContext -> ', product)
   const [productsV, setProductsV] = useLocalStorage('productsV', [])
 
   useEffect(() => {

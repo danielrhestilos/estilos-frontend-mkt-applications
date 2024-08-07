@@ -8,15 +8,27 @@
     border-radius: 1rem;
 }
 .visitedTitle {
-    font-size: 1.4rem;
+    font-size: 1.85rem;
     max-width: 1018px;
-    margin: auto;
+    /* margin: auto; */
     font-family: "Outfit";
-    margin: 1rem;
-    padding: 2rem 1rem;
+    margin: 1rem 0rem 1rem 0rem;
 }
 .containerVisited {
     max-width: 1018px;
     margin: auto;
-    background-color: #eba0a0;
+    margin-bottom: 32px;
+    padding: 1rem;
+    background-color: #F5F5F5;
+}
+.rowVisited {
+    display: flex;
+}
+.arrowPrev {
+    background-color: #ffffff;
+}
+.dotsito {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
 }

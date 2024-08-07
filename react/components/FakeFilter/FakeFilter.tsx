@@ -6,9 +6,11 @@ function FakeFilter(props: any) {
   const { route } = useRuntime()
   const { navigate } = useRuntime()
 
-  const shouldDisplayFilter = props?.images?.some(
-    (image: any) => route.path === image.url
+  const shouldDisplayFilter = props?.images?.some((image: any) =>
+    route.path.includes(image.url)
   )
+  // console.log(props.images)
+  // console.log('route.path', route.path)
 
   if (!shouldDisplayFilter) {
     return null

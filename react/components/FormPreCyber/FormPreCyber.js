@@ -217,7 +217,7 @@ export default function FormPreCyber(){
           e.preventDefault();
           
           const data = { ...form };
-          console.log('data ->', data);
+          // console.log('data ->', data);
         
           const respName = validateName(data.name) ? hideError('errorName', 'name') : null;
           const respLastName = validateLastName(data.document) ? hideError('errorLastName', 'document') : null;
