@@ -10,7 +10,12 @@ function Filters(props: any) {
         props.container.map(
           (item: any) => (
             <a href={item.url} className={styles.linkFilter} key={item.url}>
-              <img src={item.imagen} className={styles.imgFilter} alt="" />
+              <img
+                src={item.imagen}
+                className={styles.imgFilter}
+                alt=""
+                id={`coleccion-${item.url.replaceAll('/', '-')}`}
+              />
             </a>
           )
 

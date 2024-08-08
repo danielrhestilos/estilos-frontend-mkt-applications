@@ -17,13 +17,11 @@ function VisitedProducts() {
     600: 1,
   }
   const [, isMobil] = useResize()
-  const diffSlides = isMobil ? 1 : 3
+  const diffSlides = isMobil ? 1 : 4
   // const refSlides = isMobil ? :
   const handleChangeSlide = (i: number) => {
     setCurrentSlide(i)
   }
-  console.log('isMobil ', isMobil)
-
   return (
     <div className={styles.containerVisited}>
       {products.length > 0 && (
@@ -81,7 +79,7 @@ function VisitedProducts() {
           ))}
         </Slider>
         <>
-          {currentSlide !== 9 && (
+          {currentSlide !== (products.length + 1) % 3 && (
             <ButtonPlain
               className={`${styles.arrowNext} ml2`}
               onClick={() => {
@@ -119,7 +117,7 @@ function VisitedProducts() {
               blockClass="sss"
               perPage={perPage}
               currentSlide={currentSlide}
-              totalSlides={9}
+              totalSlides={products.length}
               onChangeSlide={handleChangeSlide}
               classes={{
                 root: 'pv5',

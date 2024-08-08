@@ -14,7 +14,7 @@ function ViewRead() {
     )
 
     if (!productExists) {
-      setProductsV([...productsV, product])
+      setProductsV([product, ...productsV])
     }
   }, [product, productsV, setProductsV])
 
