@@ -6,7 +6,9 @@ import RenderItem from './components/RenderItem'
 const CSS_HANDLES = ['content', 'rowContent', 'ourCamp', 'BigRowFilter']
 
 const CustomFilterColection = (
-  props: { images: any[]; small: boolean; links: string[] } | undefined
+  props:
+    | { images: any[]; small: boolean; links: string[]; widthSmall: boolean }
+    | undefined
 ) => {
   const [scrollY, setScrollY] = useState(0)
   const [show, setShow] = useState(false)
@@ -51,6 +53,7 @@ const CustomFilterColection = (
         className={`w-100 pb4 flex ${
           !props.small && handles.BigRowFilter
         } justify-between overflow-x-auto ${handles.rowContent}`}
+        style={props.widthSmall ? { maxWidth: '1000px' } : {}}
       >
         {props.images.map((index: any, key: any) => {
           return (
@@ -78,6 +81,7 @@ const CustomFilterColection = (
 CustomFilterColection.defaultProps = {
   images: [],
   small: true,
+  widthSmall: false,
   links: [],
 }
 
@@ -122,6 +126,9 @@ CustomFilterColection.schema = {
       },
     },
     small: {
+      type: 'boolean',
+    },
+    widthSmall: {
       type: 'boolean',
     },
   },
