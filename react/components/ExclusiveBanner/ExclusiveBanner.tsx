@@ -11,7 +11,9 @@ function ExclusiveBanner() {
         width: '100%',
         backgroundImage: `url(/arquivos/banner-${noSlashPath}.jpg)`,
       }}
-    ></div>
+    >
+      <header></header>
+    </div>
   )
 }
 
