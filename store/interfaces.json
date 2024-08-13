@@ -187,7 +187,10 @@
   "estilos-filters":{
     "component": "Filters"
   },
-  "estilos-fake-filter":{
-    "component": "FakeFilter"
+  "estilos-buy-button":{
+    "component": "BuyButton"
+  },
+  "estilos-header-exclusive-collection":{
+    "component": "ExclusiveBanner"
   }
 }

@@ -29,6 +29,7 @@ const Paginator = () => {
   )
 
   const products = path(['data', 'productSearch', 'products'], searchQuery)
+  console.log('products ', products)
 
   const [pageButtons, setPageButtons] = useState<number[]>([])
   const [currentPage, setCurrentPage] = useState(currPage)

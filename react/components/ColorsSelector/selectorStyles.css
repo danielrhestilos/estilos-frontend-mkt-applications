@@ -15,6 +15,18 @@
     border: .5px solid #cbcbcb;
     border-radius: 18px;
 }
+.pickerSelectExclusive {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    padding: 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 18px;
+}
 .colorSelector {
     background-color: #cbcbcb; 
     height: 100%;

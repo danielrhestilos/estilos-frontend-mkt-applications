@@ -8,7 +8,7 @@ import selectorStyles from './selectorStyles.css'
 import stage from './stage.css'
 // import useSetProduct from "../../hooks/setProductHook";
 
-function ColorsSelector() {
+function ColorsSelector(props: any) {
   const { navigate } = useRuntime()
   // const dispatch = useProductDispatch();
   const productContext = useProduct()
@@ -95,7 +95,11 @@ function ColorsSelector() {
                 <div>
                   <button
                     value={prettyColor}
-                    className={selectorStyles.pickerSelect}
+                    className={
+                      props.isExclusive
+                        ? selectorStyles.pickerSelectExclusive
+                        : selectorStyles.pickerSelect
+                    }
                     onClick={(e) => {
                       onClickColor(e, prettyColor)
                     }}
@@ -116,6 +120,10 @@ function ColorsSelector() {
       )}
     </div>
   )
+}
+
+ColorsSelector.defaultProps = {
+  isExclusive: false,
 }
 
 export default ColorsSelector
