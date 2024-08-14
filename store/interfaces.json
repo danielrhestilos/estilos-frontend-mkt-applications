@@ -166,31 +166,36 @@
     "composition": "children",
     "allowed": "*"
   },
-  "estilos-card-shelf-cta":{
+  "estilos-card-shelf-cta": {
     "component": "CardShelfCTA"
   },
-  "estilos-most-purchased":{
+  "estilos-most-purchased": {
     "component": "MostPLP"
   },
-  "estilos-price-bar":{
+  "estilos-price-bar": {
     "component": "PriceBar"
   },
-  "estilos-simulation":{
+  "estilos-simulation": {
     "component": "Simulation"
   },
-  "estilos-view-read":{
+  "estilos-view-read": {
     "component": "ViewRead"
   },
-  "estilos-visited-products":{
+  "estilos-visited-products": {
     "component": "VisitedProducts"
   },
-  "estilos-filters":{
+  "estilos-filters": {
     "component": "Filters"
   },
-  "estilos-buy-button":{
+  "estilos-buy-button": {
     "component": "BuyButton"
   },
-  "estilos-header-exclusive-collection":{
+  "estilos-header-exclusive-collection": {
     "component": "ExclusiveBanner"
+  },
+  "estilos-custom-container-filter": {
+    "component": "CustomContainerFilter",
+    "composition": "children",
+    "allowed": "*"
   }
 }
