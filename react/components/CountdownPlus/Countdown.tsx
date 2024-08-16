@@ -7,8 +7,14 @@ import {
 import './components/styles/estilospe-countdownplus-0-x-countdown.css'
 import RenderCountDownSimple from './components/RenderCountDownSimple'
 import RenderCountdownWithBanner from './components/RenderCountdownWithBanner'
+import RenderCountDownMultiBanners from './components/RenderCountDownMultiBanners'
 import { CountdownSchema } from './schema'
-
+interface ImageBanner {
+  countdownBannerDesktopEdit: string
+  countdownBannerTabletEdit: string
+  countdownBannerPhoneEdit: string
+  linkButtonEdit: string
+}
 interface CountdownProps {
   targetDate: string
   title: string
@@ -37,6 +43,8 @@ interface CountdownProps {
   descriptionItem3: string
   fontColorCountdown: string
   countdownWidthFull: boolean
+  multiBanners: boolean
+  imageBannerSet: ImageBanner[]
   children: any[]
 }
 
@@ -68,6 +76,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   descriptionItem3,
   fontColorCountdown,
   countdownWidthFull,
+  multiBanners,
   children,
 }) => {
   const [remainingTime, setRemainingTime] = useState<number>(
@@ -175,14 +184,26 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
         )}
         {countdownSimple ? (
           <>
-            <RenderCountDownSimple
-              normalizedProps={normalizedProps}
-              days={days}
-              hours={hours}
-              minutes={minutes}
-              seconds={seconds}
-              countdownVisibility={countdownVisibilityProducts}
-            />
+            {multiBanners ? (
+              <RenderCountDownMultiBanners
+                normalizedProps={normalizedProps}
+                days={days}
+                hours={hours}
+                minutes={minutes}
+                seconds={seconds}
+                countdownVisibility={countdownVisibilityProducts}
+                imageBannerSet={imageBannerSet}
+              />
+            ) : (
+              <RenderCountDownSimple
+                normalizedProps={normalizedProps}
+                days={days}
+                hours={hours}
+                minutes={minutes}
+                seconds={seconds}
+                countdownVisibility={countdownVisibilityProducts}
+              />
+            )}
             {/* {children} */}
           </>
         ) : (
