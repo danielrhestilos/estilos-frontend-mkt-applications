@@ -13,6 +13,7 @@ const CSS_HANDLES = [
   'title',
   'description',
   'button',
+  'countdownComponentMulti',
   'countdownCounter',
   'timeRemainingCounter',
   'timeRemaining',
@@ -98,7 +99,7 @@ Props) => {
   // console.log('linkButtonEdit->', linkButtonEdit)
 
   return (
-    <div className={`${handles.countdownComponent}`}>
+    <div className={`${handles.countdownComponentMulti}`}>
       {imageBannerSet?.map((item: ImageBanner) => {
         return (
           <a href={item.linkButtonEdit} className="no-underline">

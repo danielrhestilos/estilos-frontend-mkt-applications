@@ -3,10 +3,11 @@ import { useProduct } from 'vtex.product-context'
 import styles from './styles.css'
 import { isProductAvailable } from './../../utils/generalUtils'
 import useRenderedState from '../../hooks/promotionRenderedHook'
-import { canUseDOM } from 'vtex.render-runtime'
+import { canUseDOM, useRuntime } from 'vtex.render-runtime'
 import usePromotionData from '../../hooks/promotionCardHook'
 
 function CardShelfCTA(props: any) {
+  const { route } = useRuntime()
   const productContext = useProduct()
   const { selectedItem } = productContext
   const isAvailable = selectedItem ? isProductAvailable(selectedItem) : false
@@ -54,7 +55,9 @@ function CardShelfCTA(props: any) {
       )
     }
   }
-
+  if (route.id == 'store.home') {
+    return null
+  }
   return (
     !loadingItem &&
     (price != 0 ||

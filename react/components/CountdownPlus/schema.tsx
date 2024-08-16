@@ -166,5 +166,41 @@ export const CountdownSchema = {
       type: 'string',
       default: 'Iphone 12 Pro',
     },
+    imageBannerSet: {
+      title: 'Grupo de imágenes(banners)',
+      description: 'Grupo de imágenes(banners)',
+      type: 'array',
+      default: [],
+      items: {
+        title: 'item',
+        type: 'object',
+        properties: {
+          countdownBannerDesktopEdit: {
+            title: 'Banner desktop',
+            description: '',
+            type: 'string',
+            default: '',
+          },
+          countdownBannerTabletEdit: {
+            title: 'Banner tablet',
+            description: '',
+            type: 'string',
+            default: '',
+          },
+          countdownBannerPhoneEdit: {
+            title: 'Banner móviles',
+            description: '',
+            type: 'string',
+            default: '',
+          },
+          linkButtonEdit: {
+            title: 'Link ',
+            description: '',
+            type: 'string',
+            default: '',
+          },
+        },
+      },
+    },
   },
 }

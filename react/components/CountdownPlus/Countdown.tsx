@@ -7,8 +7,9 @@ import {
 import './components/styles/estilospe-countdownplus-0-x-countdown.css'
 import RenderCountDownSimple from './components/RenderCountDownSimple'
 import RenderCountdownWithBanner from './components/RenderCountdownWithBanner'
-import RenderCountDownMultiBanners from './components/RenderCountDownMultiBanners'
+import RenderCountdownMultiBanners from './components/RenderCountDownMultiBanners'
 import { CountdownSchema } from './schema'
+
 interface ImageBanner {
   countdownBannerDesktopEdit: string
   countdownBannerTabletEdit: string
@@ -16,6 +17,7 @@ interface ImageBanner {
   linkButtonEdit: string
 }
 interface CountdownProps {
+  multiBanners: boolean
   targetDate: string
   title: string
   backgroundColor: string
@@ -43,9 +45,8 @@ interface CountdownProps {
   descriptionItem3: string
   fontColorCountdown: string
   countdownWidthFull: boolean
-  multiBanners: boolean
-  imageBannerSet: ImageBanner[]
   children: any[]
+  imageBannerSet: ImageBanner[]
 }
 
 const DEFAULT_TARGET_DATE = getTwoDaysFromNow()
@@ -61,11 +62,14 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   countdownIconPhone,
   countdownIconTablet,
   countdownIconDesktop,
-  countdownBannerPhone,
-  countdownBannerTablet,
-  countdownBannerDesktop,
+  multiBanners,
+  // countdownBannerPhone,
+  // countdownBannerTablet,
+  // countdownBannerDesktop,
+  // linkButton,
+
+  imageBannerSet,
   hideIconImage,
-  linkButton,
   hideBannerImage,
   countdownWithBanner,
   countdownSimple,
@@ -76,7 +80,6 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   descriptionItem3,
   fontColorCountdown,
   countdownWidthFull,
-  multiBanners,
   children,
 }) => {
   const [remainingTime, setRemainingTime] = useState<number>(
@@ -85,11 +88,11 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   const [showCountdown, setShowCountdown] = useState(false)
 
   // const textCtaButtonEdit = textCtaButton || "Comprar ahora"
-  const linkButtonEdit = linkButton || 'https://www.estilos.com.pe/'
-  const countdownBannerPhoneEdit = countdownBannerPhone || 'bannerPhone.png'
-  const countdownBannerTabletEdit = countdownBannerTablet || 'bannerDesktop.png'
-  const countdownBannerDesktopEdit =
-    countdownBannerDesktop || 'bannerDesktop.png'
+  // const linkButtonEdit = linkButton || 'https://www.estilos.com.pe/'
+  // const countdownBannerPhoneEdit = countdownBannerPhone || 'bannerPhone.png'
+  // const countdownBannerTabletEdit = countdownBannerTablet || 'bannerDesktop.png'
+  // const countdownBannerDesktopEdit =
+  //   countdownBannerDesktop || 'bannerDesktop.png'
   const descriptionItem1Edit = descriptionItem1 || ''
   const descriptionItem2Edit = descriptionItem2 || ''
   const descriptionItem3Edit = descriptionItem3 || ''
@@ -160,23 +163,45 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
       <>
         {countdownWithBanner ? (
           <>
-            <RenderCountdownWithBanner
-              normalizedProps={normalizedProps}
-              countdownVisibility={countdownVisibilityBanner}
-              hideBannerImage={hideBannerImage}
-              days={days}
-              hours={hours}
-              minutes={minutes}
-              seconds={seconds}
-              descriptionItem1Edit={descriptionItem1Edit}
-              descriptionItem2Edit={descriptionItem2Edit}
-              descriptionItem3Edit={descriptionItem3Edit}
-              countdownBannerPhoneEdit={countdownBannerPhoneEdit}
-              linkButtonEdit={linkButtonEdit}
-              // textCtaButtonEdit={textCtaButtonEdit}
-              countdownBannerDesktopEdit={countdownBannerDesktopEdit}
-              countdownBannerTabletEdit={countdownBannerTabletEdit}
-            />
+            {!multiBanners ? (
+              <RenderCountdownWithBanner
+                normalizedProps={normalizedProps}
+                countdownVisibility={countdownVisibilityBanner}
+                hideBannerImage={hideBannerImage}
+                days={days}
+                hours={hours}
+                minutes={minutes}
+                seconds={seconds}
+                descriptionItem1Edit={descriptionItem1Edit}
+                descriptionItem2Edit={descriptionItem2Edit}
+                descriptionItem3Edit={descriptionItem3Edit}
+                // countdownBannerPhoneEdit={countdownBannerPhoneEdit}
+                // linkButtonEdit={linkButtonEdit}
+                // textCtaButtonEdit={textCtaButtonEdit}
+                // countdownBannerDesktopEdit={countdownBannerDesktopEdit}
+                // countdownBannerTabletEdit={countdownBannerTabletEdit}
+                imageBannerSet={imageBannerSet}
+              />
+            ) : (
+              <RenderCountdownMultiBanners
+                normalizedProps={normalizedProps}
+                countdownVisibility={countdownVisibilityBanner}
+                hideBannerImage={hideBannerImage}
+                days={days}
+                hours={hours}
+                minutes={minutes}
+                seconds={seconds}
+                descriptionItem1Edit={descriptionItem1Edit}
+                descriptionItem2Edit={descriptionItem2Edit}
+                descriptionItem3Edit={descriptionItem3Edit}
+                // countdownBannerPhoneEdit={countdownBannerPhoneEdit}
+                // linkButtonEdit={linkButtonEdit}
+                // textCtaButtonEdit={textCtaButtonEdit}
+                // countdownBannerDesktopEdit={countdownBannerDesktopEdit}
+                // countdownBannerTabletEdit={countdownBannerTabletEdit}
+                imageBannerSet={imageBannerSet}
+              />
+            )}
             {/* {children} */}
           </>
         ) : (
@@ -184,26 +209,14 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
         )}
         {countdownSimple ? (
           <>
-            {multiBanners ? (
-              <RenderCountDownMultiBanners
-                normalizedProps={normalizedProps}
-                days={days}
-                hours={hours}
-                minutes={minutes}
-                seconds={seconds}
-                countdownVisibility={countdownVisibilityProducts}
-                imageBannerSet={imageBannerSet}
-              />
-            ) : (
-              <RenderCountDownSimple
-                normalizedProps={normalizedProps}
-                days={days}
-                hours={hours}
-                minutes={minutes}
-                seconds={seconds}
-                countdownVisibility={countdownVisibilityProducts}
-              />
-            )}
+            <RenderCountDownSimple
+              normalizedProps={normalizedProps}
+              days={days}
+              hours={hours}
+              minutes={minutes}
+              seconds={seconds}
+              countdownVisibility={countdownVisibilityProducts}
+            />
             {/* {children} */}
           </>
         ) : (

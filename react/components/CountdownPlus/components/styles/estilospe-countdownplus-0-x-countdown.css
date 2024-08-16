@@ -15,9 +15,12 @@
 .countdownComponent,
 .containerCountdownRegularAndChildren {
   max-width: 1200px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
+  flex-direction: row;
   margin: 1rem 1rem 1rem 1rem;
+  /* justify-content: center; */
+  gap: 13px;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -191,7 +194,8 @@
 
 .countdownBannerDesktop {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-direction: row;
   justify-content: center;
 }
 
@@ -379,10 +383,16 @@
     margin-bottom: 15px;
   }
 
-  .countdownComponent {
+  .countdownComponent ,   .countdownComponentMulti{
     margin: 0rem auto;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     padding: 0 !important;
+    display: flex;
+    gap: .8rem;
+    /* flex-direction: row */
+  }
+  .countdownComponent {
+    flex-direction: column
   }
 
   .containerCountdownRegularAndChildren {
@@ -451,6 +461,7 @@
   .fullBannerM {
     /* Styles for fullBannerM on mobiles */
     display: block !important;
+    max-width: 350px;
     /* Make the banner visible */
   }
 
