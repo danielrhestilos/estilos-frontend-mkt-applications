@@ -9,6 +9,12 @@ import RenderCountDownSimple from './components/RenderCountDownSimple'
 import RenderCountdownWithBanner from './components/RenderCountdownWithBanner'
 import { CountdownSchema } from './schema'
 
+interface ImageBanner {
+  countdownBannerDesktopEdit: string
+  countdownBannerTabletEdit: string
+  countdownBannerPhoneEdit: string
+  linkButtonEdit: string
+}
 interface CountdownProps {
   targetDate: string
   title: string
@@ -38,6 +44,7 @@ interface CountdownProps {
   fontColorCountdown: string
   countdownWidthFull: boolean
   children: any[]
+  imageBannerSet: ImageBanner[]
 }
 
 const DEFAULT_TARGET_DATE = getTwoDaysFromNow()
@@ -53,11 +60,14 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   countdownIconPhone,
   countdownIconTablet,
   countdownIconDesktop,
-  countdownBannerPhone,
-  countdownBannerTablet,
-  countdownBannerDesktop,
+
+  // countdownBannerPhone,
+  // countdownBannerTablet,
+  // countdownBannerDesktop,
+  // linkButton,
+
+  imageBannerSet,
   hideIconImage,
-  linkButton,
   hideBannerImage,
   countdownWithBanner,
   countdownSimple,
@@ -76,11 +86,11 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   const [showCountdown, setShowCountdown] = useState(false)
 
   // const textCtaButtonEdit = textCtaButton || "Comprar ahora"
-  const linkButtonEdit = linkButton || 'https://www.estilos.com.pe/'
-  const countdownBannerPhoneEdit = countdownBannerPhone || 'bannerPhone.png'
-  const countdownBannerTabletEdit = countdownBannerTablet || 'bannerDesktop.png'
-  const countdownBannerDesktopEdit =
-    countdownBannerDesktop || 'bannerDesktop.png'
+  // const linkButtonEdit = linkButton || 'https://www.estilos.com.pe/'
+  // const countdownBannerPhoneEdit = countdownBannerPhone || 'bannerPhone.png'
+  // const countdownBannerTabletEdit = countdownBannerTablet || 'bannerDesktop.png'
+  // const countdownBannerDesktopEdit =
+  //   countdownBannerDesktop || 'bannerDesktop.png'
   const descriptionItem1Edit = descriptionItem1 || ''
   const descriptionItem2Edit = descriptionItem2 || ''
   const descriptionItem3Edit = descriptionItem3 || ''
@@ -162,11 +172,12 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
               descriptionItem1Edit={descriptionItem1Edit}
               descriptionItem2Edit={descriptionItem2Edit}
               descriptionItem3Edit={descriptionItem3Edit}
-              countdownBannerPhoneEdit={countdownBannerPhoneEdit}
-              linkButtonEdit={linkButtonEdit}
+              // countdownBannerPhoneEdit={countdownBannerPhoneEdit}
+              // linkButtonEdit={linkButtonEdit}
               // textCtaButtonEdit={textCtaButtonEdit}
-              countdownBannerDesktopEdit={countdownBannerDesktopEdit}
-              countdownBannerTabletEdit={countdownBannerTabletEdit}
+              // countdownBannerDesktopEdit={countdownBannerDesktopEdit}
+              // countdownBannerTabletEdit={countdownBannerTabletEdit}
+              imageBannerSet={imageBannerSet}
             />
             {/* {children} */}
           </>
