@@ -193,6 +193,11 @@
   "estilos-header-exclusive-collection": {
     "component": "ExclusiveBanner"
   },
+  "estilos-timer-parent": {
+    "component": "TimerParent",
+        "composition": "children",
+    "allowed": "*"
+  },
   "estilos-custom-container-filter": {
     "component": "CustomContainerFilter",
     "composition": "children",
