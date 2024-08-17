@@ -389,6 +389,7 @@
     padding: 0 !important;
     display: flex;
     gap: .8rem;
+    margin-bottom: .6rem;
     /* flex-direction: row */
   }
   .countdownComponent {
@@ -461,7 +462,7 @@
   .fullBannerM {
     /* Styles for fullBannerM on mobiles */
     display: block !important;
-    max-width: 350px;
+    max-width: 375px;
     /* Make the banner visible */
   }
 
