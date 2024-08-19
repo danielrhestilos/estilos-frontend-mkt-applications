@@ -1,28 +1,40 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useProduct } from 'vtex.product-context'
+// import { useRuntime } from 'vtex.render-runtime'
 
 function CustomDescription() {
   const contextPdp = useProduct()
+  // const { route } = useRuntime()
   const { product } = contextPdp
+  const { productId } = product
   const [content, setContent] = useState<any>(null)
-  const hasFetched = useRef(false) // Para rastrear si ya se realizó el fetch
+  // const hasFetched = useRef(false) // Para rastrear si ya se realizó el fetch
 
   useEffect(() => {
-    if (!product || hasFetched.current) return
+    if (!product) return
 
-    const { productId } = product
-    hasFetched.current = true // Marcar como true para que no vuelva a hacer fetch
+    const productId = product?.productId
+    // hasFetched.current = true // Marcar como true para que no vuelva a hacer fetch
 
     fetch('/_v/validate-product/' + productId)
       .then((resp: any) => resp.json())
       .then((data: any) => {
-        console.log('data', data)
-        // if (data?.targetProduct?.DescriptionShort == '') {
-        //   setContent('')
-        // }
         setContent(data?.targetProduct?.DescriptionShort)
       })
-  }, [product])
+  }, [productId])
+
+  useEffect(() => {
+    if (!product) return
+
+    const productId = product?.productId
+    // hasFetched.current = true // Marcar como true para que no vuelva a hacer fetch
+
+    fetch('/_v/validate-product/' + productId)
+      .then((resp: any) => resp.json())
+      .then((data: any) => {
+        setContent(data?.targetProduct?.DescriptionShort)
+      })
+  }, [])
 
   if (content == null) {
     return (
