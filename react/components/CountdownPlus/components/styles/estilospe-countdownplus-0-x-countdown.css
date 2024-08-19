@@ -205,7 +205,9 @@
 .countdownComponentSolo{
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  /* margin: 1rem; */
+  margin: 1rem auto;
+  max-width: 1200px;
 }
 
 .countdownRegular {
