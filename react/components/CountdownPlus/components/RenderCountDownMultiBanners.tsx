@@ -36,6 +36,7 @@ const CSS_HANDLES = [
   'fullBanner',
   'fullBannerT',
   'fullBannerM',
+  'countdownComponentSolo',
 ]
 
 interface Props {
@@ -99,7 +100,13 @@ Props) => {
   // console.log('linkButtonEdit->', linkButtonEdit)
 
   return (
-    <div className={`${handles.countdownComponentMulti}`}>
+    <div
+      className={
+        imageBannerSet?.length > 1
+          ? `${handles.countdownComponentMulti}`
+          : `${handles.countdownComponentSolo}`
+      }
+    >
       {imageBannerSet?.map((item: ImageBanner) => {
         return (
           <a href={item.linkButtonEdit} className="no-underline">
@@ -200,9 +207,6 @@ Props) => {
                     ''
                   )}
                 </>
-                {/* <div className={`${handles.countdownButton}`}>
-              <a className={`${handles.countdownButtonCta}`} href={`${linkButtonEdit}`}>{textCtaButtonEdit}</a>
-            </div> */}
               </div>
               <div className={`${handles.containerCountDownWithBannerPicture}`}>
                 <div className={`${handles.countdownBannerDesktop}`}>
