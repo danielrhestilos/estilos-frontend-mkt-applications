@@ -3,7 +3,7 @@ import { useProduct } from 'vtex.product-context'
 import styles from './styles.css'
 import { isProductAvailable } from './../../utils/generalUtils'
 import useRenderedState from '../../hooks/promotionRenderedHook'
-import { canUseDOM, useRuntime } from 'vtex.render-runtime'
+import { useRuntime } from 'vtex.render-runtime'
 import usePromotionData from '../../hooks/promotionCardHook'
 
 function CardShelfCTA(props: any) {
@@ -19,15 +19,15 @@ function CardShelfCTA(props: any) {
   const valueRefId = reference?.Value ?? 'no-sku'
   const rendered = useRenderedState()
 
-  const dataLocalStorage = canUseDOM
-    ? window.sessionStorage.getItem('PromotionsEstilosCard')
-    : null
+  // const dataLocalStorage = canUseDOM
+  //   ? window.sessionStorage.getItem('PromotionsEstilosCard')
+  //   : null
 
   const haveCollections: any = product.productClusters.find((item: any) =>
     props.collections.includes(item.id)
   )
 
-  const { price } = usePromotionData(selectedItem, dataLocalStorage)
+  const { value } = usePromotionData(selectedItem)
   // console.log('selectedItem ', selectedItem)
   // console.log('product ', product)
   // console.log('price ', price)
@@ -64,7 +64,7 @@ function CardShelfCTA(props: any) {
   }
   return (
     !loadingItem &&
-    (price != 0 ||
+    (value != 0 ||
       haveCollections ||
       product?.productName.toLowerCase().startsWith('combo tarjeta')) && (
       <a

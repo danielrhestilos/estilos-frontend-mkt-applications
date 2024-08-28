@@ -1,13 +1,12 @@
-import React from "react";
+import React from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 import { FormattedCurrency } from 'vtex.format-currency'
 import './styles/styles.css'
 
-
 const CSS_HANDLES = [
   'promotionEstilos_containerIcon',
   'promotionEstilos_titleName',
-  'promotionEstilos_titleProduct'
+  'promotionEstilos_titleProduct',
 ]
 
 const CurrencyValue = ({ value }: any) => {
@@ -28,11 +27,11 @@ const IconContainer = () => {
   )
 }
 
-const RenderPromotionInShelf = ({ priceProduct }: any) => {
+const RenderPromotionInShelf = ({ value }: any) => {
   return (
     <div className="w-100 flex">
       <div className="w-100 flex justify-start items-center f5">
-        <CurrencyValue value={priceProduct} />
+        <CurrencyValue value={value} />
       </div>
       <div className="w-100 flex justify-end">
         <IconContainer />

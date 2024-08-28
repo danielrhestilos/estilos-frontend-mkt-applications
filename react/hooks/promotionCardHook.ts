@@ -1,19 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
+export default function usePromotionData(selectedItem: any) {
+  const { itemId } = selectedItem
+  const [promotionData, setPromotionData] = useState({
+    value: 0,
+    installments: 0,
+  })
 
-export default function usePromotionData(selectedItem: any, dataLocalStorage: string | null) {
-
-    const [promotionData, setPromotionData] = useState({ price: 0, installments: 0 });
-
-    useEffect(() => {
-        if (dataLocalStorage !== null) {
-            const availablePromotions = JSON.parse(dataLocalStorage);
-            // console.log('el item id',selectedItem.itemId);
-            
-            const { value: price, installments } = availablePromotions[selectedItem?.itemId] || {};
-            setPromotionData({ price: price || 0, installments: installments || 0 });
+  useEffect(() => {
+    setPromotionData({ value: 0, installments: 0 })
+    fetch(
+      `https://vtexest.estilos.com.pe/integrations/promotions/estilos-dsct/${selectedItem?.itemId}`
+    )
+      .then((resp) => {
+        if (!resp.ok) {
+          throw new Error('Network response was not ok')
         }
-    }, [dataLocalStorage, selectedItem]);
-
-    return promotionData;
-};
+        return resp.json() as Promise<any>
+      })
+      .then((data: any) => {
+        setPromotionData({
+          value: data?.value || 0,
+          installments: data?.installments || 0,
+        })
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error)
+      })
+  }, [itemId])
+  return promotionData
+}

@@ -6,17 +6,17 @@ import { isProductAvailable } from './../../utils/generalUtils'
 
 import usePromotionData from '../../hooks/promotionCardHook'
 import useRenderedState from '../../hooks/promotionRenderedHook'
-import { canUseDOM } from 'vtex.render-runtime'
+// import { canUseDOM } from 'vtex.render-runtime'
 
 const CardCTA = () => {
   const ctxProduct = useProduct()
   const { selectedItem } = ctxProduct
   const isAvailable = selectedItem ? isProductAvailable(selectedItem) : false
   const rendered = useRenderedState()
-  const dataLocalStorage = canUseDOM
-    ? window.sessionStorage.getItem('PromotionsEstilosCard')
-    : null
-  const { price } = usePromotionData(selectedItem, dataLocalStorage)
+  // const dataLocalStorage = canUseDOM
+  //   ? window.sessionStorage.getItem('PromotionsEstilosCard')
+  //   : null
+  const { value } = usePromotionData(selectedItem)
 
   if (!isAvailable) {
     return null
@@ -35,7 +35,7 @@ const CardCTA = () => {
     return null
   }
 
-  const ahorro = itemPrice - price
+  const ahorro = itemPrice - value
 
   return rendered ? (
     <a
@@ -49,7 +49,7 @@ const CardCTA = () => {
         style={{ height: '27px' }}
       />
       <div className={styles.ctaContainer}>
-        {price != 0 ? (
+        {value != 0 ? (
           <p className={styles.cta}>
             Ahorra <strong>S/ {ahorro.toFixed(2)}</strong> con tarjeta Estilos
           </p>

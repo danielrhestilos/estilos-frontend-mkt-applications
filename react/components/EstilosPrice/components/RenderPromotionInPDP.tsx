@@ -25,7 +25,7 @@ const PromotionMessage = ({ installments }: any) => {
   )
 }
 
-const PromotionDetails = ({ priceProduct, installments }: any) => {
+const PromotionDetails = ({ value, installments }: any) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
     <div className="flex w-100 justify-between">
@@ -40,19 +40,17 @@ const PromotionDetails = ({ priceProduct, installments }: any) => {
       </div>
       <div className="w-40 flex justify-end items-center f4">
         <span className={`${handles.promotionEstilos_titleProduct}`}>
-          <FormattedCurrency value={priceProduct} />
+          <FormattedCurrency value={value} />
         </span>
       </div>
     </div>
   )
 }
 
-const RenderPromotionInPDP = ({ priceProduct, installments }: any) => {
-  console.log('priceProduct ', priceProduct)
+const RenderPromotionInPDP = ({ value, installments }: any) => {
+  console.log('value ', value)
 
-  return (
-    <PromotionDetails priceProduct={priceProduct} installments={installments} />
-  )
+  return <PromotionDetails value={value} installments={installments} />
 }
 
 export default RenderPromotionInPDP

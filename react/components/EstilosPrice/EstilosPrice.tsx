@@ -5,29 +5,29 @@ import RenderPromotionInShelf from './components/RenderPromotionInShelf'
 import RenderPromotionInPDP from './components/RenderPromotionInPDP'
 import usePromotionData from '../../hooks/promotionCardHook'
 import useRenderedState from '../../hooks/promotionRenderedHook'
-import { canUseDOM } from 'vtex.render-runtime'
+// import { canUseDOM } from 'vtex.render-runtime'
 
 const EstilosPrice = ({ view }: any) => {
   const { selectedItem } = useProduct()
   const isAvailable = selectedItem ? isProductAvailable(selectedItem) : false
   const rendered = useRenderedState()
-  const dataLocalStorage = canUseDOM
-    ? window.sessionStorage.getItem('PromotionsEstilosCard')
-    : null
-  const { price, installments } = usePromotionData(
-    selectedItem,
-    dataLocalStorage
-  )
+  // const dataLocalStorage = canUseDOM
+  //   ? window.sessionStorage.getItem('PromotionsEstilosCard')
+  //   : null
+  // const { value, installments } = usePromotionData(selectedItem)
+  const promotionData = usePromotionData(selectedItem)
+  const { value, installments } = promotionData
 
-  if (!isAvailable || price === 0) {
+  if (!isAvailable || value === 0) {
     return null
   }
 
   const PromotionComponent =
     view === 'pdp' ? RenderPromotionInPDP : RenderPromotionInShelf
 
+  // return <div></div>
   return rendered ? (
-    <PromotionComponent priceProduct={price} installments={installments} />
+    <PromotionComponent value={value} installments={installments} />
   ) : null
 }
 
