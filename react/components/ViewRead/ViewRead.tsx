@@ -4,7 +4,6 @@ import useLocalStorage from '../../hooks/localStorageHook'
 
 function ViewRead() {
   const { product } = useProduct()
-  // console.log('productContext -> ', product)
   const [productsV, setProductsV] = useLocalStorage('productsV', [])
 
   useEffect(() => {
@@ -14,7 +13,14 @@ function ViewRead() {
     )
 
     if (!productExists) {
-      setProductsV([product, ...productsV])
+      const newProducts = [product, ...productsV]
+
+      // Limitar a un máximo de 20 elementos
+      if (newProducts.length > 20) {
+        newProducts.pop() // Eliminar el elemento más antiguo
+      }
+
+      setProductsV(newProducts)
     }
   }, [product, productsV, setProductsV])
 

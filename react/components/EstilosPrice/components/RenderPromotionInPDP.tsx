@@ -48,6 +48,8 @@ const PromotionDetails = ({ priceProduct, installments }: any) => {
 }
 
 const RenderPromotionInPDP = ({ priceProduct, installments }: any) => {
+  console.log('priceProduct ', priceProduct)
+
   return (
     <PromotionDetails priceProduct={priceProduct} installments={installments} />
   )

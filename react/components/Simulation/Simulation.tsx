@@ -10,24 +10,23 @@ interface Data {
   }
 }
 
-const ZipcodeSelector: React.FC = () => {
+const Simulation: StorefrontFunctionComponent = (props: any) => {
   const [data, setData] = useState<Data>({})
+  const [loading, setLoading] = useState<boolean>(false)
   const [selectedDepartamento, setSelectedDepartamento] = useState<string>('')
   const [selectedProvincia, setSelectedProvincia] = useState<string>('')
   const [selectedDistrito, setSelectedDistrito] = useState<string>('')
   const [zipcode, setZipcode] = useState<string>('')
-  const [pickUpPoints, setPickUpPoints] = useState<any[]>([])
+  const [pickUpPoints, setPickUpPoints] = useState<any>(null)
   const [deliveryData, setDeliveryData] = useState<any>(null)
 
   const productContext = useProduct()
 
-  const { product } = productContext
-  // console.log('product ', product)
-  // const idSku = product.items[0].referenceId[0].Value
-  const idSku = product.items[0].itemId
-  // const idSeller = product.items[0].sellers[0].sellerId
-  // console.log('idSku ', idSku)
+  // const { product } = productContext
 
+  // const idSku = product.items[0].itemId
+
+  const mini = 5000
   useEffect(() => {
     setData({
       Lima: {
@@ -2321,7 +2320,8 @@ const ZipcodeSelector: React.FC = () => {
   useEffect(() => {
     if (zipcode != '') {
       try {
-        const response: any = fetch('/api/checkout/pub/orderForms/simulation', {
+        setLoading(true)
+        fetch('/api/checkout/pub/orderForms/simulation', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -2330,7 +2330,7 @@ const ZipcodeSelector: React.FC = () => {
           body: JSON.stringify({
             items: [
               {
-                id: `${idSku.toString()}`,
+                id: `${productContext?.selectedItem?.itemId.toString()}`,
                 quantity: 1,
                 seller: 1,
               },
@@ -2341,21 +2341,18 @@ const ZipcodeSelector: React.FC = () => {
         })
           .then((response) => response.json())
           .then((data) => {
-            // console.log('data: ', data)
-
+            setLoading(false)
             setDeliveryData(
               data.logisticsInfo[0].slas
                 .filter((item: any) => item.deliveryChannel === 'delivery')
                 .reduce(
                   (prev: any, curr: any) =>
                     prev.price < curr.price ? prev : curr,
-                  { price: Infinity }
+                  { price: mini }
                 )
             )
-
             setPickUpPoints(data.pickupPoints)
           })
-        console.log('response: ', response)
       } catch (error) {
         console.error('error sucedio: ', error.toString())
       }
@@ -2418,90 +2415,139 @@ const ZipcodeSelector: React.FC = () => {
     : []
 
   return (
-    <div className={styles.containerSim}>
-      <div className={styles.blockSim}>
-        <p className={styles.labelSim}>
-          <label>Departamento</label>
-        </p>
-        <span className={styles.spanSim}>▼</span>
-        <select
-          value={selectedDepartamento}
-          className={styles.selectSim}
-          onChange={handleDepartamentoChange}
-        >
-          <option value="">Seleccione un departamento</option>
-          {departamentos.map((departamento) => (
-            <option key={departamento} value={departamento}>
-              {departamento}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className={styles.blockSim}>
-        <p className={styles.labelSim}>
-          <label>Provincia</label>
-        </p>
-        <span className={styles.spanSim}>▼</span>
-        <select
-          value={selectedProvincia}
-          onChange={handleProvinciaChange}
-          disabled={!selectedDepartamento}
-          className={styles.selectSim}
-        >
-          <option value="">Seleccione una provincia</option>
-          {provincias.map((provincia) => (
-            <option key={provincia} value={provincia}>
-              {provincia}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className={styles.blockSim}>
-        <p className={styles.labelSim}>
-          <label>Distrito</label>
-        </p>
-        <span className={styles.spanSim}>▼</span>
-        <select
-          className={styles.selectSim}
-          value={selectedDistrito}
-          onChange={handleDistritoChange}
-          disabled={!selectedProvincia}
-        >
-          <option value="">Seleccione un distrito</option>
-          {distritos.map((distrito) => (
-            <option key={distrito} value={distrito}>
-              {distrito}
-            </option>
-          ))}
-        </select>
-      </div>
-      {deliveryData ? (
-        <p className={styles.deliverySim}>
-          Delivery desde sólo: {formatCurrency(deliveryData?.price)}
-        </p>
-      ) : (
-        <p className={styles.noneSim}>
-          No hay opciones de delivery para este distrito
-        </p>
-      )}
-      {pickUpPoints.length > 0 ? (
-        <div>
-          <strong>Recojo en tienda</strong>
-          <ul>
-            {pickUpPoints.map((pickUpPoint: any) => (
-              <li>{pickUpPoint.friendlyName}</li>
+    <div className={styles.containerSimulation}>
+      <div className={styles.containerSim}>
+        <div className={styles.blockSim}>
+          <p className={styles.labelSim}>
+            <label>Departamento</label>
+          </p>
+          <span className={styles.spanSim}>▼</span>
+          <select
+            value={selectedDepartamento}
+            className={styles.selectSim}
+            onChange={handleDepartamentoChange}
+          >
+            <option value="">Seleccione un departamento</option>
+            {departamentos.map((departamento) => (
+              <option key={departamento} value={departamento}>
+                {departamento}
+              </option>
             ))}
-          </ul>
+          </select>
         </div>
-      ) : (
-        <p className={styles.noneSim}>
-          No hay opciones de recojo para este distrito
-        </p>
+        <div className={styles.blockSim}>
+          <p className={styles.labelSim}>
+            <label>Provincia</label>
+          </p>
+          <span className={styles.spanSim}>▼</span>
+          <select
+            value={selectedProvincia}
+            onChange={handleProvinciaChange}
+            disabled={!selectedDepartamento}
+            className={styles.selectSim}
+          >
+            <option value="">Seleccione una provincia</option>
+            {provincias.map((provincia) => (
+              <option key={provincia} value={provincia}>
+                {provincia}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={styles.blockSim}>
+          <p className={styles.labelSim}>
+            <label>Distrito</label>
+          </p>
+          <span className={styles.spanSim}>▼</span>
+          <select
+            className={styles.selectSim}
+            value={selectedDistrito}
+            onChange={handleDistritoChange}
+            disabled={!selectedProvincia}
+          >
+            <option value="">Seleccione un distrito</option>
+            {distritos.map((distrito) => (
+              <option key={distrito} value={distrito}>
+                {distrito}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      {!loading && (
+        <div className={styles.containerResults}>
+          {props.isPickup && (
+            <>
+              {pickUpPoints && pickUpPoints.length > 0 ? (
+                <div>
+                  {pickUpPoints.map((pickUpPoint: any) => (
+                    <div className={styles.pickUpPointBlock}>
+                      <p>{pickUpPoint.friendlyName}</p>
+                      <p>
+                        {pickUpPoint.address.street} #
+                        {pickUpPoint.address.number}, {pickUpPoint.address.city}
+                        ,{pickUpPoint.address.neighborhood},{' '}
+                        {pickUpPoint.address.state}{' '}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  {selectedDistrito && pickUpPoints.length == 0 && (
+                    <p className={styles.noneSim}>
+                      ¡Lo sentimos! <br />
+                      No contamos con una tienda disponible en esta zona
+                    </p>
+                  )}
+                </>
+              )}
+            </>
+          )}
+          {!props.isPickup && (
+            <>
+              {deliveryData && deliveryData.price != mini ? (
+                <>
+                  <p style={{ fontWeight: '800' }}>Envío regular</p>
+                  <p className={styles.deliverySim}>
+                    Delivery desde sólo: {formatCurrency(deliveryData?.price)}
+                  </p>
+                </>
+              ) : (
+                <>
+                  {deliveryData && (
+                    <p className={styles.noneSim}>
+                      ¡Lo sentimos! <br />
+                      El destino seleccionado está fuera de nuestra zona de
+                      reparto por el momento
+                    </p>
+                  )}
+                </>
+              )}
+            </>
+          )}
+        </div>
       )}
     </div>
   )
 }
 
-export default ZipcodeSelector
+Simulation.defaultProps = {
+  isPickup: true,
+}
+
+Simulation.schema = {
+  title: 'Simulation',
+  description: 'Simulation',
+  type: 'object',
+  properties: {
+    isPickup: {
+      title: 'Pickup',
+      description: 'Pickup',
+      type: 'boolean',
+      default: true,
+    },
+  },
+}
+
+export default Simulation

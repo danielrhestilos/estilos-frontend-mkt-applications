@@ -8,6 +8,8 @@ export default function usePromotionData(selectedItem: any, dataLocalStorage: st
     useEffect(() => {
         if (dataLocalStorage !== null) {
             const availablePromotions = JSON.parse(dataLocalStorage);
+            // console.log('el item id',selectedItem.itemId);
+            
             const { value: price, installments } = availablePromotions[selectedItem?.itemId] || {};
             setPromotionData({ price: price || 0, installments: installments || 0 });
         }
