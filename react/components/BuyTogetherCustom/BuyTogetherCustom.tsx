@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import { useProduct } from 'vtex.product-context'
-import Product from "./components/Product";
+import Product from './components/Product'
 
 const BuyTogetherCustom = () => {
   const [buyTogether, setBuyTogether] = useState([])
 
   const producto = useProduct()
-  const { product, selectedItem } = producto || {};
-  const { productId } = product || {};
-  const itemId = selectedItem?.itemId || null;
-  const images = selectedItem?.images;
+  const { product, selectedItem } = producto || {}
+  const { productId } = product || {}
+  const itemId = selectedItem?.itemId || null
+  const images = selectedItem?.images
 
   useEffect(() => {
     const getDataProduct = () => {
@@ -19,9 +19,8 @@ const BuyTogetherCustom = () => {
           const { items } = res[0]
           const { sellers } = items[0]
           const {
-            commertialOffer: { BuyTogether }
+            commertialOffer: { BuyTogether },
           } = sellers[0]
-          // console.log("another",sellerId )
           setBuyTogether(BuyTogether)
         })
     }
@@ -34,7 +33,6 @@ const BuyTogetherCustom = () => {
   const renderedProducts = () => {
     // const { commertialOffer } = sellers[0]
 
-
     return buyTogether.map((product: any, i: any) => (
       <>
         <Product
@@ -43,7 +41,7 @@ const BuyTogetherCustom = () => {
           // sellerId={sellers[0].sellerId}
           currentProductId={itemId}
           currentProductImage={images[0].imageUrl}
-        // cv={CacheVersionUsedToCallCheckout}
+          // cv={CacheVersionUsedToCallCheckout}
         />
       </>
     ))
@@ -51,7 +49,9 @@ const BuyTogetherCustom = () => {
 
   return buyTogether.length > 0 ? (
     <div style={{ marginTop: '1.5em', borderTop: '1px solid #C4C4C4' }}>
-      <div style={{ marginTop: '1.5em', marginBottom: '1.5em' }} className="f4">Llévalos juntos</div>
+      <div style={{ marginTop: '1.5em', marginBottom: '1.5em' }} className="f4">
+        Llévalos juntos
+      </div>
       {buyTogether && renderedProducts()}
     </div>
   ) : (

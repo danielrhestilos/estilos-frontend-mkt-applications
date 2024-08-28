@@ -22,8 +22,6 @@ function Accesories() {
   useEffect(() => {
     if (!productId) return
 
-    // console.log('se viene le fetch')
-
     fetch(
       `/api/catalog_system/pub/products/crossselling/accessories/${productId}`
     )
@@ -95,7 +93,6 @@ function Accesories() {
 
   const select = (selectedId: any) => {
     const product = searchInProductCJ(selectedId)
-    // console.log('precio: ',product.price)
     if (ids.includes(selectedId)) {
       const newIds = ids.filter((id: any) => id !== selectedId)
       setIds(newIds)

@@ -28,9 +28,9 @@ function CardShelfCTA(props: any) {
   )
 
   const { price } = usePromotionData(selectedItem, dataLocalStorage)
-  console.log('selectedItem ', selectedItem)
-  console.log('product ', product)
-  console.log('price ', price)
+  // console.log('selectedItem ', selectedItem)
+  // console.log('product ', product)
+  // console.log('price ', price)
 
   const seller = selectedItem?.sellers ? selectedItem.sellers[0] : null
   const commertialOffer = seller?.commertialOffer

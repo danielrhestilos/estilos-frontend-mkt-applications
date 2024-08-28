@@ -11,7 +11,6 @@ function BubblesPLP({ container }: any) {
       to: link,
     })
   }
-  // console.log('route.pageContext ', route.pageContext);
 
   return (
     <SliderLayout
