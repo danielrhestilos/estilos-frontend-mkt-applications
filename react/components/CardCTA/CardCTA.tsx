@@ -5,14 +5,14 @@ import { useProduct } from 'vtex.product-context'
 import { isProductAvailable } from './../../utils/generalUtils'
 
 import usePromotionData from '../../hooks/promotionCardHook'
-import useRenderedState from '../../hooks/promotionRenderedHook'
+// import useRenderedState from '../../hooks/promotionRenderedHook'
 // import { canUseDOM } from 'vtex.render-runtime'
 
 const CardCTA = () => {
   const ctxProduct = useProduct()
   const { selectedItem } = ctxProduct
   const isAvailable = selectedItem ? isProductAvailable(selectedItem) : false
-  const rendered = useRenderedState()
+  // const rendered = useRenderedState()
   // const dataLocalStorage = canUseDOM
   //   ? window.sessionStorage.getItem('PromotionsEstilosCard')
   //   : null
@@ -37,7 +37,7 @@ const CardCTA = () => {
 
   const ahorro = itemPrice - value
 
-  return rendered ? (
+  return true ? (
     <a
       className={styles.cardContainer}
       href="https://www.tarjetaestilos.com.pe/solicitartarjeta"

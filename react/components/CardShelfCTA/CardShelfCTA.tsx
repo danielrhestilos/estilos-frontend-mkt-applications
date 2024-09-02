@@ -2,7 +2,7 @@ import React from 'react'
 import { useProduct } from 'vtex.product-context'
 import styles from './styles.css'
 import { isProductAvailable } from './../../utils/generalUtils'
-import useRenderedState from '../../hooks/promotionRenderedHook'
+// import useRenderedState from '../../hooks/promotionRenderedHook'
 import { useRuntime } from 'vtex.render-runtime'
 import usePromotionData from '../../hooks/promotionCardHook'
 
@@ -17,7 +17,7 @@ function CardShelfCTA(props: any) {
   const referenceId = sku?.referenceId ?? []
   const reference = referenceId?.[0] ?? {}
   const valueRefId = reference?.Value ?? 'no-sku'
-  const rendered = useRenderedState()
+  // const rendered = useRenderedState()
 
   // const dataLocalStorage = canUseDOM
   //   ? window.sessionStorage.getItem('PromotionsEstilosCard')
@@ -46,9 +46,9 @@ function CardShelfCTA(props: any) {
   if (!isAvailable) {
     return null
   }
-  if (!rendered) {
-    return null
-  }
+  // if (!true) {
+  //   return null
+  // }
   function onNavigateClick(e: React.MouseEvent) {
     e.preventDefault()
     e.stopPropagation()
