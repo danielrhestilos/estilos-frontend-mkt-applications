@@ -1,0 +1,1748 @@
+{
+    "orderFormId": "26c2798191054f82a4bfde45d224805a",
+    "salesChannel": "1",
+    "loggedIn": false,
+    "isCheckedIn": false,
+    "storeId": null,
+    "checkedInPickupPointId": null,
+    "allowManualPrice": false,
+    "canEditData": false,
+    "userProfileId": "59dd1379-e480-4bc5-9c4d-612f8ab26b84",
+    "userType": null,
+    "ignoreProfileData": false,
+    "value": 1300,
+    "messages": [],
+    "items": [
+      {
+        "uniqueId": "A038FB348F1E4129B091C7BCAE4D442E",
+        "id": "207963",
+        "productId": "263164",
+        "productRefId": "263164",
+        "refId": "002263590",
+        "ean": null,
+        "name": "PETS BY LI BOLSA DE DESECHO COLORES VARIADOSQJ162 237727 . ..",
+        "skuName": "PETS BY LI BOLSA DE DESECHO COLORES VARIADOSQJ162 237727 . ..",
+        "modalType": null,
+        "parentItemIndex": null,
+        "parentAssemblyBinding": null,
+        "assemblies": [],
+        "priceValidUntil": "2025-09-06T22:05:29Z",
+        "tax": 0,
+        "price": 100,
+        "listPrice": 100,
+        "manualPrice": 100,
+        "manualPriceAppliedBy": "50c811df-8a2c-413a-874d-70fde21b88ef",
+        "sellingPrice": 100,
+        "rewardValue": 0,
+        "isGift": false,
+        "additionalInfo": {
+          "dimension": null,
+          "brandName": "PETS BY LI",
+          "brandId": "9074",
+          "offeringInfo": null,
+          "offeringType": null,
+          "offeringTypeId": null
+        },
+        "preSaleDate": null,
+        "productCategoryIds": "/1000002/2000037/3001030/4002364/5005743/",
+        "productCategories": {
+          "1000002": "DUROS",
+          "2000037": "MASCOTAS",
+          "3001030": "CANES",
+          "4002364": "HIGIENE Y CUIDADO *CANES",
+          "5005743": "BOLSAS SANITARIAS"
+        },
+        "quantity": 1,
+        "seller": "1",
+        "sellerChain": [
+          "1"
+        ],
+        "imageUrl": "https://estilospe.vteximg.com.br/arquivos/ids/2897468-90-90/PETS-BY-LI-BOLSA-DE-DESECHO-COLORES-VARIADOSQJ162-237727-.jpg?v=638353131615270000",
+        "detailUrl": "/pets-by-li-bolsa-de-desecho-colores-vari263164/p",
+        "components": [],
+        "bundleItems": [],
+        "attachments": [],
+        "attachmentOfferings": [],
+        "offerings": [],
+        "priceTags": [],
+        "availability": "available",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "manufacturerCode": null,
+        "priceDefinition": {
+          "calculatedSellingPrice": 100,
+          "total": 100,
+          "sellingPrices": [
+            {
+              "value": 100,
+              "quantity": 1
+            }
+          ],
+          "reason": "priceTable"
+        },
+        "taxCode": ""
+      }
+    ],
+    "selectableGifts": [],
+    "totalizers": [
+      {
+        "id": "Items",
+        "name": "Total de los items",
+        "value": 100
+      },
+      {
+        "id": "Shipping",
+        "name": "Costo total del envío",
+        "value": 1200
+      }
+    ],
+    "shippingData": {
+      "address": {
+        "addressType": "residential",
+        "receiverName": "D*** r***",
+        "addressId": "5143228408278",
+        "isDisposable": false,
+        "postalCode": "***04",
+        "city": "Cer*** ***",
+        "state": "*R*Q*I*A",
+        "country": "PER",
+        "street": "Pje*** *** ***105",
+        "number": "***",
+        "neighborhood": "Are***",
+        "complement": "*** ***",
+        "reference": "***",
+        "geoCoordinates": []
+      },
+      "logisticsInfo": [
+        {
+          "itemIndex": 0,
+          "selectedSla": "DOMICILIO TDA. ESTILOS HOME",
+          "selectedDeliveryChannel": "delivery",
+          "addressId": "5143228408278",
+          "slas": [
+            {
+              "id": "DOMICILIO TDA. ESTILOS HOME",
+              "deliveryChannel": "delivery",
+              "name": "DOMICILIO TDA. ESTILOS HOME",
+              "deliveryIds": [
+                {
+                  "courierId": "136",
+                  "warehouseId": "136",
+                  "dockId": "136",
+                  "courierName": "TDA. ESTILOS HOME",
+                  "quantity": 1,
+                  "kitItemDetails": []
+                }
+              ],
+              "shippingEstimate": "2bd",
+              "shippingEstimateDate": null,
+              "lockTTL": null,
+              "availableDeliveryWindows": [],
+              "deliveryWindow": null,
+              "price": 1200,
+              "listPrice": 1200,
+              "tax": 0,
+              "pickupStoreInfo": {
+                "isPickupStore": false,
+                "friendlyName": null,
+                "address": null,
+                "additionalInfo": null,
+                "dockId": null
+              },
+              "pickupPointId": null,
+              "pickupDistance": 0,
+              "polygonName": "AREQUIPA_URBANO",
+              "transitTime": "2bd"
+            },
+            {
+              "id": "DOMICILIO PREVENTA",
+              "deliveryChannel": "delivery",
+              "name": "DOMICILIO PREVENTA",
+              "deliveryIds": [
+                {
+                  "courierId": "10007",
+                  "warehouseId": "10007",
+                  "dockId": "10007",
+                  "courierName": "PREVENTA",
+                  "quantity": 1,
+                  "kitItemDetails": []
+                }
+              ],
+              "shippingEstimate": "15bd",
+              "shippingEstimateDate": null,
+              "lockTTL": null,
+              "availableDeliveryWindows": [],
+              "deliveryWindow": null,
+              "price": 1200,
+              "listPrice": 1200,
+              "tax": 0,
+              "pickupStoreInfo": {
+                "isPickupStore": false,
+                "friendlyName": null,
+                "address": null,
+                "additionalInfo": null,
+                "dockId": null
+              },
+              "pickupPointId": null,
+              "pickupDistance": 0,
+              "polygonName": "AREQUIPA_URBANO",
+              "transitTime": "10bd"
+            },
+            {
+              "id": "RECOGE EN TIENDA TDA. ESTILOS HOME RT (136)",
+              "deliveryChannel": "pickup-in-point",
+              "name": "RECOGE EN TIENDA TDA. ESTILOS HOME RT (136)",
+              "deliveryIds": [
+                {
+                  "courierId": "136_1",
+                  "warehouseId": "136",
+                  "dockId": "136",
+                  "courierName": "TDA. ESTILOS HOME RT",
+                  "quantity": 1,
+                  "kitItemDetails": []
+                }
+              ],
+              "shippingEstimate": "1d",
+              "shippingEstimateDate": null,
+              "lockTTL": null,
+              "availableDeliveryWindows": [],
+              "deliveryWindow": null,
+              "price": 0,
+              "listPrice": 0,
+              "tax": 0,
+              "pickupStoreInfo": {
+                "isPickupStore": true,
+                "friendlyName": "TDA. ESTILOS HOME",
+                "address": {
+                  "addressType": "pickup",
+                  "receiverName": null,
+                  "addressId": "136",
+                  "isDisposable": true,
+                  "postalCode": "040126",
+                  "city": "Arequipa",
+                  "state": "Arequipa",
+                  "country": "PER",
+                  "street": "TDA Home | Av. Ejército",
+                  "number": "600",
+                  "neighborhood": "Yanahuara",
+                  "complement": null,
+                  "reference": null,
+                  "geoCoordinates": [
+                    -71.54465,
+                    -16.39049
+                  ]
+                },
+                "additionalInfo": "",
+                "dockId": "136"
+              },
+              "pickupPointId": "1_136",
+              "pickupDistance": 1.0821260213851929,
+              "polygonName": "PERU_RT",
+              "transitTime": "1d"
+            }
+          ],
+          "shipsTo": [
+            "PER"
+          ],
+          "itemId": "207963",
+          "deliveryChannels": [
+            {
+              "id": "delivery"
+            },
+            {
+              "id": "pickup-in-point"
+            }
+          ]
+        }
+      ],
+      "selectedAddresses": [
+        {
+          "addressType": "residential",
+          "receiverName": "D*** r***",
+          "addressId": "5143228408278",
+          "isDisposable": false,
+          "postalCode": "***04",
+          "city": "Cer*** ***",
+          "state": "*R*Q*I*A",
+          "country": "PER",
+          "street": "Pje*** *** ***105",
+          "number": "***",
+          "neighborhood": "Are***",
+          "complement": "*** ***",
+          "reference": "***",
+          "geoCoordinates": []
+        }
+      ],
+      "availableAddresses": [
+        {
+          "addressType": "residential",
+          "receiverName": "D*** E*** R***",
+          "addressId": "3449727835330",
+          "isDisposable": false,
+          "postalCode": "***01",
+          "city": "Are***",
+          "state": "*R*Q*I*A",
+          "country": "PER",
+          "street": "Urb*** *** *** *** ***yma",
+          "number": "***",
+          "neighborhood": "Are***",
+          "complement": "",
+          "reference": null,
+          "geoCoordinates": []
+        },
+        {
+          "addressType": "residential",
+          "receiverName": "D*** r***",
+          "addressId": "5143228408278",
+          "isDisposable": false,
+          "postalCode": "***04",
+          "city": "Cer*** ***",
+          "state": "*R*Q*I*A",
+          "country": "PER",
+          "street": "Pje*** *** ***105",
+          "number": "***",
+          "neighborhood": "Are***",
+          "complement": "*** ***",
+          "reference": "***",
+          "geoCoordinates": []
+        }
+      ],
+      "pickupPoints": [
+        {
+          "friendlyName": "TDA. ESTILOS HOME",
+          "address": {
+            "addressType": "pickup",
+            "receiverName": null,
+            "addressId": "136",
+            "isDisposable": true,
+            "postalCode": "040126",
+            "city": "Arequipa",
+            "state": "Arequipa",
+            "country": "PER",
+            "street": "TDA Home | Av. Ejército",
+            "number": "600",
+            "neighborhood": "Yanahuara",
+            "complement": null,
+            "reference": null,
+            "geoCoordinates": [
+              -71.54465,
+              -16.39049
+            ]
+          },
+          "additionalInfo": "",
+          "id": "1_136",
+          "businessHours": []
+        }
+      ],
+      "contactInformation": []
+    },
+    "clientProfileData": {
+      "email": "dramirezh@estilos.com.pe",
+      "firstName": "D***",
+      "lastName": "r***",
+      "document": "***28",
+      "documentType": "DNI",
+      "phone": "***92",
+      "corporateName": null,
+      "tradeName": null,
+      "corporateDocument": null,
+      "stateInscription": null,
+      "corporatePhone": null,
+      "isCorporate": false,
+      "profileCompleteOnLoading": true,
+      "profileErrorOnLoading": false,
+      "customerClass": null
+    },
+    "paymentData": {
+      "updateStatus": "updated",
+      "installmentOptions": [
+        {
+          "paymentSystem": "1",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 2,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 650,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 2,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 650,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 3,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 433,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 3,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 433,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 4,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 325,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 4,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 325,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 5,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 260,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 5,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 260,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 6,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 216,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 6,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 216,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 7,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 185,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 7,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 185,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 8,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 162,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 8,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 162,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 9,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 144,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 9,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 144,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 10,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 130,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 10,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 130,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 11,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 118,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 11,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 118,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 12,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 108,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 12,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 108,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "2",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 2,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 650,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 2,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 650,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 3,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 433,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 3,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 433,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 4,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 325,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 4,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 325,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 5,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 260,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 5,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 260,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 6,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 216,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 6,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 216,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 7,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 185,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 7,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 185,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 8,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 162,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 8,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 162,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 9,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 144,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 9,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 144,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 10,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 130,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 10,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 130,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 11,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 118,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 11,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 118,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 12,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 108,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 12,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 108,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "3",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 2,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 650,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 2,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 650,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 3,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 433,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 3,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 433,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 4,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 325,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 4,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 325,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 5,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 260,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 5,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 260,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 6,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 216,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 6,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 216,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 7,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 185,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 7,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 185,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 8,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 162,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 8,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 162,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 9,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 144,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 9,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 144,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 10,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 130,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 10,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 130,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 11,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 118,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 11,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 118,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 12,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 108,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 12,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 108,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "4",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 2,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 650,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 2,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 650,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 3,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 433,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 3,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 433,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 4,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 325,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 4,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 325,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 5,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 260,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 5,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 260,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 6,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 216,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 6,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 216,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 7,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 185,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 7,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 185,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 8,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 162,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 8,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 162,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 9,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 144,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 9,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 144,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 10,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 130,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 10,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 130,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 11,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 118,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 11,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 118,
+                  "total": 1300
+                }
+              ]
+            },
+            {
+              "count": 12,
+              "hasInterestRate": null,
+              "interestRate": null,
+              "value": 108,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 12,
+                  "hasInterestRate": null,
+                  "interestRate": null,
+                  "value": 108,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "10",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": false,
+              "interestRate": 0,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": false,
+                  "interestRate": 0,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "65",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": false,
+              "interestRate": 0,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": false,
+                  "interestRate": 0,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "805",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": false,
+              "interestRate": 0,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": false,
+                  "interestRate": 0,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paymentSystem": "900",
+          "bin": null,
+          "paymentName": null,
+          "paymentGroupName": null,
+          "value": 1300,
+          "installments": [
+            {
+              "count": 1,
+              "hasInterestRate": false,
+              "interestRate": 0,
+              "value": 1300,
+              "total": 1300,
+              "sellerMerchantInstallments": [
+                {
+                  "id": "ESTILOSPE",
+                  "count": 1,
+                  "hasInterestRate": false,
+                  "interestRate": 0,
+                  "value": 1300,
+                  "total": 1300
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paymentSystems": [
+        {
+          "id": 805,
+          "name": "TarjetaEstilos",
+          "groupName": "TarjetaEstilosPaymentGroup",
+          "validator": {
+            "regex": null,
+            "mask": null,
+            "cardCodeRegex": null,
+            "cardCodeMask": null,
+            "weights": null,
+            "useCvv": false,
+            "useExpirationDate": false,
+            "useCardHolderName": false,
+            "useBillingAddress": false
+          },
+          "stringId": "805",
+          "template": "TarjetaEstilosPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 1,
+          "name": "American Express",
+          "groupName": "creditCardPaymentGroup",
+          "validator": {
+            "regex": "^3[47][0-9]{13}$",
+            "mask": "9999 999999 99999",
+            "cardCodeRegex": "^[0-9]{4}$",
+            "cardCodeMask": "9999",
+            "weights": [
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1
+            ],
+            "useCvv": true,
+            "useExpirationDate": true,
+            "useCardHolderName": true,
+            "useBillingAddress": true
+          },
+          "stringId": "1",
+          "template": "creditCardPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 2,
+          "name": "Visa",
+          "groupName": "creditCardPaymentGroup",
+          "validator": {
+            "regex": "^4[0-9]{15}$",
+            "mask": "9999 9999 9999 9999",
+            "cardCodeRegex": "^[0-9]{3}$",
+            "cardCodeMask": "999",
+            "weights": [
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "useCvv": true,
+            "useExpirationDate": true,
+            "useCardHolderName": true,
+            "useBillingAddress": true
+          },
+          "stringId": "2",
+          "template": "creditCardPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 3,
+          "name": "Diners",
+          "groupName": "creditCardPaymentGroup",
+          "validator": {
+            "regex": "^3(0[0-5]|[68][0-9])[0-9]{11}$",
+            "mask": "9999 999999 9999",
+            "cardCodeRegex": "^[0-9]{3}$",
+            "cardCodeMask": "999",
+            "weights": [
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "useCvv": true,
+            "useExpirationDate": true,
+            "useCardHolderName": true,
+            "useBillingAddress": true
+          },
+          "stringId": "3",
+          "template": "creditCardPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 4,
+          "name": "Mastercard",
+          "groupName": "creditCardPaymentGroup",
+          "validator": {
+            "regex": "^((5(([1-2]|[4-5])[0-9]{8}|0((1|6)([0-9]{7}))|3(0(4((0|[2-9])[0-9]{5})|([0-3]|[5-9])[0-9]{6})|[1-9][0-9]{7})))|((508116)\\d{4,10})|((502121)\\d{4,10})|((589916)\\d{4,10})|(2[0-9]{15})|(67[0-9]{14})|(506387)\\d{4,10})",
+            "mask": "9999 9999 9999 9999",
+            "cardCodeRegex": "^[0-9]{3}$",
+            "cardCodeMask": "999",
+            "weights": [
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "useCvv": true,
+            "useExpirationDate": true,
+            "useCardHolderName": true,
+            "useBillingAddress": true
+          },
+          "stringId": "4",
+          "template": "creditCardPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 10,
+          "name": "Visa Electron",
+          "groupName": "debitCardPaymentGroup",
+          "validator": {
+            "regex": "^4[0-9]{15}$",
+            "mask": "9999 9999 9999 9999",
+            "cardCodeRegex": "^[0-9]{3}$",
+            "cardCodeMask": "999",
+            "weights": [
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "useCvv": true,
+            "useExpirationDate": true,
+            "useCardHolderName": true,
+            "useBillingAddress": true
+          },
+          "stringId": "10",
+          "template": "debitCardPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 65,
+          "name": "Mastercard Debit",
+          "groupName": "debitCardPaymentGroup",
+          "validator": {
+            "regex": "^(502275|528745|(5045|5061|5062|5063|5064|5105|5111|5112|5117|5118|5122|5160|5161|5164|5165|5166|5174|5177|5188|5201|5204|5206|5235|5236|5240|5247|5256|5261|5263|5264|5280|5284|5285|5290|5295|5301|5306|5312|5324|5336|5339|5343|5349|5359|5367|5370|5379|5380|5384|5389|5399|5439|5452|5453|5457|5463|5496|5502|5508|5510|5512|5513|5514|5515|5534|5538|5541|5544|5546|5549|5559|5575|5576|5578|5579)[0-9]{2}|558426|559471|588772|589617|528733|549180|517562|551792|553771|553777)[0-9]{0,10}$",
+            "mask": "9999 9999 9999 9999",
+            "cardCodeRegex": "^[0-9]{3}$",
+            "cardCodeMask": "999",
+            "weights": [
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "useCvv": true,
+            "useExpirationDate": true,
+            "useCardHolderName": true,
+            "useBillingAddress": true
+          },
+          "stringId": "65",
+          "template": "debitCardPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        },
+        {
+          "id": 900,
+          "name": "WH Google Pay",
+          "groupName": "WH Google PayPaymentGroup",
+          "validator": {
+            "regex": null,
+            "mask": null,
+            "cardCodeRegex": null,
+            "cardCodeMask": null,
+            "weights": null,
+            "useCvv": false,
+            "useExpirationDate": false,
+            "useCardHolderName": false,
+            "useBillingAddress": false
+          },
+          "stringId": "900",
+          "template": "WH Google PayPaymentGroup-template",
+          "requiresDocument": false,
+          "displayDocument": false,
+          "isCustom": false,
+          "description": null,
+          "requiresAuthentication": false,
+          "dueDate": "2024-09-13T21:37:46.378884Z",
+          "availablePayments": null
+        }
+      ],
+      "payments": [
+        {
+          "paymentSystem": "805",
+          "bin": null,
+          "accountId": null,
+          "tokenId": null,
+          "installments": 1,
+          "referenceValue": 1300,
+          "value": 1300,
+          "merchantSellerPayments": [
+            {
+              "id": "ESTILOSPE",
+              "installments": 1,
+              "referenceValue": 1300,
+              "value": 1300,
+              "interestRate": 0,
+              "installmentValue": 1300
+            }
+          ]
+        }
+      ],
+      "giftCards": [],
+      "giftCardMessages": [],
+      "availableAccounts": [],
+      "availableTokens": [],
+      "availableAssociations": {}
+    },
+    "marketingData": null,
+    "sellers": [
+      {
+        "id": "1",
+        "name": "ESTILOS PERU",
+        "logo": ""
+      }
+    ],
+    "clientPreferencesData": {
+      "locale": "es-PE",
+      "optinNewsLetter": true
+    },
+    "commercialConditionData": null,
+    "storePreferencesData": {
+      "countryCode": "PER",
+      "saveUserData": true,
+      "timeZone": "SA Pacific Standard Time",
+      "currencyCode": "PEN",
+      "currencyLocale": 10250,
+      "currencySymbol": "S/",
+      "currencyFormatInfo": {
+        "currencyDecimalDigits": 2,
+        "currencyDecimalSeparator": ".",
+        "currencyGroupSeparator": ",",
+        "currencyGroupSize": 3,
+        "startsWithCurrencySymbol": true
+      }
+    },
+    "giftRegistryData": null,
+    "openTextField": null,
+    "invoiceData": null,
+    "customData": {
+      "customApps": [
+        {
+          "fields": {
+            "externalPromotions": "[{\"id\":207963,\"externalPromotions\":[{\"matchedParameters\":{\"skuId\":\"207963\"},\"identifier\":\"DescuentoEstilos\",\"isPercentual\":false,\"value\":0,\"finalValue\":100}]}]",
+            "estilosPromotions": "[{\"AnhioMotorizado\":\"0\",\"AplicaBigTicket\":\"1\",\"AplicaCobroBigTicket\":\"0\",\"CCSkuAplica\":\"0\",\"Cant\":\"1\",\"CantFor\":\"1.00\",\"ChasisMotorizado\":null,\"Clase\":\"2364\",\"CodProm\":\"0\",\"CodigoDescuento\":\"0\",\"CodigoDescuentoAdicional\":\"0\",\"CodigoPorLaCompraDe\":\"0\",\"CodigoRebaja\":\"0\",\"ColorMotorizado\":null,\"ConcesionadoIng\":\"0\",\"CostoPromedio\":\"0.5510\",\"CuponesAplicados\":null,\"Descripcion\":\"PETS BY LI BOLSA DE DESECHO COLORES VARIADOSQJ162\",\"DescuentoManual\":\"false\",\"DescuentoManualAutoriza\":null,\"DescuentoManualValor\":\"0\",\"DisposicionEfectivo\":\"0\",\"Div\":\"37\",\"EsConcesionado\":\"0\",\"Estilo\":\"263164\",\"GravaImp\":\"1\",\"Linea\":\"1\",\"MarcaMotorizado\":\"PETS BY LI\",\"Mensaje\":\"Promocion Correcta\",\"ModeloMotorizado\":null,\"MotorMotorizado\":null,\"Motorizado\":\"0\",\"NoAplicaSinInteres\":\"0\",\"ObservacionDescuento\":null,\"PLSAplica\":\"false\",\"PLSId\":\"0\",\"PLSPrecioAplicaBase\":null,\"PLSPrecioOriginal\":\"1.0000\",\"PLSPrimeroId\":\"0\",\"PlsPrecio\":\"0.0000\",\"PorcDescBase\":\"0\",\"PorcDescEsp\":\"0\",\"PorcDescLin\":\"0\",\"PorcDescLinFor\":\"0.00 + 0.00\",\"PorcDescOrig\":\"0\",\"PorcentajeDescuentoGlobal\":\"0\",\"PorcentajeIva\":\"18\",\"PorlaComprade\":\"0\",\"PrecioBlanco\":\"0.8475\",\"PrecioVigente\":\"0.8475\",\"Proveedor\":\"2532\",\"SKUCombo\":null,\"Sku\":\"002263590\",\"SubTot\":\"0.85\",\"Tamanhio\":\"1\",\"TipoDescuento\":\"0\",\"UsuarioDescuentoGlobal\":null,\"ValBruto\":\"0.85\",\"ValDescGen\":\"0.00\",\"ValDescLin\":\"0.00\",\"ValImp\":\"0.15\",\"ValNeto\":\"0.85\",\"ValUni\":\"0.8475\",\"ValUniFor\":\"1.00\",\"ValorNetoFor\":\"1.00\",\"Vendedor\":\"15927\",\"gvMetodoAplicaCuponCrm\":\"0\",\"idDpto\":\"1030\",\"idMarca\":\"9074\"}]"
+          },
+          "id": "promotion-provider-estilos",
+          "major": 1
+        },
+        {
+          "fields": {
+            "terms-and-conditions": "{\"termsConditions\":true,\"dateTerms\":\"2024-09-06\"}"
+          },
+          "id": "additional-custom-data",
+          "major": 1
+        },
+        {
+          "fields": {
+            "paymentmethod": "2",
+            "installments": "6"
+          },
+          "id": "tarjetaestilos",
+          "major": 1
+        }
+      ]
+    },
+    "itemMetadata": {
+      "items": [
+        {
+          "id": "207963",
+          "seller": "1",
+          "name": "PETS BY LI BOLSA DE DESECHO COLORES VARIADOSQJ162 237727 . ..",
+          "skuName": "PETS BY LI BOLSA DE DESECHO COLORES VARIADOSQJ162 237727 . ..",
+          "productId": "263164",
+          "refId": "002263590",
+          "ean": null,
+          "imageUrl": "https://estilospe.vteximg.com.br/arquivos/ids/2897468-90-90/PETS-BY-LI-BOLSA-DE-DESECHO-COLORES-VARIADOSQJ162-237727-.jpg?v=638353131615270000",
+          "detailUrl": "/pets-by-li-bolsa-de-desecho-colores-vari263164/p",
+          "assemblyOptions": []
+        }
+      ]
+    },
+    "hooksData": null,
+    "ratesAndBenefitsData": {
+      "rateAndBenefitsIdentifiers": [],
+      "teaser": []
+    },
+    "subscriptionData": null,
+    "merchantContextData": null,
+    "purchaseAgentsData": null,
+    "itemsOrdination": null
+  }

@@ -14,15 +14,7 @@ function ResusableSlider(props: any): any {
   const { visible, toggleVisibility } = useVisibility()
   const diffSlides = isMobil ? 1 : 3
   const pages = Math.ceil(props.data.length / diffSlides)
-  console.log('pages ->', pages)
-  console.log('currentSlide ->', currentSlide)
-  console.log(
-    ' currentSlide/diffSlides * pages ->',
-    (currentSlide / diffSlides) * pages
-  )
-
   // console.log('tu data ->', props.data)
-
   const handleChangeSlide = (i: number) => {
     setCurrentSlide(i)
   }

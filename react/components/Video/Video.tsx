@@ -7,7 +7,7 @@ function Video() {
   const [shouldShow, setShouldShow] = useState(false)
 
   useEffect((): void | any => {
-    const targetDate: any = new Date('2024-07-21T23:59:59') // fecha y hora objetivo
+    const targetDate: any = new Date('2025-07-21T23:59:59') // fecha y hora objetivo
     const now: any = new Date()
     const timeUntilTarget = targetDate - now
     if (timeUntilTarget > 0) {
@@ -27,21 +27,20 @@ function Video() {
         style={{ textAlign: 'center' }}
         className={styles.videoEstilos}
         onClick={() => {
-          window.open('/severin---estilos?map=productclusternames', '__blank')
+          window.open('https://online.fliphtml5.com/iqrni/cmaj/', '__blank')
         }}
       >
-        <h5 style={{ fontSize: '1.73rem', textAlign: 'center' }}>
+        {/* <h5 style={{ fontSize: '1.73rem', textAlign: 'center' }}>
           Severin: marca exclusiva en Estilos
-        </h5>
+        </h5> */}
         {!isMobil ? (
           <video
-            width={'1018px'}
             style={{ margin: 'auto', maxWidth: '100%' }}
             autoPlay
             muted
             loop
             // src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
-            src="https://e-commerce.estilos.com.pe/videosmkp/severin_horizontal.mp4"
+            src="https://e-commerce.estilos.com.pe/videosmkp/video_avance.mp4"
           />
         ) : (
           <video

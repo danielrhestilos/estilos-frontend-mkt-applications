@@ -175,6 +175,11 @@
   "estilos-price-bar": {
     "component": "PriceBar"
   },
+  "estilos-reveal": {
+    "component": "Reveal",
+    "composition": "children",
+    "allowed": "*"
+  },
   "estilos-simulation": {
     "component": "Simulation"
   },
@@ -195,7 +200,7 @@
   },
   "estilos-timer-parent": {
     "component": "TimerParent",
-        "composition": "children",
+    "composition": "children",
     "allowed": "*"
   },
   "estilos-custom-container-filter": {
