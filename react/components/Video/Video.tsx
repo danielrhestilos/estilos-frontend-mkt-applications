@@ -43,7 +43,14 @@ function Video() {
             src="https://e-commerce.estilos.com.pe/videosmkp/video_avance.mp4"
           />
         ) : (
-          <></>
+          <video
+            style={{ margin: 'auto', maxWidth: '100%' }}
+            autoPlay
+            muted
+            loop
+            // src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
+            src="https://e-commerce.estilos.com.pe/videosmkp/avance-pc-phone.mp4"
+          />
         )}
       </section>
     )
