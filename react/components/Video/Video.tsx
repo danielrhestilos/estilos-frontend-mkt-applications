@@ -24,7 +24,9 @@ function Video() {
     !shouldShow && (
       <section
         id={`${isMobil ? 'estilos-video-movil' : 'video-estilos-desktop'}`}
-        style={{ textAlign: 'center' }}
+        style={{
+          textAlign: 'center',
+        }}
         className={styles.videoEstilos}
         onClick={() => {
           window.open('https://online.fliphtml5.com/iqrni/cmaj/', '__blank')
@@ -35,22 +37,43 @@ function Video() {
         </h5> */}
         {!isMobil ? (
           <video
-            style={{ margin: 'auto', maxWidth: '100%' }}
+            style={{
+              margin: 'auto',
+              maxWidth: '100%',
+              display: 'block',
+              width: '100vw',
+            }}
+            playsInline
             autoPlay
             muted
             loop
+            preload="metadata"
             // src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
             src="https://e-commerce.estilos.com.pe/videosmkp/video_avance.mp4"
           />
         ) : (
           <video
-            style={{ margin: 'auto', maxWidth: '100%' }}
+            style={{
+              objectFit: 'cover',
+              width: '100vw',
+              height: '100vh',
+              // position: 'fixed',
+              // top: 0,
+              // left: 0,
+
+              // margin: 'auto',
+              // width: '100%',
+              // display: 'block',
+            }}
+            poster="/arquivos/pv-opt-mini-phone.jpg"
             autoPlay
             muted
+            preload="metadata"
             loop
             // src="https://e-commerce.estilos.com.pe/videosmkp/horizonal-protuner-promo-mp4.mp4"
-            src="https://e-commerce.estilos.com.pe/videosmkp/avance-pc-phone.mp4"
-          />
+          >
+            <source src="https://e-commerce.estilos.com.pe/videosmkp/avance-pc-phone.mp4"></source>
+          </video>
         )}
       </section>
     )
