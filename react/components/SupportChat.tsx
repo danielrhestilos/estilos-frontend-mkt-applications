@@ -21,6 +21,7 @@ const SupportChat = () => {
             backgroundColor: '#E91111',
             display: 'block',
             borderRadius: '50%',
+            border: 'none',
           }}
         >
           <svg width="32px" height="26px" viewBox="0 0 32 26" version="1.1">
