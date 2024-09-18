@@ -180,6 +180,11 @@
     "composition": "children",
     "allowed": "*"
   },
+  "estilos-reveal-on-match": {
+    "component": "RevealOnMatch",
+    "composition": "children",
+    "allowed": "*"
+  },
   "estilos-simulation": {
     "component": "Simulation"
   },
