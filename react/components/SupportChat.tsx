@@ -9,6 +9,8 @@ const SupportChat = () => {
         style={{ display: 'block', cursor: 'pointer' }}
       >
         <button
+          aria-label="Chat"
+          title="Chat"
           style={{
             right: '20px',
             width: '58px',
