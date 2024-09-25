@@ -34,7 +34,6 @@ const CarouselProducts: React.FC<CarouselProductsProps> = ({
   const [data] = useLocalStorage('last_visited_products_', [])
   useEffect(() => {
     if (id === 'last-visited-products') {
-      // console.log("last-visited-products:", data);
       setListItems(data)
     } else if (id === 'best-sellers') {
       fetch(`${urlBestSellers}&_from=0&_to=${maxItems - 1}`)

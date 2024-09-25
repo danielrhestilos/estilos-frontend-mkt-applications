@@ -84,6 +84,7 @@ function ResusableSlider(props: any): any {
             >
               {props.data.map((product: any) => (
                 <Slide key={product.productId} id={product.productId}>
+                  {console.log('product final ->', product)}
                   <div
                     className={styles.cardPurchased}
                     onClick={() => navigate({ to: `/${product.linkText}/p` })}
@@ -99,7 +100,7 @@ function ResusableSlider(props: any): any {
                       <p className={styles.namePurchased}>
                         {product.productName}
                       </p>
-                      {product.listPrice != 0 && (
+                      {product.listPriceFormated != 'S/ 0.00' && (
                         <p className={styles.listPricePurchased}>
                           Antes: <span>{product.listPriceFormated}</span>
                         </p>
