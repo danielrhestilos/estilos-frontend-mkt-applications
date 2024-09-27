@@ -209,6 +209,9 @@
   "size-guide": {
     "component": "SizeGuide"
   },
+  "nothing": {
+    "component": "Nothing"
+  },
   "redirect-adidas": {
     "component": "RedirectAdidas"
   },
