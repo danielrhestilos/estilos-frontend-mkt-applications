@@ -194,11 +194,23 @@
   "estilos-visited-products": {
     "component": "VisitedProducts"
   },
+  "estilos-redirect-adidas": {
+    "component": "RedirectAdidas"
+  },
   "estilos-filters": {
     "component": "Filters"
   },
   "estilos-buy-button": {
     "component": "BuyButton"
+  },
+  "category-tree-read": {
+    "component": "CategoryTree"
+  },
+  "size-guide": {
+    "component": "SizeGuide"
+  },
+  "redirect-adidas": {
+    "component": "RedirectAdidas"
   },
   "estilos-header-exclusive-collection": {
     "component": "ExclusiveBanner"
