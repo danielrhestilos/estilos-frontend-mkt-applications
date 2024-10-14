@@ -171,6 +171,11 @@
     "composition": "children",
     "allowed": "*"
   },
+  "estilos-video-summer": {
+    "component": "VideoSummer",
+    "composition": "children",
+    "allowed": "*"
+  },
   "estilos-card-shelf-cta": {
     "component": "CardShelfCTA"
   },
