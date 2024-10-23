@@ -13,7 +13,7 @@ const PromotionMessage = ({ installments }: any) => {
   let defaultMessage = 'Exclusivo pagando con tu Tarjeta Estilos'
 
   if (installments >= 1) {
-    defaultMessage = `Válido a ${installments} cuotas o más`
+    defaultMessage = `A partir de ${installments} cuotas`
   }
 
   return (

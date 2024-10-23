@@ -14,9 +14,12 @@ function ViewRead() {
 
   useEffect(() => {
     // Comprobación si el producto ya existe en el arreglo
-    const productExists = productsV.some(
-      (p: any) => p.productId === product.productId
-    )
+    // const productExists = productsV.some(
+    //   (p: any) => p.productId === product.productId
+    // )
+    const productExists = product
+      ? productsV.some((p: any) => p?.productId === product.productId)
+      : false
     // console.log('product.priceRange.listPrice.lowPrice ', product.priceRange)
     // console.log('product.priceRange.sellingPrice.lowPrice ', product.priceRange)
 
