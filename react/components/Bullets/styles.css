@@ -1,0 +1,10 @@
+.bullets{
+    margin-top: 8px;
+    font-size: 14px;
+    padding: 3px 0;
+    background: #f6f6f6;
+}
+
+.bullets li {
+    line-height: 22px;
+}

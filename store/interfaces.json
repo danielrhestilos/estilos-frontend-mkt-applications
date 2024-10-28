@@ -104,6 +104,9 @@
   "estilos-klaviyo-form": {
     "component": "KlaviyoForm"
   },
+  "estilos-bullets": {
+    "component": "Bullets"
+  },
   "estilos-seo-categories": {
     "component": "SEOCategories"
   },
