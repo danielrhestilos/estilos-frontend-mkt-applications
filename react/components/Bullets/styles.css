@@ -6,7 +6,8 @@
 }
 .bullets{
     padding: 3px 2rem;
-    font-size: 14px;
+    font-size: .85rem;
+    /* font-size: 1px; */
 }
 .bullets ul{
     padding: 0;
