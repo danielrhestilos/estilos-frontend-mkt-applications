@@ -7,7 +7,12 @@ function Bullets() {
   const { product } = contextProduct
   const specGroups =
     '(Celulares filtros),(Filtros tablet),(consola filtros),(fields TV)'
-
+  const onClickMoreScroll = () => {
+    window.scrollBy({
+      top: 700, // Cantidad de píxeles hacia abajo
+      behavior: 'smooth', // Animación suave
+    })
+  }
   const arraySpecs =
     product?.specificationGroups?.filter((item: any) =>
       specGroups.includes(`(${item.name})`)
@@ -25,14 +30,19 @@ function Bullets() {
   }
 
   return (
-    <div className={styles.bullets}>
-      <ul>
-        {specifications.map((item: any) => (
-          <li>
-            <strong>{item.name}:</strong> {item.values[0]}
-          </li>
-        ))}
-      </ul>
+    <div className={styles.containerBullets}>
+      <div className={styles.bullets}>
+        <ul>
+          {specifications.map((item: any) => (
+            <li>
+              {item.name}: <strong>{item.values[0]}</strong>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button className={styles.moreScroll} onClick={onClickMoreScroll}>
+        Ver más características
+      </button>
     </div>
   )
 }
