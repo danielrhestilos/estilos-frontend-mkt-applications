@@ -7,21 +7,24 @@ import { IconPlusLines } from 'vtex.styleguide'
 import IconEqual from '../icons/IconEqual'
 import { useLazyQuery } from 'react-apollo'
 import QUERY_GET_PRODUCT from '../../../graphql/query.products-byIdentifier.graphql'
-import { Wrapper } from "vtex.add-to-cart-button";
-
+import { Wrapper } from 'vtex.add-to-cart-button'
 
 export interface ProductProps {
   product: any
   currentProductId: any
   currentProductImage: any
+  products: any
+  setProducts: any
 }
 
 const Product: React.FunctionComponent<ProductProps> = ({
   product,
   currentProductId,
   currentProductImage,
+  products,
+  setProducts,
 }) => {
-  const [products, setProducts] = useState<any>([])
+  // const [products, setProducts] = useState<any>([])
   const [productBT, setProductBT] = useState<any>()
 
   const { navigate } = useRuntime()
@@ -30,43 +33,40 @@ const Product: React.FunctionComponent<ProductProps> = ({
     getPriceDiscount()
   }, [product])
 
-  const [searchProductsByIdentifier, { data: productInformation, loading }] = useLazyQuery(QUERY_GET_PRODUCT, {
+  const [
+    searchProductsByIdentifier,
+    { data: productInformation, loading },
+  ] = useLazyQuery(QUERY_GET_PRODUCT, {
     fetchPolicy: 'no-cache',
-  });
+  })
 
   useMemo(() => {
     const getProductIdentification = async () => {
       const response: any = await request({
         url: `https://vtexest.estilos.com.pe/integrations/catalog/sku/${product}`,
         headers: {
-          "Accept": "*/*"
+          Accept: '*/*',
         },
         method: 'GET',
       })
-      const { status, data } = await response;
-
+      const { status, data } = await response
       if (status === 200) {
         const variables = {
           value: data.ProductId,
           field: 'id',
         }
-
         searchProductsByIdentifier({
-          variables
+          variables,
         })
       }
-
     }
-
     getProductIdentification()
   }, [currentProductId])
 
   useMemo(() => {
-
     if (loading !== true && productInformation !== undefined) {
       setProductBT(productInformation.product)
     }
-
   }, [productInformation])
 
   const handleRedirect = (linkText: any) => {
@@ -101,10 +101,8 @@ const Product: React.FunctionComponent<ProductProps> = ({
       body: raw,
       redirect: 'follow',
     }
-    fetch(
-      `/api/checkout/pub/orderforms/simulation`,
-      requestOptions
-    )
+
+    fetch(`/api/checkout/pub/orderforms/simulation`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         const { error, items } = JSON.parse(result)
@@ -114,8 +112,9 @@ const Product: React.FunctionComponent<ProductProps> = ({
       })
       .catch((error) => console.log('error', error))
   }
+
   function capitalizeWords(str: any) {
-    return str?.toLowerCase();
+    return str?.toLowerCase()
   }
 
   const renderedTitleProduct = () => {
@@ -158,9 +157,7 @@ const Product: React.FunctionComponent<ProductProps> = ({
 
     const { items } = productBT
     const { sellers } = items[0]
-    const {
-      sellerId,
-    } = sellers[0]
+    const { sellerId } = sellers[0]
 
     let seller = sellerId ?? '1'
 
@@ -179,12 +176,13 @@ const Product: React.FunctionComponent<ProductProps> = ({
               {
                 id: products[1].id,
                 quantity: 1,
-                seller: seller
-              }, {
+                seller: seller,
+              },
+              {
                 id: products[0].id,
                 quantity: 1,
-                seller: seller
-              }
+                seller: seller,
+              },
             ]}
           />
         </div>
@@ -208,20 +206,35 @@ const Product: React.FunctionComponent<ProductProps> = ({
 
   return (
     <div className={style.container__product}>
-      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
+      >
         {/* <div>Mostar producto padre</div> */}
-        <img src={currentProductImage} className={style.content__img} width="120"
-          height="120" />
-        <div className={style.content__product}>
-          Estás viendo
-        </div>
+        <img
+          src={currentProductImage}
+          className={style.content__img}
+          width="120"
+          height="120"
+        />
+        <div className={style.content__product}>Estás viendo</div>
         {/* <div><RenderImage imageUrl={currentProductImage}</div> */}
       </div>
       <div className={style.plus}>
         <IconPlusLines size={20} />
       </div>
       {/* <ExtensionPoint id="buy-together" suggestedProducts={[]} /> */}
-      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', maxWidth: '150px' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+          maxWidth: '150px',
+        }}
+      >
         {/* <div><RenderImage imageUrl={imageUrl}</div> */}
         {productBT && renderedImage()}
         <div className={style.content__product}>
