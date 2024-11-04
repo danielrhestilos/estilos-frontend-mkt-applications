@@ -231,6 +231,11 @@
   "estilos-header-exclusive-collection": {
     "component": "ExclusiveBanner"
   },
+  "estilos-fixed-pdp": {
+    "component": "FixedPDP",
+    "composition": "children",
+    "allowed": "*"
+  },
   "estilos-timer-parent": {
     "component": "TimerParent",
     "composition": "children",

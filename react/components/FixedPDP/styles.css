@@ -1,0 +1,34 @@
+.containerFixedPDP {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #e8e8e8;
+  z-index: 88;
+  padding: 0 60px 0 0;
+  height: 75px;
+}
+
+.mainContainer {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.namesContainer {
+  display: grid;
+  grid-template-columns: 4fr auto;
+}
+
+.productName {
+  font-weight: 600;
+}
+.brandContainer {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #959595;
+}

@@ -72,8 +72,23 @@ const BuyTogetherCustom = () => {
   }
 
   return buyTogether.length > 0 ? (
-    <div style={{ marginTop: '1.5em', borderTop: '1px solid #C4C4C4' }}>
-      <div style={{ marginTop: '1.5em', marginBottom: '1.5em' }} className="f4">
+    <div
+      style={{
+        marginTop: '1.5em',
+        background: '#f5f5f5',
+        borderRadius: '1rem',
+      }}
+    >
+      <div
+        style={{
+          padding: '1rem',
+          fontWeight: '700',
+          borderRadius: '.8rem',
+          background: '#f5f5f5;',
+          color: '#222',
+        }}
+        className="f4"
+      >
         Llévalos juntos
       </div>
       {buyTogether && renderedProducts()}

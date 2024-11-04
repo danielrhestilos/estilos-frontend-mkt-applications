@@ -3,8 +3,8 @@ import { request } from '../../Warranty/hooks/useApiRequest'
 import style from './styles.css'
 import { useRuntime } from 'vtex.render-runtime'
 import { FormattedCurrency } from 'vtex.format-currency'
-import { IconPlusLines } from 'vtex.styleguide'
-import IconEqual from '../icons/IconEqual'
+// import { IconPlusLines } from 'vtex.styleguide'
+// import IconEqual from '../icons/IconEqual'
 import { useLazyQuery } from 'react-apollo'
 import QUERY_GET_PRODUCT from '../../../graphql/query.products-byIdentifier.graphql'
 import { Wrapper } from 'vtex.add-to-cart-button'
@@ -217,15 +217,13 @@ const Product: React.FunctionComponent<ProductProps> = ({
         <img
           src={currentProductImage}
           className={style.content__img}
-          width="120"
-          height="120"
+          width="100"
+          height="100"
         />
         <div className={style.content__product}>Estás viendo</div>
         {/* <div><RenderImage imageUrl={currentProductImage}</div> */}
       </div>
-      <div className={style.plus}>
-        <IconPlusLines size={20} />
-      </div>
+      <div className={style.plus}>+</div>
       {/* <ExtensionPoint id="buy-together" suggestedProducts={[]} /> */}
       <div
         style={{
@@ -241,9 +239,7 @@ const Product: React.FunctionComponent<ProductProps> = ({
           {productBT && renderedTitleProduct()}
         </div>
       </div>
-      <div className={style.plus}>
-        <IconEqual />
-      </div>
+      <div className={style.plus}>=</div>
       <div className={style.container__total}>
         {renderedTotalPriceAndBuyButton()}
       </div>

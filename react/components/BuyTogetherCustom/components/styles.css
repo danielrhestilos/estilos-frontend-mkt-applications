@@ -1,18 +1,20 @@
 .container__product {
-  display         : flex;
-  align-items     : center;
+  display: flex;
+  align-items: center;
   background-color: #fff;
-  margin-bottom   : 12px;
-  padding-left    : 12px;
-  padding-right   : 12px;
-  justify-content : space-evenly;
-  border          : 1px solid #F5F5F5;
-  border-radius   : 8px;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  justify-content: space-evenly;
+  border: 2px solid #f5f5f5;
+  border-radius: 0 0 8px 8px;
 }
 
 .plus {
-  width          : 10%;
-  display        : flex;
+  width: 10%;
+  font-size: 2rem;
+  display: flex;
+  font-weight: 600;
   justify-content: center;
 }
 
@@ -21,98 +23,98 @@
 }
 
 .title__product {
-  color         : #2f353d;
-  line-height   : 23px;
-  cursor        : pointer;
+  color: #2f353d;
+  line-height: 23px;
+  cursor: pointer;
   text-transform: capitalize;
 }
 
 .container__equal {
-  width           : 24px;
-  height          : 24px;
+  width: 24px;
+  height: 24px;
   background-color: #0d2d2b;
-  color           : #fff;
-  text-align      : center;
-  line-height     : 26px;
-  font-size       : 26px;
-  right           : 156px;
-  z-index         : 1;
-  top             : 0;
-  bottom          : 0;
-  margin          : auto;
+  color: #fff;
+  text-align: center;
+  line-height: 26px;
+  font-size: 26px;
+  right: 156px;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .title__sku {
-  font-size    : 11px;
-  color        : #83838f;
-  font-weight  : bold;
-  line-height  : 16px;
+  font-size: 11px;
+  color: #83838f;
+  font-weight: bold;
+  line-height: 16px;
   margin-bottom: 8px;
 }
 
 .container__total {
-  display        : flex;
-  flex-direction : column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items    : center;
+  align-items: center;
 }
 
 .content__product {
-  padding   : 24px 0;
+  padding: 24px 0;
   text-align: center;
 }
 
 .label__total {
-  font-size  : 20px;
-  color      : #2f353d;
+  font-size: 20px;
+  color: #2f353d;
   line-height: 34px;
-  text-align : center;
+  text-align: center;
 }
 
 .discount__price {
-  font-size      : 18px;
-  line-height    : 26px;
-  text-align     : center;
-  display        : flex;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  display: flex;
   justify-content: space-around;
 }
 
 .total__price {
-  font-size      : 15px;
-  color          : #83838f;
-  line-height    : 25px;
+  font-size: 15px;
+  color: #83838f;
+  line-height: 25px;
   text-decoration: line-through;
-  text-align     : center;
-  display        : flex;
+  text-align: center;
+  display: flex;
   justify-content: space-around;
 }
 
 .list__price {
-  font-size      : 13px;
-  color          : #83838f;
-  line-height    : 19px;
+  font-size: 13px;
+  color: #83838f;
+  line-height: 19px;
   text-decoration: line-through;
-  font-weight    : bold;
+  font-weight: bold;
 }
 
 .price {
-  font-size  : 16px;
+  font-size: 16px;
   line-height: 24px;
-  color      : #f25529;
+  color: #f25529;
   font-weight: 700;
 }
 
 .button__compra {
-  font-weight     : 700;
-  font-size       : 13px;
-  height          : 30px;
-  line-height     : 30px;
-  padding         : 0 18px;
-  display         : inline-block;
-  color           : #fff;
+  font-weight: 700;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 18px;
+  display: inline-block;
+  color: #fff;
   background-color: #f25529;
-  transition      : all 0.25s;
-  cursor          : pointer;
+  transition: all 0.25s;
+  cursor: pointer;
 }
 
 .button__compra:hover {
@@ -120,10 +122,10 @@
 }
 
 .label__installments {
-  margin-top : 4px;
-  font-size  : 12px;
+  margin-top: 4px;
+  font-size: 12px;
   line-height: 19px;
-  color      : #83838f;
+  color: #83838f;
   font-weight: bold;
 }
 
@@ -137,21 +139,21 @@
   }
 
   .container__total {
-    border-left    : none;
-    width          : 100%;
-    flex-direction : row;
+    border-left: none;
+    width: 100%;
+    flex-direction: row;
     justify-content: space-around;
   }
 
   .content__img {
-    width : 142px;
+    width: 142px;
     height: 142px;
   }
 
   .container__price {
-    display        : flex;
-    flex-direction : column;
-    align-items    : center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 }
