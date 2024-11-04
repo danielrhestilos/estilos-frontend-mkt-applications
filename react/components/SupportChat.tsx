@@ -20,6 +20,7 @@ const SupportChat = () => {
             position: 'fixed',
             boxShadow: 'none',
             pointerEvents: 'auto',
+            zIndex: '555',
             // backgroundColor: '#E91111',
             backgroundColor: 'transparent',
             display: 'block',
