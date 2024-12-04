@@ -1,0 +1,36 @@
+.deliveryPDP {
+  display: flex;
+}
+
+.seeMore {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: Outfit;
+  text-decoration: underline;
+}
+
+.optionsBlock {
+  font-family: Outfit;
+  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
+  min-width: 245px;
+  padding: 0.5rem;
+  /* justify-content: center; */
+  align-content: center;
+  display: flex;
+  border: 1px solid #d2d2d2;
+  border-radius: 0.9rem;
+  justify-content: space-between;
+}
+
+.iconDeliveryPDP {
+  width: 36px;
+  height: 36px;
+}
+
+.iconDeliveryPDPDisabled {
+  width: 36px;
+  height: 36px;
+  filter: grayscale(1);
+}

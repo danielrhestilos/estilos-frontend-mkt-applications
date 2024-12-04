@@ -198,6 +198,17 @@
     "composition": "children",
     "allowed": "*"
   },
+  "estilos-fake-white-label": {
+    "component": "FakeWhiteLabel"
+  },
+  "estilos-fake-white-label-shelf": {
+    "component": "FakeWhiteLabelShelf",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "estilos-text-geo": {
+    "component": "TextGeo"
+  },
   "estilos-simulation": {
     "component": "Simulation"
   },
@@ -240,6 +251,12 @@
     "component": "TimerParent",
     "composition": "children",
     "allowed": "*"
+  },
+  "estilos-bill-qr": {
+    "component": "QR"
+  },
+  "estilos-delivery-pdp": {
+    "component": "DeliveryPDP"
   },
   "estilos-custom-container-filter": {
     "component": "CustomContainerFilter",

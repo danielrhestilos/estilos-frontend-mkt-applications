@@ -22,6 +22,7 @@ const Paginator = () => {
     maxItemsPerPage,
     page: currPage,
   } = useSearchPage()
+  console.log('searchQuery:', searchQuery)
 
   const recordsFiltered = path(
     ['data', 'productSearch', 'recordsFiltered'],

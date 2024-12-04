@@ -3,11 +3,14 @@ import { path } from 'ramda'
 
 const useSearchState = () => {
   const { searchQuery } = useSearchPage()
-  return {
+  const searchState = {
     fuzzy: path(['data', 'productSearch', 'fuzzy'], searchQuery),
     operator: path(['data', 'productSearch', 'operator'], searchQuery),
     searchState: path(['data', 'productSearch', 'searchState'], searchQuery),
   }
+  console.log("searchState: ", searchState);
+
+  return searchState
 }
 
 export default useSearchState
