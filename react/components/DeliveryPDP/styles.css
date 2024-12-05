@@ -6,22 +6,28 @@
   cursor: pointer;
   background: none;
   border: none;
+  padding: 0 2px;
   font-family: Outfit;
   text-decoration: underline;
 }
 
 .optionsBlock {
   font-family: Outfit;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   /* font-size: 0.9rem; */
   min-width: 245px;
-  padding: 0.5rem;
   /* justify-content: center; */
   align-content: center;
   display: flex;
-  border: 1px solid #d2d2d2;
-  border-radius: 0.9rem;
+  flex-direction: column;
   justify-content: space-between;
+}
+.optionsResumeBlock {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.9rem;
+  padding: 0.5rem;
+  border: 1px solid #d2d2d2;
 }
 
 .iconDeliveryPDP {
@@ -29,8 +35,21 @@
   height: 36px;
 }
 
-.iconDeliveryPDPDisabled {
+/* .iconDeliveryPDPDisabled {
   width: 36px;
   height: 36px;
   filter: grayscale(1);
+} */
+
+.deliveryCircle {
+  border: 1px solid red;
+  height: 100%;
+  padding: 3px 4px;
+  border-radius: 111px;
+}
+.deliveryCircleDisabled {
+  border: 1px solid rgb(112, 112, 112);
+  height: 100%;
+  padding: 3px 4px;
+  border-radius: 111px;
 }

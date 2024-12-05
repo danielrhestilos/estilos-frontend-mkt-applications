@@ -32,7 +32,6 @@ const BuyTogetherCustom = () => {
   }, [producto])
 
   useEffect(() => {
-    console.log('selectedItem.itemId', selectedItem.itemId)
     products.forEach((product: any) => {
       if (product.id !== selectedItem.itemId) {
         product.master = selectedItem.itemId

@@ -256,7 +256,9 @@
     "component": "QR"
   },
   "estilos-delivery-pdp": {
-    "component": "DeliveryPDP"
+    "component": "DeliveryPDP",
+    "composition": "children",
+    "allowed": "*"
   },
   "estilos-custom-container-filter": {
     "component": "CustomContainerFilter",

@@ -1,4 +1,4 @@
-import { /*useProductDispatch,*/ useProduct} from 'vtex.product-context'
+import { /*useProductDispatch,*/ useProduct } from 'vtex.product-context'
 // import type { ProductTypes } from 'vtex.product-context'
 import { ProductSummaryContext } from 'vtex.product-summary-context'
 import type { ProductSummaryTypes } from 'vtex.product-summary-context'
@@ -9,8 +9,8 @@ function useSetProduct() {
   const { selectedItem: currentSelectedItem } = useProduct() ?? {}
   const productSummaryDispatch = useProductSummaryDispatch()
   // const productDispatch = useProductDispatch()
-    console.log("currentSelectedItem ",currentSelectedItem);
-    
+  console.log("currentSelectedItem ", currentSelectedItem);
+
   return (product: ProductSummaryTypes.Product) => {
     // const newSelectedItem: ProductTypes.Item | undefined = currentSelectedItem 
     //   ? product.items.find((item: ProductTypes.Item) => item.itemId === currentSelectedItem.itemId)

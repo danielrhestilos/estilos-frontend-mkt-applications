@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import useProduct from 'vtex.product-context/useProduct'
 export const useSimulation = (zipcode: string, isPickup: boolean) => {
+    console.log('--------------------------');
+    console.log("zipcode: ", zipcode);
+
     const [loading, setLoading] = useState<boolean>(false)
     const [deliveryData, setDeliveryData] = useState<any>(null)
     const [pickUpPoints, setPickUpPoints] = useState<any>([])
@@ -9,13 +12,11 @@ export const useSimulation = (zipcode: string, isPickup: boolean) => {
     useEffect(() => {
         simulate(productContext?.selectedItem?.itemId.toString(), 'PER')
     }, [zipcode, productContext])
-    console.log('zipcode: ', zipcode)
+
     const simulate = async (itemId: string, country = 'PER') => {
-        console.log('itemId: ', itemId)
         if (!zipcode) return
         setLoading(true)
         try {
-            console.log('try')
             const response = await fetch('/api/checkout/pub/orderForms/simulation', {
                 method: 'POST',
                 headers: {
@@ -29,8 +30,6 @@ export const useSimulation = (zipcode: string, isPickup: boolean) => {
                 }),
             })
             const data = await response.json()
-            console.log('response -> ', response)
-            console.log('data -> ', data)
             if (isPickup) {
                 setPickUpPoints(data.pickupPoints || [])
             } else {
@@ -41,8 +40,6 @@ export const useSimulation = (zipcode: string, isPickup: boolean) => {
                         (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
                         { price: Infinity }
                     )
-                console.log('cheapestDelivery ->', cheapestDelivery)
-
                 setDeliveryData(
                     cheapestDelivery.price !== Infinity ? cheapestDelivery : null
                 )

@@ -39,7 +39,9 @@ const Simulation = (props: SimulationProps) => {
   // const { product } = productContext
 
   // const idSku = product.items[0].itemId
-
+  useEffect(() => {
+    setZipcode(localZipCode)
+  }, [])
   const mini = 500000
   useEffect(() => {
     setData(geo)
@@ -234,7 +236,8 @@ const Simulation = (props: SimulationProps) => {
                   {selectedDistrito && pickUpPoints.length == 0 && (
                     <p className={styles.noneSim}>
                       ¡Lo sentimos! <br />
-                      No contamos con una tienda disponible en esta zona
+                      No contamos con cobertura en esta ubicación. Por favor,
+                      prueba con otra dirección cercana
                     </p>
                   )}
                 </>

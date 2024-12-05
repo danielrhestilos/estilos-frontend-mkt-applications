@@ -17,13 +17,9 @@ function Bullets() {
     product?.specificationGroups?.filter((item: any) =>
       specGroups.includes(`(${item.name})`)
     ) || []
-
-  console.log('arraySpecs ', arraySpecs)
-
   // Verificar si arraySpecs tiene al menos un elemento antes de acceder a specifications
   const specifications =
     arraySpecs.length > 0 ? arraySpecs[0].specifications : []
-  console.log('specifications ', specifications)
 
   if (specifications.length == 0) {
     return null

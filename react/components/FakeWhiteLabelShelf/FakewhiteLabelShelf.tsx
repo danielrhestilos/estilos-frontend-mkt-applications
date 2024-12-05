@@ -41,9 +41,7 @@ function FakeWhiteLabelShelf(props: any) {
               )
             // setLoading(false)
             setDeliveryData(temporalDeliveryData)
-            console.log('temporalDeliveryData:', temporalDeliveryData)
             setPickUpPoints(data.pickupPoints)
-            console.log('data.pickUpPoints: ', data.pickUpPoints)
           })
       } catch (error) {
         console.error('error sucedio: ', error.toString())
