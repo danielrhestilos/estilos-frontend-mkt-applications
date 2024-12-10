@@ -6,7 +6,8 @@ function CustomDescription() {
   const contextPdp = useProduct()
   // const { route } = useRuntime()
   const { product } = contextPdp
-  const { productId } = product
+  const productId = product?.productId
+  // const { productId } = product
   const [content, setContent] = useState<any>(null)
   // const hasFetched = useRef(false) // Para rastrear si ya se realizó el fetch
 

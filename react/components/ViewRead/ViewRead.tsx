@@ -18,15 +18,15 @@ function ViewRead() {
     //   (p: any) => p.productId === product.productId
     // )
     const productExists = product
-      ? productsV.some((p: any) => p?.productId === product.productId)
+      ? productsV.some((p: any) => p?.productId === product?.productId)
       : false
     // console.log('product.priceRange.listPrice.lowPrice ', product.priceRange)
     // console.log('product.priceRange.sellingPrice.lowPrice ', product.priceRange)
 
     if (
       !productExists &&
-      product.priceRange.listPrice.highPrice != 0 &&
-      product.priceRange.sellingPrice.highPrice != 0
+      product?.priceRange?.listPrice?.highPrice != 0 &&
+      product?.priceRange?.sellingPrice?.highPrice != 0
     ) {
       const newProducts = [
         // {
@@ -44,7 +44,7 @@ function ViewRead() {
 
       // Limitar a un máximo de 20 elementos
       if (newProducts.length > 9) {
-        newProducts.pop() // Eliminar el elemento más antiguo
+        newProducts?.pop() // Eliminar el elemento más antiguo
       }
 
       setProductsV(newProducts)

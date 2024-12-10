@@ -15,8 +15,8 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
   const [localZipCode] = useLocalStorage('localZipCode', '')
   const [localDistrito] = useLocalStorage('localDistrito', '')
   const { deliveryData, simulate, pickUpPoints, loading } = useSimulation(
-    localZipCode,
-    isPickUp
+    localZipCode
+    // isPickUp
   )
   const productContext = useProduct()
 
@@ -41,25 +41,31 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
       ? '/assets/vtex.file-manager-graphql/images/83c6ee9f-d3ac-4d12-bc36-7e342a8152ae___68daf827e5a300345fe40c826754f822.svg'
       : '/assets/vtex.file-manager-graphql/images/bc7f0112-dee4-4190-bcb1-ece0acc79098___cc7ecc8bf7679884aafbf264e0b8b3f9.svg'
   }
+  const getClassDeliveryCircle = () => {
+    if (isPickUp) {
+      return localZipCode && pickUpPoints.length > 0
+        ? styles.deliveryCircle
+        : styles.deliveryCircleDisabled
+    }
+    return deliveryData ? styles.deliveryCircle : styles.deliveryCircleDisabled
+  }
 
   const renderMessage = () => {
     if (!localDistrito)
       return isPickUp ? 'Consultar retiro en tienda' : 'Consultar delivery'
 
     if (isPickUp) {
-      return pickUpPoints.length > 0 ? (
-        <span>Puedes retirarlo en nuestras tiendas :</span>
+      return pickUpPoints?.length > 0 ? (
+        <span>Puedes retirarlo en nuestras tiendas</span>
       ) : (
-        <p className={styles.noneSim}>
-          Retiros no disponibles en {localDistrito}
-        </p>
+        <span>No disponible para retiro en tienda</span>
       )
     }
 
     return deliveryData?.price ? (
-      <>Delivery desde {formatCurrency(deliveryData.price)}</>
+      <>Envío a domicilio desde {formatCurrency(deliveryData.price)}</>
     ) : (
-      <>Delivery a {localDistrito} no disponible</>
+      <>No disponible para delivery</>
     )
   }
 
@@ -69,20 +75,10 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     if (isPickUp) {
       return (
         <div>
-          {pickUpPoints.length > 0 ? (
-            pickUpPoints.map((point: any) => (
-              <p key={point.id}>{point.friendlyName}</p>
-            ))
-          ) : (
-            <div className={styles.noneSim}>
-              Retiros no disponibles en {localDistrito}
-            </div>
-          )}
-          <p>
-            <button className={styles.seeMore} onClick={() => setShow(true)}>
-              Ver más
-            </button>
-          </p>
+          {pickUpPoints.length > 0 &&
+            pickUpPoints?.map((point: any) => (
+              <p key={point?.id}>• {point.friendlyName}</p>
+            ))}
         </div>
       )
     }
@@ -95,29 +91,33 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
       {!loading && (
         <>
           <div className={styles.deliveryPDP}>
-            <div className={styles.deliveryCircle}>
-              <img src={`${renderIcon()}`} width="27" height="27" />
+            <div className={getClassDeliveryCircle()}>
+              <img src={`${renderIcon()}`} width="24" height="27" />
             </div>
             <div className={styles.optionsBlock}>
               <div className={styles.optionsResumeBlock}>
                 <span>{renderMessage()}</span>
-                {/* <br /> */}
-                {isPickUp && !(pickUpPoints.length > 0) && (
-                  <button
-                    className={styles.seeMore}
-                    onClick={() => setShow(true)}
-                  >
-                    Ver más
-                  </button>
-                )}
               </div>
               <div>{renderStores()}</div>
+              <p className={styles.seeMoreParagraph}>
+                <button
+                  className={styles.seeMore}
+                  onClick={() => setShow(true)}
+                >
+                  Ver más
+                </button>
+              </p>
             </div>
           </div>
         </>
       )}
       {show && (
         <Modal centered isOpen={show} onClose={() => setShow(false)}>
+          <h3>
+            {!isPickUp
+              ? 'Selecciona tu ubicación para delivery'
+              : 'Descubre nuestras tiendas disponibles para tu producto'}
+          </h3>
           <Simulation isPickup={isPickUp} />
         </Modal>
       )}

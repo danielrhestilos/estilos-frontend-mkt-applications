@@ -1,7 +1,9 @@
 .deliveryPDP {
   display: flex;
 }
-
+.seeMoreParagraph {
+  margin: 0;
+}
 .seeMore {
   cursor: pointer;
   background: none;
@@ -13,43 +15,53 @@
 
 .optionsBlock {
   font-family: Outfit;
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   /* font-size: 0.9rem; */
-  min-width: 245px;
+  /* min-width: 100%; */
+  width: 100%;
   /* justify-content: center; */
   align-content: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .optionsResumeBlock {
   display: flex;
   justify-content: space-between;
   border-radius: 0.9rem;
-  padding: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #fff;
+  margin-bottom: 0.2rem;
+  margin-left: -5px;
   border: 1px solid #d2d2d2;
 }
-
+@media screen and (max-width: 900px) {
+  .optionsBlock {
+    font-size: 1.05rem;
+  }
+}
 .iconDeliveryPDP {
   width: 36px;
   height: 36px;
 }
 
-/* .iconDeliveryPDPDisabled {
-  width: 36px;
-  height: 36px;
-  filter: grayscale(1);
-} */
-
 .deliveryCircle {
-  border: 1px solid red;
+  border: 1px solid #e91111;
   height: 100%;
-  padding: 3px 4px;
+  padding: 3px 7px;
+  background: #fff;
+  z-index: 995;
   border-radius: 111px;
 }
 .deliveryCircleDisabled {
   border: 1px solid rgb(112, 112, 112);
   height: 100%;
-  padding: 3px 4px;
+  padding: 3px 7px;
+  background: #fff;
+  z-index: 995;
   border-radius: 111px;
+}
+.noneSim {
+  margin-top: 11px;
 }

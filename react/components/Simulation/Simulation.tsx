@@ -26,8 +26,8 @@ const Simulation = (props: SimulationProps) => {
   const [selectedDistrito, setSelectedDistrito] = useState<string>('')
   const [zipcode, setZipcode] = useState<string>('')
   const { loading, deliveryData, pickUpPoints, simulate } = useSimulation(
-    zipcode,
-    props.isPickup
+    zipcode
+    // props.isPickup
   )
   ///propios
   // const [loading, setLoading] = useState<boolean>(false)

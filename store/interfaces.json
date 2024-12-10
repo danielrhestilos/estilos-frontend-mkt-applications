@@ -264,5 +264,13 @@
     "component": "CustomContainerFilter",
     "composition": "children",
     "allowed": "*"
+  },
+  "estilos-modal-whitelabel": {
+    "component": "ModalWhiteLabel"
+  },
+  "estilos-if-available-wl": {
+    "composition": "children",
+    "allowed": "*",
+    "component": "IfAvailableWL"
   }
 }

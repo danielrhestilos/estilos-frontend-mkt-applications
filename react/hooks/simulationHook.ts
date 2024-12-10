@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import useProduct from 'vtex.product-context/useProduct'
-export const useSimulation = (zipcode: string, isPickup: boolean) => {
-    console.log('--------------------------');
-    console.log("zipcode: ", zipcode);
+export const useSimulation = (zipcode: string /* isPickup: boolean*/) => {
+    console.log('--------------------------')
+    console.log('zipcode: ', zipcode)
 
     const [loading, setLoading] = useState<boolean>(false)
     const [deliveryData, setDeliveryData] = useState<any>(null)
@@ -30,20 +30,20 @@ export const useSimulation = (zipcode: string, isPickup: boolean) => {
                 }),
             })
             const data = await response.json()
-            if (isPickup) {
-                setPickUpPoints(data.pickupPoints || [])
-            } else {
-                const logisticsInfo = data.logisticsInfo[0]?.slas || []
-                const cheapestDelivery = logisticsInfo
-                    .filter((item: any) => item.deliveryChannel === 'delivery')
-                    .reduce(
-                        (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
-                        { price: Infinity }
-                    )
-                setDeliveryData(
-                    cheapestDelivery.price !== Infinity ? cheapestDelivery : null
+            // if (isPickup) {
+            setPickUpPoints(data.pickupPoints || [])
+            // } else {
+            const logisticsInfo = data.logisticsInfo[0]?.slas || []
+            const cheapestDelivery = logisticsInfo
+                .filter((item: any) => item.deliveryChannel === 'delivery')
+                .reduce(
+                    (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
+                    { price: Infinity }
                 )
-            }
+            setDeliveryData(
+                cheapestDelivery.price !== Infinity ? cheapestDelivery : null
+            )
+            // }
         } catch (error) {
             console.error('Simulation error:', error)
         } finally {

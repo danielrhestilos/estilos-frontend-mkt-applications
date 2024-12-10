@@ -7,14 +7,14 @@ function FixedPDP({ children }: any) {
   const { product } = productContext
   const [isVisible, setIsVisible] = useState(false)
 
-  // Comprueba si 'product' y 'product.categoryTree' existen antes de acceder a 'categoryId'
-  const categories = product?.categories[0]
-    ?.split('/')
-    .filter((item: any) => item != '')
-    .reverse()
+  // Comprueba si 'product' y 'product.categories' existen antes de procesar
+  const categories =
+    product?.categories?.[0]
+      ?.split('/')
+      .filter((item: string) => item !== '')
+      .reverse() || []
 
-  const category = categories[0]
-  // console.log('categories', categories)
+  const category = categories.length > 0 ? categories[0] : 'Sin categoría'
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY
@@ -62,7 +62,6 @@ function FixedPDP({ children }: any) {
           </div>
 
           {children}
-          {/* <button>Agregar</button> */}
         </div>
       </div>
     </div>
