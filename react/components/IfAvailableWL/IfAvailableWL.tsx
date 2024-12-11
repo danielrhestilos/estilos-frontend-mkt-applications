@@ -24,7 +24,7 @@ function IfAvailableWL({ children }: { children: React.ReactNode }) {
           ) : (
             <>
               {/* {!productContext?.loadingItem && ( */}
-              <a
+              {/* <a
                 href={
                   productContext?.product?.categoryTree?.[
                     productContext?.product?.categoryTree?.length - 1
@@ -32,7 +32,7 @@ function IfAvailableWL({ children }: { children: React.ReactNode }) {
                 }
               >
                 Ver mas productos{' '}
-              </a>
+              </a> */}
               {/* )} */}
             </>
           )}
