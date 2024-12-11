@@ -84,6 +84,7 @@ const SimulationBase: StorefrontFunctionComponent = () => {
     const localZipcode =
       geo[localDepartamento]?.[localProvincia]?.[distrito] || ''
     setLocalZipcode(localZipcode)
+    window.location.reload()
   }
 
   return (
@@ -145,7 +146,7 @@ const SimulationBase: StorefrontFunctionComponent = () => {
             ))}
           </select>
         </div>
-        <div className={styles.blockSim}>
+        {/* <div className={styles.blockSim}>
           <p className={styles.labelSim}>
             <button
               onClick={() => {
@@ -155,7 +156,7 @@ const SimulationBase: StorefrontFunctionComponent = () => {
               Aceptar
             </button>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )

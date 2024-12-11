@@ -16,12 +16,25 @@ function IfAvailableWL({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
+      <>{console.log('productContext ', productContext)}</>
       {!loading ? (
         <>
           {deliveryData?.price && pickUpPoints.length > 0 ? (
             <>{children}</>
           ) : (
-            <>Tu rpoducto no esta disponible en esta ubicación</>
+            <>
+              {/* {!productContext?.loadingItem && ( */}
+              <a
+                href={
+                  productContext?.product?.categoryTree?.[
+                    productContext?.product?.categoryTree?.length - 1
+                  ]?.href
+                }
+              >
+                Ver mas productos{' '}
+              </a>
+              {/* )} */}
+            </>
           )}
         </>
       ) : (
