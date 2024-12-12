@@ -84,10 +84,6 @@
     "component": "ProductSummaryNameCustom",
     "allowed": "*"
   },
-  "estilos-klaviyo-product-view": {
-    "component": "KlaviyoProductView",
-    "allowed": "*"
-  },
   "estilospe-custom-filter-collection": {
     "component": "CustomFilterColection"
   },
