@@ -251,6 +251,9 @@
   "estilos-bill-qr": {
     "component": "QR"
   },
+  "estilos-tik-tok-pixel": {
+    "component": "TikTokPixel"
+  },
   "estilos-delivery-pdp": {
     "component": "DeliveryPDP",
     "composition": "children",
