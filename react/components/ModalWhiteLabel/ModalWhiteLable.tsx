@@ -13,6 +13,10 @@ function ModalWhiteLabel(props: any) {
       }}
     >
       <h3>Selecciona tu ubicación</h3>
+      <p>
+        Te mostraremos los productos disponibles en
+        <br /> tu zona, junto con el tiempo y costo de entrega.
+      </p>
       <FakeWhiteLabel />
     </Modal>
   )

@@ -1,10 +1,15 @@
 .containerSimulation {
   display: flex;
-  margin: 1rem;
+  /* margin: 1rem; */
   /* background: var(--light_bg, #f5f5f5); */
 }
 .containerResults {
   margin: 19px 10px;
+}
+.storeName {
+  font-weight: 700;
+  color: #e91111;
+  text-transform: capitalize;
 }
 .containerSim {
   /* width: 100%; */
@@ -14,7 +19,7 @@
   min-width: 320px;
 }
 .pickUpPointBlock {
-  background: #f8f8fa;
+  background: #fff;
   margin: 0 0 20px;
   border-radius: 6px;
   border: 1px solid #ccc;

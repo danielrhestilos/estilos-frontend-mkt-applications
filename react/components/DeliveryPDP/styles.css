@@ -8,7 +8,7 @@
   cursor: pointer;
   background: none;
   border: none;
-  padding: 0 2px;
+  padding: 2px 2px;
   font-family: Outfit;
   text-decoration: underline;
 }
@@ -45,19 +45,21 @@
   width: 36px;
   height: 36px;
 }
-
+.paragraphFriendlyName {
+  text-transform: capitalize;
+}
 .deliveryCircle {
-  border: 1px solid #e91111;
+  /* border: 1px solid #e91111; */
   height: 100%;
-  padding: 3px 7px;
+  /* padding: 3px 7px; */
   background: #fff;
   z-index: 995;
   border-radius: 111px;
 }
 .deliveryCircleDisabled {
-  border: 1px solid rgb(112, 112, 112);
+  /* border: 1px solid rgb(112, 112, 112); */
   height: 100%;
-  padding: 3px 7px;
+  /* padding: 3px 7px; */
   background: #fff;
   z-index: 995;
   border-radius: 111px;

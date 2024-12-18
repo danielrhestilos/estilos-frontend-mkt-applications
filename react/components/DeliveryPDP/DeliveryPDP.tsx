@@ -8,6 +8,7 @@ import useLocalStorage from '../../hooks/localStorageHook'
 
 interface SimulationPDPProps {
   isPickUp: boolean
+  isCity: boolean
 }
 
 const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
@@ -24,6 +25,10 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     simulate(productContext?.selectedItem?.itemId || '')
   }, [productContext])
 
+  function capitalizeFirstLetter(val: string) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1)
+  }
+
   const formatCurrency = (value: number) =>
     new Intl.NumberFormat('es-PE', {
       style: 'currency',
@@ -34,12 +39,12 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
   const renderIcon = () => {
     if (isPickUp) {
       return localZipCode && pickUpPoints.length > 0
-        ? '/assets/vtex.file-manager-graphql/images/6912ff5b-5c22-47fc-8ebf-8090694c2fb3___c003a941599a517e6ad799b1072ef718.svg'
-        : '/assets/vtex.file-manager-graphql/images/cf22c440-29e6-4891-87bd-4af736a9693b___10b9e9e44e4a8e7e63aaef663474a63c.svg'
+        ? '/arquivos/Location-store-ICON-V1224-red-30.svg'
+        : '/arquivos/Location-store-ICON-V1224-grey-30.svg'
     }
     return deliveryData
-      ? '/assets/vtex.file-manager-graphql/images/83c6ee9f-d3ac-4d12-bc36-7e342a8152ae___68daf827e5a300345fe40c826754f822.svg'
-      : '/assets/vtex.file-manager-graphql/images/bc7f0112-dee4-4190-bcb1-ece0acc79098___cc7ecc8bf7679884aafbf264e0b8b3f9.svg'
+      ? '/arquivos/Delivery-on-ICON-V1224-red-30.svg'
+      : '/arquivos/Delivery-on-ICON-V1224-grey-30.svg'
   }
   const getClassDeliveryCircle = () => {
     if (isPickUp) {
@@ -76,9 +81,18 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
       return (
         <div>
           {pickUpPoints.length > 0 &&
-            pickUpPoints?.map((point: any) => (
-              <p key={point?.id}>• {point.friendlyName}</p>
-            ))}
+            pickUpPoints
+              .slice(0, 3) // Solo toma los primeros 3 elementos
+              .map((point: any) => (
+                <p key={point?.id} className={styles.paragraphFriendlyName}>
+                  •{' '}
+                  {capitalizeFirstLetter(
+                    point.friendlyName
+                      .toLocaleLowerCase()
+                      .replaceAll('tda.', 'Tienda')
+                  )}
+                </p>
+              ))}
         </div>
       )
     }
@@ -92,7 +106,7 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
         <>
           <div className={styles.deliveryPDP}>
             <div className={getClassDeliveryCircle()}>
-              <img src={`${renderIcon()}`} width="24" height="27" />
+              <img src={`${renderIcon()}`} width="43" height="43" />
             </div>
             <div className={styles.optionsBlock}>
               <div className={styles.optionsResumeBlock}>

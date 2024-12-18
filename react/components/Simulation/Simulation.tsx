@@ -221,7 +221,11 @@ const Simulation = (props: SimulationProps) => {
                 <div>
                   {pickUpPoints.map((pickUpPoint: any) => (
                     <div className={styles.pickUpPointBlock}>
-                      <p>{pickUpPoint.friendlyName}</p>
+                      <p className={styles.storeName}>
+                        {pickUpPoint.friendlyName
+                          .toLocaleLowerCase()
+                          .replaceAll('tda.', 'Tienda')}
+                      </p>
                       <p>
                         {pickUpPoint.address.street.split('|')[1]?.trim()} #
                         {pickUpPoint.address.number}, {pickUpPoint.address.city}

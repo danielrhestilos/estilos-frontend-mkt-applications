@@ -47,20 +47,20 @@ function FixedPDP({ children }: any) {
       className={styles.containerFixedPDP}
     >
       <div className={styles.mainContainer}>
-        <div className={styles.brandContainer}>{category}</div>
         <div className={styles.namesContainer}>
           <div className={styles.productName}>
+            <div className={styles.brandContainer}>{category}</div>
             {product?.productName}
             <div
               style={{
-                fontSize: '14px',
+                fontFamily: 'Outfit',
+                fontSize: '1rem',
                 color: '#959595',
               }}
             >
               {product?.brand}
             </div>
           </div>
-
           {children}
         </div>
       </div>
