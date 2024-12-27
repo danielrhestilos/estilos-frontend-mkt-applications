@@ -32,13 +32,18 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
     : { height: '25px', width: '25px' }
 
   const onClose = () => setShowModal(false)
-
+  useEffect(() => {
+    if (distrito == '') {
+      setShowModal(true)
+    }
+  }, [])
   useEffect(() => {
     if (distrito !== '') {
       setIcon(isMobile ? ICON_SELECTED_MOBILE : ICON_SELECTED_DESKTOP)
     }
   }, [distrito, isMobile])
 
+  // Si onlyMobile es true y no es un dispositivo móvil, no renderiza nada
   if (onlyMobile && !isMobile) {
     return null
   }
