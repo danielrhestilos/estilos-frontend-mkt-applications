@@ -205,6 +205,9 @@
   "estilos-text-geo": {
     "component": "TextGeo"
   },
+  "estilos-text-geo-mobile": {
+    "component": "TextGeoMobile"
+  },
   "estilos-simulation": {
     "component": "Simulation"
   },
