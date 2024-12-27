@@ -12,7 +12,7 @@ function ModalWhiteLabel(props: any) {
       // {!isMobil ? centered:''}
       isOpen={props.show}
       onClose={() => {
-        props.setShowModal(false)
+        props.onClose()
       }}
     >
       <div style={{ margin: 'auto', width: isMobil ? '90%' : '100%' }}>

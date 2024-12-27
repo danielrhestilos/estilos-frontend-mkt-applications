@@ -23,6 +23,8 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [distrito] = useLocalStorage('localDistrito', '')
   const [provincia] = useLocalStorage('localProvincia', '')
+  const [closed, setClosed] = useLocalStorage('localModalClosed', false)
+
   const [icon, setIcon] = useState(
     isMobile ? ICON_DEFAULT_MOBILE : ICON_DEFAULT_DESKTOP
   )
@@ -31,12 +33,17 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
     ? { height: '38px', width: '38px' }
     : { height: '25px', width: '25px' }
 
-  const onClose = () => setShowModal(false)
-  // useEffect(() => {
-  //   if (distrito == '') {
-  //     setShowModal(true)
-  //   }
-  // }, [])
+  const onClose = () => {
+    console.log('---------- on close --------------')
+
+    setShowModal(false)
+    setClosed(true)
+  }
+  useEffect(() => {
+    if (distrito == '' && !closed) {
+      setShowModal(true)
+    }
+  }, [])
   useEffect(() => {
     if (distrito !== '') {
       setIcon(isMobile ? ICON_SELECTED_MOBILE : ICON_SELECTED_DESKTOP)
