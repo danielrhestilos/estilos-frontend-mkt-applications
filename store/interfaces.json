@@ -203,10 +203,7 @@
     "allowed": "*"
   },
   "estilos-text-geo": {
-    "component": "TextGeo"
-  },
-  "estilos-text-geo-mobile": {
-    "component": "TextGeoMobile"
+    "component": "TextGeoUnified"
   },
   "estilos-simulation": {
     "component": "Simulation"
