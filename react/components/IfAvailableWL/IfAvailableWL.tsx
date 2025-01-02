@@ -35,8 +35,8 @@ function IfAvailableWL({
               {type == 'moreProducts' ? (
                 <>
                   {' '}
-                  <span style={{ fontSize: '13px' }}>
-                    {'* No disponible en '} {localDistrito}
+                  <span style={{ fontSize: '13px', fontWeight: '600' }}>
+                    {'⚠️ No disponible en '} {localDistrito}
                   </span>
                   <a
                     className={styles.moreProducts}
