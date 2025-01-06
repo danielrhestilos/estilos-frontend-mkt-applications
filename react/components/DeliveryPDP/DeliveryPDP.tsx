@@ -115,6 +115,7 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
               <div>{renderStores()}</div>
               <p className={styles.seeMoreParagraph}>
                 <button
+                  id={'seeMoreWhiteLabel'}
                   className={styles.seeMore}
                   onClick={() => setShow(true)}
                 >
