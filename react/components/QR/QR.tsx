@@ -63,6 +63,8 @@ function QR() {
   }
 
   const fetchQRData = async (auth: AuthData, order: OrderData) => {
+    console.log('order: ', order)
+
     try {
       if (!auth || !order) {
         throw new Error('Datos requeridos (auth u order) no están disponibles.')
