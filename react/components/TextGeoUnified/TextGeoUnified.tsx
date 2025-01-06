@@ -58,6 +58,7 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
   return (
     <>
       <div
+        id={'textGeoWhiteLabel'}
         style={{
           alignItems: 'center',
           display: 'flex',
