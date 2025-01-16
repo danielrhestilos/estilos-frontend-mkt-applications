@@ -35,13 +35,16 @@ function IfAvailableWL({
               {type == 'moreProducts' ? (
                 <>
                   {' '}
-                  <span style={{ fontSize: '13px', fontWeight: '600' }}>
+                  <p
+                    style={{
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      marginTop: '10px',
+                    }}
+                  >
                     {'⚠️ No disponible en '} {localDistrito},{' '}
-                    {
-                      'Puedes optar por delivery o recogerlo en una tienda de otra ciudad.'
-                    }
-                  </span>
-                  <br />
+                    {'Puedes optar por recogerlo o recibirlo en otra ciudad.'}
+                  </p>
                   <>{children}</>
                 </>
               ) : (

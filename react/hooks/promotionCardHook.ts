@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 
 export default function usePromotionData(selectedItem: any) {
+  console.log("selectedItem: ", selectedItem);
+
   const itemId = selectedItem?.itemId
   const [promotionData, setPromotionData] = useState({
     value: 0,

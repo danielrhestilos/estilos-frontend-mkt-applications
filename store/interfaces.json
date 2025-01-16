@@ -211,6 +211,9 @@
   "estilos-view-read": {
     "component": "ViewRead"
   },
+  "estilos-tooltip": {
+    "component": "BlockWithTooltip"
+  },
   "estilos-visited-products": {
     "component": "VisitedProducts"
   },

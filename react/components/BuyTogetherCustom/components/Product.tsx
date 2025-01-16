@@ -50,6 +50,8 @@ const Product: React.FunctionComponent<ProductProps> = ({
         method: 'GET',
       })
       const { status, data } = await response
+      console.log('data: ', data)
+
       if (status === 200) {
         const variables = {
           value: data.ProductId,
