@@ -22,6 +22,8 @@ const Paginator = () => {
     maxItemsPerPage,
     page: currPage,
   } = useSearchPage()
+  console.log('currPage:', currPage)
+
   console.log('searchQuery:', searchQuery)
 
   const recordsFiltered = path(
@@ -50,6 +52,9 @@ const Paginator = () => {
     }
   }, [maxItemsPerPage, recordsFiltered])
 
+  useEffect(() => {
+    console.log('currentPage:', currentPage)
+  }, [currentPage])
   const fetchMore = path(['fetchMore'], searchQuery)
 
   // const queryData = {
@@ -62,7 +67,7 @@ const Paginator = () => {
   // }
 
   const queryData = {
-    query: 'tv 43',
+    query: path(['variables', 'query'], searchQuery),
     map: 'ft',
     orderBy: 'OrderByReleaseDateDESC',
   }
@@ -72,7 +77,7 @@ const Paginator = () => {
   // console.log('queryData ', queryData)
 
   const { handleFetchPerPage, loading } = useFetchMore({
-    // page: currentPage,
+    page: currentPage,
     recordsFiltered,
     maxItemsPerPage,
     fetchMore,

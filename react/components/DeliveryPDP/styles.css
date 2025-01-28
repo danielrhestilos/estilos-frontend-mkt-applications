@@ -8,11 +8,16 @@
   cursor: pointer;
   background: none;
   border: none;
-  padding: 2px 2px;
+  padding: 0;
   font-family: Outfit;
   text-decoration: underline;
 }
-
+.DeliveryTitle {
+  font-family: Outfit;
+  font-size: 0.9rem;
+  margin: 0;
+  /* margin-bottom: 0.5rem; */
+}
 .optionsBlock {
   font-family: Outfit;
   font-size: 0.85rem;

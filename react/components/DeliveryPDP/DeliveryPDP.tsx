@@ -29,12 +29,12 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1)
   }
 
-  const formatCurrency = (value: number) =>
-    new Intl.NumberFormat('es-PE', {
-      style: 'currency',
-      currency: 'PEN',
-      minimumFractionDigits: 2,
-    }).format(value / 100)
+  // const formatCurrency = (value: number) =>
+  //   new Intl.NumberFormat('es-PE', {
+  //     style: 'currency',
+  //     currency: 'PEN',
+  //     minimumFractionDigits: 2,
+  //   }).format(value / 100)
 
   const renderIcon = () => {
     if (isPickUp) {
@@ -61,14 +61,36 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
 
     if (isPickUp) {
       return pickUpPoints?.length > 0 ? (
-        <span>Puedes retirarlo en nuestras tiendas</span>
+        <>
+          <p className={styles.DeliveryTitle}>Retiro en tienda</p>
+          {/* <p className={styles.seeMoreParagraph}> */}
+          <button
+            id={'seeMoreWhiteLabel'}
+            className={styles.seeMore}
+            onClick={() => setShow(true)}
+          >
+            Ver más
+          </button>
+          {/* </p> */}
+        </>
       ) : (
         <span>No disponible para retiro en tienda</span>
       )
     }
 
     return deliveryData?.price ? (
-      <>Envío a domicilio desde {formatCurrency(deliveryData.price)}</>
+      <>
+        <p className={styles.DeliveryTitle}>Envío a domicilio </p>
+        {/* <p className={styles.seeMoreParagraph}> */}
+        <button
+          id={'seeMoreWhiteLabel'}
+          className={styles.seeMore}
+          onClick={() => setShow(true)}
+        >
+          Ver más
+        </button>
+        {/* </p> */}
+      </>
     ) : (
       <>No disponible para delivery</>
     )
@@ -110,18 +132,9 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
             </div>
             <div className={styles.optionsBlock}>
               <div className={styles.optionsResumeBlock}>
-                <span>{renderMessage()}</span>
+                <>{renderMessage()}</>
               </div>
-              <div>{renderStores()}</div>
-              <p className={styles.seeMoreParagraph}>
-                <button
-                  id={'seeMoreWhiteLabel'}
-                  className={styles.seeMore}
-                  onClick={() => setShow(true)}
-                >
-                  Ver más
-                </button>
-              </p>
+              <>{renderStores()}</>
             </div>
           </div>
         </>
