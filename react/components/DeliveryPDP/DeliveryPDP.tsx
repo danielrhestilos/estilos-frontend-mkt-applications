@@ -101,21 +101,20 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
 
     if (isPickUp) {
       return (
-        <div>
+        <ul className={styles.pickUpPoints}>
           {pickUpPoints.length > 0 &&
             pickUpPoints
               .slice(0, 3) // Solo toma los primeros 3 elementos
               .map((point: any) => (
-                <p key={point?.id} className={styles.paragraphFriendlyName}>
-                  •{' '}
+                <li key={point?.id} className={styles.paragraphFriendlyName}>
                   {capitalizeFirstLetter(
                     point.friendlyName
                       .toLocaleLowerCase()
                       .replaceAll('tda.', 'Tienda')
                   )}
-                </p>
+                </li>
               ))}
-        </div>
+        </ul>
       )
     }
 

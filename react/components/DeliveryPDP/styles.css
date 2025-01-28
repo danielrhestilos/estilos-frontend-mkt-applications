@@ -52,6 +52,8 @@
 }
 .paragraphFriendlyName {
   text-transform: capitalize;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .deliveryCircle {
   /* border: 1px solid #e91111; */
@@ -71,4 +73,7 @@
 }
 .noneSim {
   margin-top: 11px;
+}
+.pickUpPoints {
+  padding: 0 1.2rem;
 }
