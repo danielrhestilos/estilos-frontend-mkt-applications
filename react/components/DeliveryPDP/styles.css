@@ -51,8 +51,10 @@
   height: 36px;
 }
 .paragraphFriendlyName {
+  font-size: 0.87978rem;
   text-transform: capitalize;
   margin-top: 0.5rem;
+  letter-spacing: 0.01622345rem;
   margin-bottom: 0.5rem;
 }
 .deliveryCircle {

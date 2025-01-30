@@ -3,11 +3,11 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  bottom: 0;
+  bottom: 1.5rem;
   left: 0;
   width: 100%;
-  background-color: #fff;
-  border-top: 1px solid #e8e8e8;
+  /* background-color: #fff; */
+  /* border-top: 1px solid #e8e8e8; */
   z-index: 997;
   padding: 0 60px 0 0;
   height: 75px;
@@ -15,12 +15,20 @@
 
 .mainContainer {
   margin: auto;
+  border-radius: 12px;
   width: 100%;
+  box-shadow: 0 4px 17px rgb(157 156 156 / 30%);
+  /* box-shadow: 0 4px 17px rgba(0, 0, 0, 0.6); */
   max-width: 1200px;
+  background: #fff;
+  padding: 1rem;
 }
 
 .namesContainer {
   display: grid;
+  /* justify-content: center; */
+  align-items: center;
+  /* align-content: center; */
   grid-template-columns: 4fr auto;
 }
 

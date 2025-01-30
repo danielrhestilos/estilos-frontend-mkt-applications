@@ -33,7 +33,7 @@ function VisitedProducts() {
     }
   }, [products])
 
-  return <ReusableSlider title={'👀 Tus últimos vistos'} data={data} />
+  return <ReusableSlider title={'Tus últimos vistos'} data={data} />
 }
 
 export default VisitedProducts

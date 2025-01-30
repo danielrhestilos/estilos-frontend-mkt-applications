@@ -8,13 +8,13 @@ function FixedPDP({ children }: any) {
   const [isVisible, setIsVisible] = useState(false)
 
   // Comprueba si 'product' y 'product.categories' existen antes de procesar
-  const categories =
-    product?.categories?.[0]
-      ?.split('/')
-      .filter((item: string) => item !== '')
-      .reverse() || []
+  // const categories =
+  //   product?.categories?.[0]
+  //     ?.split('/')
+  //     .filter((item: string) => item !== '')
+  //     .reverse() || []
 
-  const category = categories.length > 0 ? categories[0] : 'Sin categoría'
+  // const category = categories.length > 0 ? categories[0] : 'Sin categoría'
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY
@@ -49,17 +49,8 @@ function FixedPDP({ children }: any) {
       <div className={styles.mainContainer}>
         <div className={styles.namesContainer}>
           <div className={styles.productName}>
-            <div className={styles.brandContainer}>{category}</div>
+            {/* <div className={styles.brandContainer}>{category}</div> */}
             {product?.productName}
-            <div
-              style={{
-                fontFamily: 'Outfit',
-                fontSize: '1rem',
-                color: '#959595',
-              }}
-            >
-              {product?.brand}
-            </div>
           </div>
           {children}
         </div>
