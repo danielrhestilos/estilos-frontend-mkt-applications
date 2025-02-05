@@ -46,11 +46,12 @@ const BuyTogetherCustom = () => {
         master: item.master,
       }))
     })
+    console.log('buyTogether: ', buyTogether)
     console.log('skuItems: ', skuItems)
   }, [products])
 
   const renderedProducts = () => {
-    console.log('buyTogether ', buyTogether)
+    // console.log('buyTogether: ', buyTogether)
     console.log('products ', products)
 
     return buyTogether.map((product: any, i: any) => (
