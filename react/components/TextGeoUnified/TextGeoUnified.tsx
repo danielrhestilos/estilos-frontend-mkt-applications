@@ -41,8 +41,6 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
     : { height: '25px', width: '25px' }
 
   const onClose = () => {
-    console.log('---------- on close --------------')
-
     setShowModal(false)
     setClosed(true)
   }

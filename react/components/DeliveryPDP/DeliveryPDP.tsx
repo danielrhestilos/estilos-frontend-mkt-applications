@@ -57,7 +57,29 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
 
   const renderMessage = () => {
     if (!localDistrito)
-      return isPickUp ? 'Consultar retiro en tienda' : 'Consultar delivery'
+      return isPickUp ? (
+        <>
+          <p className={styles.DeliveryTitle}>Retiro en tienda</p>{' '}
+          <button
+            id={'seeMoreWhiteLabel'}
+            className={styles.seeMore}
+            onClick={() => setShow(true)}
+          >
+            Ver más
+          </button>
+        </>
+      ) : (
+        <>
+          <p className={styles.DeliveryTitle}>Envío a domicilio</p>{' '}
+          <button
+            id={'seeMoreWhiteLabel'}
+            className={styles.seeMore}
+            onClick={() => setShow(true)}
+          >
+            Ver más
+          </button>
+        </>
+      )
 
     if (isPickUp) {
       return pickUpPoints?.length > 0 ? (
@@ -117,7 +139,6 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
         </ul>
       )
     }
-
     return ''
   }
 
@@ -143,7 +164,7 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
           <h3>
             {!isPickUp
               ? 'Selecciona tu ubicación para delivery'
-              : 'Descubre nuestras tiendas disponibles para tu producto'}
+              : 'Tiendas disponibles para tu producto'}
           </h3>
           <Simulation isPickup={isPickUp} />
         </Modal>
