@@ -60,7 +60,7 @@ interface Props {
 
 const RenderCountDownSimple = ({
   normalizedProps,
-  days,
+  // days,
   hours,
   minutes,
   seconds,
@@ -126,15 +126,18 @@ const RenderCountDownSimple = ({
               color: `${normalizedProps.fontColorCountdownCounterEdit}`,
             }}
           >
-            <div className={`${handles.timeRemainingCounter}`}>
+            {/* <div className={`${handles.timeRemainingCounter}`}>
               <div className={`${handles.timeRemaining}`}>{days}</div>
               <div
                 className={`${handles.timeRemainingText}`}
-                style={{ color: `${normalizedProps.fontColorCountdownEdit}` }}
+                style={{
+                  color: `${normalizedProps.fontColorCountdownEdit}`,
+                  display: 'none',
+                }}
               >
                 Días
               </div>
-            </div>
+            </div> */}
             <div className={`${handles.timeRemainingCounter}`}>
               <div className={`${handles.timeRemaining}`}>{hours}</div>
               <div

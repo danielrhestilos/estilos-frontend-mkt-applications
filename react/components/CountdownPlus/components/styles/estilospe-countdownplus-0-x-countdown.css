@@ -22,12 +22,14 @@
   /* justify-content: center; */
   gap: 13px;
   border-radius: 8px;
+  background: #e91111;
   box-sizing: border-box;
 }
 
 /* .cont */
 .containerCountdownRegularAndChildren {
   margin: 0rem 1rem 1rem 1rem;
+  padding-bottom: 2.5rem;
 }
 
 .countdownIconImage {
@@ -150,7 +152,9 @@
   text-align: center;
   margin: 0.15rem 0 0 0;
 }
-
+.countdownRegular .title {
+  color: #fff !important;
+}
 .countdownBanner {
   display: flex;
   justify-content: center;
@@ -303,8 +307,8 @@
   }
 
   .timeRemainingText {
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 13px;
     line-height: 15px;
   }
 
@@ -405,7 +409,6 @@
     margin: 2rem auto;
     padding: 0 1rem;
     padding-bottom: 30px;
-    background: #e91111;
   }
 
   /*CONTADOR SIN BANNER*/
@@ -413,7 +416,6 @@
   .countdownRegular .title {
     font-size: 34px;
     line-height: 37px;
-    color: #fff !important;
   }
 
   .countdownRegular .description {
