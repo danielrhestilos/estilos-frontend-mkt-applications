@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 :root {
-  --primary: #FF0013;
-  --secondary: #D9A241;
-  --assistant: #F4FFCE;
+  --primary: #ff0013;
+  --secondary: #d9a241;
+  --assistant: #f4ffce;
   --gray: #eaeaea;
-  --font-black: #3A3333;
+  --font-black: #3a3333;
   --font-gray: #5f5959;
   --font-primary: 'Outfit', sans-serif;
-  --line-countdown: '25px'
+  --line-countdown: '25px';
 }
 
 .countdownComponent,
@@ -60,7 +59,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 23px;
-  color: #3A3333;
+  color: #3a3333;
 }
 
 .titleAndDescription {
@@ -92,15 +91,15 @@
 }
 
 .button {
-  padding: .25rem .75rem;
-  margin: .5rem auto;
+  padding: 0.25rem 0.75rem;
+  margin: 0.5rem auto;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 8px;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 
 .countdownCounter {
@@ -132,7 +131,7 @@
   font-family: 'Outfit';
   font-style: var(--font-primary);
   font-weight: 700;
-  font-size: 17px;
+  font-size: 24px;
   /* font-size: 24px; */
   line-height: 30px;
   background-color: #fff;
@@ -149,7 +148,7 @@
   /* font-size: 14px;
   line-height: 18px; */
   text-align: center;
-  margin: .15rem 0 0 0;
+  margin: 0.15rem 0 0 0;
 }
 
 .countdownBanner {
@@ -202,7 +201,7 @@
 
 /*CONTADOR SIN BANNER*/
 
-.countdownComponentSolo{
+.countdownComponentSolo {
   display: flex;
   justify-content: center;
   /* margin: 1rem; */
@@ -249,15 +248,9 @@
 /*FIN CONTADOR SIN BANNER*/
 
 @media screen and (min-width: 47.9em) {
-
-
-
-
   .countdownRegular {
     padding-top: 1.3rem;
   }
-
-
 
   .containerCountDownWithBannerItems {
     /* display: flex;
@@ -272,14 +265,14 @@
     /* max-width: 35%; */
   }
 
-
-
   .countdownComponent,
   .containerCountdownRegularAndChildren {
     justify-content: space-between;
   }
 
-  .containerCountDownWithBannerItems .containerCountDownWithBannerItems__iconImage .countdownIconImage {
+  .containerCountDownWithBannerItems
+    .containerCountDownWithBannerItems__iconImage
+    .countdownIconImage {
     margin: 0;
   }
 
@@ -306,7 +299,7 @@
   .timeRemaining {
     width: 40px;
     height: 40px;
-    margin: 0 .62rem;
+    margin: 0 0.62rem;
   }
 
   .timeRemainingText {
@@ -366,13 +359,15 @@
   }
 
   .countdownRegular {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .containerCountdownRegular,
   .titleAndDescription {
-    order: -1;
+    /* order: -1; */
   }
 
   /*FIN CONTADOR SIN BANNER*/
@@ -392,31 +387,33 @@
     margin-bottom: 15px;
   }
 
-  .countdownComponent ,   .countdownComponentMulti{
+  .countdownComponent,
+  .countdownComponentMulti {
     margin: 0rem auto;
     /* margin-bottom: 2rem; */
     padding: 0 !important;
     display: flex;
-    gap: .8rem;
+    gap: 0.8rem;
     margin-bottom: 1rem;
     /* flex-direction: row */
   }
   .countdownComponent {
-    flex-direction: column
+    flex-direction: column;
   }
 
   .containerCountdownRegularAndChildren {
-    margin: 2rem  auto;
+    margin: 2rem auto;
     padding: 0 1rem;
     padding-bottom: 30px;
+    background: #e91111;
   }
 
   /*CONTADOR SIN BANNER*/
 
-
   .countdownRegular .title {
-    font-size: 29px;
+    font-size: 34px;
     line-height: 37px;
+    color: #fff !important;
   }
 
   .countdownRegular .description {
@@ -424,11 +421,8 @@
     line-height: 23px;
   }
 
-
   /*FIN CONTADOR SIN BANNER*/
 }
-
-
 
 /* General styles for all banners */
 .fullBanner {

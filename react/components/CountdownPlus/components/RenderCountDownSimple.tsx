@@ -100,6 +100,7 @@ const RenderCountDownSimple = ({
         ) : (
           ''
         )}
+
         <div className={`${handles.titleAndDescription}`}>
           {normalizedProps.descriptionPromotionEdit !== '' ? (
             <h2
@@ -165,6 +166,7 @@ const RenderCountDownSimple = ({
         ) : (
           ''
         )}
+        <div></div>
       </div>
       <div>{normalizedProps.children[0]}</div>
     </div>

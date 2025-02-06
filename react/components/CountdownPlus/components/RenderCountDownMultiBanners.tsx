@@ -97,6 +97,8 @@ const RenderCountDownMultiBanners = ({
 // countdownBannerTabletEdit,
 Props) => {
   const handles = useCssHandles(CSS_HANDLES)
+  console.log('days ->', days)
+
   // console.log('linkButtonEdit->', linkButtonEdit)
 
   return (
@@ -152,7 +154,7 @@ Props) => {
                         color: `${normalizedProps.fontColorCountdownCounterEdit}`,
                       }}
                     >
-                      <div className={`${handles.timeRemainingCounter}`}>
+                      {/* <div className={`${handles.timeRemainingCounter}`}>
                         <div className={`${handles.timeRemaining}`}>{days}</div>
                         <div
                           className={`${handles.timeRemainingText}`}
@@ -162,7 +164,7 @@ Props) => {
                         >
                           Días
                         </div>
-                      </div>
+                      </div> */}
                       <div className={`${handles.timeRemainingCounter}`}>
                         <div className={`${handles.timeRemaining}`}>
                           {hours}
