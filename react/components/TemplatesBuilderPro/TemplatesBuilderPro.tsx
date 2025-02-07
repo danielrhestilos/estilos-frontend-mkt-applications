@@ -2,15 +2,15 @@ import React from 'react'
 import Layout from './Layout'
 import useResize from '../../hooks/sizeScreenHook'
 import styles from './styles.css'
-import { useRuntime } from 'vtex.render-runtime'
+// import { useRuntime } from 'vtex.render-runtime'
 function TemplatesBuilderPro(props: any) {
-  const { navigate } = useRuntime()
+  // const { navigate } = useRuntime()
   const [, isMobil] = useResize()
-  const handleRedirect = (linkText: any) => {
-    navigate({
-      to: linkText,
-    })
-  }
+  // const handleRedirect = (linkText: any) => {
+  //   navigate({
+  //     to: linkText,
+  //   })
+  // }
   return (
     <div>
       {props?.elementos?.map((child: any, index: number) => (
@@ -20,10 +20,12 @@ function TemplatesBuilderPro(props: any) {
           titlLayout={child.titlLayout}
         >
           {child?.images?.map((image: any, imgIndex: number) => (
-            <div
-              onClick={() => handleRedirect(image.link)}
+            <a
+              // onClick={() => handleRedirect(image.link)}
+              href={image.link}
+              target="_blank"
               className={image.main ? styles.contBannerMain : styles.contBanner}
-              style={{ backgroundColor: image.bgColor }}
+              style={{ backgroundColor: image.bgColor, display: 'block' }}
             >
               <img
                 key={imgIndex}
@@ -60,7 +62,7 @@ function TemplatesBuilderPro(props: any) {
                   {image?.textCTA}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </Layout>
       ))}
