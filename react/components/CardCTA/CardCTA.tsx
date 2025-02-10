@@ -4,19 +4,10 @@ import styles from './styles.css'
 import { useProduct } from 'vtex.product-context'
 import { isProductAvailable } from './../../utils/generalUtils'
 
-import usePromotionData from '../../hooks/promotionCardHook'
-// import useRenderedState from '../../hooks/promotionRenderedHook'
-// import { canUseDOM } from 'vtex.render-runtime'
-
 const CardCTA = () => {
   const ctxProduct = useProduct()
   const { selectedItem } = ctxProduct
   const isAvailable = selectedItem ? isProductAvailable(selectedItem) : false
-  // const rendered = useRenderedState()
-  // const dataLocalStorage = canUseDOM
-  //   ? window.sessionStorage.getItem('PromotionsEstilosCard')
-  //   : null
-  const { value } = usePromotionData(selectedItem)
 
   if (!isAvailable) {
     return null
@@ -35,8 +26,6 @@ const CardCTA = () => {
     return null
   }
 
-  const ahorro = itemPrice - value
-
   return true ? (
     <a
       className={styles.cardContainer}
@@ -49,15 +38,7 @@ const CardCTA = () => {
         style={{ height: '27px' }}
       />
       <div className={styles.ctaContainer}>
-        {value != 0 ? (
-          <p className={styles.cta}>
-            Ahorra <strong>S/ {ahorro.toFixed(2)}</strong> con tarjeta Estilos
-          </p>
-        ) : (
-          <p className={styles.cta}>
-            Compra con tarjeta Estilos y accede a nuestros beneficios
-          </p>
-        )}
+        <p className={styles.cta}>¡Sé parte de nuestra familia!</p>
         <p className={styles.cta}>
           ¿Aún no la tienes?{' '}
           <span className={styles.here}>¡Solicítala aquí!</span>
