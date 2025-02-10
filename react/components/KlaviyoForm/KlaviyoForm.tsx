@@ -24,7 +24,7 @@ function KlaviyoForm(props: any) {
         >
           <img
             style={{ display: 'block', height: '40px' }}
-            src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/5e0d4997-cc7b-4c36-9ed6-6164dca8905c___b4f4d1d401c8cfd7d3fbbc01d83465fc.gif"
+            src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/3164cf61-4213-4d7b-b029-54f8a4581a9e___df2ddf41ed9dc9522f6eb3f32abc5572.gif"
           />
         </div> // Aquí puedes reemplazar el texto por un componente de loader si lo deseas
       ) : (
