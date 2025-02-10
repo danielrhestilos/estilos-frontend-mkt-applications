@@ -38,7 +38,7 @@ const CardCTA = () => {
         style={{ height: '27px' }}
       />
       <div className={styles.ctaContainer}>
-        <p className={styles.cta}>¡Sé parte de nuestra familia!</p>
+        <p className={styles.cta}>¡Un mundo de beneficios para ti!</p>
         <p className={styles.cta}>
           ¿Aún no la tienes?{' '}
           <span className={styles.here}>¡Solicítala aquí!</span>
