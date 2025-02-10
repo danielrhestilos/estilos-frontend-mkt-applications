@@ -226,9 +226,6 @@
   "size-guide": {
     "component": "SizeGuide"
   },
-  "nothing": {
-    "component": "Nothing"
-  },
   "estilos-header-exclusive-collection": {
     "component": "ExclusiveBanner"
   },
