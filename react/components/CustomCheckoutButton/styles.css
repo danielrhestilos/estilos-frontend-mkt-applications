@@ -1,21 +1,22 @@
 .minicartCheckoutButton {
-    border-radius: 30px !important;
-    color: #fff;
-    font-weight: 700 !important;
-    border: none;
-    transition: all .3s;
-    background-color:  #e91111 ;
-    font-size: 17px !important;
-    padding: 11px;
-    display: block;
-    width: 90%;
-    margin: auto;
+  border-radius: 10px !important;
+  color: #fff;
+  font-weight: 700 !important;
+  border: none;
+  transition: all 0.3s;
+  background-color: #e91111;
+  font-size: 17px !important;
+  padding: 11px;
+  display: block;
+  width: 90%;
+  margin: auto;
 
-    font-family: Outfit Light, Fabriga, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-
+  font-family: Outfit Light, Fabriga, -apple-system, BlinkMacSystemFont,
+    avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+    segoe ui, arial, sans-serif;
 }
 
 .minicartCheckoutButton:hover {
-    cursor: pointer;
-    background-color: #e60b0b !important;
+  cursor: pointer;
+  background-color: #e60b0b !important;
 }

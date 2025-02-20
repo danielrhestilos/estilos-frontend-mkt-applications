@@ -35,9 +35,10 @@ function QR() {
     return `${day}${month}${year}` // Formato "ddMMyyyy"
   }
 
-  const fetchOrder = async (): Promise<OrderData> => {
+  const fetchOrder = async (codeOrder: string): Promise<OrderData> => {
     try {
       const orderResponse = await fetch(`/_v/validate-order/${codeOrder}-01`)
+
       if (!orderResponse.ok) {
         throw new Error(
           `Error ${orderResponse.status}: ${orderResponse.statusText}`
@@ -115,13 +116,13 @@ function QR() {
     }
   }
 
-  const fetchAllData = async () => {
+  const fetchAllData = async (codeOrder: string) => {
     try {
       setError(null) // Limpiar errores previos
       setLoading(true) // Iniciar el estado de carga
 
       // Primero obtenemos la orden y los datos de autenticación
-      const orderData = await fetchOrder()
+      const orderData = await fetchOrder(codeOrder)
       const authData = await fetchAuthData()
 
       // Luego generamos el QR usando los datos obtenidos
@@ -135,7 +136,7 @@ function QR() {
 
   useEffect(() => {
     if (codeOrder) {
-      fetchAllData()
+      fetchAllData(codeOrder)
     } else {
       setError('Código de orden no encontrado en la URL.')
       setLoading(false)
