@@ -1,42 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRuntime } from 'vtex.render-runtime'
 import styles from './styles.css'
-// import { match } from 'assert'
 
 function SEOCategories(props: any) {
-  const [text, setText] = useState('')
-  const { route } = useRuntime()
+  const { route } = useRuntime() || {}
   const canonicalPath = route?.canonicalPath
   const params = route?.params
   const terms = params?.terms
-  const containerPLP = props?.containerPLP
+  const containerPLP = props?.containerPLP || []
 
-  useEffect(() => {
-    if (!canonicalPath) {
-      console.error('Canonical Path is undefined')
-      return
-    }
-    const path = terms ? `${canonicalPath}/${terms}` : canonicalPath
-    // console.log('items container plp', containerPLP)
+  // Obtener la ruta de manera sincrónica
+  const path = terms ? `${canonicalPath}/${terms}` : canonicalPath
+  const matchedItem = containerPLP.find((item: any) => item.route === path)
+  const text = matchedItem?.htmlText || ''
 
-    // console.log('path: ', path)
-
-    const matchedItem = containerPLP.find((item: any) => item.route === path)
-    // console.log('matchedItem: ', matchedItem)
-
-    if (matchedItem) {
-      setText(matchedItem.htmlText || '') // Set the text or an empty string if htmlText is undefined
-    }
-  }, [canonicalPath])
-
-  return (
-    text != '' && (
-      <div
-        className={styles.seoContent}
-        dangerouslySetInnerHTML={{ __html: text }}
-      />
-    )
-  )
+  return text ? (
+    <div
+      className={styles.seoContent}
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
+  ) : null
 }
 
 SEOCategories.defaultProps = {
