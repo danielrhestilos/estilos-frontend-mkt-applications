@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRuntime } from 'vtex.render-runtime'
 import styles from './styles.css'
+// import { match } from 'assert'
 
 function SEOCategories(props: any) {
   const [text, setText] = useState('')
@@ -15,14 +16,16 @@ function SEOCategories(props: any) {
       console.error('Canonical Path is undefined')
       return
     }
-    const path = terms ? `${canonicalPath}` : canonicalPath
+    const path = terms ? `${canonicalPath}/${terms}` : canonicalPath
+    // console.log('items container plp', containerPLP)
+
+    // console.log('path: ', path)
 
     const matchedItem = containerPLP.find((item: any) => item.route === path)
+    // console.log('matchedItem: ', matchedItem)
 
     if (matchedItem) {
       setText(matchedItem.htmlText || '') // Set the text or an empty string if htmlText is undefined
-    } else {
-      console.error('No matching route found in containerPLP')
     }
   }, [canonicalPath])
 
