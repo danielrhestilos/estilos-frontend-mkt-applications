@@ -2,6 +2,8 @@ import React, { /* useState, */ useEffect } from 'react'
 import styles from './styles.css'
 import { geo } from '../../utils/geo'
 import useLocalStorage from '../../hooks/localStorageHook'
+import { useOrderForm } from 'vtex.order-manager/OrderForm'
+
 // interface Data {
 //   [departamento: string]: {
 //     [provincia: string]: {
@@ -11,6 +13,8 @@ import useLocalStorage from '../../hooks/localStorageHook'
 // }
 
 const SimulationBase: StorefrontFunctionComponent = () => {
+  const { orderForm } = useOrderForm()
+
   // const [data, setData] = useState<Data>({})
   const [localDepartamento, setLocalDepartamento] = useLocalStorage(
     'localDepartamento',
@@ -32,6 +36,8 @@ const SimulationBase: StorefrontFunctionComponent = () => {
 
   useEffect(() => {
     if (geo) {
+      console.log('orderForm->', orderForm)
+
       setDepartamentos(Object.keys(geo))
       if (localDepartamento) {
         setProvincias(Object.keys(geo[localDepartamento] || {}))
@@ -84,6 +90,21 @@ const SimulationBase: StorefrontFunctionComponent = () => {
     const localZipcode =
       geo[localDepartamento]?.[localProvincia]?.[distrito] || ''
     setLocalZipcode(localZipcode)
+
+    // window.dataLayer = window.dataLayer || [];
+    // window.dataLayer.push({
+    //    'formLocation': 'footer',
+    //    'event': 'new_subscriber'
+    //  });
+    ;(window as any).dataLayer = (window as any).dataLayer || []
+    ;(window as any).dataLayer.push({
+      event: 'select_location_white',
+      selectedDepartamento: localDepartamento,
+      selectedProvincia: localProvincia,
+      selectedDistrito: distrito,
+      selectedEmail: orderForm?.clientProfileData?.email || '',
+    })
+
     window.location.reload()
   }
 

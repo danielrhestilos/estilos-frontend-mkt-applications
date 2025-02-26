@@ -12,6 +12,7 @@ interface Data {
     }
   }
 }
+
 interface SimulationProps {
   isPickup: boolean
 }
