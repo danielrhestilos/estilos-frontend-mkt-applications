@@ -70,7 +70,8 @@ const Pagination: React.FC = () => {
               width="25"
               height="25"
               viewBox="0 0 16 16"
-              className=" vtex-slider-layout-0-x-caretIcon vtex-slider-layout-0-x-caretIcon--desktop__slider-banner--images"
+              className={styles.iconSliderPaginationPLP}
+              // className=" vtex-slider-layout-0-x-caretIcon vtex-slider-layout-0-x-caretIcon--desktop__slider-banner--images"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
@@ -116,7 +117,8 @@ const Pagination: React.FC = () => {
               width="25"
               height="25"
               viewBox="0 0 16 16"
-              className=" vtex-slider-layout-0-x-caretIcon vtex-slider-layout-0-x-caretIcon--desktop__slider-banner--images"
+              className={styles.iconSliderPaginationPLP}
+              // className=" vtex-slider-layout-0-x-caretIcon vtex-slider-layout-0-x-caretIcon--desktop__slider-banner--images"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
