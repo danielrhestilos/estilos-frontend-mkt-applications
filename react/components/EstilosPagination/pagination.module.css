@@ -1,0 +1,71 @@
+.paginationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  flex-wrap: wrap;
+  gap: 0.25rem; /* Reduce el espacio entre los elementos */
+}
+
+.currentPage {
+  display: inline-block;
+  color: #e91111; /* Rojo */
+  /* border-radius: 50%; Circular */
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  /* color: white; Texto en blanco */
+  font-weight: bold;
+  /* border: 2px solid #e91111; Borde del mismo color */
+}
+
+.pageLink {
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.pageLink:hover {
+  color: #e91111; /* Resaltar en rojo */
+}
+
+.dots {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.csiconArrowLeft::before {
+  content: '\e408';
+}
+
+.csiconArrowRight::before {
+  content: '\e409';
+}
+
+.arrowButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.arrowButton:hover {
+  color: #e91111;
+}

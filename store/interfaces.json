@@ -66,6 +66,9 @@
   "estilos-send-quickview-event": {
     "component": "sednQuickviewEvent"
   },
+  "estilospe-pagination": {
+    "component": "EstilosPagination"
+  },
   "estilos-condition-category-show": {
     "component": "ConditionCategoryShow",
     "composition": "children",
