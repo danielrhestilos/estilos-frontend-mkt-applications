@@ -1,133 +1,129 @@
-import React from 'react'
+import React, { useState, useMemo, useEffect, useCallback } from 'react'
+import ArrowPaginationLeft from './ArrowPaginationLeft'
+import ArrowPaginationRight from './ArrowPaginationRight'
 import { useSearchPage } from 'vtex.search-page-context/SearchPageContext'
+import { useFetchMore } from './../Paginator/hooks/useFetchMore'
+import { useRuntime } from 'vtex.render-runtime'
 import styles from './pagination.module.css'
 
-const Pagination: React.FC = () => {
-  const { searchQuery, maxItemsPerPage, page } = useSearchPage()
+const Pagination = () => {
+  const { searchQuery, maxItemsPerPage = 24, page = 1 } = useSearchPage()
+  const { setQuery, query: urlQuery } = useRuntime()
+  const initialPage = Number(urlQuery?.page) || page
+  const [currentPage, setCurrentPage] = useState(initialPage)
 
-  // total number of products
-  const totalNumberProducts: number =
-    searchQuery?.data?.productSearch?.recordsFiltered || 0
-
-  // total number of pages
-  const totalNumberOfPages: number = Math.ceil(
-    totalNumberProducts / maxItemsPerPage
+  const queryData = useMemo(
+    () => ({
+      query: searchQuery?.variables?.query || '',
+      map: searchQuery?.variables?.map || '',
+      order: searchQuery?.variables?.orderBy || '',
+      priceRange: searchQuery?.variables?.selectedFacets?.find(
+        (facet: any) => facet.key === 'priceRange'
+      )?.value,
+    }),
+    [searchQuery?.variables]
   )
 
-  // get query data
-  const queryData = {
-    query: searchQuery?.variables?.query || '',
-    map: searchQuery?.variables?.map || '',
-    order: searchQuery?.variables?.orderBy || '',
-    priceRange: searchQuery?.variables?.selectedFacets?.find(
-      (facet: any) => facet.key === 'priceRange'
-    )?.value,
-  }
+  const totalNumberProducts =
+    searchQuery?.data?.productSearch?.recordsFiltered || 0
+  const totalPages = useMemo(
+    () => Math.ceil(totalNumberProducts / maxItemsPerPage),
+    [totalNumberProducts, maxItemsPerPage]
+  )
 
-  // create strings for parameters
-  const map = !['c', 'c,c', 'c,c,c'].includes(queryData.map)
-    ? `&map=${queryData.map}`
-    : ''
-  const order =
-    queryData.order !== 'OrderByReleaseDateDESC'
-      ? `&order=${queryData.order}`
-      : ''
-  const priceRange = queryData.priceRange
-    ? `&priceRange=${queryData.priceRange}`
-    : ''
+  // Reset `currentPage` si cambia el query o el parámetro de la URL
+  useEffect(() => {
+    setCurrentPage(Number(urlQuery?.page) || 1)
+  }, [queryData, urlQuery?.page])
+
+  const { handleFetchPerPage, loading } = useFetchMore({
+    page: currentPage,
+    maxItemsPerPage,
+    fetchMore: searchQuery?.fetchMore,
+    products: searchQuery?.data?.productSearch?.products,
+    queryData,
+  })
 
   // Define the range of pages to display (Saga Falabella style)
-  const pages: (number | string)[] = []
+  const pages = useMemo(() => {
+    const result: (number | string)[] = []
 
-  if (page > 2) pages.push(1)
-  if (page > 3) pages.push('...')
+    if (currentPage > 2) result.push(1)
+    if (currentPage > 3) result.push('...')
 
-  for (
-    let i = Math.max(1, page - 1);
-    i <= Math.min(totalNumberOfPages, page + 1);
-    i++
-  ) {
-    pages.push(i)
-  }
+    for (
+      let i = Math.max(1, currentPage - 1);
+      i <= Math.min(totalPages, currentPage + 1);
+      i++
+    ) {
+      result.push(i)
+    }
 
-  if (page < totalNumberOfPages - 2) pages.push('...')
-  if (page < totalNumberOfPages - 1) pages.push(totalNumberOfPages)
+    if (currentPage < totalPages - 2) result.push('...')
+    if (currentPage < totalPages - 1) result.push(totalPages)
+
+    return result
+  }, [currentPage, totalPages])
+
+  const handlePageChange = useCallback(
+    async (newPage: number) => {
+      if (newPage !== currentPage && !loading) {
+        await handleFetchPerPage(newPage)
+        setCurrentPage(newPage)
+        setQuery({ page: newPage }, { replace: true, merge: true })
+      }
+    },
+    [currentPage, loading, handleFetchPerPage, setQuery]
+  )
+
+  const renderButton = (page: number | string) =>
+    page === currentPage ? (
+      <span key={page} className={styles.currentPage} aria-current="page">
+        {page}
+      </span>
+    ) : page === '...' ? (
+      <span key={page} className={styles.dots}>
+        {page}
+      </span>
+    ) : (
+      <button
+        key={page}
+        className={styles.pageLink}
+        onClick={() => handlePageChange(Number(page))}
+        disabled={loading}
+        title={`Ir a la página ${page}`}
+      >
+        {page}
+      </button>
+    )
 
   return (
     <div className={styles.paginationContainer}>
       <div id="total" className={styles.paginationWrapper}>
-        {page > 1 && (
-          <a
-            className={`${styles.arrowButton}`}
-            href={`/${queryData.query}?page=${
-              page - 1
-            }${map}${order}${priceRange}`.trim()}
+        {currentPage > 1 && (
+          <button
+            className={styles.arrowButton}
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={loading}
             title="Página Anterior"
+            aria-label="Página Anterior"
           >
-            {' '}
-            <svg
-              fill="none"
-              width="25"
-              height="25"
-              viewBox="0 0 16 16"
-              className={styles.iconSliderPaginationPLP}
-              // className=" vtex-slider-layout-0-x-caretIcon vtex-slider-layout-0-x-caretIcon--desktop__slider-banner--images"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <use
-                href="#nav-thin-caret--left"
-                xlinkHref="#nav-thin-caret--left"
-              ></use>
-            </svg>
-          </a>
+            <ArrowPaginationLeft />
+          </button>
         )}
 
-        {pages.map((thePage, index) =>
-          thePage === page ? (
-            <span key={index} className={styles.currentPage}>
-              {thePage}
-            </span>
-          ) : thePage === '...' ? (
-            <span key={index} className={styles.dots}>
-              {thePage}
-            </span>
-          ) : (
-            <a
-              key={index}
-              className={styles.pageLink}
-              href={`/${queryData.query}?page=${thePage}${map}${order}${priceRange}`.trim()}
-              title={`Ir para página ${thePage}`}
-            >
-              {thePage}
-            </a>
-          )
-        )}
+        {pages.map((page) => renderButton(page))}
 
-        {page < totalNumberOfPages && (
-          <a
-            className={`${styles.arrowButton}`}
-            href={`/${queryData.query}?page=${
-              page + 1
-            }${map}${order}${priceRange}`.trim()}
+        {currentPage < totalPages && (
+          <button
+            className={styles.arrowButton}
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={loading}
             title="Página Siguiente"
+            aria-label="Página Siguiente"
           >
-            <svg
-              fill="none"
-              width="25"
-              height="25"
-              viewBox="0 0 16 16"
-              className={styles.iconSliderPaginationPLP}
-              // className=" vtex-slider-layout-0-x-caretIcon vtex-slider-layout-0-x-caretIcon--desktop__slider-banner--images"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <use
-                href="#nav-thin-caret--right"
-                xlinkHref="#nav-thin-caret--right"
-              ></use>
-            </svg>
-          </a>
+            <ArrowPaginationRight />
+          </button>
         )}
       </div>
     </div>

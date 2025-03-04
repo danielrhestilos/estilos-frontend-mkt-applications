@@ -13,7 +13,7 @@ export const FETCH_TYPE = {
   PREVIOUS: 'previous',
 }
 
-function reducer(_state:any, action:any) {
+function reducer(_state: any, action: any) {
   const { maxItemsPerPage, rollbackState } = action.args
 
   switch (action.type) {
@@ -39,17 +39,17 @@ function reducer(_state:any, action:any) {
 }
 
 const handleFetchMore = async (
-  from:any,
-  to:any,
-  direction:any,
-  fetchMoreLocked:any,
-  setLoading:any,
-  fetchMore:any,
-  products:any,
-  updateQueryError:any,
-  fuzzy:any,
-  operator:any,
-  searchState:any
+  from: any,
+  to: any,
+  direction: any,
+  fetchMoreLocked: any,
+  setLoading: any,
+  fetchMore: any,
+  products: any,
+  updateQueryError: any,
+  fuzzy: any,
+  operator: any,
+  searchState: any
   // eslint-disable-next-line max-params
 ) => {
   if (fetchMoreLocked.current || products.length === 0) {
@@ -67,7 +67,7 @@ const handleFetchMore = async (
       operator,
       searchState,
     },
-    updateQuery: (prevResult:any, { fetchMoreResult }:any) => {
+    updateQuery: (prevResult: any, { fetchMoreResult }: any) => {
       setLoading(false)
       fetchMoreLocked.current = false
 
@@ -129,7 +129,7 @@ const useFetchingMore = () => {
   return [stateValue, setFetchMore]
 }
 
-export const useFetchMore = (props:any) => {
+export const useFetchMore = (props: any) => {
   const {
     page,
     maxItemsPerPage,
@@ -166,7 +166,7 @@ export const useFetchMore = (props:any) => {
     isFirstRender.current = false
   }, [maxItemsPerPage, query, map, orderBy, priceRange])
 
-  const handleFetchPerPage = async (currPage:any) => {
+  const handleFetchPerPage = async (currPage: any) => {
     const rollbackState = pageState
     const from = (currPage - 1) * maxItemsPerPage
     const to = currPage * maxItemsPerPage - 1
