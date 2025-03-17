@@ -227,7 +227,9 @@ const Simulation = (props: SimulationProps) => {
                           : formatCurrency(option.price)}
                       </p>
                       {option.transitTime === '0bd' ? (
-                        <p className={styles.pickUpPointName}>Llega: Hoy</p>
+                        <p className={styles.pickUpPointName}>
+                          Llega: Hoy (para compras antes de las 2PM)
+                        </p>
                       ) : (
                         <p className={styles.pickUpPointName}>
                           Llega:{' '}
