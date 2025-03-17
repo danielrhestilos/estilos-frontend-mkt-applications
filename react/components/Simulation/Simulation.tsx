@@ -43,7 +43,7 @@ const Simulation = (props: SimulationProps) => {
   useEffect(() => {
     setZipcode(localZipCode)
   }, [])
-  const mini = 500000
+  // const mini = 500000
   useEffect(() => {
     setData(geo)
     setSelectedDepartamento(localDepartamento)
@@ -51,52 +51,12 @@ const Simulation = (props: SimulationProps) => {
     setSelectedProvincia(localProvincia)
     setZipcode(localZipCode)
     simulate(`${productContext?.selectedItem?.itemId.toString()}`)
-    console.log('deliveryData montado', deliveryData)
+    // console.log('deliveryData montado', deliveryData)
   }, [])
 
   useEffect(() => {
     simulate(`${productContext?.selectedItem?.itemId.toString()}`)
-    console.log('deliveryData ', deliveryData)
-
-    // if (zipcode != '') {
-    //   try {
-    //     setLoading(true)
-    //     fetch('/api/checkout/pub/orderForms/simulation', {
-    //       method: 'POST',
-    //       headers: {
-    //         Accept: 'application/json',
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify({
-    //         items: [
-    //           {
-    //             id: `${productContext?.selectedItem?.itemId.toString()}`,
-    //             quantity: 1,
-    //             seller: 1,
-    //           },
-    //         ],
-    //         postalCode: `${zipcode.toString()}`,
-    //         country: 'PER',
-    //       }),
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         setLoading(false)
-    //         setDeliveryData(
-    //           data.logisticsInfo[0].slas
-    //             .filter((item: any) => item.deliveryChannel == 'delivery')
-    //             .reduce(
-    //               (prev: any, curr: any) =>
-    //                 prev.price < curr.price ? prev : curr,
-    //               { price: mini }
-    //             )
-    //         )
-    //         setPickUpPoints(data.pickupPoints)
-    //       })
-    //   } catch (error) {
-    //     console.error('error sucedio: ', error.toString())
-    //   }
-    // }
+    // console.log('deliveryData ', deliveryData)
   }, [
     productContext,
     selectedDepartamento,
@@ -251,17 +211,35 @@ const Simulation = (props: SimulationProps) => {
           )}
           {!props.isPickup && (
             <>
-              {deliveryData && deliveryData.price != mini ? (
+              {deliveryData && deliveryData?.options?.length > 0 ? (
                 <>
-                  <p style={{ fontWeight: '800' }}>Envío regular</p>
+                  {/* <p style={{ fontWeight: '800' }}></p>
                   <p className={styles.deliverySim}>
                     Delivery desde sólo: {formatCurrency(deliveryData?.price)}
-                  </p>
+                  </p> */}
+                  {deliveryData?.options?.map((option: any) => (
+                    <div className={styles.pickUpPointBlock}>
+                      <p className={styles.storeName}>{option?.name}</p>
+                      <p className={styles.pickUpPointName}>
+                        Precio:{' '}
+                        {option?.price === 0
+                          ? 'Gratis'
+                          : formatCurrency(option.price)}
+                      </p>
+                      {option.transitTime === '0bd' ? (
+                        <p className={styles.pickUpPointName}>Llega: Hoy</p>
+                      ) : (
+                        <p className={styles.pickUpPointName}>
+                          Llega:{' '}
+                          {option.transitTime.replaceAll('bd', ' días hábiles')}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </>
               ) : (
                 <>
-                  {console.log('deliveryData : ', deliveryData)}
-                  {deliveryData == null && (
+                  {deliveryData?.options?.length == 0 && (
                     <p className={styles.noneSim}>
                       ¡Lo sentimos! <br />
                       El destino seleccionado está fuera de nuestra zona de

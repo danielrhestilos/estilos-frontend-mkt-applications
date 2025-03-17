@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import useProduct from 'vtex.product-context/useProduct'
 export const useSimulation = (zipcode: string /* isPickup: boolean*/) => {
-    console.log('--------------------------')
-    console.log('zipcode: ', zipcode)
-
     const [loading, setLoading] = useState<boolean>(false)
     const [deliveryData, setDeliveryData] = useState<any>(null)
     const [pickUpPoints, setPickUpPoints] = useState<any>([])
@@ -34,14 +31,29 @@ export const useSimulation = (zipcode: string /* isPickup: boolean*/) => {
             setPickUpPoints(data.pickupPoints || [])
             // } else {
             const logisticsInfo = data.logisticsInfo[0]?.slas || []
-            const cheapestDelivery = logisticsInfo
+            console.log('logisticsInfo', logisticsInfo);
+
+            const optionsDelivery = logisticsInfo
                 .filter((item: any) => item.deliveryChannel === 'delivery')
-                .reduce(
-                    (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
-                    { price: Infinity }
-                )
-            setDeliveryData(
-                cheapestDelivery.price !== Infinity ? cheapestDelivery : null
+                .map(({ name, price, transitTime }: any) => ({
+                    name,
+                    price,
+                    transitTime
+                }));
+            const freeDeliveryOption = optionsDelivery.find((item: any) => item?.price === 0);
+            const expressDeliveryOption = optionsDelivery.find((item: any) => item?.transitTime === '0bd');
+            // .reduce(
+            //     (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
+            //     { price: Infinity }
+            // )
+            console.log('optionsDelivery', optionsDelivery);
+
+            setDeliveryData({
+                options: optionsDelivery,
+                hasFreeDelivery: freeDeliveryOption !== undefined,
+                hasExpressDeliveryOption: expressDeliveryOption !== undefined,
+            }
+                // cheapestDelivery.price !== Infinity ? cheapestDelivery : null
             )
             // }
         } catch (error) {

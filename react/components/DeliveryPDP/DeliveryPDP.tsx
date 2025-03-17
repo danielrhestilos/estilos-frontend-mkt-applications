@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './styles.css'
-import { Modal } from 'vtex.styleguide'
+import Modal from './../Modal/Modal'
+// import { Modal } from 'vtex.styleguide'
 import useProduct from 'vtex.product-context/useProduct'
 import Simulation from '../Simulation/Simulation'
 import { useSimulation } from '../../hooks/simulationHook'
@@ -18,16 +19,14 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
   const { deliveryData, simulate, pickUpPoints, loading } = useSimulation(
     localZipCode
   )
+  console.log('deliveryData: ', deliveryData)
   const productContext = useProduct()
-
   useEffect(() => {
     simulate(productContext?.selectedItem?.itemId || '')
   }, [productContext])
-
   function capitalizeFirstLetter(val: string) {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1)
   }
-
   const renderIcon = () => {
     if (isPickUp) {
       return localZipCode && pickUpPoints.length > 0
@@ -46,7 +45,6 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     }
     return deliveryData ? styles.deliveryCircle : styles.deliveryCircleDisabled
   }
-
   const renderMessage = () => {
     if (!localDistrito)
       return isPickUp ? (
@@ -88,7 +86,7 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
         <span>No disponible para retiro en tienda</span>
       )
     }
-    return deliveryData?.price ? (
+    return deliveryData?.options?.length > 0 ? (
       <>
         <p className={styles.DeliveryTitle}>Envío a domicilio </p>
         <button
@@ -125,6 +123,24 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     }
     return ''
   }
+  const renderDeliveryOptions = () => {
+    if (!localDistrito) return ''
+    if (!isPickUp) {
+      return (
+        <ul className={styles.pickUpPoints}>
+          {deliveryData?.options.length > 0 &&
+            deliveryData?.options
+              ?.slice(0, 3) // Solo toma los primeros 3 elementos
+              ?.map((point: any) => (
+                <li key={point?.id} className={styles.paragraphFriendlyName}>
+                  {capitalizeFirstLetter(point.name.toLocaleLowerCase())}
+                </li>
+              ))}
+        </ul>
+      )
+    }
+    return ''
+  }
   return (
     <>
       {!loading && (
@@ -138,22 +154,22 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
                 <>{renderMessage()}</>
               </div>
               <>{renderStores()}</>
+              <>{renderDeliveryOptions()}</>
             </div>
           </div>
         </>
       )}
       {show && (
-        <Modal centered isOpen={show} onClose={() => setShow(false)}>
-          <h3>
-            {!isPickUp
-              ? 'Selecciona tu ubicación para delivery'
-              : 'Tiendas disponibles para tu producto'}
-          </h3>
+        <Modal
+          title={!isPickUp ? 'Selecciona tu ubicación' : 'Tiendas disponibles'}
+          // centered
+          isOpen={show}
+          onClose={() => setShow(false)}
+        >
           <Simulation isPickup={isPickUp} />
         </Modal>
       )}
     </>
   )
 }
-
 export default DeliveryPDP

@@ -275,5 +275,8 @@
     "component": "OnlyGeoShow",
     "composition": "children",
     "allowed": "*"
+  },
+  "estilos-modal": {
+    "component": "modal"
   }
 }

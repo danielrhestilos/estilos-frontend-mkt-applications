@@ -1,10 +1,12 @@
 .containerSimulation {
+  /* display: flex; */
   display: flex;
+  gap: 1.2rem;
   /* margin: 1rem; */
   /* background: var(--light_bg, #f5f5f5); */
 }
 .containerResults {
-  margin: 19px 10px;
+  margin: 19px 0px;
 }
 .storeName {
   font-weight: 700;
@@ -23,15 +25,19 @@
   margin: 0 0 20px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
+  padding: 1rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .selectSim {
   width: 100%;
   margin-top: 10px;
   border: 1px solid #ccc;
-  border-radius: 25px;
+  border-radius: 0.5rem;
   font-size: 16px;
   background-color: #fff;
   /* -webkit-appearance: none;
@@ -53,7 +59,7 @@
   top: 43px;
 }
 .labelSim {
-  font-weight: 600;
+  font-weight: 500;
   margin: 0;
 }
 .noneSim {
