@@ -28,8 +28,8 @@ function ModalWhiteLabel(props: any) {
             borderRadius: '5px',
           }}
         >
-          Te mostraremos los productos disponibles en tu zona, junto con el
-          tiempo y costo de entrega.
+          Te mostraremos los productos disponibles en tu zona,
+          <br /> junto con el tiempo y costo de entrega.
         </p>
         <FakeWhiteLabel />
       </div>
