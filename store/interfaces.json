@@ -265,5 +265,15 @@
     "composition": "children",
     "allowed": "*",
     "component": "IfAvailableWL"
+  },
+  "sameday": {
+    "component": "SameDay",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "only-geo-show": {
+    "component": "OnlyGeoShow",
+    "composition": "children",
+    "allowed": "*"
   }
 }

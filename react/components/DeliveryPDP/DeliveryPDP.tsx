@@ -17,7 +17,6 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
   const [localDistrito] = useLocalStorage('localDistrito', '')
   const { deliveryData, simulate, pickUpPoints, loading } = useSimulation(
     localZipCode
-    // isPickUp
   )
   const productContext = useProduct()
 
@@ -28,13 +27,6 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
   function capitalizeFirstLetter(val: string) {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1)
   }
-
-  // const formatCurrency = (value: number) =>
-  //   new Intl.NumberFormat('es-PE', {
-  //     style: 'currency',
-  //     currency: 'PEN',
-  //     minimumFractionDigits: 2,
-  //   }).format(value / 100)
 
   const renderIcon = () => {
     if (isPickUp) {
@@ -80,12 +72,10 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
           </button>
         </>
       )
-
     if (isPickUp) {
       return pickUpPoints?.length > 0 ? (
         <>
           <p className={styles.DeliveryTitle}>Retiro en tienda</p>
-          {/* <p className={styles.seeMoreParagraph}> */}
           <button
             id={'seeMoreWhiteLabel'}
             className={styles.seeMore}
@@ -93,17 +83,14 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
           >
             Ver más
           </button>
-          {/* </p> */}
         </>
       ) : (
         <span>No disponible para retiro en tienda</span>
       )
     }
-
     return deliveryData?.price ? (
       <>
         <p className={styles.DeliveryTitle}>Envío a domicilio </p>
-        {/* <p className={styles.seeMoreParagraph}> */}
         <button
           id={'seeMoreWhiteLabel'}
           className={styles.seeMore}
@@ -111,16 +98,13 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
         >
           Ver más
         </button>
-        {/* </p> */}
       </>
     ) : (
       <>No disponible para delivery</>
     )
   }
-
   const renderStores = () => {
     if (!localDistrito) return ''
-
     if (isPickUp) {
       return (
         <ul className={styles.pickUpPoints}>
@@ -141,7 +125,6 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     }
     return ''
   }
-
   return (
     <>
       {!loading && (
