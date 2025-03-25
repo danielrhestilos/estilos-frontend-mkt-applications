@@ -8,9 +8,12 @@ function ListPrice({ container, isProduct }: any) {
   const productId = product?.productId
   // console.log('productId ',productId);
 
-  const { price, isVoid } = useListPrice(selectedItem, productId, container)
+  const { price /*isVoid */ } = useListPrice(selectedItem, productId, container)
+  console.log('price ', price)
 
-  if (!price || isVoid) {
+  if (!price) {
+    console.log('voy a retornar null')
+
     return null
   }
 
@@ -18,6 +21,7 @@ function ListPrice({ container, isProduct }: any) {
     style: 'currency',
     currency: 'PEN',
   })
+  console.log('formattedPrice ', formattedPrice)
 
   return (
     <div className={styles.listPrice}>
