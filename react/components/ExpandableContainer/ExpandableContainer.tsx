@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './styles.module.css'
+
 interface ExpandableContainerProps {
   children: React.ReactNode
   initialHeight?: string
@@ -11,9 +12,22 @@ const ExpandableContainer: React.FC<ExpandableContainerProps> = ({
   initialHeight = '200px',
   expandedHeight = 'auto',
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
+  const [isExpanded, setIsExpanded] = useState(false)
   const [maxHeight, setMaxHeight] = useState(initialHeight)
+  const [dynamicHeight, setDynamicHeight] = useState(initialHeight)
+
+  useEffect(() => {
+    const updateHeight = () => {
+      const newHeight = window.innerWidth < 768 ? '300px' : initialHeight // Mayor altura en móviles
+      setDynamicHeight(newHeight)
+      setMaxHeight(newHeight)
+    }
+
+    updateHeight()
+    window.addEventListener('resize', updateHeight)
+    return () => window.removeEventListener('resize', updateHeight)
+  }, [initialHeight])
 
   useEffect(() => {
     if (isExpanded) {
@@ -23,16 +37,16 @@ const ExpandableContainer: React.FC<ExpandableContainerProps> = ({
           : expandedHeight
       )
     } else {
-      setMaxHeight(initialHeight)
+      setMaxHeight(dynamicHeight)
     }
-  }, [isExpanded, expandedHeight, initialHeight])
+  }, [isExpanded, expandedHeight, dynamicHeight])
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev)
   }
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div className={styles.expandableContainer}>
       <div
         className={styles.container}
         style={{
@@ -44,12 +58,7 @@ const ExpandableContainer: React.FC<ExpandableContainerProps> = ({
       >
         {children}
       </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <button
           onClick={toggleExpand}
           className={styles.switchButton}
