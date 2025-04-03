@@ -1,17 +1,5 @@
-.container::before {
-  content: '';
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 4rem;
-  background: linear-gradient(
-    180deg,
-    hsla(0, 0%, 85.1%, 0),
-    rgba(238, 238, 240, 0.783185) 52.3%,
-    #f4f4f6
-  );
-  position: absolute;
-  pointer-events: none;
+.expandableContainer {
+  position: relative;
 }
 
 .switchButton {
@@ -32,4 +20,18 @@
   border: 1px solid rgba(80, 80, 80, 0.1);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+.gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0.832237) 55.07%,
+    #fff 84.87%
+  );
+  transition: height 0.15s linear;
 }

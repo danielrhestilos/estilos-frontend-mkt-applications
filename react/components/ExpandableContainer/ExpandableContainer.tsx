@@ -58,7 +58,15 @@ const ExpandableContainer: React.FC<ExpandableContainerProps> = ({
       >
         {children}
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      {/* <div className={isExpanded && styles.gradient}>*</div> */}
+      <div className={!isExpanded ? styles.gradient : ''}></div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '1rem',
+        }}
+      >
         <button
           onClick={toggleExpand}
           className={styles.switchButton}
