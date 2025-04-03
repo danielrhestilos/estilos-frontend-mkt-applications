@@ -31,7 +31,7 @@ export const useSimulation = (zipcode: string /* isPickup: boolean*/) => {
             setPickUpPoints(data.pickupPoints || [])
             // } else {
             const logisticsInfo = data.logisticsInfo[0]?.slas || []
-            console.log('logisticsInfo', logisticsInfo);
+            // console.log('logisticsInfo', logisticsInfo);
 
             const optionsDelivery = logisticsInfo
                 .filter((item: any) => item.deliveryChannel === 'delivery')
@@ -46,7 +46,7 @@ export const useSimulation = (zipcode: string /* isPickup: boolean*/) => {
             //     (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
             //     { price: Infinity }
             // )
-            console.log('optionsDelivery', optionsDelivery);
+            // console.log('optionsDelivery', optionsDelivery);
 
             setDeliveryData({
                 options: optionsDelivery,

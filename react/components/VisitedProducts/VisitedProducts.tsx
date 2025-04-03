@@ -15,7 +15,7 @@ function VisitedProducts() {
             `/api/catalog_system/pub/products/variations/${item.productId}`
           )
           const res = await response.json()
-          console.log('res: ', res)
+          // console.log('res: ', res)
           const sku = res.skus.find((item: any) => item.available == true)
           return {
             ...item,

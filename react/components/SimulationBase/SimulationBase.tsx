@@ -36,7 +36,7 @@ const SimulationBase: StorefrontFunctionComponent = () => {
 
   useEffect(() => {
     if (geo) {
-      console.log('orderForm->', orderForm)
+      // console.log('orderForm->', orderForm)
 
       setDepartamentos(Object.keys(geo))
       if (localDepartamento) {

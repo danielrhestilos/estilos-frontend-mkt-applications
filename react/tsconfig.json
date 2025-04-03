@@ -8,5 +8,10 @@
     "target": "es2017",
     "allowJs": true
   },
-  "include": ["./typings/*.d.ts", "./**/*.tsx", "./**/*.ts"]
+  "include": [
+    "./typings/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.ts",
+    "components/ex/Ex.jsx"
+  ]
 }

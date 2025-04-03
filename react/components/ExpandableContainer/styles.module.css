@@ -1,0 +1,35 @@
+.container::before {
+  content: '';
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 4rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 85.1%, 0),
+    rgba(238, 238, 240, 0.783185) 52.3%,
+    #f4f4f6
+  );
+  position: absolute;
+  pointer-events: none;
+}
+
+.switchButton {
+  position: relative;
+  border: none;
+  background: #fff;
+  font-family: 'Outfit';
+  border-radius: 5px;
+  padding: 0.625rem;
+  min-height: 2.3125rem;
+  display: flex;
+  margin-inline: auto;
+  align-items: center;
+  gap: 0.5rem;
+  color: #505050;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(80, 80, 80, 0.1);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
