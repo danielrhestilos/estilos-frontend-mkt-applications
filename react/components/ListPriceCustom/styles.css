@@ -1,5 +1,9 @@
 .listPrice {
-    color: #949494;
-    display: flex;
-    justify-content: space-between;
+  font-family: 'Outfit';
+  color: #222;
+  font-weight: 400;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
 }

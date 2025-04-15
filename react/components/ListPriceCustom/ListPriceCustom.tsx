@@ -3,7 +3,7 @@ import styles from './styles.css'
 import { useProductInfo } from '../../hooks/productInfoHook'
 import { useListPrice } from '../../hooks/listPriceHook'
 
-function ListPrice({ container, isProduct }: any) {
+function ListPrice({ container /*isProduct*/ }: any) {
   const { selectedItem, product } = useProductInfo()
   const productId = product?.productId
   // console.log('productId ',productId);
@@ -25,7 +25,7 @@ function ListPrice({ container, isProduct }: any) {
 
   return (
     <div className={styles.listPrice}>
-      {isProduct && <del className={styles.normalText}>Normal</del>}
+      {/* {isProduct && <del className={styles.normalText}>Normal</del>} */}
       <del>{formattedPrice}</del>
     </div>
   )
