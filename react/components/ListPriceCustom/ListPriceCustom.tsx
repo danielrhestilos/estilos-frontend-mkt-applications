@@ -35,12 +35,12 @@ ListPrice.defaultProps = {
   isProduct: false,
   container: [
     {
-      productId: 191,
-      fakePrice: 19100,
+      productId: 781,
+      fakePrice: 339900,
     },
     {
-      productId: 190,
-      fakePrice: 19000,
+      productId: 780,
+      fakePrice: 268990,
     },
   ],
 }
