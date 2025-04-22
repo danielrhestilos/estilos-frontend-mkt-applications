@@ -42,7 +42,7 @@ function IfAvailableWL({
                       marginTop: '10px',
                     }}
                   >
-                    {'⚠️ No disponible en '} {localDistrito},{' '}
+                    {'⚠️ Delivery no disponible en '} {localDistrito},{' '}
                     {'Puedes optar por recogerlo o recibirlo en otra ciudad.'}
                   </p>
                   <>{children}</>
