@@ -112,12 +112,12 @@ const RenderCountDownSimple = ({
           ) : (
             ''
           )}
-          <h1
+          <h4
             className={`${handles.title}`}
             style={{ color: `${normalizedProps.fontColorEdit}` }}
           >
             {normalizedProps.titleText}
-          </h1>
+          </h4>
         </div>
         {countdownVisibility ? (
           <div
