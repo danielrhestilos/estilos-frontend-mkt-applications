@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useLocalStorage from '../../hooks/localStorageHook'
 import ModalWhiteLabel from '../ModalWhiteLabel/ModalWhiteLable'
 import useResize from '../../hooks/sizeScreenHook'
-import { useRuntime } from 'vtex.render-runtime'
+// import { useRuntime } from 'vtex.render-runtime'
 
 // Rutas de las imágenes
 const ICON_SELECTED_DESKTOP =
@@ -20,17 +20,17 @@ interface TextGeoUnifiedProps {
 }
 
 const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
-  const {
-    route: {
-      pageContext: { type },
-    },
-  } = useRuntime()
+  // const {
+  //   route: {
+  //     pageContext: { type },
+  //   },
+  // } = useRuntime()
 
   const [, isMobile] = useResize() // Detecta si es móvil o no
   const [showModal, setShowModal] = useState<boolean>(false)
   const [distrito] = useLocalStorage('localDistrito', '')
   const [provincia] = useLocalStorage('localProvincia', '')
-  const [closed, setClosed] = useLocalStorage('localModalClosed', false)
+  // const [closed, setClosed] = useLocalStorage('localModalClosed', false)
 
   const [icon, setIcon] = useState(
     isMobile ? ICON_DEFAULT_MOBILE : ICON_DEFAULT_DESKTOP
@@ -42,14 +42,14 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
 
   const onClose = () => {
     setShowModal(false)
-    setClosed(true)
+    // setClosed(true)
   }
 
-  useEffect(() => {
-    if (distrito == '' && !closed && type == 'product') {
-      setShowModal(true)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (distrito == '' && !closed) {
+  //     setShowModal(true)
+  //   }
+  // }, [])
 
   useEffect(() => {
     if (distrito !== '') {
