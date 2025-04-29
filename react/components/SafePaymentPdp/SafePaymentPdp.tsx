@@ -7,7 +7,7 @@ const SafePaymentPdp: React.FC<SafePaymentPdpProps> = () => {
   return (
     <div className={styles.container}>
       <span>Transacciones protegidas:</span>
-      <img src="https://estilospe.vtexassets.com/arquivos/bann-Niubiz-pasarella-tcredito-280425.svg" />
+      <img src="https://estilospe.vtexassets.com/arquivos/bann-pasarella-tarjetas-seguras-debito-290425.svg" />
     </div>
   )
 }
