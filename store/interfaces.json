@@ -283,5 +283,8 @@
   },
   "estilos-modal": {
     "component": "modal"
+  },
+  "estilos-safe-payment-pdp": {
+    "component": "SafePaymentPdp"
   }
 }
