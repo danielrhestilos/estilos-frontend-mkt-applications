@@ -5,10 +5,8 @@ import useResize from '../../hooks/sizeScreenHook'
 // import { useRuntime } from 'vtex.render-runtime'
 
 // Rutas de las imágenes
-const ICON_SELECTED_DESKTOP =
-  '/assets/vtex.file-manager-graphql/images/39c40f8c-3395-4151-ac3d-2fcc280451c1___0727c3c25fd7dd81339e7582e6a092ab.svg'
-const ICON_DEFAULT_DESKTOP =
-  '/assets/vtex.file-manager-graphql/images/84b87117-c5a4-430e-95a7-3d6f2edcfc90___4ab1c2c4f9821663ba10ce58d70cd904.svg'
+const ICON_SELECTED_DESKTOP = '/arquivos/ubi-black.svg'
+const ICON_DEFAULT_DESKTOP = '/arquivos/ubi-black.svg'
 const ICON_SELECTED_MOBILE =
   'https://estilospe.vtexassets.com/arquivos/Location-cliente-ICON-V1224-red-30.svg'
 const ICON_DEFAULT_MOBILE =
@@ -68,8 +66,9 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
         id={'textGeoWhiteLabel'}
         style={{
           alignItems: 'center',
+          marginBottom: '.5rem',
           display: 'flex',
-          gap: isMobile ? '0' : '8px',
+          gap: isMobile ? '0' : '4px',
           cursor: 'pointer',
         }}
         onClick={() => setShowModal(true)}
@@ -97,7 +96,13 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
                       borderRadius: '0.9rem',
                       marginLeft: '-5px',
                     }
-                  : { fontSize: '15px' }
+                  : {
+                      fontSize: '17px',
+                      color: '#5a5a5a',
+                      fontFamily: 'Outfit',
+                      lineHeight: '1.43rem',
+                      fontWeight: '300',
+                    }
               }
             >
               {provincia}, {distrito}
@@ -126,11 +131,18 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
                       fontSize: '1.05rem',
                       width: '100%',
                       padding: '0.4rem 1rem',
-                      border: '1px solid #d2d2d2',
+                      // border: '1px solid #d2d2d2',
                       borderRadius: '0.9rem',
                       marginLeft: '-5px',
+                      fontWeight: '300',
                     }
-                  : { fontSize: '15px' }
+                  : {
+                      fontSize: '17px',
+                      fontWeight: '300',
+                      fontFamily: 'Outfit',
+                      color: '#5a5a5a',
+                      lineHeight: '1.43rem',
+                    }
               }
             >
               Selecciona tu ubicación

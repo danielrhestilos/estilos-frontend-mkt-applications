@@ -34,15 +34,15 @@
   gap: 1rem;
 }
 .selectSim {
-  width: 100%;
+  width: 96%;
   margin-top: 10px;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   font-size: 16px;
   background-color: #fff;
-  /* -webkit-appearance: none;
-    -moz-appearance: none; */
   padding: 10px 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   cursor: pointer;
   font-family: Outfit;

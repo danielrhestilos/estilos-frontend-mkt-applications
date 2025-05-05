@@ -38,11 +38,13 @@ function IfAvailableWL({
                   <p
                     style={{
                       fontSize: '13px',
-                      fontWeight: '600',
+                      fontWeight: '500',
+                      color: '#5a5a5a',
                       marginTop: '10px',
+                      fontFamily: 'Outfit',
                     }}
                   >
-                    {'⚠️ Delivery no disponible en '} {localDistrito},{' '}
+                    {'Delivery no disponible en '} {localDistrito},{' '}
                     {'Puedes optar por recogerlo o recibirlo en otra ciudad.'}
                   </p>
                   <>{children}</>
