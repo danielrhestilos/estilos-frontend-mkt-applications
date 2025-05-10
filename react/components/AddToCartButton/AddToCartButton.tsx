@@ -13,11 +13,14 @@ import {
 
 interface AddToCartButtonProps {
   titleButton: string
+  titlePreButton?: string
 }
 
-const AddToCartButton = ({ titleButton }: AddToCartButtonProps) => {
+const AddToCartButton = ({
+  titleButton,
+  titlePreButton,
+}: AddToCartButtonProps) => {
   const [itemWarranty, setItemWarranty]: any = useState([])
-
   const { addItem } = useOrderItems()
   const productContextDispatch = useProductDispatch()
   const contextPdp = useProduct()
@@ -117,10 +120,6 @@ const AddToCartButton = ({ titleButton }: AddToCartButtonProps) => {
     }
   }
 
-  const tooltipLabel = (
-    <span className="">{'Selecciona una variación para el producto.'}</span>
-  )
-
   const ButtonWithLabel = (
     <Button
       onClick={() => {
@@ -131,6 +130,17 @@ const AddToCartButton = ({ titleButton }: AddToCartButtonProps) => {
       {titleButton}
     </Button>
   )
+  const ButtonWithLabelPre = (
+    <Button
+      variation="secondary"
+      onClick={() => {
+        handleAddTocart()
+      }}
+      block
+    >
+      {titlePreButton}
+    </Button>
+  )
 
   return (
     <>
@@ -138,8 +148,12 @@ const AddToCartButton = ({ titleButton }: AddToCartButtonProps) => {
         areAllVariationsSelected ? (
           ButtonWithLabel
         ) : (
-          <Tooltip trigger="click" duration={200} label={tooltipLabel}>
-            {ButtonWithLabel}
+          <Tooltip
+            trigger="click"
+            duration={200}
+            label={'Debes elegir color y talla'}
+          >
+            {ButtonWithLabelPre}
           </Tooltip>
         )
       ) : (
