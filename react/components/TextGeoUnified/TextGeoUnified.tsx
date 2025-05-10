@@ -141,6 +141,7 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
                       fontWeight: '300',
                       fontFamily: 'Outfit',
                       color: '#5a5a5a',
+                      minWidth: '100px',
                       lineHeight: '1.43rem',
                     }
               }

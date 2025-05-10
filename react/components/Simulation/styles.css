@@ -1,6 +1,6 @@
 .containerSimulation {
   /* display: flex; */
-  display: flex;
+  display: block;
   gap: 1.2rem;
   /* margin: 1rem; */
   /* background: var(--light_bg, #f5f5f5); */
@@ -34,7 +34,7 @@
   gap: 1rem;
 }
 .selectSim {
-  width: 96%;
+  width: 100%;
   margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;

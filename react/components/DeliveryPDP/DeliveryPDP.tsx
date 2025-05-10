@@ -29,13 +29,25 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
   }
   const renderIcon = () => {
     if (isPickUp) {
-      return localZipCode && pickUpPoints.length > 0
-        ? '/arquivos/Location-store-ICON-V1224-red-30.svg'
-        : '/arquivos/Location-store-ICON-V1224-grey-30.svg'
+      return localZipCode && pickUpPoints.length > 0 ? (
+        <img
+          src={'/arquivos/Location-store-ICON-V1224-red-30.svg'}
+          width="43"
+          height="43"
+        />
+      ) : (
+        <></>
+      )
     }
-    return deliveryData
-      ? '/arquivos/Delivery-on-ICON-V1224-red-30.svg'
-      : '/arquivos/Delivery-on-ICON-V1224-grey-30.svg'
+    return deliveryData?.options?.length != 0 ? (
+      <img
+        src={'/arquivos/Delivery-on-ICON-V1224-red-30.svg'}
+        width="43"
+        height="43"
+      />
+    ) : (
+      <></>
+    )
   }
   const getClassDeliveryCircle = () => {
     if (isPickUp) {
@@ -102,26 +114,21 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
     )
   }
   const renderStores = () => {
-    if (!localDistrito) return ''
-    if (isPickUp) {
-      return (
-        <ul className={styles.pickUpPoints}>
-          {pickUpPoints.length > 0 &&
-            pickUpPoints
-              .slice(0, 3) // Solo toma los primeros 3 elementos
-              .map((point: any) => (
-                <li key={point?.id} className={styles.paragraphFriendlyName}>
-                  {capitalizeFirstLetter(
-                    point.friendlyName
-                      .toLocaleLowerCase()
-                      .replaceAll('tda.', 'Tienda')
-                  )}
-                </li>
-              ))}
-        </ul>
-      )
-    }
-    return ''
+    if (!localDistrito || !isPickUp || pickUpPoints.length === 0) return ''
+
+    return (
+      <ul className={styles.pickUpPoints}>
+        {pickUpPoints.slice(0, 3).map((point: any) => (
+          <li key={point?.id} className={styles.paragraphFriendlyName}>
+            {capitalizeFirstLetter(
+              point.friendlyName
+                .toLocaleLowerCase()
+                .replaceAll('tda.', 'Tienda')
+            )}
+          </li>
+        ))}
+      </ul>
+    )
   }
   const renderDeliveryOptions = () => {
     if (!localDistrito) return ''
@@ -146,12 +153,16 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
       {!loading && (
         <>
           <div className={styles.deliveryPDP}>
-            <div className={getClassDeliveryCircle()}>
-              <img src={`${renderIcon()}`} width="43" height="43" />
-            </div>
+            <div className={getClassDeliveryCircle()}>{renderIcon()}</div>
             <div className={styles.optionsBlock}>
-              <div className={styles.optionsResumeBlock}>
-                <>{renderMessage()}</>
+              <div
+                className={
+                  !localDistrito || !isPickUp || pickUpPoints.length === 0
+                    ? ''
+                    : styles.optionsResumeBlock
+                }
+              >
+                {renderMessage()}
               </div>
               <>{renderStores()}</>
               <>{renderDeliveryOptions()}</>
