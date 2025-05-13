@@ -1,0 +1,9 @@
+.containerQR {
+  display: flex;
+  gap: 2rem;
+  font-family: Outfit;
+  margin-bottom: 2rem;
+}
+.containerQR h2 {
+  margin: 0;
+}

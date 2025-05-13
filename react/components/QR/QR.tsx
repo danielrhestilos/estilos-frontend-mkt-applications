@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import styles from './QR.module.css'
 interface OrderData {
   [key: string]: any // Define las propiedades reales según la respuesta de la API
 }
@@ -57,8 +57,9 @@ function QR() {
         param: [
           {
             name: 'merchantId',
-            value: '341198024', // consultar a niubiz si debido a etsa diferencia falla al prueba en su plataforma (ellos tienen otra)
+            value: '400000030', // consultar a niubiz si debido a etsa diferencia falla al prueba en su plataforma (ellos tienen otra)
           },
+
           {
             name: 'transactionCurrency',
             value: '604',
@@ -69,9 +70,7 @@ function QR() {
           },
           {
             name: 'additionalData',
-            value: JSON.stringify({
-              orderId: order.orderId,
-            }),
+            value: `orderId:${order.orderId}`,
           },
           {
             name: 'idc',
@@ -132,10 +131,23 @@ function QR() {
       {!loading && !error && (
         <div>
           {order && QR && order.paymentType == '17' && (
-            <div>
-              {/* <h3>Datos QR:</h3>
-              <pre>{JSON.stringify(QR, null, 2)}</pre> */}
+            <div className={styles.containerQR}>
               <img src={QR.message.tagImg} height={'133px'} width={'133px'} />
+              <section>
+                <h2>Pago pendiente</h2>
+                <p>
+                  Le informamos que su pedido aún está pendiente de pago. A
+                  continuación, revise los detalles del pedido, realice el pago
+                  y evite la anulación de tu compra.
+                </p>
+                <p>
+                  <ul>
+                    <li>Monto pendiente: S/{order.paymentTotal}</li>
+                    <li>Método de Pago: Billetera Digital</li>
+                    <li>IDC: {order.sequence}</li>
+                  </ul>
+                </p>
+              </section>
             </div>
           )}
         </div>
