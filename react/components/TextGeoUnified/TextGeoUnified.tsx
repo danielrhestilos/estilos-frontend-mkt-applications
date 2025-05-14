@@ -41,7 +41,16 @@ const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
+  useEffect(() => {
+    if (!isMobile) return
+  
+    const handleScroll = () => {
+      setHidePromo(window.scrollY > 10)
+    }
+  
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isMobile])
   useEffect(() => {
     if (distrito !== '') {
       setIcon(isMobile ? ICON_SELECTED_MOBILE : ICON_SELECTED_DESKTOP)

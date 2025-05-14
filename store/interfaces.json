@@ -286,5 +286,8 @@
   },
   "estilos-safe-payment-pdp": {
     "component": "SafePaymentPdp"
+  },
+  "estilos-data-capt-img": {
+    "component": "DataCaptImg"
   }
 }
