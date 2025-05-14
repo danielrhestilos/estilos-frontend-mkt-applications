@@ -1,0 +1,11 @@
+.textGeoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+  .textGeoWrapper.hide {
+    opacity: 0;
+    height: 0;
+  }
