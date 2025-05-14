@@ -1,124 +1,90 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import useLocalStorage from '../../hooks/localStorageHook'
 import ModalWhiteLabel from '../ModalWhiteLabel/ModalWhiteLable'
 import useResize from '../../hooks/sizeScreenHook'
 import styles from './TextGeoUnified.module.css'
 
-// Rutas de las imágenes
-const ICON_SELECTED_DESKTOP = '/arquivos/ubi-black.svg'
-const ICON_DEFAULT_DESKTOP = '/arquivos/ubi-black.svg'
-const ICON_SELECTED_MOBILE =
-  'https://estilospe.vtexassets.com/arquivos/Location-cliente-ICON-V1224-red-30.svg'
-const ICON_DEFAULT_MOBILE =
-  'https://estilospe.vtexassets.com/arquivos/Location-cliente-ICON-V1224-grey-30.svg'
+const ICONS = {
+  selected: {
+    desktop: '/arquivos/ubi-black.svg',
+    mobile: 'https://estilospe.vtexassets.com/arquivos/Location-cliente-ICON-V1224-red-30.svg',
+  },
+  default: {
+    desktop: '/arquivos/ubi-black.svg',
+    mobile: 'https://estilospe.vtexassets.com/arquivos/Location-cliente-ICON-V1224-grey-30.svg',
+  },
+}
 
-interface TextGeoUnifiedProps {
+interface Props {
   onlyMobile?: boolean
 }
 
-const TextGeoUnified: React.FC<TextGeoUnifiedProps> = ({ onlyMobile }) => {
+const TextGeoUnified: React.FC<Props> = ({ onlyMobile }) => {
   const [, isMobile] = useResize()
-  const [showModal, setShowModal] = useState<boolean>(false)
+  const [showModal, setShowModal] = useState(false)
+  const [hidePromo, setHidePromo] = useState(false)
   const [distrito] = useLocalStorage('localDistrito', '')
   const [provincia] = useLocalStorage('localProvincia', '')
-  const [icon, setIcon] = useState(
-    isMobile ? ICON_DEFAULT_MOBILE : ICON_DEFAULT_DESKTOP
-  )
-  const [hidePromo, setHidePromo] = useState(false)
 
-  const iconStyle = isMobile
-    ? { height: '38px', width: '38px' }
-    : { height: '25px', width: '25px' }
+  const icon = distrito
+    ? isMobile ? ICONS.selected.mobile : ICONS.selected.desktop
+    : isMobile ? ICONS.default.mobile : ICONS.default.desktop
 
-  const onClose = () => {
-    setShowModal(false)
-  }
+  const iconStyle = useMemo(() => ({
+    height: isMobile ? '38px' : '25px',
+    width: isMobile ? '38px' : '25px',
+  }), [isMobile])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setHidePromo(window.scrollY > 10)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
   useEffect(() => {
     if (!isMobile) return
-  
-    const handleScroll = () => {
-      setHidePromo(window.scrollY > 10)
-    }
-  
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isMobile])
-  useEffect(() => {
-    if (distrito !== '') {
-      setIcon(isMobile ? ICON_SELECTED_MOBILE : ICON_SELECTED_DESKTOP)
-    }
-  }, [distrito, isMobile])
 
-  if (onlyMobile && !isMobile) {
-    return null
-  }
+    const onScroll = () => setHidePromo(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [isMobile]) // dependencias actualizadas
+
+  if (onlyMobile && !isMobile) return null
 
   return (
     <>
       <div
         id="textGeoWhiteLabel"
-        className={`${styles.textGeoWrapper} ${hidePromo ? styles.hide : ''}`}
+        className={`${styles.textGeoWrapper} ${isMobile && hidePromo ? styles.hide : ''}`}
         style={{
-          alignItems: 'center',
           display: 'flex',
+          alignItems: 'center',
           gap: isMobile ? '0' : '4px',
           cursor: 'pointer',
         }}
         onClick={() => setShowModal(true)}
       >
-        <div
-          style={
-            isMobile
-              ? { position: 'relative', zIndex: '999', background: '#fff' }
-              : {}
-          }
-        >
-          <img
-            style={iconStyle}
-            src={icon}
-            alt={distrito !== '' ? 'Ubicación seleccionada' : 'Sin ubicación seleccionada'}
-          />
+        <div style={isMobile ? { position: 'relative', zIndex: 999, background: '#fff' } : {}}>
+          <img style={iconStyle} src={icon} alt={distrito ? 'Ubicación seleccionada' : 'Sin ubicación'} />
         </div>
         <div
-          style={
-            isMobile
-              ? {
-                  fontFamily: 'Outfit',
-                  fontSize: '1.05rem',
-                  width: '100%',
-                  padding: '0.4rem 1rem',
-                  border: distrito !== '' ? '1px solid #d2d2d2' : 'none',
-                  borderRadius: '0.9rem',
-                  marginLeft: '-5px',
-                  fontWeight: '300',
-                }
-              : {
-                  fontSize: '17px',
-                  fontWeight: '300',
-                  fontFamily: 'Outfit',
-                  color: '#5a5a5a',
-                  minWidth: '100px',
-                  lineHeight: '1.43rem',
-                }
-          }
+          style={{
+            fontFamily: 'Outfit',
+            fontWeight: '300',
+            fontSize: isMobile ? '1.05rem' : '17px',
+            color: isMobile ? undefined : '#5a5a5a',
+            lineHeight: isMobile ? undefined : '1.43rem',
+            width: isMobile ? '100%' : undefined,
+            padding: isMobile ? '0.4rem 1rem' : undefined,
+            border: isMobile && distrito ? '1px solid #d2d2d2' : undefined,
+            borderRadius: isMobile ? '0.9rem' : undefined,
+            marginLeft: isMobile ? '-5px' : undefined,
+            minWidth: !isMobile ? '100px' : undefined,
+          }}
         >
-          {distrito !== '' ? `${provincia}, ${distrito}` : 'Selecciona tu ubicación'}
+          {distrito ? `${provincia}, ${distrito}` : 'Selecciona tu ubicación'}
         </div>
       </div>
 
       {showModal && (
         <ModalWhiteLabel
-          setShowModal={setShowModal}
           show={showModal}
-          onClose={onClose}
+          setShowModal={setShowModal}
+          onClose={() => setShowModal(false)}
         />
       )}
     </>
