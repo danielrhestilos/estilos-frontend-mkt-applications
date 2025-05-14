@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './QR.module.css'
+import { useWebSocket } from '../../utils/useWebSocket'
 interface OrderData {
   [key: string]: any // Define las propiedades reales según la respuesta de la API
 }
@@ -9,6 +10,8 @@ interface QRData {
 }
 
 function QR() {
+  const { message, connect, sendMessage } = useWebSocket()
+
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [order, setOrder] = useState<OrderData | null>(null)
@@ -102,8 +105,12 @@ function QR() {
       setError(null) // Limpiar errores previos
       setLoading(true) // Iniciar el estado de carga
 
+      connect('wss://vtexest.estilos.com.pe')
+
       // Primero obtenemos la orden y los datos de autenticación
       const orderData = await fetchOrder(codeOrder)
+
+      sendMessage(orderData.orderId)
 
       // Luego generamos el QR usando los datos obtenidos
       await fetchQRData(orderData)
@@ -147,6 +154,7 @@ function QR() {
                     <li>IDC: {order.sequence}</li>
                   </ul>
                 </p>
+                <p>Socket message: {message}</p>
               </section>
             </div>
           )}
