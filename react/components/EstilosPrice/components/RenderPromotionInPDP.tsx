@@ -11,11 +11,9 @@ const CSS_HANDLES = [
 
 const PromotionMessage = ({ installments }: any) => {
   let defaultMessage = 'Exclusivo pagando con tu Tarjeta Estilos'
-
   if (installments >= 1) {
     defaultMessage = `A partir de ${installments} cuotas`
   }
-
   return (
     <div className="lh-solid">
       <span className="f7" style={{ color: '#5A5A5A' }}>
