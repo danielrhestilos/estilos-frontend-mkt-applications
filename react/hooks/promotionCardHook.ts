@@ -9,26 +9,45 @@ export default function usePromotionData(selectedItem: any) {
     installments: 0,
   })
 
+
   useEffect(() => {
-    setPromotionData({ value: 0, installments: 0 })
-    fetch(
-      `https://vtexest.estilos.com.pe/integrations/promotions/estilos-dsct/${selectedItem?.itemId}`
-    )
-      .then((resp) => {
+    setPromotionData({ value: 0, installments: 0 });
+
+    fetch(`https://vtexest.estilos.com.pe/integrations/promotions/estilos-dsct/${selectedItem?.itemId}`)
+      .then(async (resp) => {
+        console.log("itemId: ", itemId);
+
         if (!resp.ok) {
-          throw new Error('Network response was not ok')
+          console.warn("Respuesta no OK del servidor:", resp.status);
+          return null;
         }
-        return resp.json() as Promise<any>
+
+        const contentType = resp.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+          return resp.json();
+        } else {
+          const text = await resp.text();
+          console.warn("Respuesta no JSON:", text);
+          return null;
+        }
       })
       .then((data: any) => {
+        if (!data) return;
+
+        console.log('data: ', data);
+
         setPromotionData({
           value: data?.value || 0,
           installments: data?.installments || 0,
-        })
+        });
       })
       .catch((error) => {
-        console.error('There was a problem with the fetch operation:', error)
-      })
-  }, [itemId])
+        console.log('Error en itemId:', itemId);
+        console.error('Error inesperado en fetch:', error);
+      });
+  }, [itemId]);
+
+
   return promotionData
 }

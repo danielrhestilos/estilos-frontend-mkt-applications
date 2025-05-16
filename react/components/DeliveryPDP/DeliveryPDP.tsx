@@ -158,7 +158,7 @@ const DeliveryPDP: React.FC<SimulationPDPProps> = ({ isPickUp }) => {
               <div
                 className={
                   !localDistrito || !isPickUp || pickUpPoints.length === 0
-                    ? ''
+                    ?  styles.optionsResumeBlock
                     : styles.optionsResumeBlock
                 }
               >
