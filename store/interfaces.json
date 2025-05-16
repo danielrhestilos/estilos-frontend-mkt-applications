@@ -137,9 +137,6 @@
   "estilos-custom-bubbles-plp": {
     "component": "BubblesPLP"
   },
-  "estilos-colors-selector": {
-    "component": "ColorsSelector"
-  },
   "estilos-custom-carousel-products": {
     "component": "CarouselProducts"
   },
