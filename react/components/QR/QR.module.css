@@ -1,5 +1,6 @@
 .containerQR {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
   font-family: Outfit;
   margin-bottom: 2rem;
@@ -13,12 +14,21 @@
   height: 45px;
 }
 .containerThanks{
+  font-weight: 400;
   font-family: Outfit;
   color: #3f3f40;
+  margin-bottom: 1rem;
+}
+.containerThanks p{
+  text-align: center;
+}
+.containerThanks h2{
+  font-weight: 400;
 }
 .titleThanks{
   font-size: 2.115rem;
   margin: 0;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -37,4 +47,23 @@
   padding: .32rem .78rem;
   border-radius: .76rem;
   color: #fff;
+}
+.containerLogo {
+display: flex;
+margin-bottom: 2rem;
+justify-content: center;
+}
+.tagImg{
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .containerQR {
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .tagImg{
+    margin: auto;
+  }
 }

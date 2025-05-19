@@ -11,7 +11,7 @@ interface QRData {
 }
 
 function QR() {
-  const { message, connect, sendMessage, timeLeft } = useWebSocket( 5 * 60 * 1000)
+  const { message, connect, sendMessage, timeLeft , resetTimeout} = useWebSocket( 300 * 1000)
 
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
@@ -96,6 +96,8 @@ function QR() {
   }
 
   const handleGenerateNewQR = async () => {
+    resetTimeout()
+
     if (order && order.paymentType === '17') {
       setError(null)
       setLoading(true)
@@ -124,10 +126,10 @@ function QR() {
   return (
     <div>
       {loading &&  
-      <img
+      <div className={styles.containerLogo}><img
         style={{ display: 'block', height: '40px' }}
         src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/3164cf61-4213-4d7b-b029-54f8a4581a9e___df2ddf41ed9dc9522f6eb3f32abc5572.gif"
-      />}
+      /></div>}
       {error && <p>Error: {error}</p>}
 
       {!loading && !error && (
@@ -137,15 +139,15 @@ function QR() {
               <>
                 {order.status == 'payment-pending' && !message ? (
                   <>
-                        <h2 className={styles.messageTitle}>⏱️Pago pendiente</h2>
+                    <h2 className={styles.messageTitle}>⏱️Pago pendiente</h2>
                     <div className={styles.containerQR}>
-                      <img src={QR.message.tagImg} height={'133px'} width={'133px'} />
+                      <img src={QR.message.tagImg} className={styles.tagImg}/>
                       <section className={styles.containerQRText}>
                       <p>¡Estás a solo un paso! Escanea el QR con tu billetera digital preferida para pagar y evitar que se cancele tu pedido pendiente.</p>
                         <div>
                           <img
                             className={styles.imgWallets}
-                            src={'https://coolboxpe.vteximg.com.br/arquivos/checkout--payment-method--billeteras.png'}
+                            src={'https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/073c15f6-3269-4505-a23e-aecf3bf38ec0___29e9b25ce18eb99b8aac0af67846dcc6.png'}
                             alt="Código QR"
                           />
                         </div>
@@ -158,7 +160,6 @@ function QR() {
                         )}
                       </section>
                     </div>
-
                     <p className={styles.containerThanks}>
                       <ul>
                         <li>Monto pendiente: S/{order.paymentTotal}</li>
@@ -174,14 +175,13 @@ function QR() {
                       Estamos procesando el pago, en pocos minutos recibirás un e-mail de confirmación de compra.
                       Enviaremos el mail con todos los datos de tu compra.
                     </p>
-
                     {message?.purchaseNumber && (
                       <>
                         <h2>Pago confirmado</h2>
                         <ul>
                           <li>Numero de compra Niubiz: {message.purchaseNumber}</li>
                           <li>Monto pagado: S/{message.transactionAmount}</li>
-                          <li>Moneda: {message.transactionCurrency}</li>
+                          <li>Moneda: PEN</li>
                           <li>Fecha de transacción: {message.transactionDate}</li>
                           <li>Tarjeta: {message.maskCard}</li>
                           <li>Billetera Digital: {message.wallet}</li>

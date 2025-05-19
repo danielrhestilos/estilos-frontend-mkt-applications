@@ -9,10 +9,12 @@ interface EventMessage {
   maskCard: string
   wallet: string
 }
+
 export const useWebSocket = (timeoutMs = 180000) => {
   const socketRef = useRef<Socket | null>(null)
   const [message, setMessage] = useState<EventMessage | null>(null)
   const [timeLeft, setTimeLeft] = useState<number>(timeoutMs)
+  const intervalRef = useRef<number | null>(null)
 
   const connect = useCallback((url: string) => {
     if (socketRef.current?.active) return
@@ -41,14 +43,19 @@ export const useWebSocket = (timeoutMs = 180000) => {
   const close = useCallback(() => {
     socketRef.current?.close()
     socketRef.current = null
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
   }, [])
 
-  // Manejo de timeout y limpieza
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startInterval = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = window.setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1000) {
-          clearInterval(interval)
+          clearInterval(intervalRef.current!)
+          intervalRef.current = null
           close()
           console.log('Cerrando WebSocket por timeout')
           return 0
@@ -56,12 +63,23 @@ export const useWebSocket = (timeoutMs = 180000) => {
         return prev - 1000
       })
     }, 1000)
-
-    return () => {
-      clearInterval(interval)
-      close()
-    }
   }, [close])
 
-  return { message, connect, sendMessage, timeLeft, }
+  const resetTimeout = useCallback(() => {
+    setTimeLeft(timeoutMs)
+    startInterval()
+  }, [timeoutMs, startInterval])
+
+  useEffect(() => {
+    startInterval()
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+      close()
+    }
+  }, [startInterval, close])
+
+  return { message, connect, sendMessage, timeLeft, resetTimeout }
 }
