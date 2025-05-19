@@ -143,21 +143,23 @@ function QR() {
                     <div className={styles.containerQR}>
                       <img src={QR.message.tagImg} className={styles.tagImg}/>
                       <section className={styles.containerQRText}>
-                      <p>¡Estás a solo un paso! Escanea el QR con tu billetera digital preferida para pagar y evitar que se cancele tu pedido pendiente.</p>
-                        <div>
+                      {timeLeft <= 0 ? <div>Tu QR caducó, debes generar otro</div>:
+                      <>
+                        <p>¡Estás a solo un paso! Escanea el QR con tu billetera digital preferida para pagar y evitar que se cancele tu pedido pendiente.</p>
+                        <div>             
                           <img
                             className={styles.imgWallets}
                             src={'https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/073c15f6-3269-4505-a23e-aecf3bf38ec0___29e9b25ce18eb99b8aac0af67846dcc6.png'}
                             alt="Código QR"
                           />
-                        </div>
-                        
+                        </div>                     
                         <p>Tiempo restante: {formatCountdown(timeLeft)}</p>
                         {timeLeft <= 0 && (
                           <button className={styles.regenerateButton} onClick={handleGenerateNewQR}>
                             Generar nuevo QR
                           </button>
                         )}
+                      </>}
                       </section>
                     </div>
                     <p className={styles.containerThanks}>
