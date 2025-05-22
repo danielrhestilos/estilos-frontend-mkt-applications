@@ -36,7 +36,6 @@ function TemplatesBuilderPro(props: any) {
               {
                 child.typeLayout == 'video'
                 ?
-                // ''
                 <Video
                   url= {child.urlVideo}
                 />
