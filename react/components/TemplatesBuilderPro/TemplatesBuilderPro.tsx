@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from './Layout'
 import useResize from '../../hooks/sizeScreenHook'
 import styles from './styles.css'
+import Video from "./../Video/Video"
 // import { useRuntime } from 'vtex.render-runtime'
 function TemplatesBuilderPro(props: any) {
   // const { navigate } = useRuntime()
@@ -17,6 +18,7 @@ function TemplatesBuilderPro(props: any) {
         <Layout
           key={index}
           typeLayout={child.typeLayout}
+          urlVideo={child.urlVideo}
           titlLayout={child.titlLayout}
           colorTitlLayout={child.colorTitlLayout}
           fontSizeTitlLayout={child.fontSizeTitlLayout}
@@ -31,13 +33,23 @@ function TemplatesBuilderPro(props: any) {
               className={image.main ? styles.contBannerMain : styles.contBanner}
               style={{ backgroundColor: image.bgColor, display: 'block' }}
             >
-              <img
-                key={imgIndex}
-                src={image.urlImage}
-                alt={image.altImage}
-                className={styles.thumb}
-                style={!isMobil ? { display: 'block', height: '100%' } : {}}
-              />
+              {
+                child.typeLayout == 'video'
+                ?
+                // ''
+                <Video
+                  url= {child.urlVideo}
+                />
+                :
+                <img
+                  key={imgIndex}
+                  src={image.urlImage}
+                  alt={image.altImage}
+                  className={styles.thumb}
+                  style={!isMobil ? { display: 'block', height: '100%' } : {}}
+                />
+              }
+             
               <div className={styles.textBanner}>
                 <p
                   className={
@@ -101,7 +113,7 @@ TemplatesBuilderPro.schema = {
               'collage-pro',
             ],
             type: 'string',
-          },
+          },      
           colorTitlLayout: {
             title: 'color para Titulo del layout',
             description:
@@ -114,6 +126,25 @@ TemplatesBuilderPro.schema = {
             description:
               'fontSize visible del layout de este elemento. Aparece en la parte superior del layout',
             default: '1.6rem',
+            type: 'string',
+          },
+          fontFamilyTitlLayout: {
+            title: 'fontFamily para Titulo del layout',
+            description:
+              'fontFamily visible del layout de este elemento. Aparece en la parte superior del layout',
+            default: 'Outfit',
+            type: 'string',
+          },
+          fontWeightTitlLayout: {
+            title: 'fontWeight para Titulo del layout',
+            description:
+              'fontWeight visible del layout de este elemento. Aparece en la parte superior del layout',
+            default: '700',
+            type: 'string',
+          },
+          urlVideo: {
+            title: 'URL del video',
+            description: 'URL del video a mostrar',
             type: 'string',
           },
           titlLayout: {

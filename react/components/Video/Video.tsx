@@ -1,20 +1,33 @@
-import React from 'react'
-import useResize from '../../hooks/sizeScreenHook'
+import React from 'react';
 
-function Video(props: any) {
-  const [, isMobil] = useResize()
-
-  return (
-    <section
-      style={{ cursor: 'pointer' }}
-      id={`${isMobil ? 'estilos-video-movil' : 'video-estilos-desktop'}`}
-      onClick={() => {
-        window.open('https://online.fliphtml5.com/iqrni/cmaj/', '__blank')
-      }}
-    >
-      {props.children}
-    </section>
-  )
+interface VideoPlayerProps {
+  url: string;
 }
 
-export default Video
+const VideoPlayer: React.FC<VideoPlayerProps> = ({ url }) => {
+  const isYouTubeOrVimeo = url.includes('youtube.com') || url.includes('vimeo.com');
+
+  if (isYouTubeOrVimeo) {
+    return (
+      <div>
+        <iframe
+          src={url}
+          title="Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="w-full h-full"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <video controls className="w-full rounded-xl shadow-md">
+      <source src={url} type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  );
+};
+
+export default VideoPlayer;

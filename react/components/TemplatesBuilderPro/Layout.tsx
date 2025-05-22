@@ -7,6 +7,8 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
     
     const getClassName = (typeLayout:string) => {
         switch (typeLayout) {
+            case 'video':
+                return styles.Solo;
             case 'main':
                 return styles.layoutMain;
             case 'solo':
