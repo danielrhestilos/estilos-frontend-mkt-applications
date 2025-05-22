@@ -286,5 +286,8 @@
   },
   "estilos-data-capt-img": {
     "component": "DataCaptImg"
+  },
+  "estilos-side-bar-menu": {
+    "component": "SideBarMenu"
   }
 }
