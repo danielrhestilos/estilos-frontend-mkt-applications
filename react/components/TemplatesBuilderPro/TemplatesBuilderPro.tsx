@@ -21,6 +21,7 @@ function TemplatesBuilderPro(props: any) {
           colorTitlLayout={child.colorTitlLayout}
           fontSizeTitlLayout={child.fontSizeTitlLayout}
           fontFamilyTitlLayout={child.fontFamilyTitlLayout}
+          fontWeightTitlLayout={child.fontWeightTitlLayout}
         >
           {child?.images?.map((image: any, imgIndex: number) => (
             <a

@@ -2,7 +2,7 @@ import React from "react";
 import styles from './styles.css'
 
 
-function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFamilyTitlLayout,children}:any) {
+function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFamilyTitlLayout,fontWeightTitlLayout,children}:any) {
 
     
     const getClassName = (typeLayout:string) => {
@@ -27,7 +27,9 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
     };
     return (  
         <div>
-            {titlLayout != '' && <h3 className={styles.titleLayout} style={{color:colorTitlLayout, fontFamily:fontFamilyTitlLayout,fontSize:fontSizeTitlLayout}}>{titlLayout}</h3>}
+            {titlLayout != '' && 
+            <h3 className={styles.titleLayout} 
+            style={{color:colorTitlLayout, fontFamily:fontFamilyTitlLayout,fontSize:fontSizeTitlLayout, fontWeight:fontWeightTitlLayout}}>{titlLayout}</h3>}
             <div className={getClassName(typeLayout)}>
                 {children}
             </div>
