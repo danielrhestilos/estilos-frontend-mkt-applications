@@ -1,4 +1,21 @@
 
+.layoutMain
+.layoutSolo,
+.layoutDuo,
+.layoutTriple,
+.layoutCollage,
+.layoutCollage2,
+.layoutCollagePro {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    margin: auto;
+    align-items: stretch;
+    gap: 12px;
+    /* max-width: 1440px; */
+}
+
 .layoutSolo,
 .layoutDuo,
 .layoutTriple,
@@ -14,6 +31,7 @@
     gap: 12px;
     max-width: 1440px;
 }
+
 
 /* Estilos específicos para cada layout en dispositivos móviles */
 

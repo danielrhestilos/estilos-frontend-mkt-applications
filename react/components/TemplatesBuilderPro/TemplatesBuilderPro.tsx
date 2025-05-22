@@ -18,6 +18,9 @@ function TemplatesBuilderPro(props: any) {
           key={index}
           typeLayout={child.typeLayout}
           titlLayout={child.titlLayout}
+          colorTitlLayout={child.colorTitlLayout}
+          fontSizeTitlLayout={child.fontSizeTitlLayout}
+          fontFamilyTitlLayout={child.fontFamilyTitlLayout}
         >
           {child?.images?.map((image: any, imgIndex: number) => (
             <a
@@ -86,8 +89,9 @@ TemplatesBuilderPro.schema = {
             title: 'Tipo del layout',
             description:
               'Tipo del layout de este elemento. Considera que los collage tienen 4 imágenes',
-            default: 'solo',
+            default: 'main',
             enum: [
+              'main',
               'solo',
               'duo',
               'triple',
@@ -95,6 +99,20 @@ TemplatesBuilderPro.schema = {
               'collage2',
               'collage-pro',
             ],
+            type: 'string',
+          },
+          colorTitlLayout: {
+            title: 'color para Titulo del layout',
+            description:
+              'color visible del layout de este elemento. Aparece en la parte superior del layout',
+            default: '#e91111',
+            type: 'string',
+          },    
+          fontSizeTitlLayout: {
+            title: 'fontSize para Titulo del layout',
+            description:
+              'fontSize visible del layout de este elemento. Aparece en la parte superior del layout',
+            default: '1.6rem',
             type: 'string',
           },
           titlLayout: {

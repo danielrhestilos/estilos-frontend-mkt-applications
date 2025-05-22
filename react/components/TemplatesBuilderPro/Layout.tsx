@@ -2,10 +2,13 @@ import React from "react";
 import styles from './styles.css'
 
 
-function Layout({typeLayout,titlLayout,children}:any) {
+function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFamilyTitlLayout,children}:any) {
 
+    
     const getClassName = (typeLayout:string) => {
         switch (typeLayout) {
+            case 'main':
+                return styles.layoutMain;
             case 'solo':
                 return styles.layoutSolo;
             case 'duo':
@@ -22,11 +25,9 @@ function Layout({typeLayout,titlLayout,children}:any) {
                 return '';
         }
     };
-    
-
     return (  
         <div>
-            {titlLayout != '' && <h3 className={styles.titleLayout}>{titlLayout}</h3>}
+            {titlLayout != '' && <h3 className={styles.titleLayout} style={{color:colorTitlLayout, fontFamily:fontFamilyTitlLayout,fontSize:fontSizeTitlLayout}}>{titlLayout}</h3>}
             <div className={getClassName(typeLayout)}>
                 {children}
             </div>
