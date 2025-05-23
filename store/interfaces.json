@@ -288,6 +288,6 @@
     "component": "DataCaptImg"
   },
   "estilos-side-bar-menu": {
-    "component": "SideBarMenu"
+    "component": "SidebarMenu"
   }
 }
