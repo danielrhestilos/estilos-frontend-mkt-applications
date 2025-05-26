@@ -63,7 +63,7 @@ const TextGeoUnified: React.FC<Props> = ({ onlyMobile }) => {
         </div>
         <div
           style={{
-            fontFamily: 'Outfit',
+            fontFamily: 'Outfit Light',
             fontWeight: '300',
             fontSize: isMobile ? '1.05rem' : '17px',
             color: isMobile ? undefined : '#5a5a5a',

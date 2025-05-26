@@ -6,7 +6,11 @@
   min-width: 64px;
 }
 
-.promotionEstilos_titleName {}
+.promotionEstilos_titleName {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
 
 .promotionEstilos_titleProduct {
   color: var (--primary-color);

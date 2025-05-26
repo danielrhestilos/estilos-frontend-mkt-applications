@@ -26,20 +26,17 @@ const PromotionMessage = ({ installments }: any) => {
 const PromotionDetails = ({ value, installments }: any) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div className="flex w-100 justify-between">
-      <div className={`${handles.promotionEstilos_containerIcon} w-40`}></div>
-      <div className="w-100 flex" style={{ marginLeft: '5px' }}>
-        <div className="w-100">
-          <span className={`${handles.promotionEstilos_titleName} f4`}>
-            Tarjeta estilos
-          </span>
-          <PromotionMessage installments={installments} />
-        </div>
-      </div>
+    <div className="flex w-100 justify-between">   
       <div className="w-40 flex justify-end items-center f4">
         <span className={`${handles.promotionEstilos_titleProduct}`}>
           <FormattedCurrency value={value} />
         </span>
+      </div>
+       <div className={`${handles.promotionEstilos_containerIcon} w-40`}></div>
+       <div className="w-100 flex">
+        <div className="w-100">
+          <PromotionMessage installments={installments} />
+        </div>
       </div>
     </div>
   )
