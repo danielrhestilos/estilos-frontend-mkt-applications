@@ -45,7 +45,7 @@ function TemplatesBuilderPro(props: any) {
                   src={image.urlImage}
                   alt={image.altImage}
                   className={styles.thumb}
-                  style={!isMobil ? { display: 'block', height: '100%' } : {}}
+                  style={!isMobil ? { display: 'block', height: '100%' ,width:"100%"} : {width:"100%"}}
                 />
               }
              
