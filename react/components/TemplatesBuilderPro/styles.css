@@ -270,7 +270,8 @@
 }
 
 .contBanner:hover {
-    transform: scale(0.97);
+    transform: translateY(-3px); 
+    filter: brightness(0.8); /* Oscurece el elemento */
     transition: all 0.4s ease-in-out;
 }
 

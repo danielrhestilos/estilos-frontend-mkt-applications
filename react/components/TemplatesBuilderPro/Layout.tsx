@@ -1,10 +1,8 @@
 import React from "react";
 import styles from './styles.css'
+import Anchor from "../Anchor/Anchor";
 
-
-function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFamilyTitlLayout,fontWeightTitlLayout,children}:any) {
-
-    
+function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFamilyTitlLayout,fontWeightTitlLayout,children,idLayout,menu}:any) {
     const getClassName = (typeLayout:string) => {
         switch (typeLayout) {
             case 'video':
@@ -30,14 +28,28 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
         }
     };
     return (  
-        <div>
+        <section id={idLayout}>
             {titlLayout != '' && 
             <h3 className={styles.titleLayout} 
             style={{color:colorTitlLayout, fontFamily:fontFamilyTitlLayout,fontSize:fontSizeTitlLayout, fontWeight:fontWeightTitlLayout}}>{titlLayout}</h3>}
             <div className={getClassName(typeLayout)}>
                 {children}
             </div>
-        </div>
+                  {
+                    menu?.show &&     
+                    <>
+                      {
+                        menu?.elementos?.map((child:any) =>
+                          <Anchor targetId={child.targetId}>
+                              <li>
+                                {child?.label}
+                              </li>
+                          </Anchor>
+                        )
+                      }
+                    </>
+                  }
+        </section>
     );
 }
 

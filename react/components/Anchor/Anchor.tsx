@@ -1,6 +1,12 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 
-const Anchor = ({ targetId, children, className = '', offset = 0 }) => {
+interface AnchorProps {
+    targetId: string;
+    children: React.ReactNode;
+    offset?: number;
+}
+
+const Anchor = ({ targetId, children, offset = 0 }: AnchorProps) => {
     const handleClick = useCallback(
         (e) => {
             e.preventDefault();
@@ -15,7 +21,7 @@ const Anchor = ({ targetId, children, className = '', offset = 0 }) => {
     );
 
     return (
-        <button onClick={handleClick} className={className} style={{ all: 'unset', cursor: 'pointer' }}>
+        <button onClick={handleClick} style={{ all: 'unset', cursor: 'pointer' }}>
             {children}
         </button>
     );

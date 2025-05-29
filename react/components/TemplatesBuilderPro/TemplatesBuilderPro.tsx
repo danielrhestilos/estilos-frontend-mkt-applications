@@ -3,6 +3,7 @@ import Layout from './Layout'
 import useResize from '../../hooks/sizeScreenHook'
 import styles from './styles.css'
 import Video from "./../Video/Video"
+// import Anchor from './../Anchor/Anchor'
 // import { useRuntime } from 'vtex.render-runtime'
 function TemplatesBuilderPro(props: any) {
   // const { navigate } = useRuntime()
@@ -14,16 +15,19 @@ function TemplatesBuilderPro(props: any) {
   // }
   return (
     <div>
+
       {props?.elementos?.map((child: any, index: number) => (
         <Layout
           key={index}
           typeLayout={child.typeLayout}
           urlVideo={child.urlVideo}
           titlLayout={child.titlLayout}
+          idLayout={child.idLayout}
           colorTitlLayout={child.colorTitlLayout}
           fontSizeTitlLayout={child.fontSizeTitlLayout}
           fontFamilyTitlLayout={child.fontFamilyTitlLayout}
           fontWeightTitlLayout={child.fontWeightTitlLayout}
+          menu={props?.menu}
         >
           {child?.images?.map((image: any, imgIndex: number) => (
             <a
@@ -90,6 +94,39 @@ TemplatesBuilderPro.schema = {
   description: 'A component that displays a layout with images',
   type: 'object',
   properties: {
+    menu:{
+      title: 'Menu',
+      description: 'Menu a mostrar',
+      type: 'object',
+      properties:{
+        show:{
+          type: 'boolean',
+          title: '¿Tendrá menú?',
+          description:'Tendrá menú',
+          default: false,
+        },
+        elementos:{
+          title:"Elementos del menú",
+          description:"Conjunto de elementos del menú a mostrar",
+          type:"array",
+          items:{
+            type:"object",
+            properties:{
+              label:{
+                type:"string",
+                title:"Texto",
+                description:"texto para la opcion del menú"
+              },
+              targetId:{
+                type:"string",
+                title:"Texto",
+                description:"texto para la opcion del menú"
+              },
+            }
+          }
+        }
+      }
+    },
     elementos: {
       title: 'Elementos',
       description: 'Conjunto de elementos a mostrar',
@@ -151,6 +188,13 @@ TemplatesBuilderPro.schema = {
             title: 'Titulo del layout',
             description:
               'Titulo visible del layout de este elemento. Aparece en la parte superior del layout',
+            default: '',
+            type: 'string',
+          },
+          idLayout: {
+            title: 'ID Layout',
+            description:
+              'Id layout',
             default: '',
             type: 'string',
           },
