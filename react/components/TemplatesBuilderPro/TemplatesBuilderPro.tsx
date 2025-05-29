@@ -110,6 +110,7 @@ TemplatesBuilderPro.schema = {
               'collage1',
               'collage2',
               'collage-pro',
+              'collage-max',
             ],
             type: 'string',
           },      

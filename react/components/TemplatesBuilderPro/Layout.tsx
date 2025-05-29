@@ -23,6 +23,8 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
                 return styles.layoutCollage2;
             case 'collage-pro':
                 return styles.layoutCollagePro;
+            case 'collage-max':
+                return styles.layoutCollageMax;
             default:
                 return '';
         }
