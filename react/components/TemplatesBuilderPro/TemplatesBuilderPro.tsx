@@ -119,8 +119,8 @@ TemplatesBuilderPro.schema = {
               },
               targetId:{
                 type:"string",
-                title:"Texto",
-                description:"texto para la opcion del menú"
+                title:"Id",
+                description:"Id opcion del menú"
               },
             }
           }
