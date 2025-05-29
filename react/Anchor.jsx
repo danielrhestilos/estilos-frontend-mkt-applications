@@ -1,3 +1,3 @@
-import SupportChat from './components/SupportChat'
+import Anchor from './components/Anchor/Anchor'
 
-export default SupportChat
+export default Anchor
