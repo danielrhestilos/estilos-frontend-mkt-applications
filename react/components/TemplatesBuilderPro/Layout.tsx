@@ -36,7 +36,7 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
                 {children}
             </div>
                   {
-                    menu?.show &&     
+                    menu?.show && menu?.typeLayout =='main'     &&
                     <>
                       {
                         menu?.elementos?.map((child:any) =>
