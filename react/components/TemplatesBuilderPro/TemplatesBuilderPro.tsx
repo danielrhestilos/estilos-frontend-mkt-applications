@@ -23,7 +23,7 @@ function TemplatesBuilderPro(props: any) {
             <div id={child.idLayout}>
               <div
                 style={{
-                  marginBottom: '1rem',
+                  // marginBottom: '1rem',
                   marginTop: '0px',
                   color: child.colorTitlLayout,
                   fontSize: child.fontSizeTitlLayout,

@@ -328,22 +328,26 @@
 
 /* menu */
 .menuContainer {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
   gap: 1rem;
-  margin-top: 4rem;
   margin-bottom: 3.5rem;
+  max-width: 1440px;
+  margin: auto;
+  margin-top: 2rem;
 }
 
 .menuContainer li {
   list-style: none;
   color: #222;
-  all: unset;
+  /* all: unset; */
   cursor: pointer;
   background: #eee;
   border-radius: 0.3rem;
   font-weight: 700;
-  padding: 0.4rem 1rem;
+  padding: 0.8rem 1rem;
+  text-align: center;
 }
 
 .menuContainer li:hover {

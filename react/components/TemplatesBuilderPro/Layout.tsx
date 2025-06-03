@@ -43,7 +43,7 @@ function Layout({
         <div
           style={{
             marginBottom: '2.3rem',
-            marginTop: '0px',
+            marginTop: '2rem',
             marginRight: 'auto',
             marginLeft: 'auto',
             color: colorTitlLayout,
