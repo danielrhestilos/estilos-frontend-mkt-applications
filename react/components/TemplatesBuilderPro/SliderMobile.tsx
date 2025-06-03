@@ -23,14 +23,14 @@ const SliderMobile = ({ images }: { images: ImageType[] }) => {
     },
   })
 
+  const handlePrev = () => instanceRef.current?.prev()
+  const handleNext = () => instanceRef.current?.next()
+
   return (
     <div className={styles.sliderWrapper}>
-
-
-
-      <div ref={sliderRef} className={styles.keenSliderVerticalEnabled}>
+      <div ref={sliderRef} className={`keen-slider`}>
         {images.map((image, index) => (
-          <div className={styles.keenSliderSlide} key={index}>
+          <div className={`keen-slider__slide`} key={index}>
             <a
               href={image.link}
               target="_blank"
@@ -52,12 +52,31 @@ const SliderMobile = ({ images }: { images: ImageType[] }) => {
         ))}
       </div>
 
+      {/* Flechas */}
+      <button
+        className={`${styles.arrow} ${styles.arrowLeft}`}
+        onClick={handlePrev}
+        aria-label="Slide anterior"
+      >
+        ‹
+      </button>
+      <button
+        className={`${styles.arrow} ${styles.arrowRight}`}
+        onClick={handleNext}
+        aria-label="Slide siguiente"
+      >
+        ›
+      </button>
+
+      {/* Dots */}
       <div className={styles.dots}>
         {images.map((_, idx) => (
           <button
             key={idx}
             onClick={() => instanceRef.current?.moveToIdx(idx)}
-            className={`${styles.dot} ${currentSlide === idx ? styles.active : ''}`}
+            className={`${styles.dot} ${
+              currentSlide === idx ? styles.active : ''
+            }`}
             aria-label={`Ir a la diapositiva ${idx + 1}`}
           />
         ))}
