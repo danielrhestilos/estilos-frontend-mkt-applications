@@ -30,7 +30,7 @@ function TemplatesBuilderPro(props: any) {
                   fontFamily: child.fontFamilyTitlLayout,
                   fontWeight: child.fontWeightTitlLayout,
                 }}
-                dangerouslySetInnerHTML={child.titlLayout}
+                dangerouslySetInnerHTML={{ __html: child.titlLayout }}
               />
 
               <SliderMobile images={child?.images} />
