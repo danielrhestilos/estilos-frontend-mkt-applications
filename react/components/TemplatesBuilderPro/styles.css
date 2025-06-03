@@ -40,7 +40,7 @@
   grid-auto-rows: auto;
   margin: auto;
   align-items: stretch;
-  gap: 12px;
+  gap: 1rem;
   /* max-width: 1440px; */
 }
 
@@ -49,7 +49,7 @@
   grid-template-rows: auto auto;
   margin: auto;
   align-items: stretch;
-  gap: 12px;
+  gap: 1rem;
   max-width: 1440px;
 }
 
@@ -65,7 +65,7 @@
   grid-auto-rows: auto;
   margin: auto;
   align-items: stretch;
-  gap: 12px;
+  gap: 1rem;
   max-width: 1440px;
 }
 
@@ -218,8 +218,8 @@
 .titleLayout {
   text-align: center;
   font-size: 1.45rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .contBanner {
@@ -331,9 +331,22 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .menuContainer li {
   list-style: none;
+  color: #222;
+  all: unset;
+  cursor: pointer;
+  background: #eee;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+}
+
+.menuContainer li:hover {
+  background-color: #e91111;
+  color: #fff;
 }

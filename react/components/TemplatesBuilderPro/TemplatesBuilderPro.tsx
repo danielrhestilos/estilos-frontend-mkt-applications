@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './Layout'
 import useResize from '../../hooks/sizeScreenHook'
 import styles from './styles.css'
-import Video from "./../Video/Video"
+import Video from './../Video/Video'
 import SliderMobile from './SliderMobile'
 // import Anchor from './../Anchor/Anchor'
 // import { useRuntime } from 'vtex.render-runtime'
@@ -19,80 +19,93 @@ function TemplatesBuilderPro(props: any) {
     <div>
       {props?.elementos?.map((child: any, index: number) => (
         <>
-          {
-            isMobil ?
-              <SliderMobile images={child?.images} />:
-              <Layout
-                key={index}
-                typeLayout={child.typeLayout}
-                urlVideo={child.urlVideo}
-                titlLayout={child.titlLayout}
-                idLayout={child.idLayout}
-                colorTitlLayout={child.colorTitlLayout}
-                fontSizeTitlLayout={child.fontSizeTitlLayout}
-                fontFamilyTitlLayout={child.fontFamilyTitlLayout}
-                fontWeightTitlLayout={child.fontWeightTitlLayout}
-                menu={props?.menu}
-              >
-                {child?.images?.map((image: any, imgIndex: number) => (
-                  <a
-                    // onClick={() => handleRedirect(image.link)}
-                    href={image.link}
-                    target="_blank"
-                    className={image.main ? styles.contBannerMain : styles.contBanner}
-                    style={{ backgroundColor: image.bgColor, display: 'block' }}
-                  >
-                    {
-                      child.typeLayout == 'video'
-                      ?
-                      <Video
-                        url= {child.urlVideo}
-                      />
-                      :
-                      <img
-                        key={imgIndex}
-                        src={image.urlImage}
-                        alt={image.altImage}
-                        className={styles.thumb}
-                        style={!isMobil ? { display: 'block', height: '100%' ,width:"100%"} : {width:"100%"}}
-                      />
-                    }
+          {isMobil ? (
+            <div id={child.idLayout}>
+              <div
+                style={{
+                  marginBottom: '1rem',
+                  marginTop: '0px',
+                  color: child.colorTitlLayout,
+                  fontSize: child.fontSizeTitlLayout,
+                  fontFamily: child.fontFamilyTitlLayout,
+                  fontWeight: child.fontWeightTitlLayout,
+                }}
+                dangerouslySetInnerHTML={child.titlLayout}
+              />
 
-                    <div className={styles.textBanner}>
-                      <p
-                        className={
-                          !image.whiteText
-                            ? `${styles.hotText}`
-                            : `${styles.whiteText} ${styles.hotText}`
-                        }
-                      >
-                        {image?.hotText}
-                      </p>
-                      <div
-                        className={
-                          !image.whiteText
-                            ? `${styles.textMessage}`
-                            : `${styles.textMessage} ${styles.whiteText}`
-                        }
-                        dangerouslySetInnerHTML={{ __html: image?.textMessage }}
-                      />
-                      <p
-                        className={
-                          !image.whiteText
-                            ? `${styles.textCTABlack}`
-                            : `${styles.textCTAWhite}`
-                        }
-                      >
-                        {image?.textCTA}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </Layout>
-          }
+              <SliderMobile images={child?.images} />
+            </div>
+          ) : (
+            <Layout
+              key={index}
+              typeLayout={child.typeLayout}
+              urlVideo={child.urlVideo}
+              titlLayout={child.titlLayout}
+              idLayout={child.idLayout}
+              colorTitlLayout={child.colorTitlLayout}
+              fontSizeTitlLayout={child.fontSizeTitlLayout}
+              fontFamilyTitlLayout={child.fontFamilyTitlLayout}
+              fontWeightTitlLayout={child.fontWeightTitlLayout}
+              menu={props?.menu}
+            >
+              {child?.images?.map((image: any, imgIndex: number) => (
+                <a
+                  href={image.link}
+                  target="_blank"
+                  className={
+                    image.main ? styles.contBannerMain : styles.contBanner
+                  }
+                  style={{ backgroundColor: image.bgColor, display: 'block' }}
+                >
+                  {child.typeLayout == 'video' ? (
+                    <Video url={child.urlVideo} />
+                  ) : (
+                    <img
+                      key={imgIndex}
+                      src={image.urlImage}
+                      alt={image.altImage}
+                      className={styles.thumb}
+                      style={
+                        !isMobil
+                          ? { display: 'block', height: '100%', width: '100%' }
+                          : { width: '100%' }
+                      }
+                    />
+                  )}
 
+                  <div className={styles.textBanner}>
+                    <p
+                      className={
+                        !image.whiteText
+                          ? `${styles.hotText}`
+                          : `${styles.whiteText} ${styles.hotText}`
+                      }
+                    >
+                      {image?.hotText}
+                    </p>
+                    <div
+                      className={
+                        !image.whiteText
+                          ? `${styles.textMessage}`
+                          : `${styles.textMessage} ${styles.whiteText}`
+                      }
+                      dangerouslySetInnerHTML={{ __html: image?.textMessage }}
+                    />
+                    <p
+                      className={
+                        !image.whiteText
+                          ? `${styles.textCTABlack}`
+                          : `${styles.textCTAWhite}`
+                      }
+                    >
+                      {image?.textCTA}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </Layout>
+          )}
         </>
-
       ))}
     </div>
   )
@@ -103,38 +116,38 @@ TemplatesBuilderPro.schema = {
   description: 'A component that displays a layout with images',
   type: 'object',
   properties: {
-    menu:{
+    menu: {
       title: 'Menu',
       description: 'Menu a mostrar',
       type: 'object',
-      properties:{
-        show:{
+      properties: {
+        show: {
           type: 'boolean',
           title: '¿Tendrá menú?',
-          description:'Tendrá menú',
+          description: 'Tendrá menú',
           default: false,
         },
-        elementos:{
-          title:"Elementos del menú",
-          description:"Conjunto de elementos del menú a mostrar",
-          type:"array",
-          items:{
-            type:"object",
-            properties:{
-              label:{
-                type:"string",
-                title:"Texto",
-                description:"texto para la opcion del menú"
+        elementos: {
+          title: 'Elementos del menú',
+          description: 'Conjunto de elementos del menú a mostrar',
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              label: {
+                type: 'string',
+                title: 'Texto',
+                description: 'texto para la opcion del menú',
               },
-              targetId:{
-                type:"string",
-                title:"Id",
-                description:"Id opcion del menú"
+              targetId: {
+                type: 'string',
+                title: 'Id',
+                description: 'Id opcion del menú',
               },
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     },
     elementos: {
       title: 'Elementos',
@@ -202,8 +215,7 @@ TemplatesBuilderPro.schema = {
           },
           idLayout: {
             title: 'ID Layout',
-            description:
-              'Id layout',
+            description: 'Id layout',
             default: '',
             type: 'string',
           },
