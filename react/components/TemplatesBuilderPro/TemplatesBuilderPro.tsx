@@ -15,7 +15,7 @@ function TemplatesBuilderPro(props: any) {
   // }
   return (
     <div>
-
+      <>{console.log("props?.elementos ",props?.elementos)}</>
       {props?.elementos?.map((child: any, index: number) => (
         <Layout
           key={index}
@@ -52,7 +52,7 @@ function TemplatesBuilderPro(props: any) {
                   style={!isMobil ? { display: 'block', height: '100%' ,width:"100%"} : {width:"100%"}}
                 />
               }
-             
+
               <div className={styles.textBanner}>
                 <p
                   className={
@@ -150,14 +150,14 @@ TemplatesBuilderPro.schema = {
               'collage-max',
             ],
             type: 'string',
-          },      
+          },
           colorTitlLayout: {
             title: 'color para Titulo del layout',
             description:
               'color visible del layout de este elemento. Aparece en la parte superior del layout',
             default: '#e91111',
             type: 'string',
-          },    
+          },
           fontSizeTitlLayout: {
             title: 'fontSize para Titulo del layout',
             description:

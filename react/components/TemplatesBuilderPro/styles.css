@@ -192,6 +192,8 @@
 .titleLayout {
     text-align: center;
     font-size: 1.45rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .contBanner {
@@ -270,7 +272,7 @@
 }
 
 .contBanner:hover {
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
     filter: brightness(0.8); /* Oscurece el elemento */
     transition: all 0.4s ease-in-out;
 }
@@ -300,4 +302,17 @@
     .textBanner {
         padding: 41px;
     }
+}
+
+
+/* menu */
+.menuContainer{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.menuContainer li{
+  list-style: none;
 }

@@ -27,17 +27,22 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
                 return '';
         }
     };
-    return (  
+    return (
         <section id={idLayout}>
-            {titlLayout != '' && 
-            <h3 className={styles.titleLayout} 
+            {titlLayout != '' &&
+            <h3 className={styles.titleLayout}
             style={{color:colorTitlLayout, fontFamily:fontFamilyTitlLayout,fontSize:fontSizeTitlLayout, fontWeight:fontWeightTitlLayout}}>{titlLayout}</h3>}
             <div className={getClassName(typeLayout)}>
                 {children}
+                <>
+                  {
+                    console.log("menu: ",menu)
+                  }
+                </>
             </div>
                   {
-                    menu?.show && menu?.typeLayout =='main'     &&
-                    <>
+                    menu?.show && typeLayout =='main'     &&
+                    <div className={styles.menuContainer}>
                       {
                         menu?.elementos?.map((child:any) =>
                           <Anchor targetId={child.targetId}>
@@ -47,7 +52,7 @@ function Layout({typeLayout,titlLayout,colorTitlLayout,fontSizeTitlLayout,fontFa
                           </Anchor>
                         )
                       }
-                    </>
+                    </div>
                   }
         </section>
     );
