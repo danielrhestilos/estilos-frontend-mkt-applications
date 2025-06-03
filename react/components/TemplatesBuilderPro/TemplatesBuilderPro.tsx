@@ -3,6 +3,7 @@ import Layout from './Layout'
 import useResize from '../../hooks/sizeScreenHook'
 import styles from './styles.css'
 import Video from "./../Video/Video"
+import SliderMobile from './SliderMobile'
 // import Anchor from './../Anchor/Anchor'
 // import { useRuntime } from 'vtex.render-runtime'
 function TemplatesBuilderPro(props: any) {
@@ -13,77 +14,85 @@ function TemplatesBuilderPro(props: any) {
   //     to: linkText,
   //   })
   // }
+
   return (
     <div>
-      <>{console.log("props?.elementos ",props?.elementos)}</>
       {props?.elementos?.map((child: any, index: number) => (
-        <Layout
-          key={index}
-          typeLayout={child.typeLayout}
-          urlVideo={child.urlVideo}
-          titlLayout={child.titlLayout}
-          idLayout={child.idLayout}
-          colorTitlLayout={child.colorTitlLayout}
-          fontSizeTitlLayout={child.fontSizeTitlLayout}
-          fontFamilyTitlLayout={child.fontFamilyTitlLayout}
-          fontWeightTitlLayout={child.fontWeightTitlLayout}
-          menu={props?.menu}
-        >
-          {child?.images?.map((image: any, imgIndex: number) => (
-            <a
-              // onClick={() => handleRedirect(image.link)}
-              href={image.link}
-              target="_blank"
-              className={image.main ? styles.contBannerMain : styles.contBanner}
-              style={{ backgroundColor: image.bgColor, display: 'block' }}
-            >
-              {
-                child.typeLayout == 'video'
-                ?
-                <Video
-                  url= {child.urlVideo}
-                />
-                :
-                <img
-                  key={imgIndex}
-                  src={image.urlImage}
-                  alt={image.altImage}
-                  className={styles.thumb}
-                  style={!isMobil ? { display: 'block', height: '100%' ,width:"100%"} : {width:"100%"}}
-                />
-              }
+        <>
+          {
+            isMobil ?
+              <SliderMobile images={child?.images} />:
+              <Layout
+                key={index}
+                typeLayout={child.typeLayout}
+                urlVideo={child.urlVideo}
+                titlLayout={child.titlLayout}
+                idLayout={child.idLayout}
+                colorTitlLayout={child.colorTitlLayout}
+                fontSizeTitlLayout={child.fontSizeTitlLayout}
+                fontFamilyTitlLayout={child.fontFamilyTitlLayout}
+                fontWeightTitlLayout={child.fontWeightTitlLayout}
+                menu={props?.menu}
+              >
+                {child?.images?.map((image: any, imgIndex: number) => (
+                  <a
+                    // onClick={() => handleRedirect(image.link)}
+                    href={image.link}
+                    target="_blank"
+                    className={image.main ? styles.contBannerMain : styles.contBanner}
+                    style={{ backgroundColor: image.bgColor, display: 'block' }}
+                  >
+                    {
+                      child.typeLayout == 'video'
+                      ?
+                      <Video
+                        url= {child.urlVideo}
+                      />
+                      :
+                      <img
+                        key={imgIndex}
+                        src={image.urlImage}
+                        alt={image.altImage}
+                        className={styles.thumb}
+                        style={!isMobil ? { display: 'block', height: '100%' ,width:"100%"} : {width:"100%"}}
+                      />
+                    }
 
-              <div className={styles.textBanner}>
-                <p
-                  className={
-                    !image.whiteText
-                      ? `${styles.hotText}`
-                      : `${styles.whiteText} ${styles.hotText}`
-                  }
-                >
-                  {image?.hotText}
-                </p>
-                <div
-                  className={
-                    !image.whiteText
-                      ? `${styles.textMessage}`
-                      : `${styles.textMessage} ${styles.whiteText}`
-                  }
-                  dangerouslySetInnerHTML={{ __html: image?.textMessage }}
-                />
-                <p
-                  className={
-                    !image.whiteText
-                      ? `${styles.textCTABlack}`
-                      : `${styles.textCTAWhite}`
-                  }
-                >
-                  {image?.textCTA}
-                </p>
-              </div>
-            </a>
-          ))}
-        </Layout>
+                    <div className={styles.textBanner}>
+                      <p
+                        className={
+                          !image.whiteText
+                            ? `${styles.hotText}`
+                            : `${styles.whiteText} ${styles.hotText}`
+                        }
+                      >
+                        {image?.hotText}
+                      </p>
+                      <div
+                        className={
+                          !image.whiteText
+                            ? `${styles.textMessage}`
+                            : `${styles.textMessage} ${styles.whiteText}`
+                        }
+                        dangerouslySetInnerHTML={{ __html: image?.textMessage }}
+                      />
+                      <p
+                        className={
+                          !image.whiteText
+                            ? `${styles.textCTABlack}`
+                            : `${styles.textCTAWhite}`
+                        }
+                      >
+                        {image?.textCTA}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </Layout>
+          }
+
+        </>
+
       ))}
     </div>
   )
