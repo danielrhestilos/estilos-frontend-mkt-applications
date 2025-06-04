@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles.css'
+import StickyWrapper from '../StickyWrapper/StickyWrapper'
 import Anchor from '../Anchor/Anchor'
 
 function Layout({
@@ -57,13 +58,15 @@ function Layout({
       )}
       <div className={getClassName(typeLayout)}>{children}</div>
       {menu?.show && typeLayout == 'main' && (
-        <div className={styles.menuContainer}>
-          {menu?.elementos?.map((child: any) => (
-            <Anchor targetId={child.targetId}>
-              <li>{child?.label}</li>
-            </Anchor>
-          ))}
-        </div>
+        <StickyWrapper threshold={1}>
+          <div className={styles.menuContainer}>
+            {menu?.elementos?.map((child: any) => (
+              <Anchor targetId={child.targetId}>
+                <li>{child?.label}</li>
+              </Anchor>
+            ))}
+          </div>
+        </StickyWrapper>
       )}
     </section>
   )

@@ -1,0 +1,10 @@
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white; /* Asegúrate de poner un fondo para que no se vea "transparente" */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Puedes agregar una sombra para mayor visibilidad */
+  transition: all 0.3s ease-in-out;
+}
