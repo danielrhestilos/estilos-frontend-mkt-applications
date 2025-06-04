@@ -24,7 +24,6 @@ function TemplatesBuilderPro(props: any) {
             <div id={child.idLayout}>
               <div
                 style={{
-                  // marginBottom: '1rem',
                   marginTop: '0px',
                   color: child.colorTitlLayout,
                   fontSize: child.fontSizeTitlLayout,
@@ -39,26 +38,25 @@ function TemplatesBuilderPro(props: any) {
           ) : (
             <>
               {!isMobil && child.isSlider && (
-                <>
-                  <div style={{ maxWidth: '1440px', margin: 'auto' }}>
-                    <div
-                      style={{
-                        marginTop: '0px',
-                        color: child.colorTitlLayout,
-                        fontSize: child.fontSizeTitlLayout,
-                        fontFamily: child.fontFamilyTitlLayout,
-                        fontWeight: child.fontWeightTitlLayout,
-                      }}
-                      dangerouslySetInnerHTML={{ __html: child.titlLayout }}
-                    />
+                <div style={{ maxWidth: '1440px', margin: 'auto' }}>
+                  <div
+                    style={{
+                      marginTop: '0px',
+                      color: child.colorTitlLayout,
+                      fontSize: child.fontSizeTitlLayout,
+                      fontFamily: child.fontFamilyTitlLayout,
+                      fontWeight: child.fontWeightTitlLayout,
+                    }}
+                    dangerouslySetInnerHTML={{ __html: child.titlLayout }}
+                  />
 
-                    <SliderDesktop
-                      images={child?.images}
-                      slidesPerView={child.slidesPerView}
-                    />
-                  </div>
-                </>
+                  <SliderDesktop
+                    images={child?.images}
+                    slidesPerView={child.slidesPerView}
+                  />
+                </div>
               )}
+
               {!isMobil && !child.isSlider && (
                 <Layout
                   key={index}
@@ -74,6 +72,7 @@ function TemplatesBuilderPro(props: any) {
                 >
                   {child?.images?.map((image: any, imgIndex: number) => (
                     <a
+                      key={imgIndex}
                       href={image.link}
                       target="_blank"
                       className={
@@ -88,19 +87,87 @@ function TemplatesBuilderPro(props: any) {
                         <Video url={child.urlVideo} />
                       ) : (
                         <img
-                          key={imgIndex}
                           src={image.urlImage}
                           alt={image.altImage}
                           className={styles.thumb}
-                          style={
-                            !isMobil
-                              ? {
-                                  display: 'block',
-                                  height: '100%',
-                                  width: '100%',
-                                }
-                              : { width: '100%' }
+                          style={{
+                            display: 'block',
+                            height: '100%',
+                            width: '100%',
+                          }}
+                        />
+                      )}
+
+                      <div className={styles.textBanner}>
+                        <p
+                          className={
+                            !image.whiteText
+                              ? `${styles.hotText}`
+                              : `${styles.whiteText} ${styles.hotText}`
                           }
+                        >
+                          {image?.hotText}
+                        </p>
+                        <div
+                          className={
+                            !image.whiteText
+                              ? `${styles.textMessage}`
+                              : `${styles.textMessage} ${styles.whiteText}`
+                          }
+                          dangerouslySetInnerHTML={{
+                            __html: image?.textMessage,
+                          }}
+                        />
+                        <p
+                          className={
+                            !image.whiteText
+                              ? `${styles.textCTABlack}`
+                              : `${styles.textCTAWhite}`
+                          }
+                        >
+                          {image?.textCTA}
+                        </p>
+                      </div>
+                    </a>
+                  ))}
+                </Layout>
+              )}
+
+              {/* ✅ FALTA CUBIERTA: Mobile + !Slider */}
+              {isMobil && !child.isSlider && (
+                <Layout
+                  key={index}
+                  typeLayout={child.typeLayout}
+                  urlVideo={child.urlVideo}
+                  titlLayout={child.titlLayout}
+                  idLayout={child.idLayout}
+                  colorTitlLayout={child.colorTitlLayout}
+                  fontSizeTitlLayout={child.fontSizeTitlLayout}
+                  fontFamilyTitlLayout={child.fontFamilyTitlLayout}
+                  fontWeightTitlLayout={child.fontWeightTitlLayout}
+                  menu={props?.menu}
+                >
+                  {child?.images?.map((image: any, imgIndex: number) => (
+                    <a
+                      key={imgIndex}
+                      href={image.link}
+                      target="_blank"
+                      className={
+                        image.main ? styles.contBannerMain : styles.contBanner
+                      }
+                      style={{
+                        backgroundColor: image.bgColor,
+                        display: 'block',
+                      }}
+                    >
+                      {child.typeLayout == 'video' ? (
+                        <Video url={child.urlVideo} />
+                      ) : (
+                        <img
+                          src={image.urlImage}
+                          alt={image.altImage}
+                          className={styles.thumb}
+                          style={{ width: '100%' }}
                         />
                       )}
 
