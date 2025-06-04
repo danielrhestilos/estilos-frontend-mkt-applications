@@ -29,7 +29,7 @@ const SliderMobile = ({ images }: { images: ImageType[] }) => {
   return (
     <div className={styles.sliderWrapper}>
       <div ref={sliderRef} className={`keen-slider`}>
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <div className={`keen-slider__slide`} key={index}>
             <a
               href={image.link}

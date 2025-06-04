@@ -326,18 +326,6 @@
   }
 }
 
-/* menu */
-.menuContainer {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 1440px;
-  margin: 1.3rem auto;
-  width: 100%;
-  overflow-x: scroll;
-}
-
 .menuContainer li {
   list-style: none;
   color: #222;
@@ -353,4 +341,24 @@
 .menuContainer li:hover {
   background-color: #e91111;
   color: #fff;
+}
+
+/* menu */
+.menuContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1440px;
+  margin: 1.3rem auto;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+@media screen and (max-width: 900px) {
+  /* menu */
+  .menuContainer {
+    width: 100%;
+    overflow-x: scroll;
+  }
 }

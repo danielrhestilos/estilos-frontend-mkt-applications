@@ -19,7 +19,7 @@ function TemplatesBuilderPro(props: any) {
     <div>
       {props?.elementos?.map((child: any, index: number) => (
         <>
-          {isMobil ? (
+          {isMobil && child.isSlider ? (
             <div id={child.idLayout}>
               <div
                 style={{
@@ -153,9 +153,15 @@ TemplatesBuilderPro.schema = {
       title: 'Elementos',
       description: 'Conjunto de elementos a mostrar',
       type: 'array',
+
       items: {
         type: 'object',
         properties: {
+          isSlider: {
+            type: 'boolean',
+            description: 'Is slider',
+            default: false,
+          },
           typeLayout: {
             title: 'Tipo del layout',
             description:
