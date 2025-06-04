@@ -28,7 +28,9 @@
   flex-wrap: wrap;
 }
 
-.layoutMain .layoutSolo,
+.layoutHeader,
+.layoutMain,
+.layoutSolo,
 .layoutDuo,
 .layoutTriple,
 .layoutCollage,

@@ -20,6 +20,8 @@ function Layout({
         return styles.Solo
       case 'main':
         return styles.layoutMain
+      case 'header-footer':
+        return styles.layoutHeader
       case 'solo':
         return styles.layoutSolo
       case 'duo':

@@ -169,6 +169,7 @@ TemplatesBuilderPro.schema = {
             default: 'main',
             enum: [
               'main',
+              'footer-header',
               'solo',
               'duo',
               'triple',
