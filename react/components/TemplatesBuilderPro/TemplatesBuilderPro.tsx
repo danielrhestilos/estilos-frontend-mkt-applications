@@ -40,21 +40,23 @@ function TemplatesBuilderPro(props: any) {
             <>
               {!isMobil && child.isSlider && (
                 <>
-                  <div
-                    style={{
-                      marginTop: '0px',
-                      color: child.colorTitlLayout,
-                      fontSize: child.fontSizeTitlLayout,
-                      fontFamily: child.fontFamilyTitlLayout,
-                      fontWeight: child.fontWeightTitlLayout,
-                    }}
-                    dangerouslySetInnerHTML={{ __html: child.titlLayout }}
-                  />
+                  <div style={{ maxWidth: '1440px', margin: 'auto' }}>
+                    <div
+                      style={{
+                        marginTop: '0px',
+                        color: child.colorTitlLayout,
+                        fontSize: child.fontSizeTitlLayout,
+                        fontFamily: child.fontFamilyTitlLayout,
+                        fontWeight: child.fontWeightTitlLayout,
+                      }}
+                      dangerouslySetInnerHTML={{ __html: child.titlLayout }}
+                    />
 
-                  <SliderDesktop
-                    images={child?.images}
-                    slidesPerView={child.slidesPerView}
-                  />
+                    <SliderDesktop
+                      images={child?.images}
+                      slidesPerView={child.slidesPerView}
+                    />
+                  </div>
                 </>
               )}
               {!isMobil && !child.isSlider && (

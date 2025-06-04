@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import styles from './slider.module.css'
@@ -10,18 +10,29 @@ type ImageType = {
   bgColor?: string
 }
 
-type SliderDesktopProps = {
+interface SliderProps {
   images: ImageType[]
-  slidesPerView?: number // Nueva prop opcional
+  slidesPerView: number // Prop adicional para definir la cantidad de slides visibles en desktop
 }
 
-const SliderDesktop = ({ images, slidesPerView = 3 }: SliderDesktopProps) => {
+const SliderDesktop = ({ images, slidesPerView }: SliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isDesktop, setIsDesktop] = useState<boolean>(false)
+
+  useEffect(() => {
+    // Verifica si estamos en vista de escritorio
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024)
+    window.addEventListener('resize', handleResize)
+    handleResize() // Llama una vez al cargar
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: false,
     slides: {
-      perView: slidesPerView,
-      spacing: 15,
+      perView: isDesktop ? slidesPerView : 1, // Usa `slidesPerView` en desktop y 1 en móvil
+      spacing: 10,
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
@@ -33,9 +44,9 @@ const SliderDesktop = ({ images, slidesPerView = 3 }: SliderDesktopProps) => {
 
   return (
     <div className={styles.sliderWrapper}>
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className={`keen-slider`}>
         {images?.map((image, index) => (
-          <div className="keen-slider__slide" key={index}>
+          <div className={`keen-slider__slide`} key={index}>
             <a
               href={image.link}
               target="_blank"
@@ -75,23 +86,19 @@ const SliderDesktop = ({ images, slidesPerView = 3 }: SliderDesktopProps) => {
 
       {/* Dots */}
       <div className={styles.dots}>
-        {Array.from({ length: Math.ceil(images.length / slidesPerView) }).map(
-          (_, idx) => (
-            <button
-              key={idx}
-              onClick={() =>
-                instanceRef.current?.moveToIdx(idx * slidesPerView)
-              }
-              className={`${styles.dot} ${
-                currentSlide >= idx * slidesPerView &&
-                currentSlide < (idx + 1) * slidesPerView
-                  ? styles.active
-                  : ''
-              }`}
-              aria-label={`Ir a la página ${idx + 1}`}
-            />
-          )
-        )}
+        {/* Calculamos el número total de "páginas" que se mostrarán */}
+        {Array.from({
+          length: Math.ceil(images.length / (isDesktop ? slidesPerView : 1)),
+        }).map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => instanceRef.current?.moveToIdx(idx)}
+            className={`${styles.dot} ${
+              currentSlide === idx ? styles.active : ''
+            }`}
+            aria-label={`Ir a la diapositiva ${idx + 1}`}
+          />
+        ))}
       </div>
     </div>
   )
