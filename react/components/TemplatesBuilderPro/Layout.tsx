@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles.css'
 import StickyWrapper from '../StickyWrapper/StickyWrapper'
 import Anchor from '../Anchor/Anchor'
+import useResize from '../../hooks/sizeScreenHook'
 
 function Layout({
   typeLayout,
@@ -14,6 +15,7 @@ function Layout({
   idLayout,
   menu,
 }: any) {
+  const [, isMobil] = useResize()
   const getClassName = (typeLayout: string) => {
     switch (typeLayout) {
       case 'video':
@@ -62,11 +64,57 @@ function Layout({
       {menu?.show && typeLayout == 'main' && (
         <StickyWrapper threshold={1}>
           <div className={styles.menuContainer}>
-            {menu?.elementos?.map((child: any) => (
-              <Anchor targetId={child.targetId}>
-                <li>{child?.label}</li>
-              </Anchor>
-            ))}
+            <ul>
+              {menu?.elementos?.map((child: any) => (
+                <>
+                  <Anchor targetId={child.targetId}>
+                    <li>{child?.label}</li>
+                    {isMobil && (
+                      <div
+                        style={{
+                          borderTop: '0.0625rem solid rgb(219, 219, 219)',
+                          borderLeft: 'none',
+                          borderRight: 'none',
+                          background: 'rgb(250, 250, 250)',
+                          height: '0.5rem',
+                          width: '100%',
+                        }}
+                      ></div>
+                    )}
+                  </Anchor>
+                </>
+              ))}
+            </ul>
+            {isMobil && (
+              <>
+                {/* <div
+                  style={{
+                    position: 'absolute',
+                    left: '0px',
+                    top: '0',
+                    height: '100%',
+                    width: '2.5rem',
+                    right: 'auto',
+                    backgroundImage:
+                      'linear-gradient(270deg, rgba(255, 255, 255, 0), rgb(255, 255, 255) 60%)',
+                    borderRadius: '0.188rem',
+                  }}
+                ></div> */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '0',
+                    right: '0px',
+                    height: '100%',
+                    left: 'auto',
+                    width: '2.5rem',
+                    borderRadius: '0.188rem',
+                    backgroundImage:
+                      'linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255 255 255 / 83%) 60%)',
+                  }}
+                ></div>
+              </>
+            )}
           </div>
         </StickyWrapper>
       )}

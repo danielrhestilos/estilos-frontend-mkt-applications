@@ -24,9 +24,9 @@ const Anchor = ({ targetId, children, offset = 0 }: AnchorProps) => {
   )
 
   return (
-    <button onClick={handleClick} style={{ all: 'unset', cursor: 'pointer' }}>
+    <span onClick={handleClick} style={{ cursor: 'pointer' }}>
       {children}
-    </button>
+    </span>
   )
 }
 export default Anchor
