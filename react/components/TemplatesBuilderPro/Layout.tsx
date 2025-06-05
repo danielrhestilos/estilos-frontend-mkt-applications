@@ -67,7 +67,7 @@ function Layout({
             <ul>
               {menu?.elementos?.map((child: any) => (
                 <>
-                  <Anchor targetId={child.targetId}>
+                  <Anchor targetId={child.targetId} offset={83}>
                     <li>{child?.label}</li>
                     {isMobil && (
                       <div
