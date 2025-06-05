@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import styles from './slider.module.css'
@@ -25,7 +25,13 @@ const SliderMobile = ({ images }: { images: ImageType[] }) => {
 
   const handlePrev = () => instanceRef.current?.prev()
   const handleNext = () => instanceRef.current?.next()
+  useEffect(() => {
+    const interval = setInterval(() => {
+      instanceRef.current?.next()
+    }, 3000) // 3 segundos
 
+    return () => clearInterval(interval)
+  }, [instanceRef])
   return (
     <div className={styles.sliderWrapper}>
       <div ref={sliderRef} className={`keen-slider`}>
