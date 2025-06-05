@@ -389,7 +389,7 @@
   }
   .menuContainer li {
     text-transform: capitalize;
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     padding: 1.12rem 17.92px 0.78rem;
     outline: 0.01rem solid rgb(239 239 239);
   }
