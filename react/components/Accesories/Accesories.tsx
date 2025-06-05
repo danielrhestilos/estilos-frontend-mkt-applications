@@ -255,7 +255,11 @@ function Accesories() {
 
                   <div className={styles.buttonsBuyTogether}>
                     {/* <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button> */}
-                    <button onClick={onClickBuy} className={styles.buttonPrice}>
+                    <button
+                      onClick={onClickBuy}
+                      className={styles.buttonPrice}
+                      id="comprarJuntosButton"
+                    >
                       ¡LOS QUIERO!
                     </button>
                   </div>
