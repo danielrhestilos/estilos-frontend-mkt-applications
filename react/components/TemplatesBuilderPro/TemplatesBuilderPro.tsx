@@ -275,6 +275,7 @@ TemplatesBuilderPro.schema = {
               'Tipo del layout de este elemento. Considera que los collage tienen 4 imágenes',
             default: 'main',
             enum: [
+              'video',
               'main',
               'footer-header',
               'solo',
