@@ -29,7 +29,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url }) => {
         autoPlay
         loop
         className="w-full rounded-xl shadow-md"
-        style={{ margin: 'auto', height: 'auto' }}
+        style={{ margin: 'auto', height: 'auto', width: '100%' }}
       >
         <source src={url} type="video/mp4" />
         Tu navegador no soporta la reproducción de video.
