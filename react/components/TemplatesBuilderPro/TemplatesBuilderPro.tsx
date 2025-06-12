@@ -7,19 +7,14 @@ import SliderMobile from './SliderMobile'
 import SliderDesktop from './SliderDesktop'
 // import Anchor from './../Anchor/Anchor'
 // import { useRuntime } from 'vtex.render-runtime'
+
 function TemplatesBuilderPro(props: any) {
-  // const { navigate } = useRuntime()
   const [, isMobil] = useResize()
-  // const handleRedirect = (linkText: any) => {
-  //   navigate({
-  //     to: linkText,
-  //   })
-  // }
 
   return (
     <div>
       {props?.elementos?.map((child: any, index: number) => (
-        <>
+        <React.Fragment key={index}>
           {isMobil && child.isSlider ? (
             <div id={child.idLayout}>
               <div
@@ -32,7 +27,6 @@ function TemplatesBuilderPro(props: any) {
                 }}
                 dangerouslySetInnerHTML={{ __html: child.titlLayout }}
               />
-
               <SliderMobile images={child?.images} />
             </div>
           ) : (
@@ -49,7 +43,6 @@ function TemplatesBuilderPro(props: any) {
                     }}
                     dangerouslySetInnerHTML={{ __html: child.titlLayout }}
                   />
-
                   <SliderDesktop
                     images={child?.images}
                     slidesPerView={child.slidesPerView}
@@ -57,7 +50,7 @@ function TemplatesBuilderPro(props: any) {
                 </div>
               )}
 
-              {!isMobil && !child.isSlider && (
+              {!child.isSlider && (
                 <Layout
                   key={index}
                   typeLayout={child.typeLayout}
@@ -70,144 +63,67 @@ function TemplatesBuilderPro(props: any) {
                   fontWeightTitlLayout={child.fontWeightTitlLayout}
                   menu={props?.menu}
                 >
-                  {child?.images?.map((image: any, imgIndex: number) => (
-                    <a
-                      key={imgIndex}
-                      href={image.link}
-                      target="_blank"
-                      className={
-                        image.main ? styles.contBannerMain : styles.contBanner
-                      }
-                      style={{
-                        backgroundColor: image.bgColor,
-                        display: 'block',
-                      }}
-                    >
-                      {child.typeLayout == 'video' ? (
-                        <Video url={child.urlVideo} />
-                      ) : (
+                  {child.typeLayout === 'video' ? (
+                    <Video url={child.urlVideo} />
+                  ) : (
+                    child?.images?.map((image: any, imgIndex: number) => (
+                      <a
+                        key={imgIndex}
+                        href={image.link}
+                        target="_blank"
+                        className={
+                          image.main ? styles.contBannerMain : styles.contBanner
+                        }
+                        style={{
+                          backgroundColor: image.bgColor,
+                          display: 'block',
+                        }}
+                      >
                         <img
                           src={image.urlImage}
                           alt={image.altImage}
                           className={styles.thumb}
-                          style={{
-                            display: 'block',
-                            height: '100%',
-                            width: '100%',
-                          }}
+                          style={{ width: '100%', height: '100%' }}
                         />
-                      )}
 
-                      <div className={styles.textBanner}>
-                        <p
-                          className={
-                            !image.whiteText
-                              ? `${styles.hotText}`
-                              : `${styles.whiteText} ${styles.hotText}`
-                          }
-                        >
-                          {image?.hotText}
-                        </p>
-                        <div
-                          className={
-                            !image.whiteText
-                              ? `${styles.textMessage}`
-                              : `${styles.textMessage} ${styles.whiteText}`
-                          }
-                          dangerouslySetInnerHTML={{
-                            __html: image?.textMessage,
-                          }}
-                        />
-                        <p
-                          className={
-                            !image.whiteText
-                              ? `${styles.textCTABlack}`
-                              : `${styles.textCTAWhite}`
-                          }
-                        >
-                          {image?.textCTA}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-                </Layout>
-              )}
-
-              {/* ✅ FALTA CUBIERTA: Mobile + !Slider */}
-              {isMobil && !child.isSlider && (
-                <Layout
-                  key={index}
-                  typeLayout={child.typeLayout}
-                  urlVideo={child.urlVideo}
-                  titlLayout={child.titlLayout}
-                  idLayout={child.idLayout}
-                  colorTitlLayout={child.colorTitlLayout}
-                  fontSizeTitlLayout={child.fontSizeTitlLayout}
-                  fontFamilyTitlLayout={child.fontFamilyTitlLayout}
-                  fontWeightTitlLayout={child.fontWeightTitlLayout}
-                  menu={props?.menu}
-                >
-                  {child?.images?.map((image: any, imgIndex: number) => (
-                    <a
-                      key={imgIndex}
-                      href={image.link}
-                      target="_blank"
-                      className={
-                        image.main ? styles.contBannerMain : styles.contBanner
-                      }
-                      style={{
-                        backgroundColor: image.bgColor,
-                        display: 'block',
-                      }}
-                    >
-                      {child.typeLayout == 'video' ? (
-                        <Video url={child.urlVideo} />
-                      ) : (
-                        <img
-                          src={image.urlImage}
-                          alt={image.altImage}
-                          className={styles.thumb}
-                          style={{ width: '100%' }}
-                        />
-                      )}
-
-                      <div className={styles.textBanner}>
-                        <p
-                          className={
-                            !image.whiteText
-                              ? `${styles.hotText}`
-                              : `${styles.whiteText} ${styles.hotText}`
-                          }
-                        >
-                          {image?.hotText}
-                        </p>
-                        <div
-                          className={
-                            !image.whiteText
-                              ? `${styles.textMessage}`
-                              : `${styles.textMessage} ${styles.whiteText}`
-                          }
-                          dangerouslySetInnerHTML={{
-                            __html: image?.textMessage,
-                          }}
-                        />
-                        <p
-                          className={
-                            !image.whiteText
-                              ? `${styles.textCTABlack}`
-                              : `${styles.textCTAWhite}`
-                          }
-                        >
-                          {image?.textCTA}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
+                        <div className={styles.textBanner}>
+                          <p
+                            className={
+                              !image.whiteText
+                                ? `${styles.hotText}`
+                                : `${styles.whiteText} ${styles.hotText}`
+                            }
+                          >
+                            {image?.hotText}
+                          </p>
+                          <div
+                            className={
+                              !image.whiteText
+                                ? `${styles.textMessage}`
+                                : `${styles.textMessage} ${styles.whiteText}`
+                            }
+                            dangerouslySetInnerHTML={{
+                              __html: image?.textMessage,
+                            }}
+                          />
+                          <p
+                            className={
+                              !image.whiteText
+                                ? `${styles.textCTABlack}`
+                                : `${styles.textCTAWhite}`
+                            }
+                          >
+                            {image?.textCTA}
+                          </p>
+                        </div>
+                      </a>
+                    ))
+                  )}
                 </Layout>
               )}
             </>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   )
