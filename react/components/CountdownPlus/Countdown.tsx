@@ -157,6 +157,8 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
   }
 
   const { days, hours, minutes, seconds } = remaining(remainingTime)
+  const totalHours = parseInt(hours, 10) + parseInt(days, 10) * 24
+  console.log('totalHours ->', totalHours)
 
   return (
     showCountdown && (
@@ -169,7 +171,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
                 countdownVisibility={countdownVisibilityBanner}
                 hideBannerImage={hideBannerImage}
                 days={days}
-                hours={hours}
+                hours={totalHours.toString()}
                 minutes={minutes}
                 seconds={seconds}
                 descriptionItem1Edit={descriptionItem1Edit}
@@ -188,7 +190,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
                 countdownVisibility={countdownVisibilityBanner}
                 hideBannerImage={hideBannerImage}
                 days={days}
-                hours={hours}
+                hours={totalHours.toString()}
                 minutes={minutes}
                 seconds={seconds}
                 descriptionItem1Edit={descriptionItem1Edit}
@@ -212,7 +214,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
             <RenderCountDownSimple
               normalizedProps={normalizedProps}
               days={days}
-              hours={hours}
+              hours={totalHours.toString()}
               minutes={minutes}
               seconds={seconds}
               countdownVisibility={countdownVisibilityProducts}
