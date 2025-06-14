@@ -117,8 +117,15 @@ export const formatTime = (days: number, hours: number, minutes: number, seconds
  * @param {string} dateString - A string representing a date in the format "YYYY/MM/DD".
  * @returns The function `isValidDate` returns a boolean value.
  */
-export const isValidDate = (dateString: string): boolean => {
-  // Validar si la fecha tiene el formato correcto (YYYY/MM/DD)
-  const datePattern = /^\d{4}\/\d{2}\/\d{2}$/;
-  return datePattern.test(dateString);
-};
+// export const isValidDate = (dateString: string): boolean => {
+//   // Validar si la fecha tiene el formato correcto (YYYY/MM/DD)
+//   const datePattern = /^\d{4}\/\d{2}\/\d{2}$/;
+//   return datePattern.test(dateString);
+// };
+
+
+
+export function isValidDate(date: string | Date): boolean {
+  const d = typeof date === 'string' ? new Date(date) : date
+  return d instanceof Date && !isNaN(d.getTime())
+}
