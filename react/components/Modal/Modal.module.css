@@ -44,6 +44,7 @@
   padding: 1.5rem;
   height: auto;
   overflow-y: auto;
+  /* max-height: 566px; */
   /* height: 350px; */
 }
 
@@ -86,7 +87,9 @@
   .modalContent {
     width: 90%;
   }
+
   .modalBody {
+    max-height: 566px;
     padding: 1rem 0.5rem;
   }
 }
