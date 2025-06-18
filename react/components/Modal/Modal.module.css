@@ -81,6 +81,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  .modalHeader {
+    padding-left: 0rem;
+    justify-content: center;
+  }
+  .modalClose {
+    right: 0.5rem;
+  }
   .modalContent {
     max-width: 360px;
   }
