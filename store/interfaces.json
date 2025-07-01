@@ -1,6 +1,7 @@
 {
   "support-chat": {
-    "component": "SupportChat"
+    "component": "SupportChat",
+    "hydration": "on-view"
   },
   "estilospe-horizontal-menu": {
     "component": "HorizontalMenu"
@@ -16,21 +17,25 @@
     "allowed": "*"
   },
   "countdown": {
+    "hydration": "on-view",
     "component": "Countdown",
     "composition": "children",
     "allowed": "*"
   },
   "countdown#global__banner": {
+    "hydration": "on-view",
     "component": "Countdown",
     "composition": "children",
     "allowed": "*"
   },
   "countdown#global__vitrine-version-1": {
+    "hydration": "on-view",
     "component": "Countdown",
     "composition": "children",
     "allowed": "*"
   },
   "countdown#global__vitrine-version-2": {
+    "hydration": "on-view",
     "component": "Countdown",
     "composition": "children",
     "allowed": "*"
@@ -40,6 +45,7 @@
     "render": "client"
   },
   "estilospe-search-paginator": {
+    "hydration": "on-view",
     "component": "Paginator",
     "content": {
       "$ref": "app:estilospe.frontend-applications#/definitions/Paginator"
@@ -115,6 +121,7 @@
     "component": "SEOCategories"
   },
   "estilos-custom-sticky": {
+    "render": "client",
     "component": "CustomSticky",
     "composition": "children",
     "allowed": "*"
@@ -181,6 +188,7 @@
     "allowed": "*"
   },
   "estilos-most-purchased": {
+    "hydration": "on-view",
     "component": "MostPLP"
   },
   "estilos-price-bar": {
@@ -208,9 +216,11 @@
     "component": "TextGeoUnified"
   },
   "estilos-simulation": {
+    "render": "client",
     "component": "Simulation"
   },
   "estilos-view-read": {
+    "hydration": "on-view",
     "component": "ViewRead"
   },
   "estilos-tooltip": {
