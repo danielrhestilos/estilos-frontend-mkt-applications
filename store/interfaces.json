@@ -227,6 +227,7 @@
     "component": "BlockWithTooltip"
   },
   "estilos-visited-products": {
+    "hydration": "on-view",
     "component": "VisitedProducts"
   },
   "estilos-filters": {
