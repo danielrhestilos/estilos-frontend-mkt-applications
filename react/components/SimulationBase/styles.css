@@ -4,6 +4,7 @@
 }
 .containerResults {
   margin: 19px 0px;
+  max-height: 400px;
 }
 .containerSim {
   height: 100%;
