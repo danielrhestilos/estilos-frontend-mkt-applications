@@ -1,406 +1,235 @@
-.marginContainer {
-    background: none;
-    display: flex;
-    justify-content: center;
-    /* font-family: ""; */
+.containerMaxWidth {
+  border-radius: 10px;
+  background: #F5F5F5;
+  padding: 10px;
 }
 
-.containerMaxWidth {
-    width: 100%;
-    background: var(--light-background);
-    display: flex;
-    flex-direction: column;
-    padding: 30px 36px;
-    border: 1px solid var(--light-background);
-    border-radius: 8px;
-    gap: 16px;
+.titleContent {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  margin-bottom: 8px;
+}
+.titleContent .sentencePrice {
+  font-family: "Outfit Medium";
+  font-size: 20px;
+  line-height: 20px;
+  color: #E91111;
 }
 
 .containerContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding-right: 15px; */
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5px;
 }
 
-.contentProduct {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #cdcdcd;
-    border-radius: 10px;
-    /* max-width: 200px; */
-    background: #fff;
-    padding-bottom: 20px;
-    margin:  5px;
-}
-.contentProduct:hover {
-    border: 1px solid #e91111;
+.contentProduct a {
+  background: white;
+  padding: 16px 12px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: grid;
+  grid-template-rows: 28px auto 32px;
+  justify-items: center;
+  text-decoration: none;
 }
 
-
-
-.contentProduct input[type='checkbox']:checked+label {
-    opacity: 1;
-    transition: .2s ease-in-out;
+.productName {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: "Outfit Regular";
+  font-size: 12px;
+  line-height: 14px;
+  max-height: 28px;
+  color: #000000;
 }
 
-.contentProduct input[type='checkbox']+label {
-    opacity: .5;
-}
-
-.contentProduct>label>a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #000000;
-    text-align: center;
-}
-
-.contentProduct img {
-    height: 150px;
-}
-
-.contentProduct .productName {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
-    text-transform: capitalize;
-    margin: 10px 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 180px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-}
-
-.contentProduct span:first-letter {
-    text-transform: capitalize;
+.imageProduct {
+  margin: 20px 0;
+  opacity: .5;
+  object-fit: contain;
+  transition: .3s ease all;
 }
 
 .productContainerPrice {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: grid;
+  grid-template-rows: 12px 20px;
+  justify-items: center;
 }
-
 .productOldPrice {
-    font-size: 13px;
-    color: black;
-    font-weight: 500;
-    text-decoration: line-through;
+  font-family: "Outfit Medium";
+  font-size: 12px;
+  line-height: 12px;
+  color:  #868686;
+  text-decoration: line-through;
+}
+.productPrice {
+  font-family: "Outfit Medium";
+  font-size: 20px;
+  line-height: 20px;
+  color: #E91111;
 }
 
-.contentProduct .productPrice {
-    font-weight: bold;
-    color: #E91111;
-    font-size: 16px;
-    line-height: 20px;
+
+.checkbox {
+  width: 100%;
+  background: #E91111;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #E91111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+.checkbox span {
+  font-family: "Outfit Medium";
+  font-size: 16px;
+  line-height: 13px;
+  color: #ffffff;
+  transition: .3s ease all;
 }
 
-.plusProduct {
-    font-size: 40px;
-    font-weight: bold;
-    color: #E91111;
-    margin: 10px;
+.checkbox:has(input:checked) {
+  background: #ffffff;
+  border-color: #868686;
+}
+.checkbox:has(input:checked) span {
+  color: #868686;
 }
 
-.plusProduct:last-child {
-    display: none;
-}
 
-.contentProduct input[type='checkbox'] {
-    appearance: none;
-    -webkit-appearance: none;
-    background: #DADADA;
-    width: 18px;
-    height: 18px;
-    border-radius: 3px;
-    transition: .2s ease-in-out;
-    display: flex;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    /* margin-top: 10px; */
+.containerPrices {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
 }
-
-.contentProduct input[type='checkbox']:hover {
-    background: #c21a1a;
-    cursor: pointer;
-}
-
-.contentProduct input[type='checkbox']:checked {
-    background: #E91111;
-}
-
-.contentProduct input[type='checkbox']:checked::before {
-    content: url('./assets/check-solid-dark.svg');
-    width: 12px;
-}
-
-.contentProduct input[type='checkbox']:disabled {
-    background: #d70d288c;
-}
-
-.contentProduct input[type='checkbox']:disabled:before {
-    content: url('./assets/check-solid-dark.svg');
-    width: 12px;
-}
-
-.containerPrice {
-    /* margin-left: 15px;
-    padding-left: 15px; */
-    /* height: 240px; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 15px;
-    max-width: 1400px;
-    margin: auto;
-}
-
-.sentencePrice,
-.sentencePriceMobile {
-    font-weight: bold;
-    font-size: 27px;
-    text-align: center;
-    /* font-size: 20px; */
-}
-
-.sentencePriceMobile {
-    display: none;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.contentPrincePercent {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    /* justify-content: space-between; */
-}
-
 .contentPrice {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  grid-template-rows: 14px 23px;
 }
-
-.titlePrice {
-    font-weight: 600;
-    font-size: 20px;
+.titleDiscountPrice {
+  font-family: "Outfit Medium";
+  font-size: 14px;
+  line-height: 14px;
 }
-
+.titlePrice,
 .valuePrice {
-    font-weight: 700;
-    font-size: 24px;
-    /* font-size: 30px; */
-    color: #E91111;
+  font-family: "Outfit Medium";
+  font-size: 22px;
+  line-height: 22px;
 }
-
-.contentPercent {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.percentNumber {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 3px 5px;
-    background-color: #E91111;
-    color: white;
-    border-radius: 5px;
-}
-
-.percentText {
-    font-size: 10px;
-}
-
-.discountToday {
-    font-size: 18px;
-    color: #979899;
-    font-weight: 600;
+.valuePrice {
+  color: #E91111;
 }
 
 .buttonsBuyTogether {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+.buttonPrice {
+  background: #E91111;
+  border-radius: 100px;
+  color: white;
+  font-family: "Outfit Medium";
+  font-size: 20px;
+  line-height: 20px;
+  padding: 10px 40px;
+  margin-left: 30px;
+  cursor: pointer;
+  border: 1px solid #E91111;
+}
+.buttonPrice:hover {
+  background-color: var(--light-background, #f5f5f5);
+  border-color: var(--light-background, #f5f5f5);
+  color: var(--primary-color, #e91111);
 }
 
-.buttonPriceAdd,
-.buttonPrice,
-.buttonPriceAddMobile {
-    width: 45%;
+.contentProduct:has(input:checked) .imageProduct {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .contentProduct a {
+    padding: 10px 8px;
+    grid-template-rows: 18px auto 20px;
+  }
+  .productName {
+    font-size: 9px;
+    line-height: 9px;
+    max-height: 18px;
+  }
+  .imageProduct {
+    width: 60px;
+    height: 60px;
+    margin: 12px 0;
+  }
+
+  .productContainerPrice {
+    grid-template-rows: 8px 12px;
+  }
+  .productOldPrice {
+    font-size: 8px;
+    line-height: 8px;
+  }
+  .productPrice {
     font-size: 12px;
-    line-height: 15px;
-    border: 1px solid #E91111;
-    border-radius: 50px;
-    /* padding: 10px 0; */
-    text-transform: uppercase;
-    font-family: 'Outfit';
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s all;
-}
+    line-height: 12px;
+  }
 
-.buttonPriceAdd {
-    color: #E91111;
-    background: #ffffff;
-}
+  .checkbox span {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .checkbox img {
+    width: 12px;
+    height: 12px;
+  }
 
-.buttonPrice,
-.buttonPriceAddMobile {
-    color: #ffffff;
-    background: #E91111;
-    display: block;
-    font-size: 1rem;
-    padding: 12px 16px;
-    width: 100%;
-}
-
-.buttonPriceAddMobile,
-.contentPrincePercentMobile {
-    display: none;
-}
-
-.discountPriceMobile {
+  .containerPrices {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    column-gap: 15px;
+    justify-content: flex-start;
+  }
+  .contentPrice {
+    grid-template-rows: 11px 18px;
+    align-content: center;
+  }
+  .titleDiscountPrice {
+    font-size: 11px;
+    line-height: 11px;
+  }
+  .titlePrice,
+  .valuePrice {
     font-size: 18px;
-    color: #979899;
-    font-weight: 600;
+    line-height: 18px;
+  }
+  .buttonsBuyTogether {
+    width: 100%;
+    height: 100%;
+  }
+  .buttonPrice {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px 10px;
+    border-radius: 4px;
     display: flex;
-    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+  }
 }
-
-/* ? Detalles */
-.valuePrice::before,
-.contentProduct .productPrice::before,
-.contentProduct .productOldPrice::before,
-.discountToday .discountPrice::before {
-    content: 'S/ ';
-}
-
-.contentPercent .percentNumber::before {
-    content: '-';
-}
-
-.contentPercent .percentNumber::after {
-    content: '%';
-}
-
-/* *VERSIÓN MOBILE */
-@media screen and (max-width: 1280px) {
-    .containerContent {
-        padding: 15px;
-    }
-
-    .contentPrice {
-        flex-direction: column;
-    }
-
-    .containerMaxWidth {
-        flex-direction: column;
-        padding: 30px 15px;
-        margin: 20px 24px;
-    }
-
-    .containerContent {
-        justify-content: space-between;
-    }
-
-    .containerPrice {
-        border: none;
-        margin: 0;
-        padding: 0;
-        gap: 0;
-        align-items: center;
-        text-align: center;
-        margin-top: 30px;
-        height: auto;
-    }
-/* 
-    .sentencePrice {
-        display: none;
-    } */
-
-    .sentencePriceMobile {
-        display: block;
-    }
-
-    .titlePrice {
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 19.5px;
-    }
-
-    .valuePrice {
-        font-weight: 700;
-        font-size: 24px;
-        color: #E91111;
-        line-height: 26.5px;
-    }
-
-    .buttonPriceAddMobile,
-    .contentPrincePercentMobile {
-        display: block;
-    }
-
-    .buttonPriceAddMobile {
-        width: 200px;
-        font-size: 15px;
-    }
-
-    .contentPrincePercentMobile {
-        display: flex;
-        flex-direction: column;
-        /* gap: 15px; */
-    }
-
-    /* .buttonPriceAdd,
-    .buttonPrice,
-    .contentPrincePercent,
-    .contentPercent,
-    .discountToday {
-        display: none;
-    } */
-
-    .valuesPrices {
-        display: flex;
-        align-items: center;
-        /* gap: 10px; */
-        margin: 15px 0;
-    }
-}
-
-@media screen and (max-width: 1025px) {
-    .containerMaxWidth {
-        padding: 10px 0;
-        margin: 0 0 10px;
-        overflow: hidden;
-    }
-
-    .containerContent {
-        overflow-x: scroll;
-    }
-
-    .contentProduct {
-        margin: 15px 6px;
-    }
-
-    .valuesPrices {
-        flex-direction: column;
-    }
-}
-
-/* .checkboxCompreJunto{
-    cursor: initial;
-} */
