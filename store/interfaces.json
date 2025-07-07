@@ -300,5 +300,9 @@
   },
   "estilos-side-bar-menu": {
     "component": "SidebarMenu"
+  },
+  "estilos-price-fresh": {
+    "component": "PriceFresh",
+    "render": "client"
   }
 }
