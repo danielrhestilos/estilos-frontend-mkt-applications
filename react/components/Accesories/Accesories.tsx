@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react'
 import useProduct from 'vtex.product-context/useProduct'
 import { useOrderForm } from 'vtex.order-manager/OrderForm'
 import { useOrderItems } from 'vtex.order-items/OrderItems'
+import ShoppingCartIcon from './assets/shopping-cart-icon.svg'
+import AddIcon from './assets/add-icon.svg'
+import RemoveIcon from './assets/remove-icon.svg'
 import styles from './styles.css'
 
 function Accesories() {
@@ -137,136 +140,102 @@ function Accesories() {
     <>
       <div id="buyTogether" className={styles.marginContainer}>
         {loadingCJ === false && productCJ && productCJ.length > 0 && (
-          <div className={styles.containerMaxWidth}>
-            {/* Contenido de productos */}
-            {/* Precio final y */}
-            <div className={styles.containerContent}>
-              <span className={styles.sentencePrice}>
-                Complementos indispensables para tu compra
-              </span>
-            </div>
-
-            {originalPrice - total != 0 && (
-              <div className={styles.titlePrice} style={{ margin: 'auto' }}>
-                <span>
-                  Ahorras :S/{' '}
-                  <span className={styles.discountPrice}>
-                    {(originalPrice - total).toFixed(2)}
-                  </span>
+          <>
+            <div className={styles.containerMaxWidth}>
+              <div className={styles.titleContent}>
+                <img src={ShoppingCartIcon} width={27} height={27} />
+                <span className={styles.sentencePrice}>
+                  Complementa tu compra
                 </span>
               </div>
-            )}
 
-            <div className={styles.containerContent}>
-              {productCJ.map((item: any, index: any) =>
-                ids.includes(item.id) ? (
-                  <>
-                    <div className={styles.contentProduct} key={item.id}>
-                      <input
-                        type="checkbox"
-                        id={`${item.id}`}
-                        onChange={CheckBoxChange}
-                        value={item.id}
-                        checked={ids.includes(item.id)}
-                        disabled={item.id === product.items[0].itemId}
-                        className={
-                          styles.checkboxCompreJunto + `-` + `${index}`
-                        }
+              <div className={styles.containerContent}>
+                {productCJ.map((item: any, index: number) => index > 0 && (
+                  <div className={styles.contentProduct} key={item.id}>
+                    <a href={'/' + item.linkText + '/p'}>
+                      <span className={styles.productName}>
+                        {item.name}
+                      </span>
+                      <img
+                        className={styles.imageProduct}
+                        src={item.imageUrl}
+                        alt={item.name}
+                        width={90}
+                        height={90}
                       />
-                      <label htmlFor={`${item.id}`}>
-                        <a href={'/' + item.linkText + '/p'}>
-                          <img
-                            className={styles.imageProduct}
-                            src={item.imageUrl}
-                            alt={item.name}
-                          />
-                          <span className={styles.productName}>
-                            {item.name}
+
+                      <div className={styles.productContainerPrice}>
+                        {item.price !== item.listPrice ? (
+                          <span className={styles.productOldPrice}>
+                            S/ {item.listPrice.toFixed(2)}
                           </span>
-                          {item.price === item.listPrice ? (
-                            <span className={styles.productPrice}>
-                              {item.price.toFixed(2)}
-                            </span>
-                          ) : (
-                            <div className={styles.productContainerPrice}>
-                              <span className={styles.productOldPrice}>
-                                {item.listPrice.toFixed(2)}
-                              </span>
-                              <span className={styles.productPrice}>
-                                {item.price.toFixed(2)}
-                              </span>
-                            </div>
-                          )}
-                        </a>
-                      </label>
-                    </div>
-                    {index === 0 && (
-                      <span className={styles.plusProduct}>+</span>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <div className={styles.contentProduct} key={item.id}>
+                        ) : (<span></span>)}
+                        <span className={styles.productPrice}>
+                          S/ {item.price.toFixed(2)}
+                        </span>
+                      </div>
+                    </a>
+
+                    <label htmlFor={`${item.id}`} className={styles.checkbox}>
                       <input
                         type="checkbox"
                         id={`${item.id}`}
+                        hidden
                         onChange={CheckBoxChange}
                         value={item.id}
                         checked={ids.includes(item.id)}
                         disabled={item.id === product.items[0].itemId}
                       />
-                      <label htmlFor={`${item.id}`}>
-                        <a href={'/' + item.linkText + '/p'}>
-                          <img
-                            className={styles.imageProduct}
-                            src={item.imageUrl}
-                            alt={item.name}
-                          />
-                          <span className={styles.productName}>
-                            {item.name}
-                          </span>
-                          {item.price === item.listPrice ? (
-                            <span className={styles.productPrice}>
-                              {item.price.toFixed(2)}
-                            </span>
-                          ) : (
-                            <div className={styles.productContainerPrice}>
-                              <span className={styles.productOldPrice}>
-                                {item.listPrice.toFixed(2)}
-                              </span>
-                              <span className={styles.productPrice}>
-                                {item.price.toFixed(2)}
-                              </span>
-                            </div>
-                          )}
-                        </a>
-                      </label>
-                    </div>
-                  </>
-                )
-              )}
-            </div>
-            {total != null && (
-              <div className={styles.containerMaxWidth}>
-                <div className={styles.contentPrice}>
-                  {/* Subtotal: */}
-                  <span className={styles.titlePrice}>Total:</span>
-                  <span className={styles.valuePrice}>{total.toFixed(2)}</span>
 
-                  <div className={styles.buttonsBuyTogether}>
-                    {/* <button onClick={onClickAddToCart} className={styles.buttonPriceAdd}>Agregar al carrito</button> */}
-                    <button
-                      onClick={onClickBuy}
-                      className={styles.buttonPrice}
-                      id="comprarJuntosButton"
-                    >
-                      ¡LOS QUIERO!
-                    </button>
+                      {ids.includes(item.id) ? (
+                        <>
+                          <span>Quitar</span>
+                          <img src={RemoveIcon} width={16} height={16} />
+                        </>
+                      ): (
+                        <>
+                          <span>Agregar</span>
+                          <img src={AddIcon} width={16} height={16}/>
+                        </>
+                      )}
+                    </label>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            {total != null && (
+              <div className={styles.containerPrices}>
+                <div className={styles.contentPrice}>
+                  <div className={styles.titleDiscountPrice}>
+                    {originalPrice - total != 0 && (
+                        <span>
+                          Ahorra: S/{' '}
+                          <span className={styles.discountPrice}>
+                            {(originalPrice - total).toFixed(2)}
+                          </span>
+                        </span>
+                    )}
+                  </div>
+                  <div>
+                    <span className={styles.titlePrice}>Total: </span>
+                    <span className={styles.valuePrice}>S/ {total.toFixed(2)}</span>
+                  </div>
+                </div>
+
+                {/* Subtotal: */}
+                <div className={styles.buttonsBuyTogether}>
+                  <button
+                    onClick={onClickBuy}
+                    className={styles.buttonPrice}
+                    id="comprarJuntosButton"
+                  >
+                    ¡Me lo llevo todo!
+                  </button>
                 </div>
               </div>
             )}
-          </div>
+          </>
         )}
       </div>
     </>
