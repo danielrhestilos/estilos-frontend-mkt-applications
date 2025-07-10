@@ -28,20 +28,20 @@ export const useSimulation = (zipcode: string /* isPickup: boolean*/) => {
             })
             const data = await response.json()
             // if (isPickup) {
-            setPickUpPoints(data.pickupPoints || [])
+            setPickUpPoints(data?.pickupPoints || [])
             // } else {
-            const logisticsInfo = data.logisticsInfo[0]?.slas || []
+            const logisticsInfo = data?.logisticsInfo?.[0]?.slas || []
             // console.log('logisticsInfo', logisticsInfo);
 
             const optionsDelivery = logisticsInfo
-                .filter((item: any) => item.deliveryChannel === 'delivery')
+                .filter((item: any) => item?.deliveryChannel === 'delivery')
                 .map(({ name, price, transitTime }: any) => ({
                     name,
                     price,
                     transitTime
                 }));
-            const freeDeliveryOption = optionsDelivery.find((item: any) => item?.price === 0);
-            const expressDeliveryOption = optionsDelivery.find((item: any) => item?.transitTime === '0bd');
+            const freeDeliveryOption = optionsDelivery?.find((item: any) => item?.price === 0);
+            const expressDeliveryOption = optionsDelivery?.find((item: any) => item?.transitTime === '0bd');
             // .reduce(
             //     (prev: any, curr: any) => (prev.price < curr.price ? prev : curr),
             //     { price: Infinity }
