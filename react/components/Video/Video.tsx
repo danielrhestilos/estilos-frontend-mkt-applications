@@ -28,6 +28,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ url }) => {
       <video
         autoPlay
         loop
+        muted
         className="w-full rounded-xl shadow-md"
         style={{ margin: 'auto', height: 'auto', width: '100%' }}
       >
