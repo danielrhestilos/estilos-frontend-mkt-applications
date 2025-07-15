@@ -34,7 +34,14 @@ const PriceFresh: React.FC = () => {
     <div style={{ marginTop: '1rem' }}>
       {descuento > 0 ? (
         <>
-          <p style={{ color: '#e53935', fontWeight: 'bold', margin: '0' }}>
+          <p
+            style={{
+              color: '#e53935',
+              fontWeight: 'bold',
+              margin: '0',
+              display: 'flex',
+            }}
+          >
             {formatPrice(precioPromo)} (-{descuento}%)
           </p>
           <p
