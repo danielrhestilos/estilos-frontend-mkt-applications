@@ -13,7 +13,7 @@ type ImageType = {
 const SliderMobile = ({ images }: { images: ImageType[] }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    loop: false,
+    loop: true,
     slides: {
       perView: 1,
       spacing: 10,
