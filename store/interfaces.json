@@ -304,5 +304,11 @@
   "estilos-price-fresh": {
     "component": "PriceFresh",
     "render": "client"
+  },
+  "sizes": {
+    "component": "sizes"
+  },
+  "tag": {
+    "component": "Tag"
   }
 }

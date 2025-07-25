@@ -7,6 +7,8 @@ const isPromotionExpired = (to: string): boolean => {
   if (!to) return false
   const now = new Date()
   const endDate = new Date(to)
+  console.log('endDate ', endDate)
+
   return now > endDate
 }
 
