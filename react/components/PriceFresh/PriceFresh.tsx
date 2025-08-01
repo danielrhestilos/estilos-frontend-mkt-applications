@@ -3,13 +3,14 @@ import { usePromotionData } from './../../hooks/usePromotionData'
 import useProduct from 'vtex.product-context/useProduct'
 
 // Helpers
-const isPromotionExpired = (to: string): boolean => {
-  if (!to) return false
-  const now = new Date()
-  const endDate = new Date(to)
-  console.log('endDate ', endDate)
-
-  return now > endDate
+const isPromotionDisabled = (from: string, to: string): boolean => {
+  // const now = new Date()
+  const now = new Date().toISOString()
+  const utcnow = new Date(now)
+  console.log('utcnow ', now)
+  if (to && utcnow > new Date(to)) return true
+  if (from && utcnow < new Date(from)) return true
+  return false
 }
 
 const formatPrice = (value: number): string =>
@@ -25,6 +26,7 @@ const PriceFresh: React.FC = () => {
   const itemId = selectedItem?.itemId
 
   const { data, loading, error } = usePromotionData(itemId)
+  console.log('data: ', JSON.stringify(data))
 
   if (loading) return <p>Cargando promoción...</p>
   if (error) return <p>Error al cargar promoción: {error.message}</p>
@@ -32,8 +34,10 @@ const PriceFresh: React.FC = () => {
 
   const precioNormal = data.data[0]?.value ?? 0
   const precioPromo = data.data[1]?.value ?? 0
+  const fechaInicioPromo = data.data[1]?.dateRange?.from
   const fechaFinPromo = data.data[1]?.dateRange?.to
-  const expirado = isPromotionExpired(fechaFinPromo)
+  const expirado = isPromotionDisabled(fechaInicioPromo, fechaFinPromo)
+  console.log('expirado ', expirado)
 
   const descuento =
     precioNormal && precioPromo
