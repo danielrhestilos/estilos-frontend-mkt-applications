@@ -48,7 +48,6 @@ const PriceFresh: React.FC = () => {
   const styles = {
     precioDestacado: { color: '#e53935', fontWeight: 'bold', margin: 0 },
     tachado: { textDecoration: 'line-through', color: '#999', margin: 0 },
-    contenedor: { marginTop: '1rem' },
   }
 
   if (expirado) {
@@ -56,7 +55,7 @@ const PriceFresh: React.FC = () => {
   }
 
   return (
-    <div style={styles.contenedor}>
+    <div>
       {descuento > 0 ? (
         <>
           <p style={styles.precioDestacado}>
