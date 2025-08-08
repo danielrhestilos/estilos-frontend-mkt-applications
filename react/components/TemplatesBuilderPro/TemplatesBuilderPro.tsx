@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from './Layout'
-import useResize from '../../hooks/sizeScreenHook'
+import useResize from '../../hooks/sizeScreenHook.ts'
 import styles from './styles.css'
 import Video from './../Video/Video'
 import SliderMobile from './SliderMobile'

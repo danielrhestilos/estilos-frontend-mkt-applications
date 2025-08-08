@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './styles.css'
-import StickyWrapper from '../StickyWrapper/StickyWrapper'
-import Anchor from '../Anchor/Anchor'
-import useResize from '../../hooks/sizeScreenHook'
+import StickyWrapper from './../StickyWrapper/StickyWrapper'
+import Anchor from './../Anchor/Anchor'
+import useResize from './../../hooks/sizeScreenHook'
 
 function Layout({
   typeLayout,

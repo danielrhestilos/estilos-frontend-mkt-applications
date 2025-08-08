@@ -1,3 +1,0 @@
-import ProductShelfAvailability from './components/ProductShelfAvailability/ProductShelfAvailability'
-
-export default ProductShelfAvailability
