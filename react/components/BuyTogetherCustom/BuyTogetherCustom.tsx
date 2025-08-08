@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useProduct } from 'vtex.product-context'
 import Product from './components/Product'
 import useLocalStorage from '../../hooks/localStorageHook'
+
 const BuyTogetherCustom = () => {
   const [skuItems, setSkuItems] = useLocalStorage('skuItems', [])
   const [buyTogether, setBuyTogether] = useState([])
@@ -15,8 +16,11 @@ const BuyTogetherCustom = () => {
   useEffect(() => {
     const getDataProduct = () => {
       fetch(`/api/catalog_system/pub/products/search?fq=productId:${productId}`)
-        .then((res) => res.json())
         .then((res) => {
+          return res.json()}
+        )
+        .then((res) => {
+          console.log('res BuyTogetherCustom ',res);
           const { items } = res[0]
           const { sellers } = items[0]
           const {
@@ -51,12 +55,9 @@ const BuyTogetherCustom = () => {
   }, [products])
 
   const renderedProducts = () => {
-    // console.log('buyTogether: ', buyTogether)
     console.log('products ', products)
-
     return buyTogether.map((product: any, i: any) => (
       <>
-        {/* {console.log('product : ', product)} */}
         <Product
           products={products}
           setProducts={setProducts}
