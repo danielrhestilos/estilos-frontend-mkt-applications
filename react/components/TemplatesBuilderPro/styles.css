@@ -301,7 +301,7 @@
 
 .contBanner:hover {
   /* transform: translateY(-3px); */
-  filter: brightness(0.9); /* Oscurece el elemento */
+  filter: brightness(0.8); /* Oscurece el elemento */
   transition: all 0.4s ease-in-out;
 }
 
