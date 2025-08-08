@@ -29,8 +29,7 @@ const PriceFresh: React.FC = () => {
   console.log('data: ', JSON.stringify(data))
 
   if (loading) return <p>Cargando promoción...</p>
-  if (error) return <p>Error al cargar promoción: {error.message}</p>
-  if (!data?.data) return null
+  if (error || !data?.data) return null
 
   const precioNormal = data.data[0]?.value ?? 0
   const precioPromo = data.data[1]?.value ?? 0
